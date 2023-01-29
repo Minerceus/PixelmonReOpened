@@ -7,7 +7,7 @@ import java.util.*
 plugins {
     java
     id("dev.architectury.loom") version "0.12.0-SNAPSHOT"
-    id("uk.jamierocks.propatcher") version "1.3.2" apply false
+    id("uk.jamierocks.propatcher") version "2.0.1" apply false
     id("com.dorongold.task-tree") version "1.5"
 }
 
@@ -53,7 +53,7 @@ dependencies {
 }
 
 val resetSources by tasks.registering(ResetSourcesTask::class) {
-    root = rootProject.file(".gradle/decompiled/sources")
+    rootDir = rootProject.file(".gradle/decompiled/sources")
     target = file("src/main/java")
 }
 
@@ -65,13 +65,13 @@ val applySourcePatches by tasks.registering(ApplyPatchesTask::class) {
 }
 
 val makeSourcePatches by tasks.registering(MakePatchesTask::class) {
-    root = rootProject.file(".gradle/decompiled/sources")
+    rootDir = rootProject.file(".gradle/decompiled/sources")
     target = file("src/main/java")
     patches = file("patches/java")
 }
 
 val resetResources by tasks.registering(ResetSourcesTask::class) {
-    root = rootProject.file(".gradle/decompiled/resources")
+    rootDir = rootProject.file(".gradle/decompiled/resources")
     target = file("src/main/resources")
 }
 
@@ -84,6 +84,7 @@ val applyResourcePatches by tasks.registering(ApplyPatchesTask::class) {
 }
 
 val makeResourcePatches by tasks.registering(MakePatchesTask::class) {
+    rootDir = rootProject.file(".gradle/decompiled/resources")
     target = file("src/main/resources")
     patches = file("patches/resources")
 }
