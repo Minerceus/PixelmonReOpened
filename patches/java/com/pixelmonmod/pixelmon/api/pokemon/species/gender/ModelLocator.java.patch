@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/species/gender/ModelLocator.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/species/gender/ModelLocator.java
+@@ -39,8 +39,7 @@
+ 
+         for(int i = 0; i < this.pqc.size(); ++i) {
+             this.pqcRL[i] = ResourceWithFallback.from(
+-                    ResourceLocationHelper.of((String)((Pair)this.pqc.get(i)).getFirst()),
+-                    ResourceLocationHelper.of((String)((Pair)this.pqc.get(i)).getSecond())
++               ResourceLocationHelper.of((String)((Pair)this.pqc.get(i)).getFirst()), ResourceLocationHelper.of((String)((Pair)this.pqc.get(i)).getSecond())
+                 )
+                 .ensureTexture();
+         }

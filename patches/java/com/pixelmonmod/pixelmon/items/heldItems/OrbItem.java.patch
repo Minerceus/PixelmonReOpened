@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/items/heldItems/OrbItem.java
++++ b/com/pixelmonmod/pixelmon/items/heldItems/OrbItem.java
+@@ -46,8 +46,7 @@
+         } else {
+             context.getLevel()
+                 .setBlockAndUpdate(
+-                    context.getClickedPos().above(),
+-                    (BlockState)this.block.defaultBlockState().setValue(OrbBlock.FACING, context.getPlayer().getMotionDirection())
++               context.getClickedPos().above(), (BlockState)this.block.defaultBlockState().setValue(OrbBlock.FACING, context.getPlayer().getMotionDirection())
+                 );
+             ((OrbTileEntity)context.getLevel().getBlockEntity(context.getClickedPos().above())).setPieces(10);
+             context.getPlayer().getItemInHand(context.getHand()).shrink(1);

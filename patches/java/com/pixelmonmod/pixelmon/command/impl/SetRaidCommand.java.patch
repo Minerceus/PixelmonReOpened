@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/SetRaidCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/SetRaidCommand.java
+@@ -60,9 +60,7 @@
+                         player.getX(),
+                         player.getY(),
+                         player.getZ(),
+-                        new AABB(
+-                            player.getX() - 10.0, player.getY() - 10.0, player.getZ() - 10.0, player.getX() + 10.0, player.getY() + 10.0, player.getZ() + 10.0
+-                        )
++                  new AABB(player.getX() - 10.0, player.getY() - 10.0, player.getZ() - 10.0, player.getX() + 10.0, player.getY() + 10.0, player.getZ() + 10.0)
+                     );
+             } else {
+                 int x = PixelmonCommandUtils.requireInt(args[2], "argument.coordinate.invalid");

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/quests/objectives/objectives/battle/TrainerObjective.java
++++ b/com/pixelmonmod/pixelmon/quests/objectives/objectives/battle/TrainerObjective.java
+@@ -67,9 +67,7 @@
+         if (!progress.isObjectiveComplete(objectiveIndex)) {
+             UUID uuid = arguments.value(0, progress);
+             if (uuid != null) {
+-                markers.add(
+-                    new QuestMarker(uuid, DimensionHelper.getDimension("minecraft:overworld"), progress.getQuest().getColor(), progress.getMarkerType())
+-                );
++            markers.add(new QuestMarker(uuid, DimensionHelper.getDimension("minecraft:overworld"), progress.getQuest().getColor(), progress.getMarkerType()));
+             }
+         }
+ 

@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/Gravity.java
++++ b/com/pixelmonmod/pixelmon/battles/status/Gravity.java
+@@ -80,7 +80,7 @@
+     @Override
+     public List<Element> getEffectiveTypes(PixelmonWrapper user, PixelmonWrapper target) {
+         if (user.attack != null && user.attack.getType() == Element.GROUND) {
+-            ArrayList<Element> types = target.type.stream().filter(type -> type != Element.FLYING).collect(Collectors.toList());
++         ArrayList<Element> types = (ArrayList<Element>) target.type.stream().filter(type -> type != Element.FLYING).collect(Collectors.toList());
+             if (types.size() == 0) {
+                 types.add(Element.NORMAL);
+             }

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/Defog.java
++++ b/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/Defog.java
+@@ -89,9 +89,7 @@
+         StatusType[] entryHazards = new StatusType[]{StatusType.Spikes, StatusType.StealthRock, StatusType.ToxicSpikes, StatusType.StickyWeb};
+         total += pw.countStatuses(entryHazards);
+         total -= pw.getOpponentPokemon().get(0).countStatuses(entryHazards);
+-        StatusType[] entryTerrains = new StatusType[]{
+-            StatusType.ElectricTerrain, StatusType.MistyTerrain, StatusType.PsychicTerrain, StatusType.GrassyTerrain
+-        };
++      StatusType[] entryTerrains = new StatusType[]{StatusType.ElectricTerrain, StatusType.MistyTerrain, StatusType.PsychicTerrain, StatusType.GrassyTerrain};
+         total += pw.countStatuses(entryTerrains);
+         total -= pw.getOpponentPokemon().get(0).countStatuses(entryTerrains);
+         userChoice.raiseWeight((float)(30 * total));

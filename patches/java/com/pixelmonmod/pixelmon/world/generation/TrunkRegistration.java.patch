@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/world/generation/TrunkRegistration.java
++++ b/com/pixelmonmod/pixelmon/world/generation/TrunkRegistration.java
+@@ -21,7 +21,7 @@
+     public static TrunkPlacerType<TrunkPlacer> LANAKILA_TYPE_D_PLACER = register("lanakila_type_d", LanakilaTypeDLogPlacer.CODEC);
+     public static TrunkPlacerType<TrunkPlacer> LANAKILA_TYPE_E_PLACER = register("lanakila_type_e", LanakilaTypeELogPlacer.CODEC);
+ 
+-    private static <P extends TrunkPlacer> TrunkPlacerType<P> register(String p_236928_0_, Codec<P> p_236928_1_) {
+-        return (TrunkPlacerType<P>)Registry.register(Registry.TRUNK_PLACER_TYPES, p_236928_0_, new TrunkPlacerType(p_236928_1_));
++   private static <P extends TrunkPlacer> TrunkPlacerType<P> register(String id, Codec<P> codec) {
++      return Registry.register(Registry.TRUNK_PLACER_TYPES, id, new TrunkPlacerType<>(codec));
+     }
+ }

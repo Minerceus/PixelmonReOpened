@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/starter/ChooseStarterScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/starter/ChooseStarterScreen.java
+@@ -122,16 +122,7 @@
+                     .setVisible(this.isSelected())
+             );
+         ImageButton lhs = new ImageButton(
+-            0,
+-            (int)((float)this.width * 0.02F) - 5,
+-            (int)((float)this.height / 2.0F - 32.0F) - 3,
+-            10,
+-            36,
+-            Resources.starterLeft,
+-            1.0F,
+-            1.0F,
+-            1.0F,
+-            button -> {
++         0, (int)((float)this.width * 0.02F) - 5, (int)((float)this.height / 2.0F - 32.0F) - 3, 10, 36, Resources.starterLeft, 1.0F, 1.0F, 1.0F, button -> {
+                 if (this.page - 1 < 0) {
+                     if (StarterList.shouldLoop()) {
+                         this.page = this.pages - 1;

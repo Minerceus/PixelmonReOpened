@@ -1,0 +1,10 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/widgets/SlotBase.java
++++ b/com/pixelmonmod/pixelmon/client/gui/widgets/SlotBase.java
+@@ -206,7 +206,6 @@
+                     this.scrollMultiplier = -1.0F;
+                     int topLeftOfSelect = this.getContentHeight() - (this.bottom - this.top - 4);
+                     if (topLeftOfSelect < 1) {
+-                        int var18 = true;
+                     }
+ 
+                     int middleOfSelect = (int)((float)((this.bottom - this.top) * (this.bottom - this.top)) / (float)this.getContentHeight());

@@ -1,0 +1,105 @@
+--- a/com/pixelmonmod/pixelmon/client/particle/Particles.java
++++ b/com/pixelmonmod/pixelmon/client/particle/Particles.java
+@@ -32,63 +32,63 @@
+         int i = 0;
+         switch(particle) {
+             case Blob:
+-                buf.writeDouble(args[i++]);
+-                buf.writeDouble(args[i++]);
+-                buf.writeDouble(args[i++]);
+-                buf.writeDouble(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeBoolean(args[i++]);
+-                buf.writeInt(args[i++]);
+-                buf.writeInt(args[i++]);
+-                buf.writeFloat(args[i++]);
++            buf.writeDouble((Double) args[i++]);
++            buf.writeDouble((Double) args[i++]);
++            buf.writeDouble((Double) args[i++]);
++            buf.writeDouble((Double) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeBoolean((boolean) args[i++]);
++            buf.writeInt((int) args[i++]);
++            buf.writeInt((int) args[i++]);
++            buf.writeFloat((Float) args[i++]);
+             case BlueMagic:
+             default:
+                 break;
+             case CycloneBlob:
+-                buf.writeDouble(args[i++]);
+-                buf.writeDouble(args[i++]);
+-                buf.writeDouble(args[i++]);
+-                buf.writeDouble(args[i++]);
+-                buf.writeDouble(args[i++]);
++            buf.writeDouble((Double) args[i++]);
++            buf.writeDouble((Double) args[i++]);
++            buf.writeDouble((Double) args[i++]);
++            buf.writeDouble((Double) args[i++]);
++            buf.writeDouble((Double) args[i++]);
+                 break;
+             case Dragon:
+             case SmallRising:
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
+                 break;
+             case Electric:
+-                buf.writeInt(args[i++]);
+-                buf.writeBoolean(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeFloat(args[i++]);
++            buf.writeInt((int) args[i++]);
++            buf.writeBoolean((boolean) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeFloat((Float) args[i++]);
+                 break;
+             case Leaf:
+-                buf.writeDouble(args[i++]);
+-                buf.writeFloat(args[i++]);
+-                buf.writeBoolean(args[i++]);
++            buf.writeDouble((Double) args[i++]);
++            buf.writeFloat((Float) args[i++]);
++            buf.writeBoolean((boolean) args[i++]);
+                 break;
+             case RedOrbShrinking:
+             case Shiny:
+-                buf.writeDouble(args[i++]);
+-                buf.writeDouble(args[i++]);
+-                buf.writeDouble(args[i++]);
++            buf.writeDouble((Double) args[i++]);
++            buf.writeDouble((Double) args[i++]);
++            buf.writeDouble((Double) args[i++]);
+                 break;
+             case ShadowBlob:
+-                buf.writeDouble(args[i++]);
++            buf.writeDouble((Double) args[i++]);
+                 break;
+             case SlingRing:
+-                buf.writeBoolean(args[i++]);
+-                buf.writeInt(args[i++]);
++            buf.writeBoolean((boolean) args[i++]);
++            buf.writeInt((int) args[i++]);
+         }
+     }
+ 

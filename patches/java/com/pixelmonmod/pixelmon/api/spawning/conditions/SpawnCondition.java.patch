@@ -1,0 +1,25 @@
+--- a/com/pixelmonmod/pixelmon/api/spawning/conditions/SpawnCondition.java
++++ b/com/pixelmonmod/pixelmon/api/spawning/conditions/SpawnCondition.java
+@@ -184,9 +184,7 @@
+                 return false;
+             } else if (this.weathers != null && !this.weathers.isEmpty() && !this.weathers.contains(WeatherType.get(spawnLocation.location.world))) {
+                 return false;
+-            } else if ((
+-                    !(((ServerLevel)spawnLocation.location.world).getChunkSource().getGenerator() instanceof FlatLevelSource) || !Pixelmon.isDevEnvironment()
+-                )
++         } else if ((!(((ServerLevel)spawnLocation.location.world).getChunkSource().getGenerator() instanceof FlatLevelSource) || !Pixelmon.isDevEnvironment())
+                 && this.biomes != null
+                 && !this.biomes.isEmpty()
+                 && !this.biomes.contains(spawnLocation.biome.getRegistryName())) {
+@@ -195,8 +193,9 @@
+                 return false;
+             } else if (!this.doesWorldTimeFit(spawnLocation.location.world)) {
+                 return false;
+-            } else if (this.moonPhase != null
+-                && spawnLocation.location.world.dimensionType().moonPhase(spawnLocation.location.world.dayTime()) != this.moonPhase) {
++         } else if (this.moonPhase != null && spawnLocation.location.world.dimensionType().moonPhase(spawnLocation.location.world.dayTime()) != this.moonPhase
++            )
++          {
+                 return false;
+             } else if (this.minLightLevel != null && spawnLocation.light < this.minLightLevel) {
+                 return false;

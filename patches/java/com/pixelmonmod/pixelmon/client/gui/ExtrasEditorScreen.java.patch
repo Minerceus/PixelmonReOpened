@@ -1,0 +1,36 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/ExtrasEditorScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/ExtrasEditorScreen.java
+@@ -97,9 +97,7 @@
+             list.addAll(this.client.getAvailableMonocles());
+             this.addDropDown(
+                 new DropDown<>(list, this.client.getMonocleType(), this.centerW + 100, this.centerH - 20, 80, 100)
+-                    .setGetOptionString(
+-                        monocle -> I18n.get("pixelmon.cosmetic.monocle." + monocle.name().toLowerCase(Locale.ROOT).replace("_", ""), new Object[0])
+-                    )
++               .setGetOptionString(monocle -> I18n.get("pixelmon.cosmetic.monocle." + monocle.name().toLowerCase(Locale.ROOT).replace("_", ""), new Object[0]))
+                     .setOnSelected(monocle -> {
+                         this.client.setMonocleType(monocle);
+                         this.client.setEnabled(PixelExtrasData.Category.MONOCLE, true);
+@@ -150,22 +148,6 @@
+         this.addButton(
+             new Button(
+                 25,
+-                this.height - 75,
+-                50,
+-                20,
+-                new TranslatableComponent("menu.discord"),
+-                onClick -> Minecraft.getInstance().setScreen(new ConfirmLinkScreen(e -> {
+-                        if (e) {
+-                            Util.getPlatform().openUri("https://discord.gg/pixelmon");
+-                        }
+-        
+-                        Minecraft.getInstance().setScreen(new ExtrasEditorScreen());
+-                    }, "https://discord.gg/pixelmon", true))
+-            )
+-        );
+-        this.addButton(
+-            new Button(
+-                25,
+                 this.height - 50,
+                 50,
+                 20,

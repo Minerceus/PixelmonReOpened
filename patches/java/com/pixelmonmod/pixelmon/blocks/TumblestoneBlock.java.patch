@@ -1,0 +1,33 @@
+--- a/com/pixelmonmod/pixelmon/blocks/TumblestoneBlock.java
++++ b/com/pixelmonmod/pixelmon/blocks/TumblestoneBlock.java
+@@ -65,8 +65,7 @@
+                 .emissiveRendering((p_test_1_, p_test_2_, p_test_3_) -> true)
+         );
+         this.registerDefaultState(
+-            (BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(AGE, 0)).setValue(WATERLOGGED, false))
+-                .setValue(DESTROYED, 0)
++         (BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(AGE, 0)).setValue(WATERLOGGED, false)).setValue(DESTROYED, 0)
+         );
+     }
+ 
+@@ -167,9 +166,7 @@
+                                     .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos))
+                                     .withParameter(LootContextParams.TOOL, itemInHand);
+                                 List<ItemStack> drops = this.getDrops(state, lootcontext$builder);
+-                                TumblestoneBlockEvent.PreBlockBroke breakEvent = new TumblestoneBlockEvent.PreBlockBroke(
+-                                    world, state, pos, player, itemInHand, drops
+-                                );
++                        TumblestoneBlockEvent.PreBlockBroke breakEvent = new TumblestoneBlockEvent.PreBlockBroke(world, state, pos, player, itemInHand, drops);
+                                 if (Pixelmon.EVENT_BUS.post(breakEvent)) {
+                                     return false;
+                                 }
+@@ -181,8 +178,7 @@
+                                     breakEvent.getWorld().addFreshEntity(itemEntity);
+                                 }
+ 
+-                                Pixelmon.EVENT_BUS
+-                                    .post(new TumblestoneBlockEvent.PostBlockBroke(world, state, pos, player, itemInHand, breakEvent.getDrops()));
++                        Pixelmon.EVENT_BUS.post(new TumblestoneBlockEvent.PostBlockBroke(world, state, pos, player, itemInHand, breakEvent.getDrops()));
+                             }
+ 
+                             Pixelmon.EVENT_BUS.post(new TumblestoneBlockEvent.PostBlockDestroy(world, state, pos, player, itemInHand));

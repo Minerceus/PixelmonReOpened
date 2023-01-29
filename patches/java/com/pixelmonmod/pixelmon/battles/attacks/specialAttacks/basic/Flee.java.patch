@@ -1,0 +1,14 @@
+--- a/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/Flee.java
++++ b/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/Flee.java
+@@ -115,10 +115,7 @@
+ 
+                 userChoice.raiseWeight((float)(target.getBattleStats().getSumStages() * 20));
+ 
+-                for(EntryHazard hazard : target.getEntryHazards()
+-                    .stream()
+-                    .filter(hazardx -> hazardx.type != StatusType.StickyWeb)
+-                    .collect(Collectors.toList())) {
++            for(EntryHazard hazard : target.getEntryHazards().stream().filter(hazardx -> hazardx.type != StatusType.StickyWeb).collect(Collectors.toList())) {
+                     userChoice.raiseWeight((float)(hazard.getAIWeight() * hazard.getNumLayers()));
+                 }
+             }

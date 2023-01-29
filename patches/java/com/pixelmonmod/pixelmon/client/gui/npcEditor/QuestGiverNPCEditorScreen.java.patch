@@ -1,0 +1,38 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/npcEditor/QuestGiverNPCEditorScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/npcEditor/QuestGiverNPCEditorScreen.java
+@@ -95,9 +95,7 @@
+                     npc -> {
+                         if (npc.getID().startsWith("Custom")) {
+                             NetworkHelper.sendToServer(
+-                                new NPCServerPacket(
+-                                    currentNPCID, EnumNPCServerPacketType.TextureIndex, this.npc.getBaseTrainer().textures.indexOf(npc.getID())
+-                                )
++                        new NPCServerPacket(currentNPCID, EnumNPCServerPacketType.TextureIndex, this.npc.getBaseTrainer().textures.indexOf(npc.getID()))
+                             );
+                             this.textureBox.setValue("");
+                         } else {
+@@ -186,20 +184,12 @@
+         Lighting.turnOff();
+         ScreenHelper.drawEntity(matrix, this.npc, this.width / 2 - 140, this.height / 2 + 50, 60.0F, 0.0F, 0.0F);
+         this.minecraft.font.draw(matrix, I18n.get("gui.trainereditor", new Object[0]), (float)this.width / 2.0F - 60.0F, (float)this.height / 2.0F - 90.0F, 0);
++      this.minecraft.font.draw(matrix, I18n.get("gui.npceditor.page1", new Object[0]), (float)this.width / 2.0F - 80.0F, (float)this.height / 2.0F - 61.0F, 0);
++      this.minecraft.font.draw(matrix, I18n.get("gui.npceditor.page2", new Object[0]), (float)this.width / 2.0F - 80.0F, (float)this.height / 2.0F - 26.0F, 0);
++      this.minecraft.font.draw(matrix, I18n.get("gui.npceditor.page3", new Object[0]), (float)this.width / 2.0F - 80.0F, (float)this.height / 2.0F + 9.0F, 0);
++      this.minecraft.font.draw(matrix, I18n.get("gui.npceditor.page4", new Object[0]), (float)this.width / 2.0F - 80.0F, (float)this.height / 2.0F + 44.0F, 0);
+         this.minecraft
+             .font
+-            .draw(matrix, I18n.get("gui.npceditor.page1", new Object[0]), (float)this.width / 2.0F - 80.0F, (float)this.height / 2.0F - 61.0F, 0);
+-        this.minecraft
+-            .font
+-            .draw(matrix, I18n.get("gui.npceditor.page2", new Object[0]), (float)this.width / 2.0F - 80.0F, (float)this.height / 2.0F - 26.0F, 0);
+-        this.minecraft
+-            .font
+-            .draw(matrix, I18n.get("gui.npceditor.page3", new Object[0]), (float)this.width / 2.0F - 80.0F, (float)this.height / 2.0F + 9.0F, 0);
+-        this.minecraft
+-            .font
+-            .draw(matrix, I18n.get("gui.npceditor.page4", new Object[0]), (float)this.width / 2.0F - 80.0F, (float)this.height / 2.0F + 44.0F, 0);
+-        this.minecraft
+-            .font
+             .draw(matrix, I18n.get("gui.trainereditor.model", new Object[0]), (float)this.width / 2.0F - 180.0F, (float)this.height / 2.0F + 72.0F, 0);
+         this.nameBox.renderButton(matrix, mouseX, mouseY, partialTicks);
+         this.page1Box.renderButton(matrix, mouseX, mouseY, partialTicks);

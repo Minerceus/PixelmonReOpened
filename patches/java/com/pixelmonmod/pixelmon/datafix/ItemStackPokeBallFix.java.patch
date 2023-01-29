@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/datafix/ItemStackPokeBallFix.java
++++ b/com/pixelmonmod/pixelmon/datafix/ItemStackPokeBallFix.java
+@@ -15,7 +15,7 @@
+ import net.minecraft.util.datafix.schemas.NamespacedSchema;
+ 
+ public class ItemStackPokeBallFix extends DataFix {
+-    public static final ImmutableMap<String, String> RENAMES = ImmutableMap.builder()
++   public static final ImmutableMap<String, String> RENAMES = ImmutableMap.<String, String>builder()
+         .put("pixelmon:ancient_great_ball", "pixelmon:poke_ball")
+         .put("pixelmon:ancient_heavy_ball", "pixelmon:poke_ball")
+         .put("pixelmon:ancient_poke_ball", "pixelmon:poke_ball")

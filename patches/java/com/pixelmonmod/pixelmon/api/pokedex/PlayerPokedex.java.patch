@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/api/pokedex/PlayerPokedex.java
++++ b/com/pixelmonmod/pixelmon/api/pokedex/PlayerPokedex.java
+@@ -404,9 +404,7 @@
+                         if (i < this.times.size() - 1) {
+                             sb.append(time.getLocalizedName().toLowerCase(Locale.ROOT));
+                         } else {
+-                            sb.append(I18n.get("gui.pokedex.spawning.times2", new Object[0]))
+-                                .append(" ")
+-                                .append(time.getLocalizedName().toLowerCase(Locale.ROOT));
++                     sb.append(I18n.get("gui.pokedex.spawning.times2", new Object[0])).append(" ").append(time.getLocalizedName().toLowerCase(Locale.ROOT));
+                         }
+                     }
+                 }

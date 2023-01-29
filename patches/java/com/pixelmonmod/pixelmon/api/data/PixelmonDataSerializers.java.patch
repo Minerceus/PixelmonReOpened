@@ -1,0 +1,31 @@
+--- a/com/pixelmonmod/pixelmon/api/data/PixelmonDataSerializers.java
++++ b/com/pixelmonmod/pixelmon/api/data/PixelmonDataSerializers.java
+@@ -107,9 +107,7 @@
+         statueTextureType -> statueTextureType
+     );
+     public static final EntityDataSerializer<AnimationType> ANIMATION_TYPE = new BlockedDataSerializer<>(
+-        (buffer, animationType) -> buffer.writeInt(animationType.ordinal()),
+-        buffer -> AnimationType.values()[buffer.readInt()],
+-        animationType -> animationType
++      (buffer, animationType) -> buffer.writeInt(animationType.ordinal()), buffer -> AnimationType.values()[buffer.readInt()], animationType -> animationType
+     );
+     public static final EntityDataSerializer<Optional<Color>> OPTIONAL_COLOR = new BlockedDataSerializer<>(
+         (buffer, color) -> {
+@@ -167,7 +165,7 @@
+     public static final EntityDataSerializer<EnumBike> BIKE_TYPE = new BlockedDataSerializer<>(
+         (buffer, bikeType) -> buffer.writeInt(bikeType.ordinal()), buffer -> EnumBike.values()[buffer.readInt()], bikeType -> bikeType
+     );
+-    public static final EntityDataSerializer<DyeColor> DYE_COLOR = new BlockedDataSerializer(
++   public static final EntityDataSerializer<DyeColor> DYE_COLOR = new BlockedDataSerializer<>(
+         (buffer, dyeColor) -> buffer.writeInt(dyeColor.ordinal()), buffer -> DyeColor.values()[buffer.readInt()], dyeColor -> dyeColor
+     );
+     public static final EntityDataSerializer<EnumEncounterMode> ENCOUNTER_MODE = new BlockedDataSerializer<>(
+@@ -184,7 +182,7 @@
+     public static final EntityDataSerializer<BattleAIMode> BATTLE_AI_MODE = new BlockedDataSerializer<>(
+         (buffer, aiMode) -> buffer.writeInt(aiMode.ordinal()), buffer -> BattleAIMode.values()[buffer.readInt()], aiMode -> aiMode
+     );
+-    public static final EntityDataSerializer<WoodType> WOOD_TYPE = new BlockedDataSerializer(
++   public static final EntityDataSerializer<WoodType> WOOD_TYPE = new BlockedDataSerializer<>(
+         (buffer, woodType) -> buffer.writeUtf(woodType.name()), buffer -> {
+             String name = buffer.readUtf();
+             return (WoodType)WoodType.values().filter(woodType -> woodType.name().equalsIgnoreCase(name)).findFirst().get();

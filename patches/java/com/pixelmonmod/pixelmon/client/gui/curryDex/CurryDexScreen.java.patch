@@ -1,0 +1,50 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/curryDex/CurryDexScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/curryDex/CurryDexScreen.java
+@@ -138,8 +138,7 @@
+                     );
+                     String[] split = ScreenHelper.splitStringToFit(
+                             I18n.get(
+-                                "gui.currydex.dish_curry_" + right.toString().toLowerCase(Locale.ROOT) + "." + flavor.name().toLowerCase(Locale.ROOT),
+-                                new Object[0]
++                        "gui.currydex.dish_curry_" + right.toString().toLowerCase(Locale.ROOT) + "." + flavor.name().toLowerCase(Locale.ROOT), new Object[0]
+                             ),
+                             6,
+                             70
+@@ -175,12 +174,7 @@
+                         1.0F
+                     );
+                     ScreenHelper.drawScaledString(
+-                        matrix,
+-                        "???",
+-                        x + 155.0F,
+-                        (float)((int)((float)this.centerY - this.guiHeight / 2.0F - 5.0F) + 46 + 30 * flavor.ordinal()),
+-                        -7845363,
+-                        8.0F
++                  matrix, "???", x + 155.0F, (float)((int)((float)this.centerY - this.guiHeight / 2.0F - 5.0F) + 46 + 30 * flavor.ordinal()), -7845363, 8.0F
+                     );
+                 }
+             }
+@@ -258,8 +252,7 @@
+                     );
+                     String[] split = ScreenHelper.splitStringToFit(
+                             I18n.get(
+-                                "gui.currydex.dish_curry_" + left.toString().toLowerCase(Locale.ROOT) + "." + flavor.name().toLowerCase(Locale.ROOT),
+-                                new Object[0]
++                        "gui.currydex.dish_curry_" + left.toString().toLowerCase(Locale.ROOT) + "." + flavor.name().toLowerCase(Locale.ROOT), new Object[0]
+                             ),
+                             6,
+                             70
+@@ -295,12 +288,7 @@
+                         1.0F
+                     );
+                     ScreenHelper.drawScaledString(
+-                        matrix,
+-                        "???",
+-                        x + 25.0F,
+-                        (float)((int)((float)this.centerY - this.guiHeight / 2.0F - 5.0F) + 46 + 30 * flavor.ordinal()),
+-                        -7845363,
+-                        8.0F
++                  matrix, "???", x + 25.0F, (float)((int)((float)this.centerY - this.guiHeight / 2.0F - 5.0F) + 46 + 30 * flavor.ordinal()), -7845363, 8.0F
+                     );
+                 }
+             }

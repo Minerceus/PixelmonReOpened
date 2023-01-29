@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/PokeDelCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/PokeDelCommand.java
+@@ -62,9 +62,7 @@
+             int slot = Integer.parseInt(args[2]);
+             Pokemon pokemon = PixelmonCommandUtils.require(storage.get(slot - 1), "pixelmon.command.partyslot.nothing", target.getName().getString());
+             if (storage.countAll() == 1) {
+-                sender.sendFailure(
+-                    PixelmonCommandUtils.format(ChatFormatting.RED, "pixelmon.command.pokedel.lastpokemon", target.getDisplayName().getString())
+-                );
++            sender.sendFailure(PixelmonCommandUtils.format(ChatFormatting.RED, "pixelmon.command.pokedel.lastpokemon", target.getDisplayName().getString()));
+                 return;
+             }
+ 
+@@ -111,9 +109,7 @@
+ 
+             try {
+                 int slot = Integer.parseInt(args[3]);
+-                Pokemon pokemon = PixelmonCommandUtils.require(
+-                    storage.get(box - 1, slot - 1), "pixelmon.command.compslot.nothing", target.getName().getString()
+-                );
++            Pokemon pokemon = PixelmonCommandUtils.require(storage.get(box - 1, slot - 1), "pixelmon.command.compslot.nothing", target.getName().getString());
+                 storage.set(box, slot, null);
+                 sender.sendSuccess(
+                     PixelmonCommandUtils.format(

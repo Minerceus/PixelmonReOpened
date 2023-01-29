@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/quests/editor/QuestElement.java
++++ b/com/pixelmonmod/pixelmon/quests/editor/QuestElement.java
+@@ -24,7 +24,7 @@
+     private String identifier;
+     private QuestElementArgument[] args;
+     private transient String extra = "";
+-    private final ArrayList<TextField> fields = new ArrayList();
++   private final ArrayList<TextField> fields = new ArrayList<>();
+ 
+     public QuestElement(QuestElementType type, String identifier, boolean unused) {
+         this(

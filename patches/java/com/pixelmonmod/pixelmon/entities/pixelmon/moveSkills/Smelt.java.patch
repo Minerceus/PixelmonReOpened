@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Smelt.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Smelt.java
+@@ -88,9 +88,7 @@
+                             .setStartPosition(pixelmon)
+                             .setEndPosition(
+                                 new Vec3(
+-                                    (double)furnace.getBlockPos().getX() + 0.5,
+-                                    (double)furnace.getBlockPos().getY() + 0.5,
+-                                    (double)furnace.getBlockPos().getZ() + 0.5
++                           (double)furnace.getBlockPos().getX() + 0.5, (double)furnace.getBlockPos().getY() + 0.5, (double)furnace.getBlockPos().getZ() + 0.5
+                                 )
+                             )
+                             .showAllWithin(20);

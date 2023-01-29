@@ -1,0 +1,33 @@
+--- a/com/pixelmonmod/tcg/commands/TCGGiveCommand.java
++++ b/com/pixelmonmod/tcg/commands/TCGGiveCommand.java
+@@ -94,9 +94,7 @@
+                             receiver.drop(card.getItemStack(1), true);
+                         }
+ 
+-                        receiver.sendMessage(
+-                            new TranslatableComponent(card.getName().toLowerCase()).append(" card is added to your inventory!"), Util.NIL_UUID
+-                        );
++                  receiver.sendMessage(new TranslatableComponent(card.getName().toLowerCase()).append(" card is added to your inventory!"), Util.NIL_UUID);
+                         return true;
+                     }
+                 } else {
+@@ -158,8 +156,7 @@
+                         }
+ 
+                         receiver.sendMessage(
+-                            new TextComponent(ChatFormatting.BOLD + cb.getName() + ChatFormatting.RESET + " cardback is added to your inventory!"),
+-                            Util.NIL_UUID
++                     new TextComponent(ChatFormatting.BOLD + cb.getName() + ChatFormatting.RESET + " cardback is added to your inventory!"), Util.NIL_UUID
+                         );
+                         return true;
+                     }
+@@ -178,8 +175,7 @@
+                         }
+ 
+                         receiver.sendMessage(
+-                            new TextComponent(ChatFormatting.BOLD + coin.getName() + ChatFormatting.RESET + " coin is added to your inventory!"),
+-                            Util.NIL_UUID
++                     new TextComponent(ChatFormatting.BOLD + coin.getName() + ChatFormatting.RESET + " coin is added to your inventory!"), Util.NIL_UUID
+                         );
+                         return true;
+                     }

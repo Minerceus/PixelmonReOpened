@@ -1,0 +1,55 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/npcEditor/TrainerEditorScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/npcEditor/TrainerEditorScreen.java
+@@ -140,12 +140,7 @@
+             int encounterModeTop = dropDownHeightStart + 66;
+             this.addDropDown(
+                 new DropDown<>(
+-                        Arrays.asList(EnumEncounterMode.values()),
+-                        this.trainer.getEncounterMode(),
+-                        dropDownLeft,
+-                        encounterModeTop,
+-                        dropDownWidth,
+-                        dropDownHeight
++                  Arrays.asList(EnumEncounterMode.values()), this.trainer.getEncounterMode(), dropDownLeft, encounterModeTop, dropDownWidth, dropDownHeight
+                     )
+                     .setGetOptionString(EnumEncounterMode::getLocalizedName)
+                     .setOnSelected(this::selectEncounterMode)
+@@ -161,12 +156,7 @@
+             int megaItemModeTop = dropDownHeightStart + 110;
+             this.addDropDown(
+                 new DropDown<>(
+-                        Arrays.asList(EnumMegaItemsUnlocked.values()),
+-                        this.trainer.getMegaItem(),
+-                        dropDownLeft,
+-                        megaItemModeTop,
+-                        dropDownWidth,
+-                        dropDownHeight
++                  Arrays.asList(EnumMegaItemsUnlocked.values()), this.trainer.getMegaItem(), dropDownLeft, megaItemModeTop, dropDownWidth, dropDownHeight
+                     )
+                     .setGetOptionString(EnumMegaItemsUnlocked::getLocalizedName)
+                     .setOnSelected(this::selectMegaItemMode)
+@@ -291,10 +281,8 @@
+             ScreenHelper.drawEntity(matrix, this.trainer, xCenterBackgroundScreen - 140, yCenterBackgroundScreen + 60, 60.0F, 0.0F, 0.0F);
+             int dropDownLabelX = xCenterBackgroundScreen + 88;
+             int dropDownHeightStart = yCenterBackgroundScreen - 42;
++         ScreenHelper.drawCenteredString(matrix, I18n.get("gui.trainereditor.bosstype", new Object[0]), (float)dropDownLabelX, (float)dropDownHeightStart, 0);
+             ScreenHelper.drawCenteredString(
+-                matrix, I18n.get("gui.trainereditor.bosstype", new Object[0]), (float)dropDownLabelX, (float)dropDownHeightStart, 0
+-            );
+-            ScreenHelper.drawCenteredString(
+                 matrix, I18n.get("gui.trainereditor.aimode", new Object[0]), (float)dropDownLabelX, (float)(dropDownHeightStart + 22), 0
+             );
+             ScreenHelper.drawCenteredString(
+@@ -357,11 +345,9 @@
+         for(int n = 0; n < pokemonList.size(); ++n) {
+             Pokemon pokemon = pokemonList.get(n);
+             if (pokemon != null) {
++            this.minecraft.font.draw(matrix, pokemon.getDisplayName(), (float)(leftSideOfPartyPokemon + 4), (float)(topSideOfPartyPokemon + 4 + n * 10), 0);
+                 this.minecraft
+                     .font
+-                    .draw(matrix, pokemon.getDisplayName(), (float)(leftSideOfPartyPokemon + 4), (float)(topSideOfPartyPokemon + 4 + n * 10), 0);
+-                this.minecraft
+-                    .font
+                     .draw(
+                         matrix,
+                         I18n.get("gui.trainereditor.lvl", new Object[0]) + " " + pokemon.getPokemonLevel(),

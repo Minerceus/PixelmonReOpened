@@ -1,0 +1,37 @@
+--- a/com/pixelmonmod/tcg/api/card/ImmutableCard.java
++++ b/com/pixelmonmod/tcg/api/card/ImmutableCard.java
+@@ -86,33 +86,7 @@
+ 
+     public static ImmutableCard faceDown() {
+         return new ImmutableCard(
+-            "{}",
+-            FACE_DOWN_ID,
+-            0,
+-            null,
+-            false,
+-            0,
+-            null,
+-            null,
+-            0,
+-            FACE_DOWN_CODE,
+-            "",
+-            "",
+-            0,
+-            null,
+-            null,
+-            null,
+-            0,
+-            null,
+-            null,
+-            0,
+-            null,
+-            0,
+-            null,
+-            null,
+-            0,
+-            0,
+-            null
++         "{}", FACE_DOWN_ID, 0, null, false, 0, null, null, 0, FACE_DOWN_CODE, "", "", 0, null, null, null, 0, null, null, 0, null, 0, null, null, 0, 0, null
+         );
+     }
+ 

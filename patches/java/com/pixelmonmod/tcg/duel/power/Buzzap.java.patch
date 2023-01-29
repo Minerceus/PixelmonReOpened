@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/tcg/duel/power/Buzzap.java
++++ b/com/pixelmonmod/tcg/duel/power/Buzzap.java
+@@ -30,7 +30,7 @@
+ 
+                 return selector;
+             case 1:
+-                CardSelectorState selector = new CardSelectorState(1, 1, CardSelectorDisplay.Select, false, "power.buzzap.selector.chooseattach");
++            selector = new CardSelectorState(1, 1, CardSelectorDisplay.Select, false, "power.buzzap.selector.chooseattach");
+                 PlayerServerState player = server.getPlayer(server.getCurrentTurn());
+                 if (player.getActiveCard() != null && player.getActiveCard() != pokemon) {
+                     selector.getCardList().add(new CardWithLocation(player.getActiveCard(), true, BoardLocation.Active, 0));

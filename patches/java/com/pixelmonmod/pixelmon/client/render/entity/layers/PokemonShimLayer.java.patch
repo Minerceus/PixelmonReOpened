@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/render/entity/layers/PokemonShimLayer.java
++++ b/com/pixelmonmod/pixelmon/client/render/entity/layers/PokemonShimLayer.java
+@@ -72,9 +72,7 @@
+                 }
+ 
+                 if (pixelmon.getModel() != null) {
+-                    this.renderPixelmon(
+-                        pixelmon, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, partialTicks, matrix, buffer, packedLight, false
+-                    );
++               this.renderPixelmon(pixelmon, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, partialTicks, matrix, buffer, packedLight, false);
+                 }
+ 
+                 matrix.popPose();

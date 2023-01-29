@@ -1,0 +1,16 @@
+--- a/com/pixelmonmod/pixelmon/battles/controller/ai/MoveChoice.java
++++ b/com/pixelmonmod/pixelmon/battles/controller/ai/MoveChoice.java
+@@ -295,11 +295,8 @@
+ 
+     @SafeVarargs
+     public static boolean hasPriority(List<MoveChoice>... choices) {
+-        List[] var1 = choices;
+-        int var2 = choices.length;
+-
+-        for(int var3 = 0; var3 < var2; ++var3) {
+-            for(MoveChoice choice : var1[var3]) {
++      for (List<MoveChoice> moveChoices : choices) {
++         for (MoveChoice choice : moveChoices) {
+                 if (choice.isAttack() && choice.attack.getMove().getPriority(choice.user) != 0) {
+                     return true;
+                 }

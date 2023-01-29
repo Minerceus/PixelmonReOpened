@@ -1,0 +1,48 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/custom/overlays/CustomNoticeOverlay.java
++++ b/com/pixelmonmod/pixelmon/client/gui/custom/overlays/CustomNoticeOverlay.java
+@@ -103,21 +103,7 @@
+         switch(layout) {
+             case LEFT:
+                 ScreenHelper.drawImageQuad(
+-                    rl,
+-                    matrix,
+-                    (float)(coords[0] - squareSize),
+-                    0.0F,
+-                    (float)squareSize,
+-                    (float)squareSize,
+-                    0.0F,
+-                    0.0F,
+-                    1.0F,
+-                    1.0F,
+-                    1.0F,
+-                    1.0F,
+-                    1.0F,
+-                    1.0F,
+-                    0.0F
++               rl, matrix, (float)(coords[0] - squareSize), 0.0F, (float)squareSize, (float)squareSize, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+                 );
+                 break;
+             case RIGHT:
+@@ -127,21 +113,7 @@
+                 break;
+             case LEFT_AND_RIGHT:
+                 ScreenHelper.drawImageQuad(
+-                    rl,
+-                    matrix,
+-                    (float)(coords[0] - squareSize),
+-                    0.0F,
+-                    (float)squareSize,
+-                    (float)squareSize,
+-                    0.0F,
+-                    0.0F,
+-                    1.0F,
+-                    1.0F,
+-                    1.0F,
+-                    1.0F,
+-                    1.0F,
+-                    1.0F,
+-                    0.0F
++               rl, matrix, (float)(coords[0] - squareSize), 0.0F, (float)squareSize, (float)squareSize, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+                 );
+                 ScreenHelper.drawImageQuad(
+                     rl, matrix, (float)coords[2], 0.0F, (float)squareSize, (float)squareSize, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F

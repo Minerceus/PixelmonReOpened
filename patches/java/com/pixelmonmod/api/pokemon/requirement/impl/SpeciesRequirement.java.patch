@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/api/pokemon/requirement/impl/SpeciesRequirement.java
++++ b/com/pixelmonmod/api/pokemon/requirement/impl/SpeciesRequirement.java
+@@ -42,8 +42,7 @@
+             return Lists.newArrayList(
+                 new Requirement[]{
+                     this.createInstance(
+-                        PixelmonSpecies.getRandomSpecies(!PixelmonConfigProxy.getGeneral().isAllowRandomPokemonToBeLegendary(), false, false)
+-                            .getRegistryValue()
++                  PixelmonSpecies.getRandomSpecies(!PixelmonConfigProxy.getGeneral().isAllowRandomPokemonToBeLegendary(), false, false).getRegistryValue()
+                     )
+                 }
+             );

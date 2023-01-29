@@ -1,0 +1,91 @@
+--- a/com/pixelmonmod/pixelmon/api/config/api/yaml/YamlConfigFactory.java
++++ b/com/pixelmonmod/pixelmon/api/config/api/yaml/YamlConfigFactory.java
+@@ -5,17 +5,16 @@
+ import com.pixelmonmod.pixelmon.api.config.api.data.ConfigPath;
+ import com.pixelmonmod.pixelmon.api.config.api.data.Serializers;
+ import com.pixelmonmod.pixelmon.api.config.api.yaml.data.YamlConfigStyle;
+-import info.pixelmon.repack.org.spongepowered.CommentedConfigurationNode;
+-import info.pixelmon.repack.org.spongepowered.ConfigurateException;
+-import info.pixelmon.repack.org.spongepowered.ConfigurationOptions;
+-import info.pixelmon.repack.org.spongepowered.loader.HeaderMode;
+-import info.pixelmon.repack.org.spongepowered.reference.ConfigurationReference;
+-import info.pixelmon.repack.org.spongepowered.reference.ValueReference;
+-import info.pixelmon.repack.org.spongepowered.reference.WatchServiceListener;
+-import info.pixelmon.repack.org.spongepowered.serialize.ScalarSerializer;
+-import info.pixelmon.repack.org.spongepowered.yaml.NodeStyle;
+-import info.pixelmon.repack.org.spongepowered.yaml.YamlConfigurationLoader;
+-import info.pixelmon.repack.org.spongepowered.yaml.YamlConfigurationLoader.Builder;
++import org.spongepowered.configurate.CommentedConfigurationNode;
++import org.spongepowered.configurate.ConfigurateException;
++import org.spongepowered.configurate.ConfigurationOptions;
++import org.spongepowered.configurate.loader.HeaderMode;
++import org.spongepowered.configurate.reference.ConfigurationReference;
++import org.spongepowered.configurate.reference.ValueReference;
++import org.spongepowered.configurate.reference.WatchServiceListener;
++import org.spongepowered.configurate.serialize.ScalarSerializer;
++import org.spongepowered.configurate.yaml.NodeStyle;
++import org.spongepowered.configurate.yaml.YamlConfigurationLoader;
+ import java.io.IOException;
+ import java.nio.file.Path;
+ import java.nio.file.Paths;
+@@ -57,13 +56,13 @@
+             if (base == null) {
+                 throw new IOException("Error config loaded as null");
+             } else {
+-                ValueReference<T, CommentedConfigurationNode> reference = base.referenceTo(clazz, new Object[0]);
+-                T instance = (T)reference.get();
++            ValueReference<T, CommentedConfigurationNode> reference = base.referenceTo(clazz);
++            T instance = reference.get();
+                 if (instance == null) {
+                     throw new IOException("Error config loaded as null");
+                 } else {
+                     instance.base = base;
+-                    instance.config = reference;
++               instance.config = (ValueReference<AbstractYamlConfig, CommentedConfigurationNode>) reference;
+                     instance.save();
+                     return instance;
+                 }
+@@ -81,14 +80,15 @@
+     ) {
+         try {
+             return SERVICE_LISTENER.listenToConfiguration(
+-                file -> ((Builder)((Builder)((Builder)((Builder)YamlConfigurationLoader.builder().headerMode(HeaderMode.PRESERVE))
++            file -> YamlConfigurationLoader.builder()
++                  .headerMode(HeaderMode.PRESERVE)
+                                     .nodeStyle(style)
+                                     .defaultOptions(
+                                         ConfigurationOptions.defaults()
+                                             .serializers(builder -> {
+                                                 try {
+                                                     for(Class<? extends ScalarSerializer<?>> serializer : serializers) {
+-                                                        builder.register((ScalarSerializer)serializer.newInstance());
++                                 builder.register(serializer.newInstance());
+                                                     }
+                                                 } catch (IllegalAccessException | InstantiationException var4x) {
+                                                     var4x.printStackTrace();
+@@ -96,21 +96,12 @@
+                                             })
+                                             .nativeTypes(
+                                                 Sets.newHashSet(
+-                                                    new Class[]{
+-                                                        String.class,
+-                                                        Integer.class,
+-                                                        Byte.class,
+-                                                        Double.class,
+-                                                        Boolean.class,
+-                                                        Long.class,
+-                                                        Map.class,
+-                                                        List.class
+-                                                    }
++                              new Class[]{String.class, Integer.class, Byte.class, Double.class, Boolean.class, Long.class, Map.class, List.class}
+                                                 )
+                                             )
+-                                    ))
+-                                .defaultOptions(opts -> opts.shouldCopyDefaults(true)))
+-                            .path(file))
++                  )
++                  .defaultOptions(opts -> opts.shouldCopyDefaults(true))
++                  .path(file)
+                         .build(),
+                 configFile
+             );

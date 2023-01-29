@@ -1,0 +1,33 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/species/Stats.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/species/Stats.java
+@@ -389,16 +389,11 @@
+                     if (pp == null) {
+                         Pixelmon.LOGGER
+                             .error(
+-                                "PaletteProperties null in stats file! "
+-                                    + this.parent.getName()
+-                                    + ", form "
+-                                    + (this.getName().isEmpty() ? "base" : this.getName())
++                        "PaletteProperties null in stats file! " + this.parent.getName() + ", form " + (this.getName().isEmpty() ? "base" : this.getName())
+                             );
+                     } else if (pp.getModelLocator() == null) {
+                         Pixelmon.LOGGER
+-                            .error(
+-                                "ModelLocator null in stats file! " + this.parent.getName() + ", form " + (this.getName().isEmpty() ? "base" : this.getName())
+-                            );
++                     .error("ModelLocator null in stats file! " + this.parent.getName() + ", form " + (this.getName().isEmpty() ? "base" : this.getName()));
+                     } else {
+                         pp.initModels();
+                     }
+@@ -483,10 +478,7 @@
+         if (this.preEvolutions != null && !this.preEvolutions.isEmpty()) {
+             RegistryValue<Species> preEvolution = CollectionHelper.getRandomElement(this.preEvolutions);
+ 
+-            while(
+-                preEvolution.getValueUnsafe().getDefaultForm().preEvolutions != null
+-                    && !preEvolution.getValueUnsafe().getDefaultForm().preEvolutions.isEmpty()
+-            ) {
++         while(preEvolution.getValueUnsafe().getDefaultForm().preEvolutions != null && !preEvolution.getValueUnsafe().getDefaultForm().preEvolutions.isEmpty()) {
+                 preEvolution = CollectionHelper.getRandomElement(preEvolution.getValueUnsafe().getDefaultForm().preEvolutions);
+             }
+ 

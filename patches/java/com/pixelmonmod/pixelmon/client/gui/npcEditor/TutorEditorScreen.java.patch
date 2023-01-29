@@ -1,0 +1,26 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/npcEditor/TutorEditorScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/npcEditor/TutorEditorScreen.java
+@@ -202,9 +202,7 @@
+         ScreenHelper.drawEntity(matrix, this.tutor, this.width / 2 - 133, this.height / 2 + 50, 50.0F, 0.0F, 0.0F);
+         if (this.selectedMove >= 0) {
+             String text = TutorScreen.moveList.get(this.selectedMove).attack().getLocalizedName();
+-            this.minecraft
+-                .font
+-                .draw(matrix, text, (float)this.width / 2.0F + 99.0F - (float)this.font.width(text) / 2.0F, (float)this.height / 2.0F - 20.0F, 0);
++         this.minecraft.font.draw(matrix, text, (float)this.width / 2.0F + 99.0F - (float)this.font.width(text) / 2.0F, (float)this.height / 2.0F - 20.0F, 0);
+             text = I18n.get("gui.choosemoveset.cost", new Object[0]);
+             this.minecraft.font.draw(matrix, text, (float)this.width / 2.0F + 74.0F - (float)this.font.width(text), (float)this.height / 2.0F - 5.0F, 0);
+             if (this.cost.size() < 4) {
+@@ -224,11 +222,7 @@
+                 text = I18n.get("gui.tutor.learntype." + type.name().toLowerCase(Locale.ROOT), new Object[0]);
+                 this.font
+                     .draw(
+-                        matrix,
+-                        text,
+-                        (float)this.width / 2.0F + 140.0F - (float)this.font.width(text),
+-                        (float)this.height / 2.0F - 30.0F + (float)(16 * count),
+-                        0
++                  matrix, text, (float)this.width / 2.0F + 140.0F - (float)this.font.width(text), (float)this.height / 2.0F - 30.0F + (float)(16 * count), 0
+                     );
+                 ++count;
+             }

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/quests/objectives/objectives/inserters/InsertSpecObjective.java
++++ b/com/pixelmonmod/pixelmon/quests/objectives/objectives/inserters/InsertSpecObjective.java
+@@ -95,9 +95,7 @@
+             return natures;
+         }, null), Argument.from(args.get(3), s -> {
+             String[] growthSplit = s.split(",");
+-            EnumGrowth[] growths = !s.equalsIgnoreCase("-") && !growthSplit[0].equalsIgnoreCase("any")
+-                ? new EnumGrowth[growthSplit.length]
+-                : new EnumGrowth[0];
++         EnumGrowth[] growths = !s.equalsIgnoreCase("-") && !growthSplit[0].equalsIgnoreCase("any") ? new EnumGrowth[growthSplit.length] : new EnumGrowth[0];
+ 
+             for(int i = 0; i < growths.length; ++i) {
+                 growths[i] = EnumGrowth.getGrowthFromString(growthSplit[i]);

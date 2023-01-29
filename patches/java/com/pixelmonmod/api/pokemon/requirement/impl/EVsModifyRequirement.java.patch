@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/api/pokemon/requirement/impl/EVsModifyRequirement.java
++++ b/com/pixelmonmod/api/pokemon/requirement/impl/EVsModifyRequirement.java
+@@ -46,9 +46,7 @@
+         KEYS_BY_STAT.put(BattleStatsType.SPECIAL_ATTACK, Sets.newHashSet(new String[]{"modevspecialattack", "modevspatk", "modspatkev", "modspecialattackev"}));
+         KEYS_BY_STAT.put(
+             BattleStatsType.SPECIAL_DEFENSE,
+-            Sets.newHashSet(
+-                new String[]{"modevspecialdefence", "modevspecialdefense", "modevspdef", "modspdefev", "modspecialdefenseev", "modspecialdefenceev"}
+-            )
++         Sets.newHashSet(new String[]{"modevspecialdefence", "modevspecialdefense", "modevspdef", "modspdefev", "modspecialdefenseev", "modspecialdefenceev"})
+         );
+         KEYS_BY_STAT.put(BattleStatsType.SPEED, Sets.newHashSet(new String[]{"modevspeed", "modevspd", "modspdev", "modspeedev"}));
+     }

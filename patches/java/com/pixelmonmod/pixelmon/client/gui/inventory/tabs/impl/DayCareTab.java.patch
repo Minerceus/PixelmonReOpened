@@ -1,0 +1,41 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/inventory/tabs/impl/DayCareTab.java
++++ b/com/pixelmonmod/pixelmon/client/gui/inventory/tabs/impl/DayCareTab.java
+@@ -120,8 +120,7 @@
+                                 } else {
+                                     List<Component> allErrorMessages = Lists.newArrayList(
+                                         new Component[]{
+-                                            new TranslatableComponent("pixelmon.daycare.box." + boxId),
+-                                            new TranslatableComponent("pixelmon.daycare.requirements")
++                                 new TranslatableComponent("pixelmon.daycare.box." + boxId), new TranslatableComponent("pixelmon.daycare.requirements")
+                                         }
+                                     );
+                                     allErrorMessages.addAll(dayCareBox.getAllErrorMessages());
+@@ -253,25 +252,16 @@
+                                     minecraft.screen.blit(matrix, j1 - 1, j + 14 + 19 * k, 0, 205, 109, 19);
+                                     this.minecraft.getTextureManager().bind(GUI_LOCATION);
+                                     this.minecraft.screen.blit(matrix, j1 - 1 + 23, j + 19 + 19 * k, 19, 226, 81, 5);
+-                                    this.minecraft
+-                                        .screen
+-                                        .blit(matrix, j1 - 1 + 23, j + 19 + 19 * k, 19, 231, (int)(box.getPercentComplete() / 100.0 * 81.0), 5);
++                           this.minecraft.screen.blit(matrix, j1 - 1 + 23, j + 19 + 19 * k, 19, 231, (int)(box.getPercentComplete() / 100.0 * 81.0), 5);
+                                     Component totalDuration = StringHelper.getFormattedDuration(box.getTotalDuration());
+                                     this.minecraft
+                                         .font
+-                                        .draw(
+-                                            matrix,
+-                                            totalDuration,
+-                                            (float)(j1 + 18 + 50 - this.minecraft.font.width(totalDuration)),
+-                                            (float)(j + 33 + 19 * k - 9),
+-                                            1
+-                                        );
++                              .draw(matrix, totalDuration, (float)(j1 + 18 + 50 - this.minecraft.font.width(totalDuration)), (float)(j + 33 + 19 * k - 9), 1);
+                                 } else {
+                                     minecraft.getTextureManager().bind(GUI_LOCATION);
+                                     minecraft.screen.blit(matrix, j1 - 1, j + 14 + 19 * k, 109, 186, 109, 19);
+                                     Component complete = new TranslatableComponent("pixelmon.daycare.complete");
+-                                    minecraft.font
+-                                        .draw(matrix, complete, (float)(j1 + 18 + 45 - minecraft.font.width(complete) / 2), (float)(j + 18 + 19 * k), 1);
++                           minecraft.font.draw(matrix, complete, (float)(j1 + 18 + 45 - minecraft.font.width(complete) / 2), (float)(j + 18 + 19 * k), 1);
+                                 }
+                             }
+     

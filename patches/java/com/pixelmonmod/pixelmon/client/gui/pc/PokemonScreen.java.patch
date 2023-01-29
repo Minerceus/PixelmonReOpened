@@ -1,0 +1,25 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/pc/PokemonScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/pc/PokemonScreen.java
+@@ -244,21 +244,7 @@
+                     );
+                     if (!pokemon.getHeldItem().isEmpty()) {
+                         ScreenHelper.drawImageQuad(
+-                            Resources.heldItem,
+-                            matrix,
+-                            (float)(xPos + 21),
+-                            (float)(yPos + 25),
+-                            8.0F,
+-                            8.0F,
+-                            0.0F,
+-                            0.0F,
+-                            1.0F,
+-                            1.0F,
+-                            1.0F,
+-                            1.0F,
+-                            1.0F,
+-                            1.0F,
+-                            1.0F
++                     Resources.heldItem, matrix, (float)(xPos + 21), (float)(yPos + 25), 8.0F, 8.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F
+                         );
+                     }
+ 

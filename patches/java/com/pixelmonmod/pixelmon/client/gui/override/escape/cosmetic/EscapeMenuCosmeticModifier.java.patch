@@ -1,0 +1,26 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/override/escape/cosmetic/EscapeMenuCosmeticModifier.java
++++ b/com/pixelmonmod/pixelmon/client/gui/override/escape/cosmetic/EscapeMenuCosmeticModifier.java
+@@ -79,23 +79,6 @@
+             );
+         event.getGui()
+             .addButton(
+-                new DiscordButton(
+-                    event.getGui().width / 2 + 4,
+-                    event.getGui().height / 4 + 120 + -16,
+-                    98,
+-                    20,
+-                    new TranslatableComponent("menu.discord"),
+-                    p_213067_1_ -> Minecraft.getInstance().setScreen(new ConfirmLinkScreen(p_213064_1_ -> {
+-                            if (p_213064_1_) {
+-                                Util.getPlatform().openUri("https://discord.gg/pixelmon");
+-                            }
+-            
+-                            Minecraft.getInstance().setScreen(event.getGui());
+-                        }, "https://discord.gg/pixelmon", true))
+-                )
+-            );
+-        event.getGui()
+-            .addButton(
+                 new ButtonWithIcon(
+                     new ResourceLocation("pixelmon", "textures/gui/pixelmon.png"),
+                     event.getGui().width / 2 - 102,

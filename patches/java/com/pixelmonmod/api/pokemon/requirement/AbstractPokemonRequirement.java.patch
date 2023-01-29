@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/api/pokemon/requirement/AbstractPokemonRequirement.java
++++ b/com/pixelmonmod/api/pokemon/requirement/AbstractPokemonRequirement.java
+@@ -16,10 +16,10 @@
+     public abstract List<Requirement<Pokemon, PixelmonEntity, ?>> createSimple(String var1, String var2);
+ 
+     public void applyMinecraft(PixelmonEntity entityPixelmon) {
+-        this.applyData((A)entityPixelmon.getPokemon());
++      this.applyData(entityPixelmon.getPokemon());
+     }
+ 
+     public boolean isMinecraftMatch(PixelmonEntity entityPixelmon) {
+-        return this.isDataMatch((A)entityPixelmon.getPokemon());
++      return this.isDataMatch(entityPixelmon.getPokemon());
+     }
+ }

@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/daycare/DayCareConditionRegistry.java
++++ b/com/pixelmonmod/pixelmon/api/daycare/DayCareConditionRegistry.java
+@@ -30,7 +30,7 @@
+     }
+ 
+     public static <T extends DayCareRequirement> void registerRequirement(Supplier<T> t) {
+-        REGISTERED_CONDITION_TYPES.put(t.get().getTypeId().toLowerCase(Locale.ROOT), t);
++      REGISTERED_CONDITION_TYPES.put(t.get().getTypeId().toLowerCase(Locale.ROOT), (Supplier<DayCareRequirement>) t);
+     }
+ 
+     public static <T extends DayCareRequirement> Optional<T> getRequirement(String id) {

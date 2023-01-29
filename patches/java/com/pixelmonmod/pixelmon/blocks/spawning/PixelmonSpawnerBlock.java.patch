@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/blocks/spawning/PixelmonSpawnerBlock.java
++++ b/com/pixelmonmod/pixelmon/blocks/spawning/PixelmonSpawnerBlock.java
+@@ -48,8 +48,7 @@
+                 PixelmonSpawnerTileEntity spawner = BlockHelper.getTileEntity(PixelmonSpawnerTileEntity.class, world, pos);
+                 serverPlayer.connection.send(spawner.getUpdatePacket());
+                 NetworkHelper.sendPacket(
+-                    serverPlayer,
+-                    new ClientboundUpdateSpawnerPacket(new PixelmonSpawnerData(spawner.getBlockPos(), spawner.getUpdateTag(), spawner.pokemonList))
++               serverPlayer, new ClientboundUpdateSpawnerPacket(new PixelmonSpawnerData(spawner.getBlockPos(), spawner.getUpdateTag(), spawner.pokemonList))
+                 );
+                 spawner.onActivate();
+                 OpenScreenPacket.open(player, EnumGuiScreen.PixelmonSpawner, pos.getX(), pos.getY(), pos.getZ());

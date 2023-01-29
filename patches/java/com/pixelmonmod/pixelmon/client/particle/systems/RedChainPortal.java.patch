@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/client/particle/systems/RedChainPortal.java
++++ b/com/pixelmonmod/pixelmon/client/particle/systems/RedChainPortal.java
+@@ -20,8 +20,7 @@
+             double radius = 4.0;
+             double dx = -(radius * Math.cos(angle));
+             double dz = -(radius * Math.sin(angle));
+-            mc.particleEngine
+-                .add(new ParticleArcanery(x + dx, y + 0.025, z + dz, dz / 6.0, 0.0, -dx / 6.0, new CycloneBlob(0.35, angle, 0.01, radius, args[0])));
++         mc.particleEngine.add(new ParticleArcanery(x + dx, y + 0.025, z + dz, dz / 6.0, 0.0, -dx / 6.0, new CycloneBlob(0.35, angle, 0.01, radius, args[0])));
+         }
+     }
+ }

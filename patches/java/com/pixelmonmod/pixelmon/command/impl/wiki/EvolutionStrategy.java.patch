@@ -1,0 +1,23 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/wiki/EvolutionStrategy.java
++++ b/com/pixelmonmod/pixelmon/command/impl/wiki/EvolutionStrategy.java
+@@ -47,9 +47,7 @@
+                 if (leveling.level == null) {
+                     sender.sendSuccess(
+                         TextHelper.space(1)
+-                            .append(
+-                                PixelmonCommandUtils.format("pixelmon.command.wiki.evolution.leveling.nospecification", evo.to.create().getLocalizedName())
+-                            ),
++                     .append(PixelmonCommandUtils.format("pixelmon.command.wiki.evolution.leveling.nospecification", evo.to.create().getLocalizedName())),
+                         false
+                     );
+                 } else {
+@@ -73,8 +71,7 @@
+                 );
+             } else {
+                 sender.sendSuccess(
+-                    TextHelper.space(1)
+-                        .append(PixelmonCommandUtils.format("pixelmon.command.wiki.evolution." + evo.evoType, evo.to.create().getLocalizedName())),
++               TextHelper.space(1).append(PixelmonCommandUtils.format("pixelmon.command.wiki.evolution." + evo.evoType, evo.to.create().getLocalizedName())),
+                     false
+                 );
+             }

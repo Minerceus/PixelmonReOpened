@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/ExpCharmCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/ExpCharmCommand.java
+@@ -33,9 +33,7 @@
+ 
+             if (newState.equals(EnumFeatureState.Active)) {
+                 PixelmonCommandUtils.sendMessage(player, "pixelmon.command.expcharm.received");
+-                PixelmonCommandUtils.notifyCommandListener(
+-                    sender, this, 0, "pixelmon.command.expcharm.notify.received", sender.getTextName(), player.getName()
+-                );
++            PixelmonCommandUtils.notifyCommandListener(sender, this, 0, "pixelmon.command.expcharm.notify.received", sender.getTextName(), player.getName());
+             } else {
+                 PixelmonCommandUtils.sendMessage(player, "pixelmon.command.expcharm.removed");
+                 PixelmonCommandUtils.notifyCommandListener(sender, this, 0, "pixelmon.command.expcharm.notify.removed", sender.getTextName(), player.getName());

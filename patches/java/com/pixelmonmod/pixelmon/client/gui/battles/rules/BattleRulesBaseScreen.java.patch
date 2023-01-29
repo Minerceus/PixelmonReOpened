@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/rules/BattleRulesBaseScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/rules/BattleRulesBaseScreen.java
+@@ -34,7 +34,7 @@
+ public abstract class BattleRulesBaseScreen extends DropDownScreen implements IImportableContainer {
+     protected BattleRules rules = new BattleRules();
+     private String titleText;
+-    protected List<EditBox> textFields = new ArrayList();
++   protected List<EditBox> textFields = new ArrayList<>();
+     private EditBox levelCapField;
+     private EditBox numPokemonField;
+     private EditBox turnTimeField;

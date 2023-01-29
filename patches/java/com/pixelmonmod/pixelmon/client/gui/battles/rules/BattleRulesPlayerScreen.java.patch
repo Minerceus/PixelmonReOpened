@@ -1,0 +1,32 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/rules/BattleRulesPlayerScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/rules/BattleRulesPlayerScreen.java
+@@ -48,13 +48,7 @@
+         int buttonWidth = 60;
+         int id = 0;
+         this.proposeButton = new IndexedButton(
+-            id++,
+-            this.centerX - buttonWidth / 2,
+-            this.centerY + 60,
+-            buttonWidth,
+-            20,
+-            new TranslatableComponent("gui.battlerules.propose"),
+-            this::actionPerformed
++         id++, this.centerX - buttonWidth / 2, this.centerY + 60, buttonWidth, 20, new TranslatableComponent("gui.battlerules.propose"), this::actionPerformed
+         );
+         this.acceptButton = new IndexedButton(
+             id++, this.centerX - buttonWidth, this.centerY + 60, buttonWidth, 20, new TranslatableComponent("gui.acceptdeny.accept"), this::actionPerformed
+@@ -63,13 +57,7 @@
+             id++, this.centerX, this.centerY + 60, buttonWidth, 20, new TranslatableComponent("gui.battlerules.change"), this::actionPerformed
+         );
+         this.declineButton = new IndexedButton(
+-            id++,
+-            this.centerX + 200 - buttonWidth,
+-            this.centerY + 60,
+-            buttonWidth,
+-            20,
+-            new TranslatableComponent("gui.acceptdeny.deny"),
+-            this::actionPerformed
++         id++, this.centerX + 200 - buttonWidth, this.centerY + 60, buttonWidth, 20, new TranslatableComponent("gui.acceptdeny.deny"), this::actionPerformed
+         );
+         this.addButton(this.declineButton);
+         this.changeState(this.state);

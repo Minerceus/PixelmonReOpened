@@ -1,0 +1,57 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/inventory/InventoryPixelmon.java
++++ b/com/pixelmonmod/pixelmon/client/gui/inventory/InventoryPixelmon.java
+@@ -99,9 +99,7 @@
+                 this.gui
+                     .getMinecraft()
+                     .getItemRenderer()
+-                    .renderGuiItemDecorations(
+-                        this.gui.getMinecraft().font, ClientStorageManager.party.getLureStack(), this.lureSlot[0], this.lureSlot[1], null
+-                    );
++               .renderGuiItemDecorations(this.gui.getMinecraft().font, ClientStorageManager.party.getLureStack(), this.lureSlot[0], this.lureSlot[1], null);
+                 if (mouseX >= this.lureSlot[0] && mouseX <= this.lureSlot[0] + 16 && mouseY >= this.lureSlot[1] && mouseY <= this.lureSlot[1] + 16) {
+                     this.gui.renderTooltip(matrix, ClientStorageManager.party.getLureStack(), mouseX, mouseY);
+                 }
+@@ -781,9 +779,7 @@
+                     if (mouseY > (double)(bY + 55) && mouseY < (double)(bY + 79)) {
+                         EnumFeatureState charm = EntityPlayerExtension.getPlayerMarkCharm(this.gui.getMinecraft().player);
+                         if (charm.isAvailable()) {
+-                            NetworkHelper.sendToServer(
+-                                new SetCharmPacket(EnumCharms.Mark, charm.isActive() ? EnumFeatureState.Available : EnumFeatureState.Active)
+-                            );
++                     NetworkHelper.sendToServer(new SetCharmPacket(EnumCharms.Mark, charm.isActive() ? EnumFeatureState.Available : EnumFeatureState.Active));
+                         }
+ 
+                         return false;
+@@ -803,9 +799,7 @@
+                     if (mouseY > (double)(bY + 9) && mouseY < (double)(bY + 33)) {
+                         EnumFeatureState charm = EntityPlayerExtension.getPlayerExpCharm(this.gui.getMinecraft().player);
+                         if (charm.isAvailable()) {
+-                            NetworkHelper.sendToServer(
+-                                new SetCharmPacket(EnumCharms.Exp, charm.isActive() ? EnumFeatureState.Available : EnumFeatureState.Active)
+-                            );
++                     NetworkHelper.sendToServer(new SetCharmPacket(EnumCharms.Exp, charm.isActive() ? EnumFeatureState.Available : EnumFeatureState.Active));
+                         }
+ 
+                         return false;
+@@ -814,9 +808,7 @@
+                     if (mouseY > (double)(bY - 13) && mouseY < (double)(bY + 9)) {
+                         EnumFeatureState charm = EntityPlayerExtension.getPlayerShinyCharm(this.gui.getMinecraft().player);
+                         if (charm.isAvailable()) {
+-                            NetworkHelper.sendToServer(
+-                                new SetCharmPacket(EnumCharms.Shiny, charm.isActive() ? EnumFeatureState.Available : EnumFeatureState.Active)
+-                            );
++                     NetworkHelper.sendToServer(new SetCharmPacket(EnumCharms.Shiny, charm.isActive() ? EnumFeatureState.Available : EnumFeatureState.Active));
+                         }
+ 
+                         return false;
+@@ -825,9 +817,7 @@
+                     if (mouseY > (double)(bY - 35) && mouseY < (double)(bY - 13)) {
+                         EnumFeatureState charm = EntityPlayerExtension.getPlayerOvalCharm(this.gui.getMinecraft().player);
+                         if (charm.isAvailable()) {
+-                            NetworkHelper.sendToServer(
+-                                new SetCharmPacket(EnumCharms.Oval, charm.isActive() ? EnumFeatureState.Available : EnumFeatureState.Active)
+-                            );
++                     NetworkHelper.sendToServer(new SetCharmPacket(EnumCharms.Oval, charm.isActive() ? EnumFeatureState.Available : EnumFeatureState.Active));
+                         }
+ 
+                         return false;

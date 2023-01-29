@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/npc/TutorScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/npc/TutorScreen.java
+@@ -61,11 +61,7 @@
+             this.attackListGui = new TutorListScreen(this, moveList, this.listWidth, this.listHeight, this.listTop, this.listLeft, this.minecraft);
+             this.children.add(this.attackListGui);
+             this.buttons
+-                .add(
+-                    new IndexedButton(
+-                        1, this.width / 2 + 155, this.height / 2 + 90, 50, 20, new TranslatableComponent("gui.cancel.text"), this::actionPerformed
+-                    )
+-                );
++            .add(new IndexedButton(1, this.width / 2 + 155, this.height / 2 + 90, 50, 20, new TranslatableComponent("gui.cancel.text"), this::actionPerformed));
+             this.children.addAll(this.buttons);
+         }
+     }

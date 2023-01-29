@@ -1,0 +1,51 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/spawner/PixelmonSpawnerScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/spawner/PixelmonSpawnerScreen.java
+@@ -82,13 +82,7 @@
+         );
+         this.addButton(
+             new IndexedButton(
+-                5,
+-                this.listLeft + this.listWidth + 65,
+-                this.height - 40,
+-                70,
+-                20,
+-                new TranslatableComponent("gui.trainereditor.deletepoke"),
+-                this::actionPerformed
++            5, this.listLeft + this.listWidth + 65, this.height - 40, 70, 20, new TranslatableComponent("gui.trainereditor.deletepoke"), this::actionPerformed
+             )
+         );
+         this.addButton(
+@@ -116,9 +110,7 @@
+                 85,
+                 100,
+                 20,
+-                this.ps.fireOnTick
+-                    ? new TranslatableComponent("gui.pixelmonspawner.fireontick")
+-                    : new TranslatableComponent("gui.pixelmonspawner.fireonredstone"),
++            this.ps.fireOnTick ? new TranslatableComponent("gui.pixelmonspawner.fireontick") : new TranslatableComponent("gui.pixelmonspawner.fireonredstone"),
+                 this::actionPerformed
+             )
+         );
+@@ -213,21 +205,7 @@
+         boolean force = Minecraft.getInstance().isEnforceUnicode();
+         Minecraft.getInstance().selectMainFont(true);
+         ScreenHelper.drawImageQuad(
+-            Resources.cwPanel,
+-            matrix,
+-            10.0F,
+-            10.0F,
+-            (float)(this.width - 20),
+-            (float)(this.height - 20),
+-            0.0F,
+-            1.0F,
+-            1.0F,
+-            0.0F,
+-            1.0F,
+-            1.0F,
+-            1.0F,
+-            0.75F,
+-            0.0F
++         Resources.cwPanel, matrix, 10.0F, 10.0F, (float)(this.width - 20), (float)(this.height - 20), 0.0F, 1.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.75F, 0.0F
+         );
+         if (this.isFullScreen()) {
+             ScreenHelper.drawImageQuad(

@@ -1,0 +1,41 @@
+--- a/com/pixelmonmod/tcg/client/gui/duel/DuelLogScreen.java
++++ b/com/pixelmonmod/tcg/client/gui/duel/DuelLogScreen.java
+@@ -99,8 +99,7 @@
+                                 lines.add(
+                                     new TranslatableComponent(
+                                         I18n.get(
+-                                            "duel.log.ability",
+-                                            new Object[]{card.getTranslatedName().getString(), card.getAbility().getTranslatedName().getString()}
++                                 "duel.log.ability", new Object[]{card.getTranslatedName().getString(), card.getAbility().getTranslatedName().getString()}
+                                         )
+                                     )
+                                 );
+@@ -137,16 +136,13 @@
+                                 lines.remove(0);
+                                 lines.add(
+                                     new TranslatableComponent(
+-                                        I18n.get(
+-                                            "duel.log.knockout",
+-                                            new Object[]{item.getKnockoutParameters().getCard().getData().getTranslatedName().getString()}
++                              I18n.get("duel.log.knockout", new Object[]{item.getKnockoutParameters().getCard().getData().getTranslatedName().getString()})
+                                         )
+-                                    )
+                                 );
+                                 break;
+                             case PLAY:
+                                 lines.remove(0);
+-                                Component name = new TranslatableComponent(I18n.get("duel.log.acard", new Object[0]));
++                        name = new TranslatableComponent(I18n.get("duel.log.acard", new Object[0]));
+                                 if (item.getPlayParameters().getCard().getData() != null && !item.getPlayParameters().getCard().getData().isFaceDown()) {
+                                     name = item.getPlayParameters().getCard().getData().getTranslatedName();
+                                 }
+@@ -180,8 +176,7 @@
+                                 lines.add(
+                                     new TranslatableComponent(
+                                         I18n.get(
+-                                            "duel.log.switch",
+-                                            new Object[]{playerName, item.getSwitchParameters().getCard().getData().getTranslatedName().getString()}
++                                 "duel.log.switch", new Object[]{playerName, item.getSwitchParameters().getCard().getData().getTranslatedName().getString()}
+                                         )
+                                     )
+                                 );

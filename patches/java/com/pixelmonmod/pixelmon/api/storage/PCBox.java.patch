@@ -1,0 +1,14 @@
+--- a/com/pixelmonmod/pixelmon/api/storage/PCBox.java
++++ b/com/pixelmonmod/pixelmon/api/storage/PCBox.java
+@@ -138,10 +138,7 @@
+         if (pokemon != null) {
+             pokemon.setStorage(this, position);
+             if (this.pc.playerName != null
+-                && (
+-                    pokemon.getOriginalTrainer() == null
+-                        || pokemon.getOriginalTrainer().equals(this.pc.playerName) && pokemon.getOriginalTrainerUUID() == null
+-                )) {
++            && (pokemon.getOriginalTrainer() == null || pokemon.getOriginalTrainer().equals(this.pc.playerName) && pokemon.getOriginalTrainerUUID() == null)) {
+                 pokemon.setOriginalTrainer(this.uuid, this.pc.playerName);
+             }
+         }

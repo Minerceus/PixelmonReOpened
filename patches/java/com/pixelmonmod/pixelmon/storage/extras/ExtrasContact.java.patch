@@ -1,0 +1,48 @@
+--- a/com/pixelmonmod/pixelmon/storage/extras/ExtrasContact.java
++++ b/com/pixelmonmod/pixelmon/storage/extras/ExtrasContact.java
+@@ -87,7 +87,7 @@
+                 try {
+                     data.apiData = queryApi(uuid, update);
+                     StringJoiner joiner = new StringJoiner(", ", "[", "]");
+-                    ((EnumSet)data.apiData.getA()).forEach(g -> joiner.add(g.id + ""));
++               (data.apiData.getA()).forEach(g -> joiner.add(g.id + ""));
+                     Pixelmon.LOGGER.info("Query response: groups" + joiner + " colors" + Arrays.toString((int[])data.apiData.getB()));
+                     cache.put(data.id, new Tuple(data.apiData, Instant.now()));
+                 } catch (IOException var5) {
+@@ -121,7 +121,7 @@
+         if (!cache.containsKey(uuid)) {
+             return false;
+         } else {
+-            for(ExtrasContact.Groups group : (EnumSet)((Tuple)((Tuple)cache.get(uuid)).getA()).getA()) {
++         for(ExtrasContact.Groups group : ((cache.get(uuid)).getA()).getA()) {
+                 if (group != null) {
+                     h = 31 * h + group.ordinal() + 1;
+                 }
+@@ -137,8 +137,8 @@
+             Arrays.fill(colours, -1);
+             data.apiData = new Tuple(EnumSet.noneOf(ExtrasContact.Groups.class), colours);
+             return true;
+-        } else if (cache.containsKey(data.id) && ((Instant)((Tuple)cache.get(data.id)).getB()).getEpochSecond() > Instant.now().getEpochSecond() - 604800L) {
+-            data.apiData = (Tuple)((Tuple)cache.get(data.id)).getA();
++      } else if (cache.containsKey(data.id) && ((Instant)(cache.get(data.id)).getB()).getEpochSecond() > Instant.now().getEpochSecond() - 604800L) {
++         data.apiData = (cache.get(data.id)).getA();
+             return true;
+         } else {
+             return false;
+@@ -151,12 +151,12 @@
+ 
+         while(iterator.hasNext()) {
+             Entry<UUID, Tuple<Tuple<EnumSet<ExtrasContact.Groups>, int[]>, Instant>> entry = iterator.next();
+-            if (((Instant)((Tuple)entry.getValue()).getB()).getEpochSecond() < Instant.now().getEpochSecond() - 604800L) {
++         if (((Instant)(entry.getValue()).getB()).getEpochSecond() < Instant.now().getEpochSecond() - 604800L) {
+                 iterator.remove();
+             } else {
+-                Instant instant = (Instant)((Tuple)entry.getValue()).getB();
+-                EnumSet<ExtrasContact.Groups> groups = (EnumSet)((Tuple)((Tuple)entry.getValue()).getA()).getA();
+-                int[] colours = (int[])((Tuple)((Tuple)entry.getValue()).getA()).getB();
++            Instant instant = (Instant)(entry.getValue()).getB();
++            EnumSet<ExtrasContact.Groups> groups = ((entry.getValue()).getA()).getA();
++            int[] colours = (int[])((entry.getValue()).getA()).getB();
+                 ByteBuffer buf = ByteBuffer.allocate(8 + (groups.size() + 1) * 1 + 12);
+                 buf.putLong(instant.getEpochSecond());
+                 buf.put((byte)groups.size());

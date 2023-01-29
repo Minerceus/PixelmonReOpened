@@ -1,0 +1,34 @@
+--- a/com/pixelmonmod/pixelmon/ai/ExecuteActionGoal.java
++++ b/com/pixelmonmod/pixelmon/ai/ExecuteActionGoal.java
+@@ -141,9 +141,7 @@
+                                 NPCTrainer trainer = (NPCTrainer)this.parent;
+                                 battleType = trainer.getBattleType();
+                                 if (!trainer.battleRules.isDefault()) {
+-                                    TeamSelectionRegistry.addTeamSelection(
+-                                        trainer.battleRules, true, trainer.getPokemonStorage(), StorageProxy.getParty(player)
+-                                    );
++                           TeamSelectionRegistry.addTeamSelection(trainer.battleRules, true, trainer.getPokemonStorage(), StorageProxy.getParty(player));
+                                     return;
+                                 }
+                             }
+@@ -202,18 +200,14 @@
+                                 PlayerPartyStorage storage = StorageProxy.getParty(player);
+                                 List<Pokemon> list = new ArrayList<>();
+                                 list.add(userPokemon.getPokemon());
+-                                list.addAll(
+-                                    storage.getTeam().stream().filter(p -> !p.isFainted() && p != userPokemon.getPokemon()).collect(Collectors.toList())
+-                                );
++                        list.addAll(storage.getTeam().stream().filter(p -> !p.isFainted() && p != userPokemon.getPokemon()).collect(Collectors.toList()));
+                                 playerPart = new PlayerParticipant(player, list, 2);
+                             }
+ 
+                             userPokemon.startBattle(playerPart, trainer, trainerEntity.battleRules);
+                         }
+                     } else {
+-                        TeamSelectionRegistry.addTeamSelection(
+-                            trainerEntity.battleRules, true, trainerEntity.getPokemonStorage(), StorageProxy.getParty(player)
+-                        );
++                  TeamSelectionRegistry.addTeamSelection(trainerEntity.battleRules, true, trainerEntity.getPokemonStorage(), StorageProxy.getParty(player));
+                     }
+ 
+                     return;

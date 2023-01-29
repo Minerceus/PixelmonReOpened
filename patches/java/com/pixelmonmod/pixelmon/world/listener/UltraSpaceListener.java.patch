@@ -1,0 +1,19 @@
+--- a/com/pixelmonmod/pixelmon/world/listener/UltraSpaceListener.java
++++ b/com/pixelmonmod/pixelmon/world/listener/UltraSpaceListener.java
+@@ -9,6 +9,7 @@
+ import net.minecraft.server.level.ServerLevel;
+ import net.minecraft.world.entity.LivingEntity;
+ import net.minecraft.world.entity.player.Player;
++import net.minecraft.world.level.WorldGenLevel;
+ import net.minecraft.world.phys.Vec3;
+ import net.minecraftforge.event.entity.living.LivingFallEvent;
+ import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+@@ -75,7 +76,7 @@
+     @SubscribeEvent
+     public static void onPokeFaint(PixelmonFaintEvent.Post event) {
+         if (event.getPlayer() != null) {
+-            if (UltraSpace.is(event.getPlayer().getLevel())) {
++         if (UltraSpace.is((WorldGenLevel) event.getPlayer().getLevel())) {
+                 BlockPos respawnPosition = event.getPlayer().getRespawnPosition();
+                 ServerLevel world = ServerLifecycleHooks.getCurrentServer().getLevel(event.getPlayer().getRespawnDimension());
+                 if (respawnPosition == null) {

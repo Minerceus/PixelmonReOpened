@@ -1,0 +1,58 @@
+--- a/com/pixelmonmod/tcg/client/helper/CardRenderingHelper.java
++++ b/com/pixelmonmod/tcg/client/helper/CardRenderingHelper.java
+@@ -519,18 +519,7 @@
+                     }
+                 } else if (card.getData().getHasCustomTex()) {
+                     ScreenHelper.drawImageQuad(
+-                        card.getData().getCustomTexture(),
+-                        matrix,
+-                        (float)w / 2.0F - 23.5F,
+-                        (float)h / 2.0F - 53.0F,
+-                        47.0F,
+-                        47.0F,
+-                        0.0F,
+-                        0.0F,
+-                        1.0F,
+-                        1.0F,
+-                        alpha,
+-                        z
++                  card.getData().getCustomTexture(), matrix, (float)w / 2.0F - 23.5F, (float)h / 2.0F - 53.0F, 47.0F, 47.0F, 0.0F, 0.0F, 1.0F, 1.0F, alpha, z
+                     );
+                 } else {
+                     ScreenHelper.drawImageQuad(
+@@ -605,7 +594,7 @@
+                     getAbilityTexture(cardAbility), matrix, (float)w / 2.0F - 46.0F, (float)h / 2.0F + 1.0F, 6.0F, 6.0F, 0.0F, 0.0F, 1.0F, 1.0F, alpha, z
+                 );
+                 matrix.pushPose();
+-                String name = "\u00a7l" + new TranslatableComponent(cardAbility.getName().toLowerCase()).getString();
++            String name = "§l" + new TranslatableComponent(cardAbility.getName().toLowerCase()).getString();
+                 float widthConstant = 88.0F;
+                 int altColor = ((int)(alpha * 255.0F) << 24) + 4473924;
+                 if (cardAbility.getEffect() == null) {
+@@ -625,7 +614,7 @@
+                     false
+                 );
+                 matrix.popPose();
+-                String description = "\u00a7o" + new TranslatableComponent(cardAbility.getDescription().toLowerCase()).getString();
++            String description = "§o" + new TranslatableComponent(cardAbility.getDescription().toLowerCase()).getString();
+                 ++lineCount;
+                 int linesForAbility = attacks != null && attacks.length > 0 ? 2 : 5;
+                 if (attacks.length == 1 && !attacks[0].hasDescription()) {
+@@ -832,7 +821,7 @@
+             if (attack.hasDescription()) {
+                 lineCount += drawMultiline(
+                     matrix,
+-                    "\u00a7o" + attack.getLocalizedDescription().getString(),
++               "§o" + attack.getLocalizedDescription().getString(),
+                     descriptionLineCount,
+                     width / 2 - 46,
+                     height / 2 + 9 + verticalOffset,
+@@ -1024,7 +1013,7 @@
+     private static int drawMultiline(PoseStack matrix, String description, int maxLines, int x, int y, int maxWidth, int color) {
+         boolean unicode = Minecraft.getInstance().isEnforceUnicode();
+         Minecraft.getInstance().selectMainFont(true);
+-        String style = description.startsWith("\u00a7") ? description.substring(0, 2) : "";
++      String style = description.startsWith("§") ? description.substring(0, 2) : "";
+         List<FormattedText> properties = Minecraft.getInstance().font.getSplitter().splitLines(description, maxWidth, Style.EMPTY);
+         int i = 0;
+ 

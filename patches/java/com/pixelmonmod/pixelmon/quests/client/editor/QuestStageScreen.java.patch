@@ -1,0 +1,19 @@
+--- a/com/pixelmonmod/pixelmon/quests/client/editor/QuestStageScreen.java
++++ b/com/pixelmonmod/pixelmon/quests/client/editor/QuestStageScreen.java
+@@ -26,14 +26,14 @@
+ import org.apache.commons.lang3.math.NumberUtils;
+ 
+ public class QuestStageScreen extends Screen {
+-    private List<SimpleButton> buttons = new ArrayList();
++   private List<SimpleButton> buttons = new ArrayList<>();
+     private Stage stage;
+     private CopyOnWriteArrayList<QuestElement> objectives;
+     private CopyOnWriteArrayList<QuestElement> actions;
+     private QuestElement selection = null;
+     private HashSet<Integer> actionObjectives = new HashSet<>();
+     private ExecutorMode actionMode = ExecutorMode.AND;
+-    private ArrayList<GuiComponent> selectionElements = new ArrayList();
++   private ArrayList<GuiComponent> selectionElements = new ArrayList<>();
+     private DropDown<QuestElement> dropDown;
+     private final DropDownManager dropDownManager = new DropDownManager();
+     private QuestStageScreen.MouseState mouseState = QuestStageScreen.MouseState.HOVER;

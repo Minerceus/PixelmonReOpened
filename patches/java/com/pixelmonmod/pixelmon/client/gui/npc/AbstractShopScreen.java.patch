@@ -1,0 +1,64 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/npc/AbstractShopScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/npc/AbstractShopScreen.java
+@@ -188,7 +188,7 @@
+                 LocalPlayer player = Minecraft.getInstance().player;
+                 int available = 0;
+ 
+-                for(ItemStack curStack : new ArrayList(player.inventory.items)) {
++            for(ItemStack curStack : new ArrayList<>(player.inventory.items)) {
+                     if (curStack != null && curStack.sameItem(buying)) {
+                         available += buying.getMaxStackSize() - curStack.getCount();
+                     } else if (curStack == null || curStack == ItemStack.EMPTY || curStack.getItem() == Items.AIR) {
+@@ -218,9 +218,7 @@
+                     ClientShopItem item = buyItems.get(this.selectedItem);
+                     if ((double)((this.quantity + 1) * item.getBuy()) <= ClientData.playerMoney.doubleValue()
+                         && this.quantity + 1
+-                            <= Math.min(
+-                                this.checkRemainingSlots(item.getItemStack()), PixelmonConfigProxy.getGeneral().getShopMaxStackSize(item.getItemStack())
+-                            )) {
++                     <= Math.min(this.checkRemainingSlots(item.getItemStack()), PixelmonConfigProxy.getGeneral().getShopMaxStackSize(item.getItemStack()))) {
+                         ++this.quantity;
+                     } else {
+                         this.quantity = 1;
+@@ -452,15 +450,7 @@
+                     0.0F
+                 );
+                 ScreenHelper.drawSquashedString(
+-                    matrix,
+-                    this.minecraft.font,
+-                    itemName,
+-                    false,
+-                    (float)(140 - costWidth - 15),
+-                    (float)itemLeft,
+-                    (float)((int)(topLimit + 7.0F)),
+-                    16777215,
+-                    true
++               matrix, this.minecraft.font, itemName, false, (float)(140 - costWidth - 15), (float)itemLeft, (float)((int)(topLimit + 7.0F)), 16777215, true
+                 );
+                 colour = 14540253;
+                 if (this.currentTab == EnumBuySell.Buy && (double)listItems.get(i).getBuy() > ClientData.playerMoney.doubleValue()) {
+@@ -572,9 +562,7 @@
+                 0.0F
+             );
+             String priceLabel = I18n.get("gui.shopkeeper.price", new Object[0]);
+-            drawString(
+-                matrix, this.minecraft.font, priceLabel, this.width / 2 - 69 - this.minecraft.font.width(priceLabel) / 2, this.height / 2 - 96, 16777215
+-            );
++         drawString(matrix, this.minecraft.font, priceLabel, this.width / 2 - 69 - this.minecraft.font.width(priceLabel) / 2, this.height / 2 - 96, 16777215);
+             int price = this.currentTab == EnumBuySell.Buy ? listItems.get(this.selectedItem).getBuy() : listItems.get(this.selectedItem).getSell();
+             String priceAmount = "" + this.quantity * price;
+             ScreenHelper.drawImageQuad(
+@@ -614,12 +602,7 @@
+             );
+             String quantityAmount = "" + this.quantity;
+             drawString(
+-                matrix,
+-                this.minecraft.font,
+-                quantityAmount,
+-                this.width / 2 - 58 - this.minecraft.font.width(quantityAmount) / 2,
+-                this.height / 2 - 51,
+-                16777215
++            matrix, this.minecraft.font, quantityAmount, this.width / 2 - 58 - this.minecraft.font.width(quantityAmount) / 2, this.height / 2 - 51, 16777215
+             );
+             if (mouseX > this.width / 2 - 94 && mouseX < this.width / 2 - 94 + 49 && mouseY > this.height / 2 - 29 && mouseY < this.height / 2 - 29 + 18) {
+                 boolean validTransaction = this.currentTab == EnumBuySell.Buy

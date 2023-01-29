@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Cut.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Cut.java
+@@ -101,8 +101,8 @@
+     }
+ 
+     private static ArrayList<BlockPos> findTreeLogs(Level world, BlockPos pos) {
+-        ArrayList<BlockPos> logs = new ArrayList();
+-        ArrayList<BlockPos> newLogs = new ArrayList();
++      ArrayList<BlockPos> logs = new ArrayList<>();
++      ArrayList<BlockPos> newLogs = new ArrayList<>();
+         newLogs.add(pos);
+ 
+         while(!newLogs.isEmpty()) {

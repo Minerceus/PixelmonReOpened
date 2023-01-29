@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/spawning/calculators/CheckSpawns.java
++++ b/com/pixelmonmod/pixelmon/api/spawning/calculators/CheckSpawns.java
+@@ -25,7 +25,7 @@
+     void checkSpawns(AbstractSpawner var1, CommandSourceStack var2, List<String> var3);
+ 
+     default List<MutableComponent> generateMessages(Map<String, Double> percentages, List<String> arguments) {
+-        List<MutableComponent> translationMessages = new ArrayList();
++      List<MutableComponent> translationMessages = new ArrayList<>();
+         List<String> messages = new ArrayList<>();
+         Predicate<String> caredAbout = null;
+ 

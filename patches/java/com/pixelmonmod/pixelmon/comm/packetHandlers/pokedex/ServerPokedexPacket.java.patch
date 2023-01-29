@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/comm/packetHandlers/pokedex/ServerPokedexPacket.java
++++ b/com/pixelmonmod/pixelmon/comm/packetHandlers/pokedex/ServerPokedexPacket.java
+@@ -70,11 +70,7 @@
+                     hasChanged = playerPokedex.set(preEvent.getPokemon(), preEvent.getNewStatus());
+                     id = pokemon.getSpecies().getDex();
+                     Pixelmon.EVENT_BUS
+-                        .post(
+-                            new PokedexEvent.Post(
+-                                player.getUUID(), preEvent.getOldStatus(), preEvent.getPokemon(), preEvent.getNewStatus(), preEvent.getCause()
+-                            )
+-                        );
++                  .post(new PokedexEvent.Post(player.getUUID(), preEvent.getOldStatus(), preEvent.getPokemon(), preEvent.getNewStatus(), preEvent.getCause()));
+                 }
+             }
+         }

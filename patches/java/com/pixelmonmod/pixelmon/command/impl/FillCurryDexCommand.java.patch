@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/FillCurryDexCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/FillCurryDexCommand.java
+@@ -112,11 +112,7 @@
+             storage.fillOneCurryDexPage(curryDexPage, curryDexRating);
+             sender.sendSuccess(
+                 PixelmonCommandUtils.format(
+-                    ChatFormatting.GRAY,
+-                    "pixelmon.command.fillcurrydex.page",
+-                    curryDexPage + 1,
+-                    target.getName(),
+-                    "" + curryDexRatingColor + curryDexRatingName
++               ChatFormatting.GRAY, "pixelmon.command.fillcurrydex.page", curryDexPage + 1, target.getName(), "" + curryDexRatingColor + curryDexRatingName
+                 ),
+                 false
+             );

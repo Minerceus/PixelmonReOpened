@@ -1,0 +1,22 @@
+--- a/com/pixelmonmod/pixelmon/api/data/BlockedDataSerializer.java
++++ b/com/pixelmonmod/pixelmon/api/data/BlockedDataSerializer.java
+@@ -44,16 +44,16 @@
+ 
+     public void write(FriendlyByteBuf buffer, T instance) {
+         DataSyncLock.park(this.context);
+-        this.write.accept((T)buffer, instance);
++      this.write.accept(buffer, instance);
+     }
+ 
+     public T read(FriendlyByteBuf buffer) {
+         DataSyncLock.park(this.context);
+-        return this.read.apply((T)buffer);
++      return this.read.apply(buffer);
+     }
+ 
+     public EntityDataAccessor<T> createAccessor(int id) {
+-        return this.createAccessor == null ? super.createAccessor(id) : (EntityDataAccessor)this.createAccessor.apply(id);
++      return this.createAccessor == null ? new EntityDataAccessor<>(id, this) : this.createAccessor.apply(id);
+     }
+ 
+     public T copy(T instance) {

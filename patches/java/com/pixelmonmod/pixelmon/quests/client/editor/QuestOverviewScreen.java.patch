@@ -1,0 +1,63 @@
+--- a/com/pixelmonmod/pixelmon/quests/client/editor/QuestOverviewScreen.java
++++ b/com/pixelmonmod/pixelmon/quests/client/editor/QuestOverviewScreen.java
+@@ -19,7 +19,7 @@
+ import net.minecraft.network.chat.TextComponent;
+ 
+ public class QuestOverviewScreen extends Screen {
+-    private List<SimpleButton> buttons = new ArrayList();
++   private List<SimpleButton> buttons = new ArrayList<>();
+     private TextField questName;
+     private String oldName;
+     private int globalQuestOption = -1;
+@@ -95,9 +95,7 @@
+             this.minecraft
+                 .getTextureManager()
+                 .bind(
+-                    quest.getStages().get(quest.getStages().size() - 1).getStage() == quest.getActiveStage()
+-                        ? Resources.question_mark
+-                        : Resources.exclamation_mark
++               quest.getStages().get(quest.getStages().size() - 1).getStage() == quest.getActiveStage() ? Resources.question_mark : Resources.exclamation_mark
+                 );
+             QuestColor color = quest.getColor();
+             RenderSystem.color4f(color.floatR(), color.floatG(), color.floatB(), 1.0F);
+@@ -374,15 +372,7 @@
+                 matrix, left + i, top, 1.0F, left + i + 1, top + height, Color.HSBtoRGB(this.hsb[0], v1, 1.0F), Color.BLACK.getRGB(), false
+             );
+             ScreenHelper.drawGradientRect(
+-                matrix,
+-                left + i,
+-                top + height + 4,
+-                1.0F,
+-                left + i + 1,
+-                top + height + 12,
+-                Color.HSBtoRGB(v1, 1.0F, 1.0F),
+-                Color.HSBtoRGB(v2, 1.0F, 1.0F),
+-                true
++            matrix, left + i, top + height + 4, 1.0F, left + i + 1, top + height + 12, Color.HSBtoRGB(v1, 1.0F, 1.0F), Color.HSBtoRGB(v2, 1.0F, 1.0F), true
+             );
+         }
+ 
+@@ -397,21 +387,11 @@
+         this.font.draw(matrix, String.valueOf(color.getRed()), (float)(left + 8), (float)(top + height + 16), this.hoveringColor == 0 ? tickerColor : 0);
+         this.font.draw(matrix, "G", (float)(left + rgbSpacing), (float)(top + height + 16), 0);
+         this.font
+-            .draw(
+-                matrix,
+-                String.valueOf(color.getGreen()),
+-                (float)(left + rgbSpacing + 8),
+-                (float)(top + height + 16),
+-                this.hoveringColor == 1 ? tickerColor : 0
+-            );
++         .draw(matrix, String.valueOf(color.getGreen()), (float)(left + rgbSpacing + 8), (float)(top + height + 16), this.hoveringColor == 1 ? tickerColor : 0);
+         this.font.draw(matrix, "B", (float)(left + rgbSpacing * 2), (float)(top + height + 16), 0);
+         this.font
+             .draw(
+-                matrix,
+-                String.valueOf(color.getBlue()),
+-                (float)(left + rgbSpacing * 2 + 8),
+-                (float)(top + height + 16),
+-                this.hoveringColor == 2 ? tickerColor : 0
++            matrix, String.valueOf(color.getBlue()), (float)(left + rgbSpacing * 2 + 8), (float)(top + height + 16), this.hoveringColor == 2 ? tickerColor : 0
+             );
+         if (this.mouseState == QuestOverviewScreen.MouseState.PRESS) {
+             if (mouseX >= left && mouseX <= left + width && mouseY >= top && mouseY <= top + height) {

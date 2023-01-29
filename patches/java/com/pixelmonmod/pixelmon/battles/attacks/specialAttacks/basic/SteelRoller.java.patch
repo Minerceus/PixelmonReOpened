@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/SteelRoller.java
++++ b/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/SteelRoller.java
+@@ -34,9 +34,7 @@
+         List<MoveChoice> bestOpponentChoices
+     ) {
+         int total = 0;
+-        StatusType[] entryTerrains = new StatusType[]{
+-            StatusType.ElectricTerrain, StatusType.MistyTerrain, StatusType.PsychicTerrain, StatusType.GrassyTerrain
+-        };
++      StatusType[] entryTerrains = new StatusType[]{StatusType.ElectricTerrain, StatusType.MistyTerrain, StatusType.PsychicTerrain, StatusType.GrassyTerrain};
+         total += pw.countStatuses(entryTerrains);
+         total -= pw.getOpponentPokemon().get(0).countStatuses(entryTerrains);
+         userChoice.raiseWeight((float)(30 * total));

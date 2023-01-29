@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/override/load/LoadingPokemonModifier.java
++++ b/com/pixelmonmod/pixelmon/client/gui/override/load/LoadingPokemonModifier.java
+@@ -188,9 +188,7 @@
+         if (this.nextSpriteIn <= 0) {
+             this.nextSpriteIn = 10;
+             this.sprites
+-                .add(
+-                    new LoadingPokemonModifier.AnimatedSprite((ResourceLocation)SPRITES.get(gameStarterIndexToRender).get(), event.getGui().width + 50, 20, 40)
+-                );
++            .add(new LoadingPokemonModifier.AnimatedSprite((ResourceLocation)SPRITES.get(gameStarterIndexToRender).get(), event.getGui().width + 50, 20, 40));
+         }
+ 
+         event.getMatrixStack().popPose();

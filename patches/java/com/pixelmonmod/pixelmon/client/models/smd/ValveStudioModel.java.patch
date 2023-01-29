@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/client/models/smd/ValveStudioModel.java
++++ b/com/pixelmonmod/pixelmon/client/models/smd/ValveStudioModel.java
+@@ -209,8 +209,7 @@
+                 return resourceLocation;
+             }
+ 
+-            Pixelmon.LOGGER
+-                .debug("There was an error attempting to load " + fileName + " (potentially invalid location check ResourceLocation specifications)");
++         Pixelmon.LOGGER.debug("There was an error attempting to load " + fileName + " (potentially invalid location check ResourceLocation specifications)");
+         }
+ 
+         String urlAsString = this.resource.getPath();

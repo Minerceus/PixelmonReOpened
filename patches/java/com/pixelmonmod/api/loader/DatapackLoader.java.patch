@@ -1,0 +1,16 @@
+--- a/com/pixelmonmod/api/loader/DatapackLoader.java
++++ b/com/pixelmonmod/api/loader/DatapackLoader.java
+@@ -73,12 +73,7 @@
+         private final String name;
+ 
+         public Impl(
+-            String context,
+-            Gson gson,
+-            String type,
+-            TriConsumer<Gson, ResourceLocation, JsonElement> consumer,
+-            List<Runnable> preTasks,
+-            List<Runnable> postTasks
++         String context, Gson gson, String type, TriConsumer<Gson, ResourceLocation, JsonElement> consumer, List<Runnable> preTasks, List<Runnable> postTasks
+         ) {
+             super(gson, type);
+             this.context = context;

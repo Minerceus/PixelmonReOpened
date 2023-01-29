@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/healing/WalkingPassiveHealingTicker.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/healing/WalkingPassiveHealingTicker.java
+@@ -45,9 +45,7 @@
+             } else {
+                 boolean revive = false;
+                 boolean status = false;
+-                boolean heal = RandomHelper.getRandomChance(
+-                    (float)steps / (float)PixelmonConfigProxy.getGeneral().getHealing().getStepsToHealHealthPassively()
+-                );
++            boolean heal = RandomHelper.getRandomChance((float)steps / (float)PixelmonConfigProxy.getGeneral().getHealing().getStepsToHealHealthPassively());
+ 
+                 for(int i = 0; i < steps; ++i) {
+                     if (!revive && RandomHelper.getRandomChance(PixelmonConfigProxy.getGeneral().getHealing().getChanceToRevivePassively())) {

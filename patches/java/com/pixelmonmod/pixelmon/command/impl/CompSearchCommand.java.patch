@@ -1,0 +1,26 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/CompSearchCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/CompSearchCommand.java
+@@ -65,20 +65,18 @@
+ 
+     @Override
+     public List<String> getTabCompletions(MinecraftServer server, CommandSourceStack sender, String[] args, BlockPos pos) throws CommandSyntaxException {
+-        return args.length == 1 && this.hasPermissionOtherTarget(sender)
+-            ? PixelmonCommandUtils.tabCompleteUsernames()
+-            : PixelmonCommandUtils.SPEC_REQUIREMENTS;
++      return args.length == 1 && this.hasPermissionOtherTarget(sender) ? PixelmonCommandUtils.tabCompleteUsernames() : PixelmonCommandUtils.SPEC_REQUIREMENTS;
+     }
+ 
+     private List<Component> searchComputerPokemon(String[] args, PCStorage storage) {
+         PCBox[] storageBoxes = storage.getBoxes();
+         int boxCount = storage.getBoxCount();
+         int boxLimit = 30;
+-        List<Component> pokemonList = new ArrayList();
++      List<Component> pokemonList = new ArrayList<>();
+         PokemonSpecification spec = PokemonSpecificationProxy.create(args);
+ 
+         for(int i = 0; i < boxCount; ++i) {
+-            List<Component> boxList = new ArrayList();
++         List<Component> boxList = new ArrayList<>();
+             PCBox b = storageBoxes[i];
+ 
+             for(int j = 0; j < boxLimit; ++j) {

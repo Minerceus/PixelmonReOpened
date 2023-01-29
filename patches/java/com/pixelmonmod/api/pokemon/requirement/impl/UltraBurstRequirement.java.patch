@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/api/pokemon/requirement/impl/UltraBurstRequirement.java
++++ b/com/pixelmonmod/api/pokemon/requirement/impl/UltraBurstRequirement.java
+@@ -29,8 +29,7 @@
+         if (!pixelmon.getSpecies().is(PixelmonSpecies.NECROZMA)) {
+             return false;
+         } else {
+-            return (pixelmon.getForm().isForm("dusk") || pixelmon.getForm().isForm("dawn"))
+-                && pixelmon.getHeldItem().getItem() == PixelmonItems.ultranecrozium_z;
++         return (pixelmon.getForm().isForm("dusk") || pixelmon.getForm().isForm("dawn")) && pixelmon.getHeldItem().getItem() == PixelmonItems.ultranecrozium_z;
+         }
+     }
+ 

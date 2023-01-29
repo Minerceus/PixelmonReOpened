@@ -1,0 +1,44 @@
+--- a/com/pixelmonmod/pixelmon/init/registry/TileEntityRegistration.java
++++ b/com/pixelmonmod/pixelmon/init/registry/TileEntityRegistration.java
+@@ -525,8 +525,7 @@
+         ClientRegistry.bindTileEntityRenderer((BlockEntityType)DECORATIVE.get(), RenderTileEntityDecorativeBase::new);
+         ClientRegistry.bindTileEntityRenderer((BlockEntityType)DECORATIVE_TREE.get(), RenderTileEntityTree::new);
+         ClientRegistry.bindTileEntityRenderer(
+-            (BlockEntityType)END_TABLE.get(),
+-            dispatcher -> new RenderTileEntityGenericSMD(dispatcher, "pixelutilities/EndTable/EndTable.pqc", "end_table.png")
++         (BlockEntityType)END_TABLE.get(), dispatcher -> new RenderTileEntityGenericSMD(dispatcher, "pixelutilities/EndTable/EndTable.pqc", "end_table.png")
+         );
+         ClientRegistry.bindTileEntityRenderer(
+             (BlockEntityType)FAN.get(), dispatcher -> new RenderTileEntityGenericSMD(dispatcher, "blocks/machines/fan.pqc", "fan.png")
+@@ -536,9 +535,7 @@
+         ClientRegistry.bindTileEntityRenderer((BlockEntityType)FOSSIL_DISPLAY.get(), RenderTileEntityFossilDisplay::new);
+         ClientRegistry.bindTileEntityRenderer(
+             (BlockEntityType)GRACIDEA.get(),
+-            dispatcher -> new RenderTileEntityGenericSMD(dispatcher, "blocks/gracidea/gracidea.pqc", "gracidea.png")
+-                    .rotate(-90.0F, 1.0F, 0.0F, 0.0F)
+-                    .scale(0.1F)
++         dispatcher -> new RenderTileEntityGenericSMD(dispatcher, "blocks/gracidea/gracidea.pqc", "gracidea.png").rotate(-90.0F, 1.0F, 0.0F, 0.0F).scale(0.1F)
+         );
+         ClientRegistry.bindTileEntityRenderer((BlockEntityType)GYM_SIGN.get(), RenderTileEntityGymSign::new);
+         ClientRegistry.bindTileEntityRenderer((BlockEntityType)HEALER.get(), RenderTileEntityHealer::new);
+@@ -564,8 +561,7 @@
+         ClientRegistry.bindTileEntityRenderer((BlockEntityType)SCROLL.get(), RenderTileEntityScroll::new);
+         ClientRegistry.bindTileEntityRenderer((BlockEntityType)TIMESPACE_ALTAR.get(), RenderTileEntityTimespaceAltar::new);
+         ClientRegistry.bindTileEntityRenderer(
+-            (BlockEntityType)TRASH_CAN.get(),
+-            dispatcher -> new RenderTileEntityGenericSMD(dispatcher, "pixelutilities/TrashCan/TrashCan.pqc", "trash_can.png")
++         (BlockEntityType)TRASH_CAN.get(), dispatcher -> new RenderTileEntityGenericSMD(dispatcher, "pixelutilities/TrashCan/TrashCan.pqc", "trash_can.png")
+         );
+         ClientRegistry.bindTileEntityRenderer((BlockEntityType)TV.get(), RenderTileEntityTV::new);
+         ClientRegistry.bindTileEntityRenderer(
+@@ -586,9 +582,7 @@
+         );
+         ClientRegistry.bindTileEntityRenderer(
+             (BlockEntityType)WATER_FLOAT.get(),
+-            dispatcher -> new RenderTileEntityGenericSMD(dispatcher, "pixelutilities/WaterFloat/WaterFloat.pqc", null)
+-                    .setCorrectionAngles(90)
+-                    .setYOffset(0.2F)
++         dispatcher -> new RenderTileEntityGenericSMD(dispatcher, "pixelutilities/WaterFloat/WaterFloat.pqc", null).setCorrectionAngles(90).setYOffset(0.2F)
+         );
+         ClientRegistry.bindTileEntityRenderer((BlockEntityType)ZYGARDE_CELL.get(), RenderTileEntityZygardeCell::new);
+         ClientRegistry.bindTileEntityRenderer((BlockEntityType)MULTI_COUCH.get(), RenderTileEntityCouch::new);

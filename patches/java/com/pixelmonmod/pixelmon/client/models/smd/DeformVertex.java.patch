@@ -1,0 +1,40 @@
+--- a/com/pixelmonmod/pixelmon/client/models/smd/DeformVertex.java
++++ b/com/pixelmonmod/pixelmon/client/models/smd/DeformVertex.java
+@@ -11,8 +11,6 @@
+     public Vector4f storage = new Vector4f();
+     public Vector4f storageNorm = new Vector4f();
+     private boolean reset = false;
+-    public float u;
+-    public float v;
+     public final int ID;
+     public int id2 = -1;
+     public float xn;
+@@ -24,8 +22,6 @@
+         this.xn = vertex.xn;
+         this.yn = vertex.yn;
+         this.zn = vertex.zn;
+-        this.u = vertex.u;
+-        this.v = vertex.v;
+         this.baseLoc = new Vector4f(vertex.baseLoc);
+         this.baseNormal = new Vector4f(vertex.baseNormal);
+         this.ID = vertex.ID;
+@@ -43,8 +39,6 @@
+         this.currentLocMod = new Vector4f(20.0F, 20.0F, 20.0F, 1.0F);
+         this.currentNormalMod = new Vector4f(20.0F, 20.0F, 20.0F, 0.0F);
+         this.ID = ID;
+-        this.u = u;
+-        this.v = v;
+     }
+ 
+     public void reset() {
+@@ -94,8 +88,8 @@
+         }
+     }
+ 
+-    public boolean equals(float x, float y, float z, float u, float v) {
+-        return this.x == x && this.y == y && this.z == z && this.u == u && this.v == v;
++   public boolean equals(float x, float y, float z) {
++      return this.x == x && this.y == y && this.z == z;
+     }
+ 
+     public float getX(float partialTick) {

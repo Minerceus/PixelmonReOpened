@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/battles/tasks/RaidDropsTask.java
++++ b/com/pixelmonmod/pixelmon/battles/tasks/RaidDropsTask.java
+@@ -19,7 +19,7 @@
+     private boolean canCatch;
+     private RaidData raid;
+     private boolean shiny;
+-    private ArrayList<ItemStack> drops = new ArrayList();
++   private ArrayList<ItemStack> drops = new ArrayList<>();
+ 
+     public RaidDropsTask() {
+     }

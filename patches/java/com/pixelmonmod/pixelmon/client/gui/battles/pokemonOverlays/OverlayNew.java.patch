@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/pokemonOverlays/OverlayNew.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/pokemonOverlays/OverlayNew.java
+@@ -54,9 +54,7 @@
+                     opponent.drawSelected(matrix, (int)((center - offset) * (1.0F / scaleOpponents)), yPos, 250, 70, scaleOpponents);
+                 }
+ 
+-                opponent.drawElementScaled(
+-                    matrix, (int)((center - offset) * (1.0F / scaleOpponents)), yPos, 250, 70, scaleOpponents, 0, this, this.particleEngine
+-                );
++            opponent.drawElementScaled(matrix, (int)((center - offset) * (1.0F / scaleOpponents)), yPos, 250, 70, scaleOpponents, 0, this, this.particleEngine);
+             } else {
+                 float wo = (float)this.parent.width;
+                 float scaleOpponents = 1.0F;

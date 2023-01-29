@@ -1,0 +1,23 @@
+--- a/com/pixelmonmod/pixelmon/battles/controller/participants/TrainerParticipant.java
++++ b/com/pixelmonmod/pixelmon/battles/controller/participants/TrainerParticipant.java
+@@ -143,9 +143,9 @@
+ 
+     @Override
+     public void endBattle(BattleEndCause cause) {
+-        ArrayList<BattleParticipant> opponents = this.bc.participants.stream().filter(p -> p.team != this.team).collect(Collectors.toList());
++      ArrayList<BattleParticipant> opponents = (ArrayList<BattleParticipant>) this.bc.participants.stream().filter(p -> p.team != this.team).collect(Collectors.toList());
+         if (this.trainer.battleController != null) {
+-            if (!this.hasMorePokemon() && !opponents.stream().noneMatch(BattleParticipant::hasMorePokemon)) {
++         if (!this.hasMorePokemon() && opponents.stream().anyMatch(BattleParticipant::hasMorePokemon)) {
+                 this.trainer.loseBattle(opponents);
+             } else {
+                 this.trainer.winBattle(opponents);
+@@ -267,7 +267,7 @@
+         for(Pokemon pokemon : this.trainer.getPokemonStorage().getTeam()) {
+             if (pokemon.getMoveset().size() == 0) {
+                 if (PixelmonConfigProxy.getGeneral().getDebug().isPrintErrors()) {
+-                    Pixelmon.LOGGER.info("Couldn't load Pok\u00e9mon's moves.");
++               Pixelmon.LOGGER.info("Couldn't load Pokémon's moves.");
+                 }
+ 
+                 return false;

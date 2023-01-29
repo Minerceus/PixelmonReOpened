@@ -1,0 +1,59 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/raids/RaidStartScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/raids/RaidStartScreen.java
+@@ -160,11 +160,8 @@
+             RaidData.RaidPlayer player = players.size() > i ? players.get(i) : null;
+             this.slots
+                 .add(
+-                    new PokemonSlot(
+-                            this.raid, (double)((float)this.width / 1.1F), (double)((float)this.height * 0.08F + yGap * (float)i), 2.0, player, button -> {
+-                            }
+-                        )
+-                        .setEnabled(false)
++               new PokemonSlot(this.raid, (double)((float)this.width / 1.1F), (double)((float)this.height * 0.08F + yGap * (float)i), 2.0, player, button -> {
++               }).setEnabled(false)
+                 );
+         }
+ 
+@@ -224,12 +221,7 @@
+                         Color c2 = den.getColorUIB();
+                         Color color = new Color(c2.getRed(), c2.getGreen(), c2.getBlue(), Math.max(0, (int)this.fadeout));
+                         ScreenHelper.drawScaledCenteredString(
+-                            matrix,
+-                            String.valueOf(this.seconds),
+-                            (float)this.width * 0.8F,
+-                            (float)this.height * 0.13F,
+-                            color.getRGB(),
+-                            (float)this.width * 0.25F
++                     matrix, String.valueOf(this.seconds), (float)this.width * 0.8F, (float)this.height * 0.13F, color.getRGB(), (float)this.width * 0.25F
+                         );
+                         return true;
+                     }
+@@ -238,12 +230,7 @@
+                     () -> {
+                         Color color = new Color(226, 75, 66, Math.max(0, (int)this.fadeout));
+                         ScreenHelper.drawScaledCenteredString(
+-                            matrix,
+-                            String.valueOf(this.seconds),
+-                            (float)this.width * 0.8F,
+-                            (float)this.height * 0.13F,
+-                            color.getRGB(),
+-                            (float)this.width * 0.25F
++                     matrix, String.valueOf(this.seconds), (float)this.width * 0.8F, (float)this.height * 0.13F, color.getRGB(), (float)this.width * 0.25F
+                         );
+                         return true;
+                     }
+@@ -255,13 +242,7 @@
+ 
+         for(int i = 0; i < this.raid.getStars(); ++i) {
+             ScreenHelper.drawImage(
+-                matrix,
+-                STAR,
+-                (float)((double)starSize * 0.75 + (double)(i * starSize)),
+-                (float)((double)starSize * 0.6),
+-                (float)starSize,
+-                (float)starSize,
+-                1.0F
++            matrix, STAR, (float)((double)starSize * 0.75 + (double)(i * starSize)), (float)((double)starSize * 0.6), (float)starSize, (float)starSize, 1.0F
+             );
+         }
+ 

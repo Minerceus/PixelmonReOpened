@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/SpectateCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/SpectateCommand.java
+@@ -80,9 +80,7 @@
+                     NetworkHelper.sendPacket(new SetPokemonTeamDataPacket(watchedPlayer.getAllyData()), player);
+                 }
+ 
+-                NetworkHelper.sendPacket(
+-                    new StartSpectatePacket(watchedPlayer.player.getUUID(), base.rules.getOrDefault(BattleRuleRegistry.BATTLE_TYPE)), player
+-                );
++            NetworkHelper.sendPacket(new StartSpectatePacket(watchedPlayer.player.getUUID(), base.rules.getOrDefault(BattleRuleRegistry.BATTLE_TYPE)), player);
+                 base.addSpectator(new Spectator(player, target.getName().getString()));
+             }
+         } else {

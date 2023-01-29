@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/multiTurn/MultiTurnCharge.java
++++ b/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/multiTurn/MultiTurnCharge.java
+@@ -41,7 +41,7 @@
+         this.base = base;
+ 
+         try {
+-            this.statusClass = Class.forName("com.pixelmonmod.pixelmon.battles.status." + base);
++         this.statusClass = (Class<? extends StatusBase>) Class.forName("com.pixelmonmod.pixelmon.battles.status." + base);
+         } catch (ClassNotFoundException var5) {
+             var5.printStackTrace();
+         }

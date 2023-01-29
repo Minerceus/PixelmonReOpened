@@ -1,0 +1,101 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/particleEffects/GastlyParticles.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/particleEffects/GastlyParticles.java
+@@ -30,91 +30,49 @@
+             for(int i = 0; i < 20; ++i) {
+                 pokemon.level
+                     .addParticle(
+-                        data,
+-                        pokemon.getX() + (double)var6 + 0.2F,
+-                        pokemon.getY() + 2.0 + (double)var8,
+-                        pokemon.getZ() + (double)var7 + 0.4F,
+-                        0.0,
+-                        gravity,
+-                        0.0
++                  data, pokemon.getX() + (double)var6 + 0.2F, pokemon.getY() + 2.0 + (double)var8, pokemon.getZ() + (double)var7 + 0.4F, 0.0, gravity, 0.0
+                     );
+             }
+ 
+             for(int i = 0; i < 20; ++i) {
+                 pokemon.level
+                     .addParticle(
+-                        data,
+-                        pokemon.getX() + (double)var62 + 0.2F,
+-                        pokemon.getY() + 2.0 + (double)var82,
+-                        pokemon.getZ() + (double)var72 - 0.6F,
+-                        0.0,
+-                        gravity,
+-                        0.0
++                  data, pokemon.getX() + (double)var62 + 0.2F, pokemon.getY() + 2.0 + (double)var82, pokemon.getZ() + (double)var72 - 0.6F, 0.0, gravity, 0.0
+                     );
+             }
+         } else if (pokemon.getPokemon().getGrowth() == EnumGrowth.Huge) {
+             for(int i = 0; i < 20; ++i) {
+                 pokemon.level
+                     .addParticle(
+-                        data,
+-                        pokemon.getX() + (double)var6 + 0.2F,
+-                        pokemon.getY() + 1.5 + (double)var8,
+-                        pokemon.getZ() + (double)var7 + 0.4F,
+-                        0.0,
+-                        gravity,
+-                        0.0
++                  data, pokemon.getX() + (double)var6 + 0.2F, pokemon.getY() + 1.5 + (double)var8, pokemon.getZ() + (double)var7 + 0.4F, 0.0, gravity, 0.0
+                     );
+             }
+ 
+             for(int i = 0; i < 20; ++i) {
+                 pokemon.level
+                     .addParticle(
+-                        data,
+-                        pokemon.getX() + (double)var62 + 0.2F,
+-                        pokemon.getY() + 1.5 + (double)var82,
+-                        pokemon.getZ() + (double)var72 - 0.6F,
+-                        0.0,
+-                        gravity,
+-                        0.0
++                  data, pokemon.getX() + (double)var62 + 0.2F, pokemon.getY() + 1.5 + (double)var82, pokemon.getZ() + (double)var72 - 0.6F, 0.0, gravity, 0.0
+                     );
+             }
+         } else if (pokemon.getPokemon().getGrowth() == EnumGrowth.Pygmy) {
+             for(int i = 0; i < 20; ++i) {
+                 pokemon.level
+                     .addParticle(
+-                        data,
+-                        pokemon.getX() + (double)var6 + 0.2F,
+-                        pokemon.getY() + (double)var8 + 0.6,
+-                        pokemon.getZ() + (double)var7 + 0.4F,
+-                        0.0,
+-                        gravity,
+-                        0.0
++                  data, pokemon.getX() + (double)var6 + 0.2F, pokemon.getY() + (double)var8 + 0.6, pokemon.getZ() + (double)var7 + 0.4F, 0.0, gravity, 0.0
+                     );
+             }
+         } else {
+             for(int i = 0; i < 20; ++i) {
+                 pokemon.level
+                     .addParticle(
+-                        data,
+-                        pokemon.getX() + (double)var6 + 0.2F,
+-                        pokemon.getY() + 1.2F + (double)var8,
+-                        pokemon.getZ() + (double)var7 + 0.4F,
+-                        0.0,
+-                        gravity,
+-                        0.0
++                  data, pokemon.getX() + (double)var6 + 0.2F, pokemon.getY() + 1.2F + (double)var8, pokemon.getZ() + (double)var7 + 0.4F, 0.0, gravity, 0.0
+                     );
+             }
+ 
+             for(int i = 0; i < 20; ++i) {
+                 pokemon.level
+                     .addParticle(
+-                        data,
+-                        pokemon.getX() + (double)var62 + 0.2F,
+-                        pokemon.getY() + 1.2F + (double)var82,
+-                        pokemon.getZ() + (double)var72 - 0.6F,
+-                        0.0,
+-                        gravity,
+-                        0.0
++                  data, pokemon.getX() + (double)var62 + 0.2F, pokemon.getY() + 1.2F + (double)var82, pokemon.getZ() + (double)var72 - 0.6F, 0.0, gravity, 0.0
+                     );
+             }
+         }

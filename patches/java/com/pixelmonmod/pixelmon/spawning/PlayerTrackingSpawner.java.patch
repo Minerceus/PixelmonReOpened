@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/spawning/PlayerTrackingSpawner.java
++++ b/com/pixelmonmod/pixelmon/spawning/PlayerTrackingSpawner.java
+@@ -105,8 +105,7 @@
+                     }
+                 }
+ 
+-                if (action.spawnInfo.stringLocationTypes != null && action.spawnInfo.stringLocationTypes.contains("Air")
+-                    || pixelmon.getForm() != null && matches) {
++            if (action.spawnInfo.stringLocationTypes != null && action.spawnInfo.stringLocationTypes.contains("Air") || pixelmon.getForm() != null && matches) {
+                     int playerFlyingPokes = this.spawnedTracker.countAllFlyingPoke();
+                     long maxFlying = (long)PixelmonConfigProxy.getSpawning().getWildSpawning().getMaximumSpawnedPokemon();
+                     long playerSpawnerCount = PixelmonSpawning.coordinator.spawners.stream().filter(it -> it instanceof PlayerTrackingSpawner).count();

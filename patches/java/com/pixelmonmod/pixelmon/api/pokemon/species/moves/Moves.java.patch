@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/species/moves/Moves.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/species/moves/Moves.java
+@@ -246,7 +246,7 @@
+     }
+ 
+     public List<Pair<Integer, ImmutableAttack>> getFormatLevelMoves() {
+-        List<Pair<Integer, ImmutableAttack>> check = new ArrayList();
++      List<Pair<Integer, ImmutableAttack>> check = new ArrayList<>();
+ 
+         for(Entry<Integer, Set<ImmutableAttack>> entry : this.levelUpMoves.entrySet()) {
+             Integer lv = entry.getKey();

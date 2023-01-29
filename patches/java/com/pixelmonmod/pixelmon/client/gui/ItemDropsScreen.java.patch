@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/ItemDropsScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/ItemDropsScreen.java
+@@ -122,9 +122,7 @@
+         if (this.drops.hasCustomTitle) {
+             this.s = this.drops.customTitle.getString();
+         } else if (this.drops.mode == ItemDropMode.Boss) {
+-            this.s = I18n.get(
+-                "gui.guiItemDrops.beatBossPixelmon1", new Object[]{ClientProxy.battleManager.displayedEnemyPokemon[0].species.getLocalizedName()}
+-            );
++         this.s = I18n.get("gui.guiItemDrops.beatBossPixelmon1", new Object[]{ClientProxy.battleManager.displayedEnemyPokemon[0].species.getLocalizedName()});
+         } else if (this.drops.mode == ItemDropMode.NormalTrainer) {
+             this.s = I18n.get("gui.guiItemDrops.beatTrainer1", new Object[0]);
+         }

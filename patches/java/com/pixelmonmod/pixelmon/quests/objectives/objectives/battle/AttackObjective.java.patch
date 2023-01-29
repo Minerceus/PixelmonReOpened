@@ -1,0 +1,35 @@
+--- a/com/pixelmonmod/pixelmon/quests/objectives/objectives/battle/AttackObjective.java
++++ b/com/pixelmonmod/pixelmon/quests/objectives/objectives/battle/AttackObjective.java
+@@ -48,20 +48,7 @@
+             new QuestElementArgument("type", true, false, ArgumentType.TYPE, Element.getTypeNames(true)),
+             new QuestElementArgument("category", true, false, ArgumentType.TEXT, "Physical", "Special", "Status"),
+             new QuestElementArgument(
+-                "result",
+-                true,
+-                false,
+-                ArgumentType.TEXT,
+-                "proceed",
+-                "hit",
+-                "ignore",
+-                "killed",
+-                "succeeded",
+-                "charging",
+-                "unable",
+-                "failed",
+-                "missed",
+-                "notarget"
++            "result", true, false, ArgumentType.TEXT, "proceed", "hit", "ignore", "killed", "succeeded", "charging", "unable", "failed", "missed", "notarget"
+             ),
+             new QuestElementArgument("damage", true, false, ArgumentType.WHOLE_NUMBER),
+             new QuestElementArgument("full_damage", true, false, ArgumentType.WHOLE_NUMBER),
+@@ -105,9 +92,7 @@
+         Boolean soundBased = arguments.value(8, progress);
+         PokemonSpecification userSpec = arguments.value(9, progress);
+         PokemonSpecification targetSpec = arguments.value(10, progress);
+-        ImmutableAttack[] parsedAttacks = Arrays.stream(attacks)
+-            .map(s -> AttackRegistry.getAttackBase(s).orElse(null))
+-            .toArray(x$0 -> new ImmutableAttack[x$0]);
++      ImmutableAttack[] parsedAttacks = Arrays.stream(attacks).map(s -> AttackRegistry.getAttackBase(s).orElse(null)).toArray(x$0 -> new ImmutableAttack[x$0]);
+         if (soundBased != null && soundBased != attack.isSoundBased()) {
+             return false;
+         } else if (category != null && attack.getAttackCategory() != category) {

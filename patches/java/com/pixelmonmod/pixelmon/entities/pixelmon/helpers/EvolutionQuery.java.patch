@@ -1,0 +1,47 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/helpers/EvolutionQuery.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/helpers/EvolutionQuery.java
+@@ -291,29 +291,21 @@
+         if (!this.pixelmon.getForm().getMoves().getMovesAtLevel(level).isEmpty()) {
+             List<ImmutableAttack> newAttacks = this.pixelmon.getForm().getMoves().getMovesAtLevel(level);
+             Moveset moveset = this.pixelmon.getPokemon().getMoveset();
+-            newAttacks.stream()
+-                .filter(a -> !moveset.hasAttack(a))
+-                .forEach(
+-                    a -> {
++         newAttacks.stream().filter(a -> !moveset.hasAttack(a)).forEach(a -> {
+                         if (moveset.size() >= 4) {
+                             LearnMoveController.sendLearnMove(this.player, this.pixelmon.getUUID(), a);
+                         } else {
+                             moveset.add(a.ofMutable());
+                             this.pixelmon.update(new EnumUpdateType[]{EnumUpdateType.Moveset});
+                             if (BattleRegistry.getBattle((Player)this.pixelmon.getOwner()) != null) {
+-                                ChatHandler.sendBattleMessage(
+-                                    this.pixelmon.getOwner(), "pixelmon.stats.learnedmove", this.pixelmon.getNickname(), a.getTranslatedName()
+-                                );
++                  ChatHandler.sendBattleMessage(this.pixelmon.getOwner(), "pixelmon.stats.learnedmove", this.pixelmon.getNickname(), a.getTranslatedName());
+                             } else {
+-                                ChatHandler.sendChat(
+-                                    this.pixelmon.getOwner(), "pixelmon.stats.learnedmove", this.pixelmon.getNickname(), a.getTranslatedName()
+-                                );
++                  ChatHandler.sendChat(this.pixelmon.getOwner(), "pixelmon.stats.learnedmove", this.pixelmon.getNickname(), a.getTranslatedName());
+                             }
+                         }
++         });
+                     }
+-                );
+         }
+-    }
+ 
+     public void checkForEvolutionMoves() {
+         if (this.evolution.moves != null && !this.evolution.moves.isEmpty()) {
+@@ -353,9 +345,7 @@
+                                 this.pixelmon.getOwner(), "pixelmon.stats.learnedmove", this.pixelmon.getNickname(), a.getMove().getTranslatedName()
+                             );
+                         } else {
+-                            ChatHandler.sendChat(
+-                                this.pixelmon.getOwner(), "pixelmon.stats.learnedmove", this.pixelmon.getNickname(), a.getMove().getTranslatedName()
+-                            );
++                     ChatHandler.sendChat(this.pixelmon.getOwner(), "pixelmon.stats.learnedmove", this.pixelmon.getNickname(), a.getMove().getTranslatedName());
+                         }
+                     }
+                 }

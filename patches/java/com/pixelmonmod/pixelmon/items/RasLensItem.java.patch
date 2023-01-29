@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/items/RasLensItem.java
++++ b/com/pixelmonmod/pixelmon/items/RasLensItem.java
+@@ -58,9 +58,7 @@
+                 } else {
+                     pixelmon.exposeInfo((ServerPlayer)player);
+                     player.level.playSound(null, player.getX(), player.getY() + 1.0, player.getZ(), sound, SoundSource.PLAYERS, 1.0F, 1.0F);
+-                    player.sendMessage(
+-                        new TranslatableComponent("item.pixelmon.lens.used", new Object[]{pixelmon.getPokemon().getTranslatedName()}), Util.NIL_UUID
+-                    );
++               player.sendMessage(new TranslatableComponent("item.pixelmon.lens.used", new Object[]{pixelmon.getPokemon().getTranslatedName()}), Util.NIL_UUID);
+                     return InteractionResult.SUCCESS;
+                 }
+             }

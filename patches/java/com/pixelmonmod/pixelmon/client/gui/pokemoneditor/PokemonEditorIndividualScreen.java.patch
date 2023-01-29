@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/pokemoneditor/PokemonEditorIndividualScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/pokemoneditor/PokemonEditorIndividualScreen.java
+@@ -47,7 +47,7 @@
+         this.pokeBall = this.p.getBall().getBallItem();
+         this.pokeBallText.setValue(this.p.getBall());
+         this.pokeBallText.setResponder(s -> {
+-            PokeBall ball = PokeBallRegistry.getPokeBall(s.toLowerCase(Locale.ROOT).replace(" ", "_").replace("\u00e9", "e")).orElse((PokeBall)null);
++         PokeBall ball = PokeBallRegistry.getPokeBall(s.toLowerCase(Locale.ROOT).replace(" ", "_").replace("é", "e")).orElse((PokeBall)null);
+             if (ball != null && !this.pokeBallText.getTranslatableValue().is(ball)) {
+                 this.pokeBallText.setValue(ball);
+                 this.updatePokeBall();

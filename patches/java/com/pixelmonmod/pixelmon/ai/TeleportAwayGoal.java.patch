@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/ai/TeleportAwayGoal.java
++++ b/com/pixelmonmod/pixelmon/ai/TeleportAwayGoal.java
+@@ -70,8 +70,7 @@
+             double doubleRandZ = currentZPos
+                 + (pixelmon.getZ() - currentZPos) * bounding
+                 + (rand.nextDouble() - 0.5) * pixelmon.getForm().getDimensions().getLength() * 2.0;
+-            pixelmon.level
+-                .addParticle(ParticleTypes.PORTAL, doubleRandX, doubleRandY, doubleRandZ, (double)floatRandX, (double)floatRandY, (double)floatRandZ);
++         pixelmon.level.addParticle(ParticleTypes.PORTAL, doubleRandX, doubleRandY, doubleRandZ, (double)floatRandX, (double)floatRandY, (double)floatRandZ);
+         }
+ 
+         pixelmon.level.playSound(null, currentXPos, currentYPos, currentZPos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.NEUTRAL, 1.0F, 1.0F);

@@ -1,0 +1,28 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/ability/abilities/custom/Revenant.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/ability/abilities/custom/Revenant.java
+@@ -47,7 +47,7 @@
+             () -> PixelmonItems.power_herb
+         }
+     );
+-    private static final Map<Element, Revenant.AttackPool> ATTACK_POOLS = ImmutableMap.builder()
++   private static final Map<Element, Revenant.AttackPool> ATTACK_POOLS = ImmutableMap.<Element, Revenant.AttackPool>builder()
+         .put(
+             Element.DRAGON,
+             Revenant.AttackPool.of(
+@@ -336,11 +336,11 @@
+         Moveset moveset = pw.getMoveset();
+         Tuple<Optional<ImmutableAttack>, Optional<ImmutableAttack>> moves12 = ATTACK_POOLS.get(types.get(0)).getTwoAttacks();
+         Tuple<Optional<ImmutableAttack>, Optional<ImmutableAttack>> moves34 = ATTACK_POOLS.get(types.get(1)).getTwoAttacks();
+-        ((Optional)moves12.getA()).ifPresent(attack -> moveset.set(0, attack.ofMutable()));
+-        ((Optional)moves12.getB()).ifPresent(attack -> moveset.set(1, attack.ofMutable()));
+-        ((Optional)moves34.getA()).ifPresent(attack -> moveset.set(2, attack.ofMutable()));
+-        ((Optional)moves34.getB()).ifPresent(attack -> moveset.set(3, attack.ofMutable()));
+-        pw.setHeldItem((HeldItem)RandomHelper.getRandomElementFromCollection(ITEM_POOL).get());
++      moves12.getA().ifPresent(attack -> moveset.set(0, attack.ofMutable()));
++      moves12.getB().ifPresent(attack -> moveset.set(1, attack.ofMutable()));
++      moves34.getA().ifPresent(attack -> moveset.set(2, attack.ofMutable()));
++      moves34.getB().ifPresent(attack -> moveset.set(3, attack.ofMutable()));
++      pw.setHeldItem(RandomHelper.getRandomElementFromCollection(ITEM_POOL).get());
+         pw.setTempType(types);
+     }
+ 

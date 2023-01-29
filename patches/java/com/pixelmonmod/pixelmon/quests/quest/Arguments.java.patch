@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/quests/quest/Arguments.java
++++ b/com/pixelmonmod/pixelmon/quests/quest/Arguments.java
+@@ -46,7 +46,7 @@
+ 
+     public int quantity(int index, QuestProgress progress) {
+         Argument<?> argument = this.get(index);
+-        return argument.isPresent(progress) ? argument.value(progress) : 1;
++      return argument.isPresent(progress) ? (int) argument.value(progress) : 1;
+     }
+ 
+     public int size() {

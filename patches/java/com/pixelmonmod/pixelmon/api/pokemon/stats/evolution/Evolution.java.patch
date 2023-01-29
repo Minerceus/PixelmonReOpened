@@ -1,0 +1,25 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/stats/evolution/Evolution.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/stats/evolution/Evolution.java
+@@ -12,10 +12,9 @@
+ import com.pixelmonmod.pixelmon.comm.ChatHandler;
+ import com.pixelmonmod.pixelmon.comm.EnumUpdateType;
+ import com.pixelmonmod.pixelmon.entities.pixelmon.PixelmonEntity;
+-import java.util.ArrayList;
+-import java.util.Arrays;
+-import java.util.HashMap;
+-import java.util.List;
++
++import java.util.*;
++
+ import net.minecraft.server.level.ServerPlayer;
+ import net.minecraft.world.item.ItemStack;
+ 
+@@ -89,7 +88,7 @@
+ 
+     public <T extends EvoCondition> List<T> getConditionsOfType(Class<T> clazz) {
+         if (this.conditions == null) {
+-            return Arrays.asList((T[])());
++         return Collections.emptyList(); // Reforged why?
+         } else {
+             List<T> list = new ArrayList<>();
+ 

@@ -1,0 +1,18 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/pokechecker/PokeCheckerScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/pokechecker/PokeCheckerScreen.java
+@@ -79,14 +79,7 @@
+         this.addButton(new PokeCheckerTabsScreen(3, 0, this.width / 2 + 107, this.height / 2 + 80, 17, 15, "", this::actionPerformed));
+         this.addButton(
+             new PokeCheckerTabsScreen(
+-                0,
+-                1,
+-                this.width / 2 - 34 - 89 - 4,
+-                this.height / 2 + 80,
+-                89,
+-                15,
+-                I18n.get("gui.screenpokechecker.summary", new Object[0]),
+-                this::actionPerformed
++            0, 1, this.width / 2 - 34 - 89 - 4, this.height / 2 + 80, 89, 15, I18n.get("gui.screenpokechecker.summary", new Object[0]), this::actionPerformed
+             )
+         );
+         this.addButton(

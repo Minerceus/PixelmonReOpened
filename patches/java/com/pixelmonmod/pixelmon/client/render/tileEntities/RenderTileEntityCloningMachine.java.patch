@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/render/tileEntities/RenderTileEntityCloningMachine.java
++++ b/com/pixelmonmod/pixelmon/client/render/tileEntities/RenderTileEntityCloningMachine.java
+@@ -135,9 +135,7 @@
+                 machine.pixelmon.setLevel(machine.getLevel());
+                 matrix.mulPose(QuaternionHelper.fromEuler((float)rotation, 0.0F, 1.0F, 0.0F));
+                 matrix.scale(
+-                    0.0F + (float)machine.pokemonProgress / 200.0F,
+-                    0.0F + (float)machine.pokemonProgress / 200.0F,
+-                    0.0F + (float)machine.pokemonProgress / 200.0F
++               0.0F + (float)machine.pokemonProgress / 200.0F, 0.0F + (float)machine.pokemonProgress / 200.0F, 0.0F + (float)machine.pokemonProgress / 200.0F
+                 );
+                 PixelmonRendering.renderEntity(matrix, machine.pixelmon, false, partialTicks);
+                 matrix.popPose();

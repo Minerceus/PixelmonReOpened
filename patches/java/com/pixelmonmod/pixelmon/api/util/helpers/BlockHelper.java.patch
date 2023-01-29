@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/api/util/helpers/BlockHelper.java
++++ b/com/pixelmonmod/pixelmon/api/util/helpers/BlockHelper.java
+@@ -68,8 +68,8 @@
+                     for(Entry<BlockPos, BlockEntity> entry : chunk.getBlockEntities().entrySet()) {
+                         if (tileEntity.isAssignableFrom(((BlockEntity)entry.getValue()).getClass())
+                             && getDistance(entity, (BlockPos)entry.getKey()) <= range
+-                            && predicate.test((BlockEntity)entry.getValue())) {
+-                            map.put(entry.getKey(), (BlockEntity)entry.getValue());
++                     && predicate.test((T) entry.getValue())) {
++                     map.put(entry.getKey(), (T) entry.getValue());
+                         }
+                     }
+                 }

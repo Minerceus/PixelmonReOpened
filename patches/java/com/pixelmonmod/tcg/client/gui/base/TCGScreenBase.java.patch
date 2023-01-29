@@ -1,0 +1,32 @@
+--- a/com/pixelmonmod/tcg/client/gui/base/TCGScreenBase.java
++++ b/com/pixelmonmod/tcg/client/gui/base/TCGScreenBase.java
+@@ -24,7 +24,7 @@
+ public abstract class TCGScreenBase extends Screen implements ContainerEventHandler {
+     public boolean visible = true;
+     private int buttonPressed = -1;
+-    protected List<EditBox> textFieldList = new ArrayList();
++   protected List<EditBox> textFieldList = new ArrayList<>();
+ 
+     public TCGScreenBase() {
+         super(TextComponent.EMPTY);
+@@ -153,8 +153,7 @@
+                                 matrix,
+                                 Lists.newArrayList(
+                                     new Component[]{
+-                                        new TranslatableComponent(attacks[i].getData().getName()).withStyle(ChatFormatting.BOLD),
+-                                        attacks[i].getLocalizedDescription()
++                              new TranslatableComponent(attacks[i].getData().getName()).withStyle(ChatFormatting.BOLD), attacks[i].getLocalizedDescription()
+                                     }
+                                 ),
+                                 mouseX,
+@@ -203,9 +202,7 @@
+             int k1 = 1347420415;
+             int l1 = (k1 & 16711422) >> 1 | k1 & 0xFF000000;
+             ScreenHelper.drawGradientRect(matrix, startX - 4, startY - 3 + 1, 300.0F, startX - 4 + 1, startY + popupHeight + 3 - 1, k1, l1);
+-            ScreenHelper.drawGradientRect(
+-                matrix, startX + popupWidth + 2, startY - 3 + 1, 300.0F, startX + popupWidth + 3, startY + popupHeight + 3 - 1, k1, l1
+-            );
++         ScreenHelper.drawGradientRect(matrix, startX + popupWidth + 2, startY - 3 + 1, 300.0F, startX + popupWidth + 3, startY + popupHeight + 3 - 1, k1, l1);
+             ScreenHelper.drawGradientRect(matrix, startX - 4, startY - 3, 300.0F, startX + popupWidth + 3, startY - 3 + 1, k1, k1);
+             ScreenHelper.drawGradientRect(matrix, startX - 4, startY + popupHeight + 2, 300.0F, startX + popupWidth + 3, startY + popupHeight + 3, l1, l1);
+ 

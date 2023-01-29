@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/ReloadMoveAnimations.java
++++ b/com/pixelmonmod/pixelmon/command/impl/ReloadMoveAnimations.java
+@@ -41,9 +41,7 @@
+                     } else {
+                         ImmutableAttack existing = AttackRegistry.getAttackBase(immutableAttack.getAttackName()).get();
+                         existing.animations = immutableAttack.animations;
+-                        PixelmonCommandUtils.sendMessage(
+-                            sender, ChatFormatting.DARK_GREEN, "Reloaded animations for move: " + immutableAttack.getTranslatedName()
+-                        );
++                  PixelmonCommandUtils.sendMessage(sender, ChatFormatting.DARK_GREEN, "Reloaded animations for move: " + immutableAttack.getTranslatedName());
+                     }
+                 } catch (Exception var7) {
+                     PixelmonCommandUtils.sendMessage(sender, "There was a problem in the JSON");

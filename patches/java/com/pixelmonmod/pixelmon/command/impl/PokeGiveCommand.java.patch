@@ -1,0 +1,27 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/PokeGiveCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/PokeGiveCommand.java
+@@ -38,8 +38,9 @@
+         if (args.length >= 1) {
+             args = PixelmonCommandUtils.setupCommandTargets(this, sender, args, 0);
+             GameProfile profile;
+-            if (PixelmonSpecies.has(args[0].toLowerCase(Locale.ROOT))
+-                && ServerLifecycleHooks.getCurrentServer().getPlayerList().getPlayerByName(args[0]) == null) {
++         if (PixelmonSpecies.has(args[0].toLowerCase(Locale.ROOT)) && ServerLifecycleHooks.getCurrentServer().getPlayerList().getPlayerByName(args[0]) == null
++            )
++          {
+                 profile = PixelmonCommandUtils.requireEntityPlayer(sender).getGameProfile();
+             } else {
+                 profile = PixelmonCommandUtils.findProfile(args[0]);
+@@ -77,11 +78,7 @@
+                     pps.playerPokedex.set(preEvent.getPokemon(), preEvent.getNewStatus());
+                     pps.playerPokedex.update();
+                     Pixelmon.EVENT_BUS
+-                        .post(
+-                            new PokedexEvent.Post(
+-                                player.getUUID(), preEvent.getOldStatus(), preEvent.getPokemon(), preEvent.getNewStatus(), preEvent.getCause()
+-                            )
+-                        );
++                  .post(new PokedexEvent.Post(player.getUUID(), preEvent.getOldStatus(), preEvent.getPokemon(), preEvent.getNewStatus(), preEvent.getCause()));
+                 }
+             }
+ 

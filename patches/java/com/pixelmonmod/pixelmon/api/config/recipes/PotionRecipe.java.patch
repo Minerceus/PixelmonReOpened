@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/api/config/recipes/PotionRecipe.java
++++ b/com/pixelmonmod/pixelmon/api/config/recipes/PotionRecipe.java
+@@ -42,11 +42,7 @@
+                     return new ItemStack(PixelmonItems.super_potion);
+                 } else {
+                     return input.getItem() != PixelmonItems.super_potion
+-                            || berry != BerryType.FIGY
+-                                && berry != BerryType.WIKI
+-                                && berry != BerryType.MAGO
+-                                && berry != BerryType.IAPAPA
+-                                && berry != BerryType.AGUAV
++                     || berry != BerryType.FIGY && berry != BerryType.WIKI && berry != BerryType.MAGO && berry != BerryType.IAPAPA && berry != BerryType.AGUAV
+                         ? ItemStack.EMPTY
+                         : new ItemStack(PixelmonItems.hyper_potion);
+                 }

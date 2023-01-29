@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/items/PixelmonBoatItem.java
++++ b/com/pixelmonmod/pixelmon/items/PixelmonBoatItem.java
+@@ -37,9 +37,7 @@
+         } else {
+             Vec3 vector3d = p_77659_2_.getViewVector(1.0F);
+             double d0 = 5.0;
+-            List<Entity> list = p_77659_1_.getEntities(
+-                p_77659_2_, p_77659_2_.getBoundingBox().expandTowards(vector3d.scale(5.0)).inflate(1.0), ENTITY_PREDICATE
+-            );
++         List<Entity> list = p_77659_1_.getEntities(p_77659_2_, p_77659_2_.getBoundingBox().expandTowards(vector3d.scale(5.0)).inflate(1.0), ENTITY_PREDICATE);
+             if (!list.isEmpty()) {
+                 Vec3 vector3d1 = p_77659_2_.getEyePosition(1.0F);
+ 

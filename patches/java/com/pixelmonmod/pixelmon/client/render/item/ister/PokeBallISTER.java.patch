@@ -1,0 +1,33 @@
+--- a/com/pixelmonmod/pixelmon/client/render/item/ister/PokeBallISTER.java
++++ b/com/pixelmonmod/pixelmon/client/render/item/ister/PokeBallISTER.java
+@@ -29,9 +29,7 @@
+                 return;
+             }
+ 
+-            PokeBallPart.getPokeBall(stack)
+-                .ifPresent(
+-                    pokeball -> {
++         PokeBallPart.getPokeBall(stack).ifPresent(pokeball -> {
+                         matrix.pushPose();
+                         RenderSystem.enableBlend();
+                         RenderSystem.blendFunc(770, 771);
+@@ -58,8 +56,7 @@
+                             matrix.scale(0.006F, 0.006F, 0.006F);
+                             VertexConsumer verts = buffer.getBuffer(PixelmonRendering.getSMDRenderType(pokeball.getModelTexture()));
+                             ((ModelPokeballs)pokeball.getModelHolder().getModel()).getTheModel().animate();
+-                            ((ModelPokeballs)pokeball.getModelHolder().getModel())
+-                                .renderToBuffer(matrix, verts, combinedLight, combinedOverlay, 1.0F, 1.0F, 1.0F, 1.0F);
++               ((ModelPokeballs)pokeball.getModelHolder().getModel()).renderToBuffer(matrix, verts, combinedLight, combinedOverlay, 1.0F, 1.0F, 1.0F, 1.0F);
+                             matrix.popPose();
+                         } else {
+                             Minecraft mc = Minecraft.getInstance();
+@@ -70,8 +67,7 @@
+                             ir.renderModelLists(model, stack, combinedLight, combinedOverlay, matrix, ivertexbuilder);
+                             matrix.popPose();
+                         }
++         });
+                     }
+-                );
+         }
+     }
+-}

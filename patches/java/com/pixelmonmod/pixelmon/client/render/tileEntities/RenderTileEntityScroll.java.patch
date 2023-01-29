@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/client/render/tileEntities/RenderTileEntityScroll.java
++++ b/com/pixelmonmod/pixelmon/client/render/tileEntities/RenderTileEntityScroll.java
+@@ -67,8 +67,7 @@
+                 matrix.scale(8.0F, 8.0F, 8.0F);
+                 this.model
+                     .renderToBuffer(matrix, buffer.getBuffer(RenderType.entitySolid(resourcelocation)), combinedLight, combinedOverlay, 1.0F, 1.0F, 1.0F, 1.0F);
+-                this.model
+-                    .renderBase(matrix, buffer.getBuffer(RenderType.entitySolid(ModelScroll.base)), combinedLight, combinedOverlay, 1.0F, 1.0F, 1.0F, 1.0F);
++            this.model.renderBase(matrix, buffer.getBuffer(RenderType.entitySolid(ModelScroll.base)), combinedLight, combinedOverlay, 1.0F, 1.0F, 1.0F, 1.0F);
+                 matrix.popPose();
+             }
+ 

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/old_gui/choosePokemon/ChoosePokemon.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/old_gui/choosePokemon/ChoosePokemon.java
+@@ -274,9 +274,7 @@
+                 );
+                 drawString(matrix, this.minecraft.font, (int)pData.health + "/" + pData.maxHealth, width / 2 + 75, height - 180 + i * 30, 16777215);
+                 drawString(matrix, this.minecraft.font, pData.getDisplayName(), width / 2 + 5, height - 190 + i * 30, 16777215);
+-                drawString(
+-                    matrix, this.minecraft.font, I18n.get("gui.overlay1v1.lv", new Object[0]) + pData.level, width / 2 + 5, height - 176 + i * 30, 16777215
+-                );
++            drawString(matrix, this.minecraft.font, I18n.get("gui.overlay1v1.lv", new Object[0]) + pData.level, width / 2 + 5, height - 176 + i * 30, 16777215);
+                 float[] texturePair = pData.getStatusTexturePos();
+                 if (texturePair[0] != -1.0F) {
+                     ScreenHelper.bindTexture(Resources.status);

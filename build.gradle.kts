@@ -44,7 +44,7 @@ dependencies {
     implementation("com.github.Vatuu:discord-rpc:1.6.2")
     implementation("io.leangen.geantyref:geantyref:1.3.13")
     implementation("org.yaml:snakeyaml:1.33")
-    implementation("org.spongepowered:configurate-yaml:4.0.0")
+    implementation("org.spongepowered:configurate-yaml:4.1.2")
 
     // FIXME: IMPORTANT. USE THIS TO REMAP YOUR PIXELMON JAR BEFORE YOU USE IT
     // modImplementation(files("SourceOnly.jar"))

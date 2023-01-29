@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/fishingLog/FishingLogMenuScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/fishingLog/FishingLogMenuScreen.java
+@@ -79,8 +79,7 @@
+                     Species species = PixelmonSpecies.fromNationalDex(id);
+                     this.buttons
+                         .put(
+-                            species,
+-                            this.addButton(new IndexedButton(species.getDex(), 0, 0, 60, 46, new TextComponent(species.toString()), this::actionPerformed))
++                     species, this.addButton(new IndexedButton(species.getDex(), 0, 0, 60, 46, new TextComponent(species.toString()), this::actionPerformed))
+                         );
+                 }
+             );

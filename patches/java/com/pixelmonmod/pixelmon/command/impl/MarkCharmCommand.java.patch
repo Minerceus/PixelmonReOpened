@@ -1,0 +1,19 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/MarkCharmCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/MarkCharmCommand.java
+@@ -33,14 +33,10 @@
+ 
+             if (newState.equals(EnumFeatureState.Active)) {
+                 PixelmonCommandUtils.sendMessage(player, "pixelmon.command.markcharm.received");
+-                PixelmonCommandUtils.notifyCommandListener(
+-                    sender, this, 0, "pixelmon.command.markcharm.notify.received", sender.getTextName(), player.getName()
+-                );
++            PixelmonCommandUtils.notifyCommandListener(sender, this, 0, "pixelmon.command.markcharm.notify.received", sender.getTextName(), player.getName());
+             } else {
+                 PixelmonCommandUtils.sendMessage(player, "pixelmon.command.markcharm.removed");
+-                PixelmonCommandUtils.notifyCommandListener(
+-                    sender, this, 0, "pixelmon.command.markcharm.notify.removed", sender.getTextName(), player.getName()
+-                );
++            PixelmonCommandUtils.notifyCommandListener(sender, this, 0, "pixelmon.command.markcharm.notify.removed", sender.getTextName(), player.getName());
+             }
+         } else {
+             sender.sendSuccess(PixelmonCommandUtils.format(ChatFormatting.RED, "pixelmon.command.general.invalid"), false);

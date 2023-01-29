@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/blocks/tileentity/ZygardeCellTileEntity.java
++++ b/com/pixelmonmod/pixelmon/blocks/tileentity/ZygardeCellTileEntity.java
+@@ -58,7 +58,7 @@
+     public void tick() {
+         if (!this.level.isClientSide) {
+             ++this.age;
+-            if (!this.isPermanent() && this.age > (ServerLifecycleHooks.getCurrentServer().isSingleplayer() ? 12000 : '\u8ca0')) {
++         if (!this.isPermanent() && this.age > (ServerLifecycleHooks.getCurrentServer().isSingleplayer() ? 12000 : '負')) {
+                 this.level.removeBlock(this.worldPosition, false);
+             }
+         }

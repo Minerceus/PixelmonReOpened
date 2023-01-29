@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/listener/RotomListener.java
++++ b/com/pixelmonmod/pixelmon/listener/RotomListener.java
+@@ -74,9 +74,7 @@
+                         if (replaceMove(pokemon, pokemon.getForm().getName(), form)) {
+                             pokemon.setForm(form);
+                         } else {
+-                            LearnMoveController.sendLearnMove(
+-                                party.getPlayer(), pokemon.getUUID(), (ImmutableAttack)((Optional)getAttackMap().get(form)).get()
+-                            );
++                     LearnMoveController.sendLearnMove(party.getPlayer(), pokemon.getUUID(), (ImmutableAttack)((Optional)getAttackMap().get(form)).get());
+                         }
+                     }
+                 }

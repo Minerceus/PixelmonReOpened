@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/species/Pokedex.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/species/Pokedex.java
+@@ -41,8 +41,7 @@
+                     Pixelmon.LOGGER.error("Null stats! " + pokemon.getName());
+                 } else {
+                     FULL_POKEDEX.put(
+-                        pokemon.getDex(),
+-                        new PokedexEntry(pokemon.getDex(), pokemon.getLocalizedName(), bs.getWeight(), (float)bs.getDimensions().getHeight())
++                  pokemon.getDex(), new PokedexEntry(pokemon.getDex(), pokemon.getLocalizedName(), bs.getWeight(), (float)bs.getDimensions().getHeight())
+                     );
+                 }
+             }

@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/util/WeightedSet.java
++++ b/com/pixelmonmod/pixelmon/api/util/WeightedSet.java
+@@ -22,7 +22,7 @@
+         WeightedSet<T> set = new WeightedSet<>();
+         if (contents.length % 2 == 0) {
+             for(int i = 0; i < contents.length; i += 2) {
+-                set.add(contents[i], (T)contents[i + 1]);
++            set.add((Integer) contents[i], (T)contents[i + 1]);
+             }
+         }
+ 

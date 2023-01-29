@@ -1,0 +1,36 @@
+--- a/com/pixelmonmod/pixelmon/blocks/tileentity/BellTileEntity.java
++++ b/com/pixelmonmod/pixelmon/blocks/tileentity/BellTileEntity.java
+@@ -125,8 +125,7 @@
+             } else if (clampedTime == 13000 && this.spawning) {
+                 ServerPlayer ownerPlayer = ServerLifecycleHooks.getCurrentServer().getPlayerList().getPlayer(this.owner);
+                 if (ownerPlayer == null
+-                    || ownerPlayer.distanceToSqr((double)this.worldPosition.getX(), (double)this.worldPosition.getY(), (double)this.worldPosition.getZ())
+-                        > 4096.0) {
++               || ownerPlayer.distanceToSqr((double)this.worldPosition.getX(), (double)this.worldPosition.getY(), (double)this.worldPosition.getZ()) > 4096.0) {
+                     this.spawning = false;
+                     this.setChanged();
+                     return;
+@@ -148,10 +147,7 @@
+                     if (ownerPlayer != null && storage.countAblePokemon() >= 1 && BattleRegistry.getBattle(ownerPlayer) == null) {
+                         PixelmonEntity startingPixelmon = storage.findOne(Pokemon::canBattle).getOrSpawnPixelmon(ownerPlayer);
+                         PixelmonEntity pixelmon = pokemon.getOrSpawnPixelmon(
+-                            this.level,
+-                            (double)this.worldPosition.getX() + 0.5,
+-                            (double)(this.worldPosition.getY() - 1),
+-                            (double)this.worldPosition.getZ() + 0.5
++                     this.level, (double)this.worldPosition.getX() + 0.5, (double)(this.worldPosition.getY() - 1), (double)this.worldPosition.getZ() + 0.5
+                         );
+                         Gen2BellEvent.SummonLegendary pre = new Gen2BellEvent.SummonLegendary.Pre(this.owner, this, pixelmon);
+                         if (Pixelmon.EVENT_BUS.post(pre)) {
+@@ -165,10 +161,7 @@
+                         Pixelmon.EVENT_BUS.post(new Gen2BellEvent.SummonLegendary.Post(ownerPlayer.getUUID(), this, pixelmon));
+                     } else {
+                         PixelmonEntity pixelmon = pokemon.getOrCreatePixelmon(
+-                            this.level,
+-                            (double)this.worldPosition.getX() + 0.5,
+-                            (double)(this.worldPosition.getY() - 1),
+-                            (double)this.worldPosition.getZ() + 0.5
++                     this.level, (double)this.worldPosition.getX() + 0.5, (double)(this.worldPosition.getY() - 1), (double)this.worldPosition.getZ() + 0.5
+                         );
+                         Gen2BellEvent.SummonLegendary pre = new Gen2BellEvent.SummonLegendary.Pre(this.owner, this, pixelmon);
+                         if (Pixelmon.EVENT_BUS.post(pre)) {

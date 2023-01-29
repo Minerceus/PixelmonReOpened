@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/export/exception/ShowdownFieldType.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/export/exception/ShowdownFieldType.java
+@@ -1,7 +1,7 @@
+ package com.pixelmonmod.pixelmon.api.pokemon.export.exception;
+ 
+ public enum ShowdownFieldType {
+-    SPECIES("Pok\u00e9mon"),
++   SPECIES("Pokémon"),
+     IVs("IVs"),
+     EVs("EVs"),
+     ATTACKS("Moves"),

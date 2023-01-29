@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/quests/objectives/objectives/entity/DialogueInjectObjective.java
++++ b/com/pixelmonmod/pixelmon/quests/objectives/objectives/entity/DialogueInjectObjective.java
+@@ -92,9 +92,7 @@
+                 Dialogue.DialogueBuilder builder = arguments.value(1, progress);
+                 builder.injectHandler(
+                     event -> data.receiveMultipleInternal(
+-                            new String[]{"NPC_RESPOND", "NPC_TALK", "NPC_SHOW", "NPC_GIVE"},
+-                            new Object[][]{{npc, event.choice.choiceID}, {npc}, {npc}, {npc}},
+-                            true
++                     new String[]{"NPC_RESPOND", "NPC_TALK", "NPC_SHOW", "NPC_GIVE"}, new Object[][]{{npc, event.choice.choiceID}, {npc}, {npc}, {npc}}, true
+                         )
+                 );
+                 builder.build().open(progress.getIdentifier(), data.getPlayer());

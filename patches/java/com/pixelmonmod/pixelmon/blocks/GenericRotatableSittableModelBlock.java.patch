@@ -1,0 +1,16 @@
+--- a/com/pixelmonmod/pixelmon/blocks/GenericRotatableSittableModelBlock.java
++++ b/com/pixelmonmod/pixelmon/blocks/GenericRotatableSittableModelBlock.java
+@@ -70,12 +70,7 @@
+             for(Entity entity : world.getEntitiesOfClass(
+                 Entity.class,
+                 new AABB(
+-                    (double)pos.getX(),
+-                    (double)(pos.getY() - 1),
+-                    (double)pos.getZ(),
+-                    (double)(pos.getX() + 1),
+-                    (double)(pos.getY() + 2),
+-                    (double)(pos.getZ() + 1)
++               (double)pos.getX(), (double)(pos.getY() - 1), (double)pos.getZ(), (double)(pos.getX() + 1), (double)(pos.getY() + 2), (double)(pos.getZ() + 1)
+                 )
+             )) {
+                 if (entity instanceof ChairMountEntity) {

@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/pixelmon/comm/packetHandlers/custom/overlays/CustomNoticePacketPacket.java
++++ b/com/pixelmonmod/pixelmon/comm/packetHandlers/custom/overlays/CustomNoticePacketPacket.java
+@@ -49,7 +49,7 @@
+     public CustomNoticePacketPacket setPokemonSprite(PokemonSpecification spec, EnumOverlayLayout layout) {
+         Preconditions.checkArgument(
+             ((PokemonSpecification)Preconditions.checkNotNull(spec, "spec")).getValue(SpeciesRequirement.class).isPresent(),
+-            "The spec doesn't specify a pok\u00e9mon."
++         "The spec doesn't specify a pokémon."
+         );
+         this.type = OverlayGraphicType.PokemonSprite;
+         this.spec = spec;
+@@ -60,7 +60,7 @@
+     public CustomNoticePacketPacket setPokemon3D(PokemonSpecification spec, EnumOverlayLayout layout) {
+         Preconditions.checkArgument(
+             ((PokemonSpecification)Preconditions.checkNotNull(spec, "spec")).getValue(SpeciesRequirement.class).isPresent(),
+-            "The spec doesn't specify a pok\u00e9mon."
++         "The spec doesn't specify a pokémon."
+         );
+         this.type = OverlayGraphicType.Pokemon3D;
+         this.spec = spec;

@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/tcg/commands/TCGEndBattleCommand.java
++++ b/com/pixelmonmod/tcg/commands/TCGEndBattleCommand.java
+@@ -34,7 +34,7 @@
+         } else {
+             ServerPlayer player = (ServerPlayer)entity;
+ 
+-            for(BlockEntity tileEntity : (List)player.getLevel()
++         for(BlockEntity tileEntity : player.getLevel()
+                 .blockEntityList
+                 .stream()
+                 .filter(te -> te instanceof BattleOwnedTileEntityController && ((BattleOwnedTileEntityController)te).getGameServer().hasPlayer(player))

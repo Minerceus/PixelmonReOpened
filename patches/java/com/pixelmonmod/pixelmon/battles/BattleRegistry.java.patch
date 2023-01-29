@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/pixelmon/battles/BattleRegistry.java
++++ b/com/pixelmonmod/pixelmon/battles/BattleRegistry.java
+@@ -39,9 +39,7 @@
+             PartyStorage party = p.getStorage();
+             if (party != null
+                 && party.findOne(
+-                        pokemon -> pokemon.getPixelmonEntity() != null
+-                                && pokemon.getPixelmonEntity().isPresent()
+-                                && pokemon.getPixelmonEntity().get().isEvolving()
++                  pokemon -> pokemon.getPixelmonEntity() != null && pokemon.getPixelmonEntity().isPresent() && pokemon.getPixelmonEntity().get().isEvolving()
+                     )
+                     != null) {
+                 return null;
+@@ -51,9 +49,7 @@
+         if (battle.participants.size() == 2) {
+             BattleParticipant bp1 = battle.participants.get(0);
+             BattleParticipant bp2 = battle.participants.get(1);
+-            if (bp1 instanceof PlayerParticipant && bp2 instanceof TrainerParticipant || bp2 instanceof PlayerParticipant && bp1 instanceof TrainerParticipant
+-                )
+-             {
++         if (bp1 instanceof PlayerParticipant && bp2 instanceof TrainerParticipant || bp2 instanceof PlayerParticipant && bp1 instanceof TrainerParticipant) {
+                 NPCEvent.StartBattle npcStartBattleEvent = new NPCEvent.StartBattle(battle.participants);
+                 Pixelmon.EVENT_BUS.post(npcStartBattleEvent);
+                 if (npcStartBattleEvent.isCanceled()) {

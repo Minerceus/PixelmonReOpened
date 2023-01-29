@@ -1,0 +1,63 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/pokemoneditor/ImportExportScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/pokemoneditor/ImportExportScreen.java
+@@ -39,29 +39,19 @@
+         super.init();
+         this.buttons.clear();
+         this.addButton(
+-            new IndexedButton(
+-                1, this.width / 2 + 100, this.height / 2 + 90, 40, 20, new TranslatableComponent("gui.pokemoneditor.save"), this::actionPerformed
+-            )
++         new IndexedButton(1, this.width / 2 + 100, this.height / 2 + 90, 40, 20, new TranslatableComponent("gui.pokemoneditor.save"), this::actionPerformed)
+         );
+         this.addButton(
+-            new IndexedButton(
+-                2, this.width / 2 + 150, this.height / 2 - 110, 40, 20, new TranslatableComponent("gui.pokemoneditor.reset"), this::actionPerformed
+-            )
++         new IndexedButton(2, this.width / 2 + 150, this.height / 2 - 110, 40, 20, new TranslatableComponent("gui.pokemoneditor.reset"), this::actionPerformed)
+         );
+         this.addButton(
+-            new IndexedButton(
+-                3, this.width / 2 + 150, this.height / 2 - 80, 40, 20, new TranslatableComponent("gui.pokemoneditor.copy"), this::actionPerformed
+-            )
++         new IndexedButton(3, this.width / 2 + 150, this.height / 2 - 80, 40, 20, new TranslatableComponent("gui.pokemoneditor.copy"), this::actionPerformed)
+         );
+         this.addButton(
+-            new IndexedButton(
+-                4, this.width / 2 + 150, this.height / 2 - 50, 40, 20, new TranslatableComponent("gui.pokemoneditor.paste"), this::actionPerformed
+-            )
++         new IndexedButton(4, this.width / 2 + 150, this.height / 2 - 50, 40, 20, new TranslatableComponent("gui.pokemoneditor.paste"), this::actionPerformed)
+         );
+         this.addButton(
+-            new IndexedButton(
+-                5, this.width / 2 + 150, this.height / 2 + 90, 40, 20, new TranslatableComponent("gui.pokemoneditor.cancel"), this::actionPerformed
+-            )
++         new IndexedButton(5, this.width / 2 + 150, this.height / 2 + 90, 40, 20, new TranslatableComponent("gui.pokemoneditor.cancel"), this::actionPerformed)
+         );
+         this.importText = new TextFieldMultipleLine(3, this.width / 2 - 80, this.height / 2 - 65, 160, 180);
+         this.children.add(this.importText);
+@@ -98,11 +88,7 @@
+         this.minecraft
+             .font
+             .draw(
+-                matrix,
+-                this.titleText,
+-                (float)this.width / 2.0F - (float)this.minecraft.font.width(this.titleText) / 2.0F,
+-                (float)this.height / 2.0F - 90.0F,
+-                0
++            matrix, this.titleText, (float)this.width / 2.0F - (float)this.minecraft.font.width(this.titleText) / 2.0F, (float)this.height / 2.0F - 90.0F, 0
+             );
+         ScreenHelper.drawCenteredString(
+             matrix, I18n.get("gui.pokemoneditor.importexport", new Object[0]), (float)this.width / 2.0F, (float)this.height / 2.0F - 75.0F, 0
+@@ -110,11 +96,7 @@
+         if (this.errorTextTimer > 0) {
+             --this.errorTextTimer;
+             ScreenHelper.drawCenteredString(
+-                matrix,
+-                I18n.get("gui.pokemoneditor.errorimport", new Object[0]),
+-                (float)this.width / 2.0F + 145.0F,
+-                (float)this.height / 2.0F + 65.0F,
+-                16711680
++            matrix, I18n.get("gui.pokemoneditor.errorimport", new Object[0]), (float)this.width / 2.0F + 145.0F, (float)this.height / 2.0F + 65.0F, 16711680
+             );
+             ScreenHelper.drawCenteredString(matrix, this.errorText, (float)this.width / 2.0F + 145.0F, (float)this.height / 2.0F + 75.0F, 16711680);
+         }

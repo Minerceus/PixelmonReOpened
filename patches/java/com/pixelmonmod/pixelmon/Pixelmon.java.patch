@@ -1,0 +1,83 @@
+--- a/com/pixelmonmod/pixelmon/Pixelmon.java
++++ b/com/pixelmonmod/pixelmon/Pixelmon.java
+@@ -96,7 +96,6 @@
+     public static boolean logPackets = false;
+ 
+     public Pixelmon() {
+-        fixLifecycle();
+         instance = this;
+         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+         bus.addListener(Pixelmon::init);
+@@ -127,34 +126,12 @@
+         Class<WorldGenRegistration> worldGenRegistrationClass = WorldGenRegistration.class;
+     }
+ 
+-    private static void fixLifecycle() {
+-        try {
+-            Field STABLE = Lifecycle.class.getDeclaredField("STABLE");
+-            Field EXPERIMENTAL = Lifecycle.class.getDeclaredField("EXPERIMENTAL");
+-            STABLE.setAccessible(true);
+-            EXPERIMENTAL.setAccessible(true);
+-            ReflectionHelper.flipVariableFinality(EXPERIMENTAL, () -> {
+-                try {
+-                    EXPERIMENTAL.set(null, STABLE.get(null));
+-                    LOGGER.info("Patched lifecycle fields.");
+-                } catch (Exception var3) {
+-                    LOGGER.error("Failed to set lifecycle fields!");
+-                    var3.printStackTrace();
+-                }
+-            });
+-        } catch (Exception var2) {
+-            LOGGER.error("Failed to patch lifecycle fields!");
+-            var2.printStackTrace();
+-        }
+-    }
+-
+     @SubscribeEvent
+     public static void init(FMLCommonSetupEvent event) {
+         LOGGER.info("Loading Pixelmon version 9.1.1");
+ 
+         try {
+-            Method method = NetworkRegistry.class
+-                .getDeclaredMethod("createInstance", ResourceLocation.class, Supplier.class, Predicate.class, Predicate.class);
++         Method method = NetworkRegistry.class.getDeclaredMethod("createInstance", ResourceLocation.class, Supplier.class, Predicate.class, Predicate.class);
+             method.setAccessible(true);
+             network = new SimpleChannel(
+                 (NetworkInstance)method.invoke(
+@@ -165,7 +142,7 @@
+                                 && !serverVersion.equalsIgnoreCase(NetworkRegistry.ACCEPTVANILLA)
+                             ? "9.1.1".equals(serverVersion)
+                             : true,
+-                    "9.1.1"::equals
++                    (Predicate<String>) "9.1.1"::equals
+                 )
+             );
+         } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException var5) {
+@@ -221,8 +198,7 @@
+ 
+     private static void networkReflection() {
+         try {
+-            Method method = NetworkRegistry.class
+-                .getDeclaredMethod("createInstance", ResourceLocation.class, Supplier.class, Predicate.class, Predicate.class);
++         Method method = NetworkRegistry.class.getDeclaredMethod("createInstance", ResourceLocation.class, Supplier.class, Predicate.class, Predicate.class);
+             method.setAccessible(true);
+             network = new SimpleChannel(
+                 (NetworkInstance)method.invoke(
+@@ -233,7 +209,7 @@
+                                 && !serverVersion.equalsIgnoreCase(NetworkRegistry.ACCEPTVANILLA)
+                             ? "9.1.1".equals(serverVersion)
+                             : true,
+-                    "9.1.1"::equals
++                    (Predicate<String>)"9.1.1"::equals
+                 )
+             );
+         } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException var1) {
+@@ -292,7 +268,7 @@
+     }
+ 
+     public static String getVersion() {
+-        return "9.1.1";
++      return "Fixed Daniel's Renderer";
+     }
+ 
+     public static boolean isClient() {

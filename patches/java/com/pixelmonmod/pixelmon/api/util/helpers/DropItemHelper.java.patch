@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/api/util/helpers/DropItemHelper.java
++++ b/com/pixelmonmod/pixelmon/api/util/helpers/DropItemHelper.java
+@@ -36,9 +36,7 @@
+             }
+ 
+             if (announce) {
+-                ChatHandler.sendFormattedChat(
+-                    player, ChatFormatting.RED, "pixelmon.drops.fullinventory", new TranslatableComponent(is.getDescriptionId() + "")
+-                );
++            ChatHandler.sendFormattedChat(player, ChatFormatting.RED, "pixelmon.drops.fullinventory", new TranslatableComponent(is.getDescriptionId() + ""));
+             }
+         }
+     }

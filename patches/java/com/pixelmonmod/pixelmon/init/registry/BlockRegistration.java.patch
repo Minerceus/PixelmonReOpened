@@ -1,0 +1,260 @@
+--- a/com/pixelmonmod/pixelmon/init/registry/BlockRegistration.java
++++ b/com/pixelmonmod/pixelmon/init/registry/BlockRegistration.java
+@@ -249,20 +249,14 @@
+         "temple_pillar", CreativeModeTab.TAB_BUILDING_BLOCKS, () -> new TemplePillarBlock(Properties.of(Material.STONE).noOcclusion().strength(5.0F))
+     );
+     public static final RegistryObject<Block> TEMPLE_PILLAR_FRACTURED = registerBlock(
+-        "temple_pillar_fractured",
+-        CreativeModeTab.TAB_BUILDING_BLOCKS,
+-        () -> new TemplePillarBlock(Properties.of(Material.STONE).noOcclusion().strength(5.0F))
++      "temple_pillar_fractured", CreativeModeTab.TAB_BUILDING_BLOCKS, () -> new TemplePillarBlock(Properties.of(Material.STONE).noOcclusion().strength(5.0F))
+     );
+     public static final RegistryObject<Block> PC = registerBlockPixelmon("pc", CreativeModeTab.TAB_DECORATIONS, PCBlock::new);
+     public static final RegistryObject<Block> COOKING_POT = registerBlockPixelmon("cooking_pot", CreativeModeTab.TAB_DECORATIONS, CookingPotBlock::new);
+     public static final RegistryObject<Block> INFUSER = registerBlockPixelmon("infuser", CreativeModeTab.TAB_DECORATIONS, InfuserBlock::new);
+-    public static final RegistryObject<Block> FOSSIL_MACHINE = registerBlockPixelmon(
+-        "fossil_machine", CreativeModeTab.TAB_DECORATIONS, FossilMachineBlock::new
+-    );
++   public static final RegistryObject<Block> FOSSIL_MACHINE = registerBlockPixelmon("fossil_machine", CreativeModeTab.TAB_DECORATIONS, FossilMachineBlock::new);
+     public static final RegistryObject<Block> TRADE_MACHINE = registerBlockPixelmon("trade_machine", CreativeModeTab.TAB_DECORATIONS, TradeMachineBlock::new);
+-    public static final RegistryObject<Block> FOSSIL_CLEANER = registerBlockPixelmon(
+-        "fossil_cleaner", CreativeModeTab.TAB_DECORATIONS, FossilCleanerBlock::new
+-    );
++   public static final RegistryObject<Block> FOSSIL_CLEANER = registerBlockPixelmon("fossil_cleaner", CreativeModeTab.TAB_DECORATIONS, FossilCleanerBlock::new);
+     public static final RegistryObject<Block> CLONING_MACHINE = registerBlockPixelmon(
+         "cloning_machine", CreativeModeTab.TAB_DECORATIONS, CloningMachineBlock::new
+     );
+@@ -322,9 +316,7 @@
+     public static final RegistryObject<Block> TEMPORARY_LIGHT = registerBlockNoItem("temporary_light", TemporaryLightBlock::new);
+     public static final RegistryObject<Block> HIDDEN_CUBE = registerBlock("hidden_cube", PixelmonItemGroups.TAB_UTILITY, HiddenCubeBlock::new);
+     public static final RegistryObject<Block> HIDDEN_IRON_DOOR = registerBlock("hidden_iron_door", CreativeModeTab.TAB_REDSTONE, HiddenIronDoorBlock::new);
+-    public static final RegistryObject<Block> HIDDEN_WOODEN_DOOR = registerBlock(
+-        "hidden_wooden_door", CreativeModeTab.TAB_REDSTONE, HiddenWoodenDoorBlock::new
+-    );
++   public static final RegistryObject<Block> HIDDEN_WOODEN_DOOR = registerBlock("hidden_wooden_door", CreativeModeTab.TAB_REDSTONE, HiddenWoodenDoorBlock::new);
+     public static final RegistryObject<Block> HIDDEN_PRESSURE_PLATE = registerBlock(
+         "hidden_pressure_plate", PixelmonItemGroups.TAB_UTILITY, HiddenPressurePlateBlock::new
+     );
+@@ -462,9 +454,7 @@
+     public static final RegistryObject<Block> SILICON_BLOCK = registerBlock(
+         "silicon_block",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+-        () -> new PixelmonBlock(
+-                Properties.of(Material.STONE).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).sound(SoundType.METAL).strength(8.5F)
+-            )
++      () -> new PixelmonBlock(Properties.of(Material.STONE).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).sound(SoundType.METAL).strength(8.5F))
+     );
+     public static final RegistryObject<Block> SHINGLES = registerBlock(
+         "shingles", PixelmonItemGroups.TAB_DECORATION, () -> new PixelmonBlock(Properties.of(Material.STONE).sound(SoundType.STONE).strength(0.5F))
+@@ -655,9 +645,7 @@
+         () -> new StairBlock(((Block)ULTRA_SPACE_COBBLESTONE.get()).defaultBlockState(), Properties.copy((BlockBehaviour)ULTRA_SPACE_COBBLESTONE.get()))
+     );
+     public static final RegistryObject<Block> ULTRA_SPACE_COBBLESTONE_WALL = registerBlock(
+-        "ultra_space_cobblestone_wall",
+-        CreativeModeTab.TAB_BUILDING_BLOCKS,
+-        () -> new WallBlock(Properties.copy((BlockBehaviour)ULTRA_SPACE_COBBLESTONE.get()))
++      "ultra_space_cobblestone_wall", CreativeModeTab.TAB_BUILDING_BLOCKS, () -> new WallBlock(Properties.copy((BlockBehaviour)ULTRA_SPACE_COBBLESTONE.get()))
+     );
+     public static final RegistryObject<Block> ULTRA_SPACE_COBBLESTONE_BUTTON = registerBlock(
+         "ultra_space_cobblestone_button",
+@@ -706,11 +694,7 @@
+         "ultra_desert_cut_sandstone_slab",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+         () -> new SlabBlock(
+-                Properties.of(Material.STONE, MaterialColor.SAND)
+-                    .harvestTool(ToolType.PICKAXE)
+-                    .harvestLevel(1)
+-                    .requiresCorrectToolForDrops()
+-                    .strength(2.0F, 6.0F)
++            Properties.of(Material.STONE, MaterialColor.SAND).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(2.0F, 6.0F)
+             )
+     );
+     public static final RegistryObject<Block> ULTRA_DESERT_CHISELED_SANDSTONE = registerBlock(
+@@ -724,11 +708,7 @@
+         "ultra_desert_smooth_sandstone",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+         () -> new Block(
+-                Properties.of(Material.STONE, MaterialColor.SAND)
+-                    .harvestTool(ToolType.PICKAXE)
+-                    .harvestLevel(1)
+-                    .requiresCorrectToolForDrops()
+-                    .strength(2.0F, 6.0F)
++            Properties.of(Material.STONE, MaterialColor.SAND).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(2.0F, 6.0F)
+             )
+     );
+     public static final RegistryObject<Block> ULTRA_DESERT_SMOOTH_SANDSTONE_STAIRS = registerBlock(
+@@ -742,9 +722,7 @@
+     public static final RegistryObject<Block> ULTRA_DESERT_SMOOTH_SANDSTONE_SLAB = registerBlock(
+         "ultra_desert_smooth_sandstone_slab",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+-        () -> new SlabBlock(
+-                Properties.copy(Blocks.SMOOTH_SANDSTONE).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(1.5F)
+-            )
++      () -> new SlabBlock(Properties.copy(Blocks.SMOOTH_SANDSTONE).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(1.5F))
+     );
+     public static final RegistryObject<Block> ULTRA_DESERT_SANDSTONE_WALL = registerBlock(
+         "ultra_desert_sandstone_wall",
+@@ -789,9 +767,7 @@
+         "ultra_gingko_log",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+         () -> new LogBlock(
+-                Properties.of(
+-                        Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL
+-                    )
++            Properties.of(Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL)
+                     .strength(2.0F)
+                     .sound(SoundType.WOOD)
+             )
+@@ -846,9 +822,7 @@
+         "stripped_ultra_gingko_log",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+         () -> new RotatedPillarBlock(
+-                Properties.of(
+-                        Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL
+-                    )
++            Properties.of(Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL)
+                     .strength(2.0F)
+                     .sound(SoundType.WOOD)
+             )
+@@ -860,9 +834,7 @@
+     );
+     public static final RegistryObject<Block> ULTRA_GINGKO_SIGN = registerBlockNoItem(
+         "ultra_gingko_sign",
+-        () -> new PixelmonStandingSignBlock(
+-                Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD), PixelmonWoodType.ULTRA_GINGKO_WOOD
+-            )
++      () -> new PixelmonStandingSignBlock(Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD), PixelmonWoodType.ULTRA_GINGKO_WOOD)
+     );
+     public static final RegistryObject<Block> ULTRA_GINGKO_WALL_SIGN = registerBlockNoItem(
+         "ultra_gingko_wall_sign",
+@@ -874,9 +846,7 @@
+     public static final RegistryObject<Block> ULTRA_GINGKO_FENCE = registerBlock(
+         "ultra_gingko_fence",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+-        () -> new FenceBlock(
+-                Properties.of(Material.WOOD, ((Block)ULTRA_GINGKO_PLANKS.get()).defaultMaterialColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD)
+-            )
++      () -> new FenceBlock(Properties.of(Material.WOOD, ((Block)ULTRA_GINGKO_PLANKS.get()).defaultMaterialColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD))
+     );
+     public static final RegistryObject<Block> ULTRA_GINGKO_FENCE_GATE = registerBlock(
+         "ultra_gingko_fence_gate",
+@@ -912,9 +882,7 @@
+         "ultra_elm_log",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+         () -> new LogBlock(
+-                Properties.of(
+-                        Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL
+-                    )
++            Properties.of(Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL)
+                     .strength(2.0F)
+                     .sound(SoundType.WOOD)
+             )
+@@ -969,9 +937,7 @@
+         "stripped_ultra_elm_log",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+         () -> new RotatedPillarBlock(
+-                Properties.of(
+-                        Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL
+-                    )
++            Properties.of(Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL)
+                     .strength(2.0F)
+                     .sound(SoundType.WOOD)
+             )
+@@ -995,9 +961,7 @@
+     public static final RegistryObject<Block> ULTRA_ELM_FENCE = registerBlock(
+         "ultra_elm_fence",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+-        () -> new FenceBlock(
+-                Properties.of(Material.WOOD, ((Block)ULTRA_GINGKO_PLANKS.get()).defaultMaterialColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD)
+-            )
++      () -> new FenceBlock(Properties.of(Material.WOOD, ((Block)ULTRA_GINGKO_PLANKS.get()).defaultMaterialColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD))
+     );
+     public static final RegistryObject<Block> ULTRA_ELM_FENCE_GATE = registerBlock(
+         "ultra_elm_fence_gate",
+@@ -1033,9 +997,7 @@
+         "ultra_jungle_log",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+         () -> new LogBlock(
+-                Properties.of(
+-                        Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL
+-                    )
++            Properties.of(Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL)
+                     .strength(2.0F)
+                     .sound(SoundType.WOOD)
+             )
+@@ -1095,9 +1057,7 @@
+         "stripped_ultra_jungle_log",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+         () -> new RotatedPillarBlock(
+-                Properties.of(
+-                        Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL
+-                    )
++            Properties.of(Material.WOOD, p_235431_2_ -> p_235431_2_.getValue(RotatedPillarBlock.AXIS) == Axis.Y ? MaterialColor.WOOD : MaterialColor.PODZOL)
+                     .strength(2.0F)
+                     .sound(SoundType.WOOD)
+             )
+@@ -1109,9 +1069,7 @@
+     );
+     public static final RegistryObject<Block> ULTRA_JUNGLE_SIGN = registerBlockNoItem(
+         "ultra_jungle_sign",
+-        () -> new PixelmonStandingSignBlock(
+-                Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD), PixelmonWoodType.ULTRA_JUNGLE_WOOD
+-            )
++      () -> new PixelmonStandingSignBlock(Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD), PixelmonWoodType.ULTRA_JUNGLE_WOOD)
+     );
+     public static final RegistryObject<Block> ULTRA_JUNGLE_WALL_SIGN = registerBlockNoItem(
+         "ultra_jungle_wall_sign",
+@@ -1123,9 +1081,7 @@
+     public static final RegistryObject<Block> ULTRA_JUNGLE_FENCE = registerBlock(
+         "ultra_jungle_fence",
+         CreativeModeTab.TAB_BUILDING_BLOCKS,
+-        () -> new FenceBlock(
+-                Properties.of(Material.WOOD, ((Block)ULTRA_JUNGLE_PLANKS.get()).defaultMaterialColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD)
+-            )
++      () -> new FenceBlock(Properties.of(Material.WOOD, ((Block)ULTRA_JUNGLE_PLANKS.get()).defaultMaterialColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD))
+     );
+     public static final RegistryObject<Block> ULTRA_JUNGLE_FENCE_GATE = registerBlock(
+         "ultra_jungle_fence_gate",
+@@ -1422,8 +1378,7 @@
+                     registerBlockNoItem(
+                         berry.getColor().name().toLowerCase(Locale.ROOT) + "_berry_wood_wall_sign",
+                         () -> new PixelmonWallSignBlock(
+-                                Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).dropsLike(Blocks.OAK_SIGN),
+-                                berry.getWoodType()
++                        Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).dropsLike(Blocks.OAK_SIGN), berry.getWoodType()
+                             )
+                     )
+                 );
+@@ -1431,8 +1386,7 @@
+                     registerBlockNoItem(
+                         berry.getColor().name().toLowerCase(Locale.ROOT) + "_berry_wood_sign",
+                         () -> new PixelmonStandingSignBlock(
+-                                Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).dropsLike(Blocks.OAK_SIGN),
+-                                berry.getWoodType()
++                        Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).dropsLike(Blocks.OAK_SIGN), berry.getWoodType()
+                             )
+                     )
+                 );
+@@ -1475,9 +1429,7 @@
+             registerBlockPixelmon(
+                 value.name().toLowerCase(Locale.ROOT) + "_vending_machine", PixelmonItemGroups.TAB_DECORATION, () -> new VendingMachineBlock(value)
+             );
+-            registerBlockPixelmon(
+-                value.name().toLowerCase(Locale.ROOT) + "_folding_chair", PixelmonItemGroups.TAB_DECORATION, () -> new FoldingChairBlock(value)
+-            );
++         registerBlockPixelmon(value.name().toLowerCase(Locale.ROOT) + "_folding_chair", PixelmonItemGroups.TAB_DECORATION, () -> new FoldingChairBlock(value));
+             registerBlockWithCustomItem(
+                 value.name().toLowerCase(Locale.ROOT) + "_water_float",
+                 () -> new WaterFloatBlock(value),
+@@ -1550,10 +1502,8 @@
+                     registerBlock(
+                         "berry_log_" + berry.name().toLowerCase(Locale.ROOT),
+                         CreativeModeTab.TAB_BUILDING_BLOCKS,
+-                        () -> new BerryLogBlock(
+-                                Properties.of(Material.WOOD, p_235431_2_ -> MaterialColor.PODZOL).strength(2.0F).randomTicks().sound(SoundType.WOOD)
++                  () -> new BerryLogBlock(Properties.of(Material.WOOD, p_235431_2_ -> MaterialColor.PODZOL).strength(2.0F).randomTicks().sound(SoundType.WOOD))
+                             )
+-                    )
+                 );
+                 BERRY_LEAVES.add(
+                     registerBlock(

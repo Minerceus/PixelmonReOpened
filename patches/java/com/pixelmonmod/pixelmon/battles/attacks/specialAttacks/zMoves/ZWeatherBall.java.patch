@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/zMoves/ZWeatherBall.java
++++ b/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/zMoves/ZWeatherBall.java
+@@ -36,9 +36,7 @@
+             user.skipZConvert = true;
+             user.zMove = new ZMove(null, attackName, 160, Collections.emptyList(), Collections.emptyList());
+             user.bc
+-                .sendToAll(
+-                    "pixelmon.effect.zbreakneck_blitz", new TranslatableComponent("attack." + attackName.toLowerCase(Locale.ROOT).replace(" ", "_") + "")
+-                );
++            .sendToAll("pixelmon.effect.zbreakneck_blitz", new TranslatableComponent("attack." + attackName.toLowerCase(Locale.ROOT).replace(" ", "_") + ""));
+             user.attack.moveResult.damage = calledAttack.moveResult.damage;
+             user.attack.moveResult.fullDamage = calledAttack.moveResult.fullDamage;
+             user.attack.moveResult.accuracy = calledAttack.moveResult.accuracy;

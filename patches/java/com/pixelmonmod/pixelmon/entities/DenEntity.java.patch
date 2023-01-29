@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/entities/DenEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/DenEntity.java
+@@ -127,7 +127,7 @@
+     public static final DataSync<DenEntity, Float> SYNC_BEAM_WIDTH = new DataSync<>(
+         DenEntity.class, EntityDataSerializers.FLOAT, (denEntity, aFloat) -> denEntity.beamWidth = aFloat
+     );
+-    public static final DataSync<DenEntity, Rotations> SYNC_ROTATION = new DataSync(
++   public static final DataSync<DenEntity, Rotations> SYNC_ROTATION = new DataSync<>(
+         DenEntity.class, EntityDataSerializers.ROTATIONS, (denEntity, rotations) -> denEntity.rotation = rotations
+     );
+     public static final DataSync<DenEntity, RaidData> SYNC_RAID_DATA = new DataSync<>(

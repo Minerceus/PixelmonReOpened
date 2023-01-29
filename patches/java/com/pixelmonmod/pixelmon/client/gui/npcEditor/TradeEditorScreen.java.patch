@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/npcEditor/TradeEditorScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/npcEditor/TradeEditorScreen.java
+@@ -84,9 +84,7 @@
+                 .setCompletions(PixelmonSpecies.getFormattedEnglishNameSet());
+             this.exchangeName.setMaxLength(150);
+             this.exchangeName
+-                .setValue(
+-                    this.exchange.<RegistryValue<Species>>getValue(SpeciesRequirement.class).orElse(PixelmonSpecies.MISSINGNO).getValueUnsafe().getName()
+-                );
++            .setValue(this.exchange.<RegistryValue<Species>>getValue(SpeciesRequirement.class).orElse(PixelmonSpecies.MISSINGNO).getValueUnsafe().getName());
+             this.addButton(this.exchangeName);
+             this.descriptionTextBox = new EditBox(this.minecraft.font, this.width / 2 - 45, this.height / 2 + 50, 235, 15, TextComponent.EMPTY);
+             this.descriptionTextBox.setMaxLength(150);
+@@ -96,9 +94,7 @@
+ 
+             this.addButton(this.descriptionTextBox);
+             this.addButton(
+-                new IndexedButton(
+-                    0, this.width / 2 + 155, this.height / 2 + 90, 30, 20, new TranslatableComponent("gui.guiItemDrops.ok"), this::actionPerformed
+-                )
++            new IndexedButton(0, this.width / 2 + 155, this.height / 2 + 90, 30, 20, new TranslatableComponent("gui.guiItemDrops.ok"), this::actionPerformed)
+             );
+             this.addButton(
+                 new IndexedButton(

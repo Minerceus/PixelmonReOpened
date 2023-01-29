@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/pixelmon/api/util/helpers/CommandHelper.java
++++ b/com/pixelmonmod/pixelmon/api/util/helpers/CommandHelper.java
+@@ -52,9 +52,7 @@
+                 .append(TextHelper.color(ChatFormatting.BLUE, "]")),
+             getMovesetHover(pokemon.getMoveset())
+         );
+-        MutableComponent result = TextHelper.translate(
+-            pokemon.isShiny() ? ChatFormatting.GOLD : ChatFormatting.GREEN, pokemon.getSpecies().getTranslationKey()
+-        );
++      MutableComponent result = TextHelper.translate(pokemon.isShiny() ? ChatFormatting.GOLD : ChatFormatting.GREEN, pokemon.getSpecies().getTranslationKey());
+         if (boxString != null) {
+             result.append(" ").append(boxString);
+         }
+@@ -64,9 +62,7 @@
+ 
+     private static MutableComponent getStatHover(IStatStore iStatStore) {
+         return iStatStore instanceof IVStore
+-            ? TextHelper.translate(ChatFormatting.DARK_PURPLE, "pixelmon.command.pokemoninfo.ivs")
+-                .append("\n")
+-                .append(getBattleStatsFormatted(iStatStore, true))
++         ? TextHelper.translate(ChatFormatting.DARK_PURPLE, "pixelmon.command.pokemoninfo.ivs").append("\n").append(getBattleStatsFormatted(iStatStore, true))
+             : TextHelper.translate(ChatFormatting.GOLD, "pixelmon.command.pokemoninfo.evs").append("\n").append(getBattleStatsFormatted(iStatStore, false));
+     }
+ 

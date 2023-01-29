@@ -1,0 +1,10 @@
+--- a/com/pixelmonmod/pixelmon/api/config/api/yaml/data/YamlConfigStyle.java
++++ b/com/pixelmonmod/pixelmon/api/config/api/yaml/data/YamlConfigStyle.java
+@@ -1,6 +1,6 @@
+ package com.pixelmonmod.pixelmon.api.config.api.yaml.data;
+ 
+-import info.pixelmon.repack.org.spongepowered.yaml.NodeStyle;
++import org.spongepowered.configurate.yaml.NodeStyle;
+ import java.lang.annotation.ElementType;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.RetentionPolicy;

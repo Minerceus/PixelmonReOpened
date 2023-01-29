@@ -1,0 +1,94 @@
+--- a/com/pixelmonmod/pixelmon/battles/raids/RaidRandomizer.java
++++ b/com/pixelmonmod/pixelmon/battles/raids/RaidRandomizer.java
+@@ -67,11 +67,7 @@
+                 );
+                 possibleAllies.add(
+                     new RaidPokemon(
+-                        "Martin",
+-                        PixelmonSpecies.SOLROCK,
+-                        null,
+-                        "Levitate",
+-                        AttackRegistry.getAttackBases("Cosmic Power", "Rock Throw", "Psychic", "Rock Polish")
++                  "Martin", PixelmonSpecies.SOLROCK, null, "Levitate", AttackRegistry.getAttackBases("Cosmic Power", "Rock Throw", "Psychic", "Rock Polish")
+                     )
+                 );
+                 possibleAllies.add(
+@@ -104,29 +100,17 @@
+                 );
+                 possibleAllies.add(
+                     new RaidPokemon(
+-                        "Janet",
+-                        PixelmonSpecies.SNORLAX,
+-                        null,
+-                        "Immunity",
+-                        AttackRegistry.getAttackBases("Giga Impact", "Body Slam", "Crunch", "Stomping Tantrum")
++                  "Janet", PixelmonSpecies.SNORLAX, null, "Immunity", AttackRegistry.getAttackBases("Giga Impact", "Body Slam", "Crunch", "Stomping Tantrum")
+                     )
+                 );
+                 possibleAllies.add(
+                     new RaidPokemon(
+-                        "Sean",
+-                        PixelmonSpecies.TORKOAL,
+-                        null,
+-                        "Drought",
+-                        AttackRegistry.getAttackBases("Rapid Spin", "Flame Wheel", "Flamethrower", "Clear Smog")
++                  "Sean", PixelmonSpecies.TORKOAL, null, "Drought", AttackRegistry.getAttackBases("Rapid Spin", "Flame Wheel", "Flamethrower", "Clear Smog")
+                     )
+                 );
+                 possibleAllies.add(
+                     new RaidPokemon(
+-                        "Patricia",
+-                        PixelmonSpecies.WISHIWASHI,
+-                        null,
+-                        "Schooling",
+-                        AttackRegistry.getAttackBases("Liquidation", "Aqua Tail", "Whirlpool", "Brine")
++                  "Patricia", PixelmonSpecies.WISHIWASHI, null, "Schooling", AttackRegistry.getAttackBases("Liquidation", "Aqua Tail", "Whirlpool", "Brine")
+                     )
+                 );
+                 possibleAllies.add(
+@@ -140,29 +124,17 @@
+                 );
+                 possibleAllies.add(
+                     new RaidPokemon(
+-                        "Isabella",
+-                        PixelmonSpecies.MAGIKARP,
+-                        PixelmonItems.focus_sash,
+-                        "Swift Swim",
+-                        AttackRegistry.getAttackBases("Flail", "Tackle", "Hydro Pump")
++                  "Isabella", PixelmonSpecies.MAGIKARP, PixelmonItems.focus_sash, "Swift Swim", AttackRegistry.getAttackBases("Flail", "Tackle", "Hydro Pump")
+                     )
+                 );
+                 possibleAllies.add(
+                     new RaidPokemon(
+-                        "Nicki",
+-                        PixelmonSpecies.JOLTEON,
+-                        null,
+-                        "Volt Absorb",
+-                        AttackRegistry.getAttackBases("Double Kick", "Quick Attack", "Electro Ball", "Swift")
++                  "Nicki", PixelmonSpecies.JOLTEON, null, "Volt Absorb", AttackRegistry.getAttackBases("Double Kick", "Quick Attack", "Electro Ball", "Swift")
+                     )
+                 );
+                 possibleAllies.add(
+                     new RaidPokemon(
+-                        "Alfie",
+-                        PixelmonSpecies.WOBBUFFET,
+-                        null,
+-                        "Shadow Tag",
+-                        AttackRegistry.getAttackBases("Counter", "Mirror Coat", "Safeguard", "Amnesia")
++                  "Alfie", PixelmonSpecies.WOBBUFFET, null, "Shadow Tag", AttackRegistry.getAttackBases("Counter", "Mirror Coat", "Safeguard", "Amnesia")
+                     )
+                 );
+                 possibleAllies.add(
+@@ -213,11 +185,7 @@
+                 );
+                 possibleAllies.add(
+                     new RaidPokemon(
+-                            "Klara",
+-                            PixelmonSpecies.SLOWBRO,
+-                            null,
+-                            "Quick Draw",
+-                            AttackRegistry.getAttackBases("Scald", "Shell Side Arm", "Focus Blast", "Psychic")
++                     "Klara", PixelmonSpecies.SLOWBRO, null, "Quick Draw", AttackRegistry.getAttackBases("Scald", "Shell Side Arm", "Focus Blast", "Psychic")
+                         )
+                         .setForm("galarian")
+                 );

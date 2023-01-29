@@ -1,0 +1,17 @@
+--- a/com/pixelmonmod/pixelmon/entities/pokeballs/PokeBallEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/pokeballs/PokeBallEntity.java
+@@ -222,12 +222,8 @@
+             } else if (this.pausing && this.waitTimer == 0) {
+                 if (this.getAnimation() != AnimationType.BOUNCECLOSED) {
+                     EntityHelper.setMotion(this, EnumRotation.y, 0.2);
+-                    EntityHelper.setMotion(
+-                        this, EnumRotation.x, 0.2 * (double)((float)Math.cos((double)this.getInitialYaw() * Math.PI / 180.0 - (Math.PI / 2)))
+-                    );
+-                    EntityHelper.setMotion(
+-                        this, EnumRotation.z, 0.2 * (double)((float)Math.sin((double)this.getInitialYaw() * Math.PI / 180.0 - (Math.PI / 2)))
+-                    );
++               EntityHelper.setMotion(this, EnumRotation.x, 0.2 * (double)((float)Math.cos((double)this.getInitialYaw() * Math.PI / 180.0 - (Math.PI / 2))));
++               EntityHelper.setMotion(this, EnumRotation.z, 0.2 * (double)((float)Math.sin((double)this.getInitialYaw() * Math.PI / 180.0 - (Math.PI / 2))));
+                     this.setAnimation(AnimationType.BOUNCECLOSED);
+                     if (this.level.isClientSide) {
+                         this.level.playLocalSound(this.getX(), this.getY(), this.getZ(), PixelSounds.pokeballClose, SoundSource.NEUTRAL, 0.1F, 1.0F, true);

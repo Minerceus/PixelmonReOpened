@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/tcg/client/gui/TCGRuleEditorScreen.java
++++ b/com/pixelmonmod/tcg/client/gui/TCGRuleEditorScreen.java
+@@ -68,9 +68,7 @@
+ 
+         this.buttons.clear();
+         this.textFieldList.clear();
+-        this.addButton(
+-            this.doneBtn = new IndexedButton(0, this.width / 2 - 4 - 150, 210, 150, 20, new TranslatableComponent("gui.done"), this::actionPerformed)
+-        );
++      this.addButton(this.doneBtn = new IndexedButton(0, this.width / 2 - 4 - 150, 210, 150, 20, new TranslatableComponent("gui.done"), this::actionPerformed));
+         this.addButton(this.cancelBtn = new IndexedButton(1, this.width / 2 + 4, 210, 150, 20, new TranslatableComponent("gui.cancel"), this::actionPerformed));
+         this.textFieldList.add(this.deckSizeTextField = new EditBox(this.font, this.width / 2 - 150, 45, 23, 20, TextComponent.EMPTY));
+         this.deckSizeTextField.setMaxLength(32767);
+@@ -137,9 +135,7 @@
+                             if (timeLimit >= 0) {
+                                 tag.putInt("TimeLimit", timeLimit);
+                             } else {
+-                                this.minecraft
+-                                    .player
+-                                    .sendMessage(new TextComponent(ChatFormatting.RED + "Time limit has to be larger or equal to 0!"), Util.NIL_UUID);
++                        this.minecraft.player.sendMessage(new TextComponent(ChatFormatting.RED + "Time limit has to be larger or equal to 0!"), Util.NIL_UUID);
+                             }
+                         } catch (Exception var5) {
+                             this.minecraft.player.sendMessage(new TextComponent(ChatFormatting.RED + "Invalid time limit!"), Util.NIL_UUID);

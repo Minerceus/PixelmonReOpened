@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/config/StorageConfig.java
++++ b/com/pixelmonmod/pixelmon/api/config/StorageConfig.java
+@@ -2,7 +2,7 @@
+ 
+ import com.pixelmonmod.pixelmon.api.config.api.data.ConfigPath;
+ import com.pixelmonmod.pixelmon.api.config.api.yaml.AbstractYamlConfig;
+-import info.pixelmon.repack.org.spongepowered.objectmapping.ConfigSerializable;
++import org.spongepowered.configurate.objectmapping.ConfigSerializable;
+ 
+ @ConfigSerializable
+ @ConfigPath("config/pixelmon/storage.yml")

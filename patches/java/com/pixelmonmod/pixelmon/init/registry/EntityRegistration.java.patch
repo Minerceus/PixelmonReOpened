@@ -1,0 +1,149 @@
+--- a/com/pixelmonmod/pixelmon/init/registry/EntityRegistration.java
++++ b/com/pixelmonmod/pixelmon/init/registry/EntityRegistration.java
+@@ -36,47 +36,47 @@
+ public class EntityRegistration {
+     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, "pixelmon");
+     public static RegistryObject<EntityType<BikeEntity>> BIKE = ENTITIES.register(
+-        "bike", () -> Builder.of(BikeEntity::new, MobCategory.MISC).sized(1.1F, 1.5F).build("pixelmon:bike")
++      "bike", () -> Builder.<BikeEntity>of(BikeEntity::new, MobCategory.MISC).sized(1.1F, 1.5F).build("pixelmon:bike")
+     );
+     public static RegistryObject<EntityType<PixelmonPaintingEntity>> PAINTING = ENTITIES.register(
+-        "painting", () -> Builder.of(PixelmonPaintingEntity::new, MobCategory.MISC).build("pixelmon:painting")
++      "painting", () -> Builder.<PixelmonPaintingEntity>of(PixelmonPaintingEntity::new, MobCategory.MISC).build("pixelmon:painting")
+     );
+     public static RegistryObject<EntityType<NPCTrainer>> NPC_TRAINER = ENTITIES.register(
+-        "npc_trainer", () -> Builder.of(NPCTrainer::new, MobCategory.CREATURE).build("pixelmon:npc_trainer")
++      "npc_trainer", () -> Builder.<NPCTrainer>of(NPCTrainer::new, MobCategory.CREATURE).build("pixelmon:npc_trainer")
+     );
+     public static RegistryObject<EntityType<NPCTrader>> NPC_TRADER = ENTITIES.register(
+-        "npc_trader", () -> Builder.of(NPCTrader::new, MobCategory.CREATURE).build("pixelmon:npc_trader")
++      "npc_trader", () -> Builder.<NPCTrader>of(NPCTrader::new, MobCategory.CREATURE).build("pixelmon:npc_trader")
+     );
+     public static RegistryObject<EntityType<NPCChatting>> NPC_CHATTING = ENTITIES.register(
+-        "npc_chatting", () -> Builder.of(NPCChatting::new, MobCategory.CREATURE).build("pixelmon:npc_chatting")
++      "npc_chatting", () -> Builder.<NPCChatting>of(NPCChatting::new, MobCategory.CREATURE).build("pixelmon:npc_chatting")
+     );
+     public static RegistryObject<EntityType<NPCQuestGiver>> NPC_QUEST_GIVER = ENTITIES.register(
+-        "quest_giver", () -> Builder.of(NPCQuestGiver::new, MobCategory.CREATURE).build("pixelmon:quest_giver")
++      "quest_giver", () -> Builder.<NPCQuestGiver>of(NPCQuestGiver::new, MobCategory.CREATURE).build("pixelmon:quest_giver")
+     );
+     public static RegistryObject<EntityType<NPCRelearner>> NPC_RELEARNER = ENTITIES.register(
+-        "npc_relearner", () -> Builder.of(NPCRelearner::new, MobCategory.CREATURE).build("pixelmon:npc_relearner")
++      "npc_relearner", () -> Builder.<NPCRelearner>of(NPCRelearner::new, MobCategory.CREATURE).build("pixelmon:npc_relearner")
+     );
+     public static RegistryObject<EntityType<NPCTutor>> NPC_TUTOR = ENTITIES.register(
+-        "npc_tutor", () -> Builder.of(NPCTutor::new, MobCategory.CREATURE).build("pixelmon:npc_tutor")
++      "npc_tutor", () -> Builder.<NPCTutor>of(NPCTutor::new, MobCategory.CREATURE).build("pixelmon:npc_tutor")
+     );
+     public static RegistryObject<EntityType<NPCNurseJoy>> NPC_NURSE_JOY = ENTITIES.register(
+-        "npc_nursejoy", () -> Builder.of(NPCNurseJoy::new, MobCategory.CREATURE).build("pixelmon:npc_nursejoy")
++      "npc_nursejoy", () -> Builder.<NPCNurseJoy>of(NPCNurseJoy::new, MobCategory.CREATURE).build("pixelmon:npc_nursejoy")
+     );
+     public static RegistryObject<EntityType<NPCShopkeeper>> NPC_SHOPKEEPER = ENTITIES.register(
+-        "npc_shopkeeper", () -> Builder.of(NPCShopkeeper::new, MobCategory.CREATURE).build("pixelmon:npc_shopkeeper")
++      "npc_shopkeeper", () -> Builder.<NPCShopkeeper>of(NPCShopkeeper::new, MobCategory.CREATURE).build("pixelmon:npc_shopkeeper")
+     );
+     public static RegistryObject<EntityType<NPCFisherman>> NPC_FISHERMAN = ENTITIES.register(
+-        "npc_oldfisherman", () -> Builder.of(NPCFisherman::new, MobCategory.CREATURE).build("pixelmon:npc_oldfisherman")
++      "npc_oldfisherman", () -> Builder.<NPCFisherman>of(NPCFisherman::new, MobCategory.CREATURE).build("pixelmon:npc_oldfisherman")
+     );
+     public static RegistryObject<EntityType<PixelmonEntity>> PIXELMON = ENTITIES.register(
+-        "pixelmon", () -> Builder.of(PixelmonEntity::new, MobCategory.CREATURE).build("pixelmon:pixelmon")
++      "pixelmon", () -> Builder.<PixelmonEntity>of(PixelmonEntity::new, MobCategory.CREATURE).build("pixelmon:pixelmon")
+     );
+     public static RegistryObject<EntityType<StatueEntity>> STATUE = ENTITIES.register(
+-        "statue", () -> Builder.of(StatueEntity::new, MobCategory.MISC).build("pixelmon:statue")
++      "statue", () -> Builder.<StatueEntity>of(StatueEntity::new, MobCategory.MISC).build("pixelmon:statue")
+     );
+     public static RegistryObject<EntityType<EmptyPokeBallEntity>> EMPTY_POKEBALL = ENTITIES.register(
+         "empty_pokeball",
+-        () -> Builder.of(EmptyPokeBallEntity::new, MobCategory.MISC)
++      () -> Builder.<EmptyPokeBallEntity>of(EmptyPokeBallEntity::new, MobCategory.MISC)
+                 .updateInterval(1)
+                 .setUpdateInterval(1)
+                 .setShouldReceiveVelocityUpdates(true)
+@@ -87,7 +87,7 @@
+     );
+     public static RegistryObject<EntityType<OccupiedPokeBallEntity>> OCCUPIED_POKEBALL = ENTITIES.register(
+         "occupied_pokeball",
+-        () -> Builder.of(OccupiedPokeBallEntity::new, MobCategory.MISC)
++      () -> Builder.<OccupiedPokeBallEntity>of(OccupiedPokeBallEntity::new, MobCategory.MISC)
+                 .updateInterval(1)
+                 .setUpdateInterval(1)
+                 .setTrackingRange(80)
+@@ -99,53 +99,53 @@
+     );
+     public static RegistryObject<EntityType<HookEntity>> HOOK = ENTITIES.register(
+         "hook",
+-        () -> Builder.createNothing(MobCategory.MISC)
++      () -> Builder.<HookEntity>createNothing(MobCategory.MISC)
+                 .sized(0.25F, 0.25F)
+                 .noSave()
+                 .noSummon()
+                 .clientTrackingRange(4)
+                 .updateInterval(5)
+-                .setCustomClientFactory((spawnEntity, world) -> world.isClientSide ? (HookEntity)ClientFactories.HOOK_FACTORY.apply(spawnEntity, world) : null)
++            .setCustomClientFactory((spawnEntity, world) -> world.isClientSide ? ClientFactories.HOOK_FACTORY.apply(spawnEntity, world) : null)
+                 .build("pixelmon:hook")
+     );
+     public static RegistryObject<EntityType<ChairMountEntity>> CHAIR_MOUNT = ENTITIES.register(
+-        "chair_mount", () -> Builder.of(ChairMountEntity::new, MobCategory.MISC).sized(0.0F, 0.0F).build("pixelmon:chair_mount")
++      "chair_mount", () -> Builder.<ChairMountEntity>of(ChairMountEntity::new, MobCategory.MISC).sized(0.0F, 0.0F).build("pixelmon:chair_mount")
+     );
+     public static RegistryObject<EntityType<WormholeEntity>> WORMHOLE = ENTITIES.register(
+-        "ultra_wormhole", () -> Builder.of(WormholeEntity::new, MobCategory.MISC).sized(1.0F, 1.0F).build("pixelmon:ultra_wormhole")
++      "ultra_wormhole", () -> Builder.<WormholeEntity>of(WormholeEntity::new, MobCategory.MISC).sized(1.0F, 1.0F).build("pixelmon:ultra_wormhole")
+     );
+     public static RegistryObject<EntityType<CameraEntity>> CAMERA = ENTITIES.register(
+-        "camera", () -> Builder.of(CameraEntity::new, MobCategory.MISC).sized(0.0F, 0.0F).build("pixelmon:camera")
++      "camera", () -> Builder.<CameraEntity>of(CameraEntity::new, MobCategory.MISC).sized(0.0F, 0.0F).build("pixelmon:camera")
+     );
+     public static RegistryObject<EntityType<DenEntity>> DEN = ENTITIES.register(
+-        "den", () -> Builder.of(DenEntity::new, MobCategory.MISC).sized(2.25F, 0.5F).build("pixelmon:den")
++      "den", () -> Builder.<DenEntity>of(DenEntity::new, MobCategory.MISC).sized(2.25F, 0.5F).build("pixelmon:den")
+     );
+     public static RegistryObject<EntityType<PixelmonBoatEntity>> BOAT = ENTITIES.register(
+-        "boat", () -> Builder.of(PixelmonBoatEntity::new, MobCategory.MISC).sized(1.375F, 0.5625F).build("pixelmon:boat")
++      "boat", () -> Builder.<PixelmonBoatEntity>of(PixelmonBoatEntity::new, MobCategory.MISC).sized(1.375F, 0.5625F).build("pixelmon:boat")
+     );
+ 
+     @SubscribeEvent
+     public static void registerAttributes(EntityAttributeCreationEvent event) {
+-        event.put((EntityType)NPC_TRAINER.get(), NPCTrainer.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
+-        event.put((EntityType)NPC_TRADER.get(), NPCTrader.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
+-        event.put((EntityType)NPC_CHATTING.get(), NPCChatting.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
+-        event.put((EntityType)NPC_QUEST_GIVER.get(), NPCQuestGiver.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
+-        event.put((EntityType)NPC_RELEARNER.get(), NPCRelearner.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
+-        event.put((EntityType)NPC_TUTOR.get(), NPCTutor.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
+-        event.put((EntityType)NPC_NURSE_JOY.get(), NPCNurseJoy.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
+-        event.put((EntityType)NPC_SHOPKEEPER.get(), NPCShopkeeper.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
+-        event.put((EntityType)NPC_FISHERMAN.get(), NPCFisherman.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(NPC_TRAINER.get(), NPCTrainer.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(NPC_TRADER.get(), NPCTrader.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(NPC_CHATTING.get(), NPCChatting.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(NPC_QUEST_GIVER.get(), NPCQuestGiver.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(NPC_RELEARNER.get(), NPCRelearner.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(NPC_TUTOR.get(), NPCTutor.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(NPC_NURSE_JOY.get(), NPCNurseJoy.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(NPC_SHOPKEEPER.get(), NPCShopkeeper.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(NPC_FISHERMAN.get(), NPCFisherman.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
+         event.put(
+-            (EntityType)PIXELMON.get(),
++              PIXELMON.get(),
+             PixelmonEntity.createLivingAttributes()
+                 .add(Attributes.JUMP_STRENGTH)
+-                .add((Attribute)ForgeMod.SWIM_SPEED.get())
++            .add(ForgeMod.SWIM_SPEED.get())
+                 .add(Attributes.FOLLOW_RANGE, 10.0)
+                 .build()
+         );
+-        event.put((EntityType)BIKE.get(), PixelmonEntity.createLivingAttributes().add(Attributes.JUMP_STRENGTH).add(Attributes.FOLLOW_RANGE, 10.0).build());
+-        event.put((EntityType)STATUE.get(), StatueEntity.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
+-        event.put((EntityType)DEN.get(), DenEntity.createLivingAttributes().build());
+-        event.put((EntityType)CAMERA.get(), CameraEntity.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(BIKE.get(), PixelmonEntity.createLivingAttributes().add(Attributes.JUMP_STRENGTH).add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(STATUE.get(), StatueEntity.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
++      event.put(DEN.get(), DenEntity.createLivingAttributes().build());
++      event.put(CAMERA.get(), CameraEntity.createLivingAttributes().add(Attributes.FOLLOW_RANGE, 10.0).build());
+     }
+ }

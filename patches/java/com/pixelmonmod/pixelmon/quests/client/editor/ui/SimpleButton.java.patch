@@ -1,0 +1,18 @@
+--- a/com/pixelmonmod/pixelmon/quests/client/editor/ui/SimpleButton.java
++++ b/com/pixelmonmod/pixelmon/quests/client/editor/ui/SimpleButton.java
+@@ -71,13 +71,9 @@
+         if (this.image != null) {
+             Minecraft.getInstance().getTextureManager().bind(this.image);
+             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 0.8F);
+-            blit(
+-                matrix, this.x + this.bX, this.y + this.bY, 0.0F, 0.0F, this.w - this.bX * 2, this.h - this.bY * 2, this.w - this.bX * 2, this.h - this.bY * 2
+-            );
++         blit(matrix, this.x + this.bX, this.y + this.bY, 0.0F, 0.0F, this.w - this.bX * 2, this.h - this.bY * 2, this.w - this.bX * 2, this.h - this.bY * 2);
+         } else if (this.text != null) {
+-            ScreenHelper.drawCenteredString(
+-                matrix, this.text, (float)this.x + (float)this.w / 2.0F, (float)(this.y - 4) + (float)this.h / 2.0F, 16777215, true
+-            );
++         ScreenHelper.drawCenteredString(matrix, this.text, (float)this.x + (float)this.w / 2.0F, (float)(this.y - 4) + (float)this.h / 2.0F, 16777215, true);
+         }
+ 
+         RenderSystem.disableAlphaTest();

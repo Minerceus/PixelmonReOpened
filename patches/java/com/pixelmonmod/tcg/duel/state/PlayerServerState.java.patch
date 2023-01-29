@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/tcg/duel/state/PlayerServerState.java
++++ b/com/pixelmonmod/tcg/duel/state/PlayerServerState.java
+@@ -121,9 +121,7 @@
+     }
+ 
+     public boolean hasDeck() {
+-        return this.entityPlayer != null
+-            && !this.entityPlayer.getMainHandItem().isEmpty()
+-            && this.entityPlayer.getMainHandItem().getItem() instanceof DeckItem;
++      return this.entityPlayer != null && !this.entityPlayer.getMainHandItem().isEmpty() && this.entityPlayer.getMainHandItem().getItem() instanceof DeckItem;
+     }
+ 
+     public void prepareDeck() {

@@ -1,0 +1,30 @@
+--- a/com/pixelmonmod/pixelmon/quests/client/editor/QuestEditorScreen.java
++++ b/com/pixelmonmod/pixelmon/quests/client/editor/QuestEditorScreen.java
+@@ -21,7 +21,7 @@
+ import net.minecraft.network.chat.TextComponent;
+ 
+ public class QuestEditorScreen extends Screen {
+-    private List<SimpleButton> buttons = new ArrayList();
++   private List<SimpleButton> buttons = new ArrayList<>();
+     private ListQuestEditor questList;
+     private TextField newQuest;
+     private boolean canMakeQuest = false;
+@@ -111,17 +111,7 @@
+         blit(matrix, x + dispWidth / 2 + gap + 1, y, 0.0F, 0.0F, dispWidth / 2, dispHeight, (int)((float)dispWidth / 2.0F), dispHeight);
+         blit(matrix, x - gap, y, 0.0F, 0.0F, dispWidth / 2, dispHeight - newQuestGap, (int)((float)dispWidth / 2.0F), dispHeight - newQuestGap);
+         int newQuestY = y + dispHeight - newQuestGap + 7;
+-        blit(
+-            matrix,
+-            x - gap,
+-            newQuestY,
+-            0.0F,
+-            0.0F,
+-            dispWidth / 2,
+-            dispHeight - (dispHeight - newQuestGap) - 7,
+-            (int)((float)dispWidth / 2.0F),
+-            dispHeight - 30
+-        );
++      blit(matrix, x - gap, newQuestY, 0.0F, 0.0F, dispWidth / 2, dispHeight - (dispHeight - newQuestGap) - 7, (int)((float)dispWidth / 2.0F), dispHeight - 30);
+         String textA = ChatFormatting.BOLD + I18n.get("gui.questeditor.title", new Object[0]);
+         this.font.draw(matrix, textA, (float)(x - gap) + (float)dispWidth / 4.0F - (float)this.font.width(textA) / 2.0F, (float)y + 8.5F, 16777215);
+         this.questList.drawBackground(matrix);

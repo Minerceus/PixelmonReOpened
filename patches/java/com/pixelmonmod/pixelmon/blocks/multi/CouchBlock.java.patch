@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/blocks/multi/CouchBlock.java
++++ b/com/pixelmonmod/pixelmon/blocks/multi/CouchBlock.java
+@@ -98,10 +98,8 @@
+             BlockPos topFar = topMid.relative(((Direction)currentBaseState.getValue(FACING)).getClockWise());
+             BlockPos bottomMid = base.relative(((Direction)currentBaseState.getValue(FACING)).getClockWise());
+             BlockPos bottomFar = bottomMid.relative(((Direction)currentBaseState.getValue(FACING)).getClockWise());
+-            BlockState baseState = (BlockState)((BlockState)st.setValue(FACING, currentBaseState.getValue(FACING)))
+-                .setValue(MULTIPOS, MultiBlockPosition.BASE);
+-            BlockState topBaseState = (BlockState)((BlockState)st.setValue(FACING, currentBaseState.getValue(FACING)))
+-                .setValue(MULTIPOS, MultiBlockPosition.TOP);
++         BlockState baseState = (BlockState)((BlockState)st.setValue(FACING, currentBaseState.getValue(FACING))).setValue(MULTIPOS, MultiBlockPosition.BASE);
++         BlockState topBaseState = (BlockState)((BlockState)st.setValue(FACING, currentBaseState.getValue(FACING))).setValue(MULTIPOS, MultiBlockPosition.TOP);
+             BlockState topState = (BlockState)((BlockState)st.setValue(FACING, ((Direction)currentBaseState.getValue(FACING)).getClockWise()))
+                 .setValue(MULTIPOS, MultiBlockPosition.TOP);
+             BlockState bottomState = (BlockState)((BlockState)st.setValue(FACING, ((Direction)currentBaseState.getValue(FACING)).getClockWise()))

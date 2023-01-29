@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/tcg/api/config/impl/TCGConfig.java
++++ b/com/pixelmonmod/tcg/api/config/impl/TCGConfig.java
+@@ -3,7 +3,7 @@
+ import com.pixelmonmod.pixelmon.api.config.api.data.ConfigPath;
+ import com.pixelmonmod.pixelmon.api.config.api.yaml.AbstractYamlConfig;
+ import com.pixelmonmod.pixelmon.api.util.helpers.RandomHelper;
+-import info.pixelmon.repack.org.spongepowered.objectmapping.ConfigSerializable;
++import org.spongepowered.configurate.objectmapping.ConfigSerializable;
+ 
+ @ConfigSerializable
+ @ConfigPath("config/pixelmon/tcg.yml")

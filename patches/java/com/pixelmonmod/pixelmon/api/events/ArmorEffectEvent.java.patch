@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/api/events/ArmorEffectEvent.java
++++ b/com/pixelmonmod/pixelmon/api/events/ArmorEffectEvent.java
+@@ -66,9 +66,7 @@
+ 
+     @Cancelable
+     public static class Attribute extends ArmorEffectEvent {
+-        public Attribute(
+-            GenericArmor armorItem, Level world, Player player, ItemStack stack, IArmorEffect armorEffect, IItemAttributeModifier attributeModifier
+-        ) {
++      public Attribute(GenericArmor armorItem, Level world, Player player, ItemStack stack, IArmorEffect armorEffect, IItemAttributeModifier attributeModifier) {
+             super(armorItem, world, player, stack, armorEffect, attributeModifier);
+         }
+     }

@@ -1,0 +1,21 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/trainerCard/TrainerCardScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/trainerCard/TrainerCardScreen.java
+@@ -163,17 +163,7 @@
+ 
+         public void renderButton(PoseStack matrix, int mouseX, int mouseY, float partialTicks) {
+             ScreenHelper.drawImage(
+-                BUTTON,
+-                matrix,
+-                (float)this.x,
+-                (float)this.y,
+-                (float)this.width,
+-                (float)this.height,
+-                this.color.red,
+-                this.color.green,
+-                this.color.blue,
+-                1.0F,
+-                1.0F
++            BUTTON, matrix, (float)this.x, (float)this.y, (float)this.width, (float)this.height, this.color.red, this.color.green, this.color.blue, 1.0F, 1.0F
+             );
+         }
+     }

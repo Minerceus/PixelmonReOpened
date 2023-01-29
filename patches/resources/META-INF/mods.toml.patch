@@ -1,0 +1,46 @@
+--- a/META-INF/mods.toml
++++ b/META-INF/mods.toml
+@@ -87,23 +87,23 @@
+ ordering = "AFTER"
+ side = "BOTH"
+ 
+-[[mods]]
+-modId="clientresetpacket"
+-version="0.0.6"
+-displayName="Client Reset Packet"
+-displayURL="https://github.com/Just-Chaldea/Forge-Client-Reset-Packet"
+-credits="https://github.com/Just-Chaldea/Forge-Client-Reset-Packet"
+-authors="https://github.com/Just-Chaldea/Forge-Client-Reset-Packet"
+-description='''
+-Adds a reset packet to Minecraft Forge to allow Modern Forge (1.13+) support on proxies.
+-'''
+-
+-[[mods]]
+-modId="serverredirect"
+-version="1.4.4a"
+-displayName="ServerRedirect"
+-displayURL="https://github.com/KaiKikuchi/ServerRedirect"
+-authors="KaiNoMood"
+-description='''
+-This mod allows servers to redirect clients to other servers.
+-'''
++#[[mods]]
++#modId="clientresetpacket"
++#version="0.0.6"
++#displayName="Client Reset Packet"
++#displayURL="https://github.com/Just-Chaldea/Forge-Client-Reset-Packet"
++#credits="https://github.com/Just-Chaldea/Forge-Client-Reset-Packet"
++#authors="https://github.com/Just-Chaldea/Forge-Client-Reset-Packet"
++#description='''
++#Adds a reset packet to Minecraft Forge to allow Modern Forge (1.13+) support on proxies.
++#'''
++#
++#[[mods]]
++#modId="serverredirect"
++#version="1.4.4a"
++#displayName="ServerRedirect"
++#displayURL="https://github.com/KaiKikuchi/ServerRedirect"
++#authors="KaiNoMood"
++#description='''
++#This mod allows servers to redirect clients to other servers.
++#'''

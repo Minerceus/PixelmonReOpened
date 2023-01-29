@@ -1,0 +1,40 @@
+--- a/com/pixelmonmod/pixelmon/client/music/BattleMusic.java
++++ b/com/pixelmonmod/pixelmon/client/music/BattleMusic.java
+@@ -32,17 +32,7 @@
+ 
+             SoundEvent soundEvent = (SoundEvent)PixelSounds.battleMusics.get(type);
+             SimpleSoundInstance record = new BattleMusic.FixedTrackSound(
+-                soundEvent,
+-                index,
+-                SoundSource.MUSIC,
+-                PixelmonConfigProxy.getBattle().getBattleMusicVolume(),
+-                1.0F,
+-                repeat,
+-                0,
+-                Attenuation.NONE,
+-                0.0F,
+-                0.0F,
+-                0.0F
++            soundEvent, index, SoundSource.MUSIC, PixelmonConfigProxy.getBattle().getBattleMusicVolume(), 1.0F, repeat, 0, Attenuation.NONE, 0.0F, 0.0F, 0.0F
+             );
+             song = record;
+             PixelmonMusic.fadeSoundToStart(record, 2000L);
+@@ -80,16 +70,14 @@
+             float yIn,
+             float zIn
+         ) {
+-            super(
+-                soundIn.getLocation(), categoryIn, volumeIn, pitchIn, repeatIn, repeatDelayIn, attenuationTypeIn, (double)xIn, (double)yIn, (double)zIn, false
+-            );
++         super(soundIn.getLocation(), categoryIn, volumeIn, pitchIn, repeatIn, repeatDelayIn, attenuationTypeIn, (double)xIn, (double)yIn, (double)zIn, false);
+             this.index = index;
+         }
+ 
+         public WeighedSoundEvents resolve(SoundManager handler) {
+             WeighedSoundEvents accessor = super.resolve(handler);
+             if (this.index >= 0) {
+-                List<Weighted<Sound>> accessorList = (List)ObfuscationReflectionHelper.getPrivateValue(WeighedSoundEvents.class, accessor, "field_188716_a");
++            List<Weighted<Sound>> accessorList = ObfuscationReflectionHelper.getPrivateValue(WeighedSoundEvents.class, accessor, "field_188716_a");
+                 if (accessorList.size() > this.index) {
+                     this.sound = (Sound)((Weighted)accessorList.get(this.index)).getSound();
+                 }

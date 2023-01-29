@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/fishingLog/FishingLogInformationScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/fishingLog/FishingLogInformationScreen.java
+@@ -193,8 +193,7 @@
+             ScreenHelper.drawScaledCenteredSplitString(
+                 matrix,
+                 I18n.get(
+-                    "pixelmon." + this.pokemon.getSpecies().getName().toLowerCase() + ".form." + this.pokemon.getForm().getName() + ".description",
+-                    new Object[0]
++               "pixelmon." + this.pokemon.getSpecies().getName().toLowerCase() + ".form." + this.pokemon.getForm().getName() + ".description", new Object[0]
+                 ),
+                 (float)this.centerX,
+                 (float)(this.centerY + 30),

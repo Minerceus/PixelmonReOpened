@@ -1,0 +1,16 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/Reflect.java
++++ b/com/pixelmonmod/pixelmon/battles/status/Reflect.java
+@@ -10,12 +10,7 @@
+ 
+     public Reflect(int turns) {
+         super(
+-            StatusType.Reflect,
+-            BattleStatsType.DEFENSE,
+-            turns,
+-            "pixelmon.effect.reflectraised",
+-            "pixelmon.effect.alreadybarrier",
+-            "pixelmon.status.reflectoff"
++         StatusType.Reflect, BattleStatsType.DEFENSE, turns, "pixelmon.effect.reflectraised", "pixelmon.effect.alreadybarrier", "pixelmon.status.reflectoff"
+         );
+     }
+ 

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/SkyDropBase.java
++++ b/com/pixelmonmod/pixelmon/battles/status/SkyDropBase.java
+@@ -21,9 +21,7 @@
+         } else {
+             return user.attack.moveAccuracy != -2
+                 && !user.attack
+-                    .isAttack(
+-                        AttackRegistry.HURRICANE, AttackRegistry.SKY_UPPERCUT, AttackRegistry.SMACK_DOWN, AttackRegistry.THUNDER, AttackRegistry.WHIRLWIND
+-                    )
++               .isAttack(AttackRegistry.HURRICANE, AttackRegistry.SKY_UPPERCUT, AttackRegistry.SMACK_DOWN, AttackRegistry.THUNDER, AttackRegistry.WHIRLWIND)
+                 && !user.bc.simulateMode;
+         }
+     }

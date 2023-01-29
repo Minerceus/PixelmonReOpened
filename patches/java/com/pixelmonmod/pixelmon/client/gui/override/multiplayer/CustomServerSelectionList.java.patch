@@ -1,0 +1,59 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/override/multiplayer/CustomServerSelectionList.java
++++ b/com/pixelmonmod/pixelmon/client/gui/override/multiplayer/CustomServerSelectionList.java
+@@ -89,9 +89,7 @@
+         if (this.getSelected() instanceof CustomServerSelectionList.NormalEntry) {
+             NarratorChatListener.INSTANCE
+                 .sayNow(
+-                    new TranslatableComponent(
+-                            "narrator.select", new Object[]{((CustomServerSelectionList.NormalEntry)this.getSelected()).serverData.field_78847_a}
+-                        )
++               new TranslatableComponent("narrator.select", new Object[]{((CustomServerSelectionList.NormalEntry)this.getSelected()).serverData.field_78847_a})
+                         .getString()
+                 );
+         }
+@@ -328,10 +326,10 @@
+                 CustomServerSelectionList.THREAD_POOL.submit(() -> {
+                     try {
+                         this.screen.getPinger().pingServer(this.serverData, () -> this.minecraft.execute(this::updateServerList));
+-                    } catch (UnknownHostException var2) {
++               } catch (UnknownHostException var2x) {
+                         this.serverData.ping = -1L;
+                         this.serverData.motd = CustomServerSelectionList.CANT_RESOLVE_TEXT;
+-                    } catch (Exception var3) {
++               } catch (Exception var3x) {
+                         this.serverData.ping = -1L;
+                         this.serverData.motd = CustomServerSelectionList.CANT_CONNECT_TEXT;
+                     }
+@@ -381,9 +379,7 @@
+             List<FormattedCharSequence> list = this.minecraft.font.split(this.serverData.motd, p_230432_5_ - 32 - 2);
+ 
+             for(int i = 0; i < Math.min(list.size(), 2); ++i) {
+-                this.minecraft
+-                    .font
+-                    .draw(matrix, (FormattedCharSequence)list.get(i), (float)(p_230432_4_ + 32 + 3), (float)(p_230432_3_ + 12 + 9 * i), 8421504);
++            this.minecraft.font.draw(matrix, (FormattedCharSequence)list.get(i), (float)(p_230432_4_ + 32 + 3), (float)(p_230432_3_ + 12 + 9 * i), 8421504);
+             }
+ 
+             Component itextcomponent1 = (Component)(flag ? this.serverData.version.copy().withStyle(ChatFormatting.RED) : this.serverData.status);
+@@ -527,8 +523,7 @@
+ 
+                     this.minecraft.getTextureManager().register(this.iconLocation, this.icon);
+                 } catch (Throwable var3) {
+-                    CustomServerSelectionList.LOGGER
+-                        .error("Invalid icon for server {} ({})", this.serverData.field_78847_a, this.serverData.field_78845_b, var3);
++               CustomServerSelectionList.LOGGER.error("Invalid icon for server {} ({})", this.serverData.field_78847_a, this.serverData.field_78845_b, var3);
+                     return false;
+                 }
+             }
+@@ -552,10 +547,7 @@
+         private void swap(int p_228196_1_, int p_228196_2_) {
+             this.screen.getServers().swap(p_228196_1_, p_228196_2_);
+             this.screen.field_146803_h.updateOnlineServers(this.screen.getServers());
+-            CustomServerSelectionList.Entry serverselectionlist$entry = (CustomServerSelectionList.Entry)this.screen
+-                .field_146803_h
+-                .children()
+-                .get(p_228196_2_);
++         CustomServerSelectionList.Entry serverselectionlist$entry = (CustomServerSelectionList.Entry)this.screen.field_146803_h.children().get(p_228196_2_);
+             this.screen.field_146803_h.setSelected(serverselectionlist$entry);
+             CustomServerSelectionList.this.ensureVisible(serverselectionlist$entry);
+         }

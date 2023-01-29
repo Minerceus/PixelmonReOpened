@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/quests/objectives/objectives/inserters/InsertNPCObjective.java
++++ b/com/pixelmonmod/pixelmon/quests/objectives/objectives/inserters/InsertNPCObjective.java
+@@ -81,7 +81,7 @@
+                     return false;
+                 }
+ 
+-                for(Entity entity : (List)player.getLevel().getEntities().collect(Collectors.toList())) {
++            for(Entity entity : player.getLevel().getEntities().collect(Collectors.toList())) {
+                     if (entity.distanceTo(player) < (float)range && this.attemptInsertion(data, entity, progress, key, chance, player)) {
+                         return false;
+                     }

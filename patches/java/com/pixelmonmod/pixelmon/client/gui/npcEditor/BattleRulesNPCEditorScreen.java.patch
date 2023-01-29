@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/npcEditor/BattleRulesNPCEditorScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/npcEditor/BattleRulesNPCEditorScreen.java
+@@ -17,9 +17,7 @@
+     private static final int BUTTON_ID_OK = 100;
+ 
+     public BattleRulesNPCEditorScreen() {
+-        Optional<NPCTrainer> entityNPCOptional = NPCEntity.locateNPCClient(
+-            Minecraft.getInstance().level, TrainerEditorScreen.currentTrainerID, NPCTrainer.class
+-        );
++      Optional<NPCTrainer> entityNPCOptional = NPCEntity.locateNPCClient(Minecraft.getInstance().level, TrainerEditorScreen.currentTrainerID, NPCTrainer.class);
+         if (!entityNPCOptional.isPresent()) {
+             ScreenHelper.closeScreen();
+         } else {

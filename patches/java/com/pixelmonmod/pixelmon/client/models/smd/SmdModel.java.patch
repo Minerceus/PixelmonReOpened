@@ -1,0 +1,32 @@
+--- a/com/pixelmonmod/pixelmon/client/models/smd/SmdModel.java
++++ b/com/pixelmonmod/pixelmon/client/models/smd/SmdModel.java
+@@ -212,7 +212,7 @@
+                     float u = in.readFloat();
+                     float v = in.readFloat();
+                     int id = vertexCount++;
+-                    DeformVertex dv = this.getExisting(x, y, z, u, v);
++               DeformVertex dv = this.getExisting(x, y, z);
+                     if (dv == null) {
+                         faceVerts[j] = new DeformVertex(x, y, z, normX, normY, normZ, this.vertexIDBank, u, v);
+                     } else {
+@@ -284,7 +284,7 @@
+             float xn = Float.parseFloat(values[4]);
+             float yn = -Float.parseFloat(values[5]);
+             float zn = -Float.parseFloat(values[6]);
+-            DeformVertex v = this.getExisting(x, y, z, 0.0F, 0.0F);
++         DeformVertex v = this.getExisting(x, y, z);
+             if (v == null) {
+                 faceVerts[i] = new DeformVertex(x, y, z, xn, yn, zn, this.vertexIDBank, 0.0F, 0.0F);
+                 CommonHelper.ensureIndex(this.verts, this.vertexIDBank);
+@@ -306,9 +306,9 @@
+         this.faces.add(face);
+     }
+ 
+-    private DeformVertex getExisting(float x, float y, float z, float u, float v) {
++   private DeformVertex getExisting(float x, float y, float z) {
+         for(DeformVertex vertex : this.verts) {
+-            if (vertex.equals(x, y, z, u, v)) {
++         if (vertex.equals(x, y, z)) {
+                 return vertex;
+             }
+         }

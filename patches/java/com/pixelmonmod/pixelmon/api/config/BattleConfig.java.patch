@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/config/BattleConfig.java
++++ b/com/pixelmonmod/pixelmon/api/config/BattleConfig.java
+@@ -4,7 +4,7 @@
+ import com.pixelmonmod.pixelmon.api.battles.BattleAIMode;
+ import com.pixelmonmod.pixelmon.api.config.api.data.ConfigPath;
+ import com.pixelmonmod.pixelmon.api.config.api.yaml.AbstractYamlConfig;
+-import info.pixelmon.repack.org.spongepowered.objectmapping.ConfigSerializable;
++import org.spongepowered.configurate.objectmapping.ConfigSerializable;
+ import java.util.List;
+ 
+ @ConfigSerializable

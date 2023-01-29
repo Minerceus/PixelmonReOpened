@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/events/battles/ForceEndBattleEvent.java
++++ b/com/pixelmonmod/pixelmon/api/events/battles/ForceEndBattleEvent.java
+@@ -17,7 +17,7 @@
+     }
+ 
+     public ArrayList<ServerPlayer> getPlayers() {
+-        ArrayList<ServerPlayer> players = new ArrayList();
++      ArrayList<ServerPlayer> players = new ArrayList<>();
+         this.bc.participants.forEach(p -> {
+             if (p instanceof PlayerParticipant) {
+                 players.add(((PlayerParticipant)p).player);

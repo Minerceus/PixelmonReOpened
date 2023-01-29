@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/tcg/duel/state/GameClientState.java
++++ b/com/pixelmonmod/tcg/duel/state/GameClientState.java
+@@ -79,9 +79,7 @@
+     public boolean isDisablingEvolution() {
+         for(PlayerCommonState player : Arrays.asList(this.me, this.opponent)) {
+             for(PokemonCardState pokemon : player.getActiveAndBenchCards()) {
+-                if (pokemon.getAbility() != null
+-                    && pokemon.getAbility().getEffect() != null
+-                    && pokemon.getAbility().getEffect().disableEvolution(pokemon, this)) {
++            if (pokemon.getAbility() != null && pokemon.getAbility().getEffect() != null && pokemon.getAbility().getEffect().disableEvolution(pokemon, this)) {
+                     return true;
+                 }
+ 

@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/entities/npcs/NPCShopkeeper.java
++++ b/com/pixelmonmod/pixelmon/entities/npcs/NPCShopkeeper.java
+@@ -252,8 +252,7 @@
+             this.init(id);
+             String loc = p.getLanguage();
+             NetworkHelper.sendPacket(
+-                new SetNPCEditDataPacket(ServerNPCRegistry.shopkeepers.getJsonName(this.npcIndex), this.getShopkeeperName(loc), this.getCustomSteveTexture()),
+-                p
++            new SetNPCEditDataPacket(ServerNPCRegistry.shopkeepers.getJsonName(this.npcIndex), this.getShopkeeperName(loc), this.getCustomSteveTexture()), p
+             );
+         }
+     }

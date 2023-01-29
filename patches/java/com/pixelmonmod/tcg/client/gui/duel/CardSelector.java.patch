@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/tcg/client/gui/duel/CardSelector.java
++++ b/com/pixelmonmod/tcg/client/gui/duel/CardSelector.java
+@@ -211,9 +211,7 @@
+                 float opacity = this.getCardOpacity(this.renderLastPos);
+                 matrix.pushPose();
+                 matrix.scale(scaleFactor, scaleFactor, scaleFactor);
+-                int cardX = (int)(
+-                    (float)(this.getScaledWidth() * 2 + this.renderLastPos * 250 - (size - 1) * 125 + this.scrollModifier) / (scaleFactor * 2.0F)
+-                );
++            int cardX = (int)((float)(this.getScaledWidth() * 2 + this.renderLastPos * 250 - (size - 1) * 125 + this.scrollModifier) / (scaleFactor * 2.0F));
+                 int cardY = (int)((float)(this.getScaledHeight() * 2) / (scaleFactor * 2.0F));
+                 float cardZ = this.isMouseInGrid ? 1.1F : 1.0F;
+                 if (this.renderLast == null) {
+@@ -424,9 +422,7 @@
+                         if (this.isSelectedAtPosition[i]) {
+                             NetworkHelper.sendToServer(
+                                 new RetreatAndSwitchPacket(
+-                                    this.controller.getBlockPos(),
+-                                    this.controller.energySelectionForRetreat,
+-                                    this.data.getCardList().get(i).getLocationSubIndex()
++                           this.controller.getBlockPos(), this.controller.energySelectionForRetreat, this.data.getCardList().get(i).getLocationSubIndex()
+                                 )
+                             );
+                         }

@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/tcg/network/packets/battles/GenericActionRequestPacket.java
++++ b/com/pixelmonmod/tcg/network/packets/battles/GenericActionRequestPacket.java
+@@ -81,7 +81,7 @@
+                 return;
+             case UseAttack:
+                 if (server.getCurrentTurn() == this.playerIndex && server.getPlayer(this.playerIndex).getEntityPlayer() == e) {
+-                    PlayerServerState player = server.getPlayer(server.getCurrentTurn());
++               player = server.getPlayer(server.getCurrentTurn());
+                     if (player.isChoosingOppAttack()) {
+                         b.requestPickAttack(this.playerIndex, this.actionIndex);
+                     } else {
+@@ -98,7 +98,7 @@
+             case Discard:
+                 if (server.getCurrentTurn() == this.playerIndex && server.getPlayer(this.playerIndex).getEntityPlayer() == e) {
+                     BoardLocation location = BoardLocation.values()[this.actionIndex];
+-                    PlayerServerState player = server.getPlayer(server.getCurrentTurn());
++               player = server.getPlayer(server.getCurrentTurn());
+                     b.discard(player, location, this.actionSubindex);
+                 }
+         }

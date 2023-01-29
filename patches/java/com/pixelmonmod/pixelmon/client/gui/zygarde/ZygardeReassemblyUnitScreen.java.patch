@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/zygarde/ZygardeReassemblyUnitScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/zygarde/ZygardeReassemblyUnitScreen.java
+@@ -172,9 +172,7 @@
+         for(int i = 0; i < this.pokemon.size(); ++i) {
+             boolean highlight = this.pokemon
+                 .get(i)
+-                .isMouseOver(
+-                    i < 3 ? this.centerW - 110 : this.centerW + 5, this.height / 4 + 20 + this.buttonOffset * (i % 3 + 1), (double)mouseX, (double)mouseY
+-                );
++            .isMouseOver(i < 3 ? this.centerW - 110 : this.centerW + 5, this.height / 4 + 20 + this.buttonOffset * (i % 3 + 1), (double)mouseX, (double)mouseY);
+             this.pokemon
+                 .get(i)
+                 .drawPokemon(

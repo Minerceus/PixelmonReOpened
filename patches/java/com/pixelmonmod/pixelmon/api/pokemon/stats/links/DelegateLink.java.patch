@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/stats/links/DelegateLink.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/stats/links/DelegateLink.java
+@@ -178,9 +178,7 @@
+         ServerPlayer owner = this.pokemon.getOwnerPlayer();
+         if (owner != null) {
+             PixelmonStatsData stats2 = PixelmonStatsData.createPacket(this);
+-            NetworkHelper.sendPacket(
+-                new LevelUpPacket(this.getPokemonUUID(), this.getPokemonLevel(), stats, stats2, new PixelmonClientData(this.pokemon)), owner
+-            );
++         NetworkHelper.sendPacket(new LevelUpPacket(this.getPokemonUUID(), this.getPokemonLevel(), stats, stats2, new PixelmonClientData(this.pokemon)), owner);
+             this.pokemon.markDirty(EnumUpdateType.Stats);
+         }
+     }

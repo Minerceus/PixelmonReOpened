@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/comm/packetHandlers/raids/OpenRaidDropsPacket.java
++++ b/com/pixelmonmod/pixelmon/comm/packetHandlers/raids/OpenRaidDropsPacket.java
+@@ -19,7 +19,7 @@
+ public class OpenRaidDropsPacket extends AbstractPixelmonPacket {
+     private boolean canCatch;
+     private RaidData raid;
+-    private ArrayList<ItemStack> drops = new ArrayList();
++   private ArrayList<ItemStack> drops = new ArrayList<>();
+ 
+     public OpenRaidDropsPacket() {
+         super(PacketDirection.PLAY_CLIENT, true);

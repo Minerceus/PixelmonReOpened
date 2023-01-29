@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/ability/abilities/PrimordialSea.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/ability/abilities/PrimordialSea.java
+@@ -17,8 +17,7 @@
+     }
+ 
+     private void checkForRemoval(PixelmonWrapper pokemon) {
+-        if (pokemon.bc.globalStatusController.getWeatherIgnoreAbility() instanceof Rainy
+-            && pokemon.bc.globalStatusController.getWeatherIgnoreAbility().extreme) {
++      if (pokemon.bc.globalStatusController.getWeatherIgnoreAbility() instanceof Rainy && pokemon.bc.globalStatusController.getWeatherIgnoreAbility().extreme) {
+             for(PixelmonWrapper pw : pokemon.bc.getActivePokemon()) {
+                 if (pw != pokemon && pw.getBattleAbility() instanceof PrimordialSea) {
+                     return;

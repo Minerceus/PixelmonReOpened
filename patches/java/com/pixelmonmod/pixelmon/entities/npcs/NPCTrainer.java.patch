@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/entities/npcs/NPCTrainer.java
++++ b/com/pixelmonmod/pixelmon/entities/npcs/NPCTrainer.java
+@@ -805,7 +805,7 @@
+             }
+         } else if (nbt.contains("Winnings")) {
+             int[] testArray = nbt.getIntArray("Winnings");
+-            ArrayList<Item> array = new ArrayList();
++         ArrayList<Item> array = new ArrayList<>();
+ 
+             for(int aTestArray : testArray) {
+                 array.add(Item.byId(aTestArray));

@@ -1,0 +1,30 @@
+--- a/com/pixelmonmod/pixelmon/quests/client/editor/ui/ListQuestLang.java
++++ b/com/pixelmonmod/pixelmon/quests/client/editor/ui/ListQuestLang.java
+@@ -51,14 +51,7 @@
+             float barMult = 9.0F / ((float)this.lines.size() - 8.0F);
+             float barHeight = (float)this.lineHeight * barMult;
+             float barPos = barHeight * (float)this.startLine;
+-            fill(
+-                matrix,
+-                this.xPos + this.width,
+-                this.yPos + 3 + (int)barPos,
+-                this.xPos + this.width + 6,
+-                this.yPos + 3 + (int)barPos + (int)barHeight,
+-                -6710887
+-            );
++         fill(matrix, this.xPos + this.width, this.yPos + 3 + (int)barPos, this.xPos + this.width + 6, this.yPos + 3 + (int)barPos + (int)barHeight, -6710887);
+             fill(matrix, this.xPos + this.width, this.yPos + 1, this.xPos + this.width + 6, this.yPos + 3, -7829368);
+             fill(matrix, this.xPos + this.width, this.yPos + 1 + bottomMarker, this.xPos + this.width + 6, this.yPos + 3 + bottomMarker, -7829368);
+         }
+@@ -112,10 +105,7 @@
+     }
+ 
+     public String mouseClicked(double mouseX, double mouseY, int mouseButton, int offsetY) {
+-        if (mouseX > (double)this.xPos
+-            && mouseX < (double)(this.xPos + this.width)
+-            && mouseY > (double)this.yPos
+-            && mouseY < (double)(this.yPos + this.height)) {
++      if (mouseX > (double)this.xPos && mouseX < (double)(this.xPos + this.width) && mouseY > (double)this.yPos && mouseY < (double)(this.yPos + this.height)) {
+             mouseY += 8.0;
+             int theLine = (int)((mouseY - (double)offsetY) / (double)this.lineHeight);
+             int index = theLine + this.startLine;

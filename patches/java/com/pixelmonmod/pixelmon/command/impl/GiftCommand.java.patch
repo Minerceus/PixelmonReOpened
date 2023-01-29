@@ -1,0 +1,35 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/GiftCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/GiftCommand.java
+@@ -42,9 +42,7 @@
+             sender.sendFailure(PixelmonCommandUtils.format(ChatFormatting.RED, "pixelmon.command.general.playercommand"));
+         } else {
+             ServerPlayer self = PixelmonCommandUtils.requireEntityPlayer(sender);
+-            PlayerPartyStorage selfStorage = PixelmonCommandUtils.require(
+-                PixelmonCommandUtils.getPlayerStorage(self), "pixelmon.command.general.invalidplayer"
+-            );
++         PlayerPartyStorage selfStorage = PixelmonCommandUtils.require(PixelmonCommandUtils.getPlayerStorage(self), "pixelmon.command.general.invalidplayer");
+             if (self.getName().getString().equals(args[0])) {
+                 sender.sendFailure(PixelmonCommandUtils.format(ChatFormatting.RED, "pixelmon.command.gift.toself"));
+             } else {
+@@ -70,19 +68,13 @@
+                             targetStorage.add(pokemon);
+                             target.sendMessage(
+                                 PixelmonCommandUtils.format(
+-                                    ChatFormatting.GREEN,
+-                                    "pixelmon.command.gift.received",
+-                                    self.getName().getString(),
+-                                    pokemon.getTranslatedName().getString()
++                           ChatFormatting.GREEN, "pixelmon.command.gift.received", self.getName().getString(), pokemon.getTranslatedName().getString()
+                                 ),
+                                 Util.NIL_UUID
+                             );
+                             sender.sendSuccess(
+                                 PixelmonCommandUtils.format(
+-                                    ChatFormatting.GREEN,
+-                                    "pixelmon.command.gift.gifted",
+-                                    target.getName().getString(),
+-                                    pokemon.getTranslatedName().getString()
++                           ChatFormatting.GREEN, "pixelmon.command.gift.gifted", target.getName().getString(), pokemon.getTranslatedName().getString()
+                                 ),
+                                 false
+                             );

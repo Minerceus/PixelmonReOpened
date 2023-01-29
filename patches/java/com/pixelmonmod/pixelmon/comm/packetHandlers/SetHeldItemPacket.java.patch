@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/comm/packetHandlers/SetHeldItemPacket.java
++++ b/com/pixelmonmod/pixelmon/comm/packetHandlers/SetHeldItemPacket.java
+@@ -73,7 +73,7 @@
+         } else if (BattleRegistry.getBattle(player) == null) {
+             Inventory inventory = player.inventory;
+             Pokemon pokemon = storage.get(this.position);
+-            Preconditions.checkArgument(pokemon != null, "The pok\u00e9mon cannot be null since we've already validated it");
++         Preconditions.checkArgument(pokemon != null, "The pokémon cannot be null since we've already validated it");
+             ItemStack newHeldItem = ItemStack.EMPTY;
+             ItemStack currentItem = inventory.getCarried().copy();
+             ItemStack giveItem = null;

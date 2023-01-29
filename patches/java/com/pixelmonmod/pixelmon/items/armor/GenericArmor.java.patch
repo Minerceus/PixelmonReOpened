@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/items/armor/GenericArmor.java
++++ b/com/pixelmonmod/pixelmon/items/armor/GenericArmor.java
+@@ -67,11 +67,7 @@
+ 
+     @Nullable
+     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+-        return "pixelmon:textures/models/armor/"
+-            + this.modifyArmorName(stack.getItem().toString())
+-            + "_layer_"
+-            + (slot == EquipmentSlot.LEGS ? 2 : 1)
+-            + ".png";
++      return "pixelmon:textures/models/armor/" + this.modifyArmorName(stack.getItem().toString()) + "_layer_" + (slot == EquipmentSlot.LEGS ? 2 : 1) + ".png";
+     }
+ 
+     private String modifyArmorName(String itemName) {

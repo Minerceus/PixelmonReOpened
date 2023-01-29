@@ -1,0 +1,14 @@
+--- a/com/pixelmonmod/pixelmon/client/listener/WallpapersListener.java
++++ b/com/pixelmonmod/pixelmon/client/listener/WallpapersListener.java
+@@ -65,10 +65,7 @@
+                     }
+                 } catch (JsonParseException var11) {
+                     Pixelmon.LOGGER
+-                        .error(
+-                            String.format("There was a problem trying to read 'wallpapers.json' from the resource pack '%s'.", resource.getSourceName()),
+-                            var11
+-                        );
++                  .error(String.format("There was a problem trying to read 'wallpapers.json' from the resource pack '%s'.", resource.getSourceName()), var11);
+                 }
+             }
+         } catch (IOException var12) {

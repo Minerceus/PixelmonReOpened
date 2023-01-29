@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/quests/CompleteAllQuestsCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/quests/CompleteAllQuestsCommand.java
+@@ -40,8 +40,7 @@
+         }
+ 
+         sender.sendSuccess(
+-            new TranslatableComponent("pixelmon.command.completeallquests.notify", new Object[]{sender.getTextName(), player.getDisplayName().getString()}),
+-            true
++         new TranslatableComponent("pixelmon.command.completeallquests.notify", new Object[]{sender.getTextName(), player.getDisplayName().getString()}), true
+         );
+         PixelmonCommandUtils.sendMessage(sender, "pixelmon.command.completeallquests", player.getDisplayName().getString());
+     }

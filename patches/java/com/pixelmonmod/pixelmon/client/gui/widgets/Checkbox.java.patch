@@ -1,0 +1,25 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/widgets/Checkbox.java
++++ b/com/pixelmonmod/pixelmon/client/gui/widgets/Checkbox.java
+@@ -40,21 +40,7 @@
+         );
+         if (this.selected()) {
+             ScreenHelper.drawImageQuad(
+-                TEXTURE,
+-                matrix,
+-                (float)this.x,
+-                (float)this.y,
+-                (float)this.width,
+-                (float)this.height,
+-                0.0F,
+-                0.0F,
+-                1.0F,
+-                1.0F,
+-                1.0F,
+-                1.0F,
+-                1.0F,
+-                1.0F,
+-                partialTicks
++            TEXTURE, matrix, (float)this.x, (float)this.y, (float)this.width, (float)this.height, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, partialTicks
+             );
+         }
+     }

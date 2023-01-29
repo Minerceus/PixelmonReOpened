@@ -1,0 +1,17 @@
+--- a/com/pixelmonmod/pixelmon/entities/npcs/registry/DropItemRegistry.java
++++ b/com/pixelmonmod/pixelmon/entities/npcs/registry/DropItemRegistry.java
+@@ -38,10 +38,10 @@
+ import net.minecraftforge.registries.ForgeRegistries;
+ 
+ public class DropItemRegistry {
+-    public static ArrayList<ItemStack> tier1 = new ArrayList();
+-    public static ArrayList<ItemStack> tier2 = new ArrayList();
+-    public static ArrayList<ItemStack> tier3 = new ArrayList();
+-    public static ArrayList<ItemStack> ultraSpace = new ArrayList();
++   public static ArrayList<ItemStack> tier1 = new ArrayList<>();
++   public static ArrayList<ItemStack> tier2 = new ArrayList<>();
++   public static ArrayList<ItemStack> tier3 = new ArrayList<>();
++   public static ArrayList<ItemStack> ultraSpace = new ArrayList<>();
+     public static Map<Species, Set<PokemonDropInformation>> pokemonDrops = new HashMap<>();
+     public static HashMap<Integer, HashMap<Element, WeightedItemStacks>> raidDrops = new HashMap<>();
+ 

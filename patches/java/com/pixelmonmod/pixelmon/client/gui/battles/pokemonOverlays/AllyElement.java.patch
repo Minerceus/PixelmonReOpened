@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/pokemonOverlays/AllyElement.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/pokemonOverlays/AllyElement.java
+@@ -108,9 +108,7 @@
+         );
+         ScreenHelper.drawScaledStringRightAligned(matrix, "Lv." + this.ally.level, (float)(this.x + 114), (float)this.y + 15.0F, -986896, false, 12.0F);
+         if (PixelmonConfigProxy.getGraphics().isAdvancedBattleInformation()) {
+-            ScreenHelper.drawScaledString(
+-                matrix, (int)this.ally.health + "/" + this.ally.maxHealth, (float)(this.x + 15), (float)this.y + 29.0F, -986896, 11.0F
+-            );
++         ScreenHelper.drawScaledString(matrix, (int)this.ally.health + "/" + this.ally.maxHealth, (float)(this.x + 15), (float)this.y + 29.0F, -986896, 11.0F);
+         }
+ 
+         if (this.ally.status != -1 && StatusType.getEffect(this.ally.status) != null) {

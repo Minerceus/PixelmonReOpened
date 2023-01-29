@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/interactions/InteractionMaxSoup.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/interactions/InteractionMaxSoup.java
+@@ -20,15 +20,11 @@
+         if (player instanceof ServerPlayer && entityPixelmon.getOwner() == player && itemstack.getItem() instanceof MaxSoupItem) {
+             Pokemon pokemon = entityPixelmon.getPokemon();
+             if (pokemon.hasGigantamaxFactor()) {
+-                player.sendMessage(
+-                    new TranslatableComponent("pixelmon.interaction.maxsoup.alreadyhas", new Object[]{entityPixelmon.getNickname()}), Util.NIL_UUID
+-                );
++            player.sendMessage(new TranslatableComponent("pixelmon.interaction.maxsoup.alreadyhas", new Object[]{entityPixelmon.getNickname()}), Util.NIL_UUID);
+             } else if (pokemon.getForm().getGigantamax().canHaveFactor()) {
+                 if (!Pixelmon.EVENT_BUS.post(new MaxSoupEvent((ServerPlayer)player, entityPixelmon))) {
+                     pokemon.setGigantamaxFactor(true);
+-                    player.sendMessage(
+-                        new TranslatableComponent("pixelmon.interaction.maxsoup.success", new Object[]{entityPixelmon.getNickname()}), Util.NIL_UUID
+-                    );
++               player.sendMessage(new TranslatableComponent("pixelmon.interaction.maxsoup.success", new Object[]{entityPixelmon.getNickname()}), Util.NIL_UUID);
+                     if (!player.isCreative()) {
+                         player.getItemInHand(hand).shrink(1);
+                         ItemStack bowl = new ItemStack(Items.BOWL);

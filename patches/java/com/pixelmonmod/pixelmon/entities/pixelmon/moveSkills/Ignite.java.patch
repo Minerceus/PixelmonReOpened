@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Ignite.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Ignite.java
+@@ -70,7 +70,7 @@
+                     int initPosX = pos.getX();
+                     int initPosY = pos.getY();
+                     int initPosZ = pos.getZ();
+-                    ArrayList<Vec3> targets = new ArrayList();
++               ArrayList<Vec3> targets = new ArrayList<>();
+                     if (!cross) {
+                         for(int x = 0; x < width; ++x) {
+                             int posX = x + initPosX;

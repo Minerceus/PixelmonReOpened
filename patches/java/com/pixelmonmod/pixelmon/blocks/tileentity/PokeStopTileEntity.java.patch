@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/blocks/tileentity/PokeStopTileEntity.java
++++ b/com/pixelmonmod/pixelmon/blocks/tileentity/PokeStopTileEntity.java
+@@ -126,8 +126,7 @@
+         LootClaim claim = this.getLootClaim(playerID);
+         if (claim != null) {
+             if (!this.oneTimeUse) {
+-                return (System.currentTimeMillis() - claim.getTimeClaimed()) / 1000L
+-                    > (long)PixelmonConfigProxy.getSpawning().getPokeStop().getLootTime() * 3600L;
++            return (System.currentTimeMillis() - claim.getTimeClaimed()) / 1000L > (long)PixelmonConfigProxy.getSpawning().getPokeStop().getLootTime() * 3600L;
+             } else {
+                 return false;
+             }

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/api/events/raids/RaidDropsEvent.java
++++ b/com/pixelmonmod/pixelmon/api/events/raids/RaidDropsEvent.java
+@@ -15,9 +15,7 @@
+     private ArrayList<ItemStack> drops;
+     private boolean canCatch;
+ 
+-    public RaidDropsEvent(
+-        RaidData raid, RaidData.RaidPlayer player, RaidGovernor governor, Pokemon possibleCatch, ArrayList<ItemStack> drops, boolean canCatch
+-    ) {
++   public RaidDropsEvent(RaidData raid, RaidData.RaidPlayer player, RaidGovernor governor, Pokemon possibleCatch, ArrayList<ItemStack> drops, boolean canCatch) {
+         this.raid = raid;
+         this.player = player;
+         this.governor = governor;

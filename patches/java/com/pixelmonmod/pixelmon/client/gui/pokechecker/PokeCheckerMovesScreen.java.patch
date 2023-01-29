@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/pokechecker/PokeCheckerMovesScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/pokechecker/PokeCheckerMovesScreen.java
+@@ -186,11 +186,7 @@
+             this.move3 = true;
+         }
+ 
+-        if (this.pokemon.getMoveset().size() > 3
+-                && i > this.width / 2 - 31
+-                && i < this.width / 2 + 123
+-                && i1 > this.height / 2 - 32
+-                && i1 < this.height / 2 - 9
++      if (this.pokemon.getMoveset().size() > 3 && i > this.width / 2 - 31 && i < this.width / 2 + 123 && i1 > this.height / 2 - 32 && i1 < this.height / 2 - 9
+             || this.move4) {
+             this.blit(matrix, 58, 50, 1, 231, 153, 24);
+             this.resetAll();

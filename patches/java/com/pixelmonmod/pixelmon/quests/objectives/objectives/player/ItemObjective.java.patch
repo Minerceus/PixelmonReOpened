@@ -1,0 +1,43 @@
+--- a/com/pixelmonmod/pixelmon/quests/objectives/objectives/player/ItemObjective.java
++++ b/com/pixelmonmod/pixelmon/quests/objectives/objectives/player/ItemObjective.java
+@@ -17,6 +17,8 @@
+ import com.pixelmonmod.pixelmon.quests.quest.Stage;
+ import com.pixelmonmod.pixelmon.storage.playerData.QuestData;
+ import java.util.List;
++import java.util.Set;
++
+ import net.minecraft.nbt.CompoundTag;
+ import net.minecraft.nbt.Tag;
+ import net.minecraft.nbt.TagParser;
+@@ -72,7 +74,7 @@
+             Argument.from(args.get(4), s -> {
+                 try {
+                     return TagParser.parseTag(s);
+-                } catch (Exception var2) {
++            } catch (Exception var2x) {
+                     return new CompoundTag();
+                 }
+             }, new CompoundTag())
+@@ -88,7 +90,7 @@
+             String name = arguments.value(3, progress);
+             CompoundTag nbt = arguments.value(4, progress);
+ 
+-            for(ItemStack stack : (List)context.get(0)) {
++         for(ItemStack stack : (Set<ItemStack>) context.get(0)) {
+                 if (!stack.isEmpty() && compare(stack, item, count, damage, name, nbt)) {
+                     return this.seekMatch;
+                 }
+@@ -97,12 +99,7 @@
+             return !this.seekMatch;
+         } else {
+             return compare(
+-                context.get(0),
+-                arguments.value(0, progress),
+-                1,
+-                arguments.<Integer>value(2, progress),
+-                arguments.value(3, progress),
+-                arguments.value(4, progress)
++            context.get(0), arguments.value(0, progress), 1, arguments.<Integer>value(2, progress), arguments.value(3, progress), arguments.value(4, progress)
+             );
+         }
+     }

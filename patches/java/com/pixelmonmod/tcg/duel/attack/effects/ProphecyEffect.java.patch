@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/tcg/duel/attack/effects/ProphecyEffect.java
++++ b/com/pixelmonmod/tcg/duel/attack/effects/ProphecyEffect.java
+@@ -54,9 +54,7 @@
+                 }
+             }
+ 
+-            CardSelectorState selector = new CardSelectorState(
+-                1, 1, CardSelectorDisplay.Select, false, "trainer.pokedex.selector." + Integer.toString(skip + 1)
+-            );
++         CardSelectorState selector = new CardSelectorState(1, 1, CardSelectorDisplay.Select, false, "trainer.pokedex.selector." + Integer.toString(skip + 1));
+             selector.getCardList().addAll(top.stream().map(c -> new CardWithLocation(c, true, BoardLocation.Deck, 0)).collect(Collectors.toList()));
+             return selector;
+         }

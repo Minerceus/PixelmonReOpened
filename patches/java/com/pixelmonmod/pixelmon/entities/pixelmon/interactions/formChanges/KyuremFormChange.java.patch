@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/interactions/formChanges/KyuremFormChange.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/interactions/formChanges/KyuremFormChange.java
+@@ -52,7 +52,7 @@
+                 }
+ 
+                 if (fused == null) {
+-                    Pixelmon.LOGGER.error("Couldn't get fused Pok\u00e9mon from NBT for player: " + player.getName());
++               Pixelmon.LOGGER.error("Couldn't get fused Pokémon from NBT for player: " + player.getName());
+                 }
+             }
+ 

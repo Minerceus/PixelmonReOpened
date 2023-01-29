@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/tcg/client/gui/BattleSpectatorScreen.java
++++ b/com/pixelmonmod/tcg/client/gui/BattleSpectatorScreen.java
+@@ -157,9 +157,7 @@
+         this.minecraft.textureManager.bind(background);
+         GuiComponent.blit(matrix, this.width / 2 - 170, 0, 0.0F, 0.0F, 350, 350, 350, 350);
+         super.render(matrix, mouseX, mouseY, partialTicks);
+-        GuiComponent.drawCenteredString(
+-            matrix, this.font, ChatFormatting.BOLD + I18n.get("battleSpectator.title", new Object[0]), this.width / 2, 10, 16777215
+-        );
++      GuiComponent.drawCenteredString(matrix, this.font, ChatFormatting.BOLD + I18n.get("battleSpectator.title", new Object[0]), this.width / 2, 10, 16777215);
+         GuiComponent.drawString(matrix, this.font, I18n.get("battleSpectator.controllerLocation", new Object[0]), this.width / 2 - 150, 30, 16777215);
+         GuiComponent.drawString(matrix, this.font, I18n.get("battleSpectator.playerIndex", new Object[0]), this.width / 2 - 150, 80, 16777215);
+         if (this.foundController != null) {

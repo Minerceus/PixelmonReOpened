@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/boss/DropSet.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/boss/DropSet.java
+@@ -71,11 +71,8 @@
+         buf.writeDouble(this.chance);
+         buf.writeInt(this.quantity);
+         buf.writeInt(this.drops.size());
+-
+-        for(DropSet.Drop drop : this.drops) {
+-            drop.toBuffer(buf);
++      drops.stream().forEach(drop -> drop.toBuffer(buf));
+         }
+-    }
+ 
+     public static class Drop {
+         private final int weight;

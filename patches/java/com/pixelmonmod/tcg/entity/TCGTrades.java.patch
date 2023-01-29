@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/tcg/entity/TCGTrades.java
++++ b/com/pixelmonmod/tcg/entity/TCGTrades.java
+@@ -53,7 +53,7 @@
+             }
+         }
+ 
+-        TCG_TRADER_TRADES = toIntMap(ImmutableMap.builder().put(1, trades.toArray(new ItemListing[0])).build());
++      TCG_TRADER_TRADES = toIntMap(ImmutableMap.<Integer, ItemListing[]>builder().put(1, trades.toArray(new ItemListing[0])).build());
+     }
+ 
+     static class EssenceJarForItemStack implements ItemListing {

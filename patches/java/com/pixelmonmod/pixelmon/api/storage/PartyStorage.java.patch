@@ -1,0 +1,19 @@
+--- a/com/pixelmonmod/pixelmon/api/storage/PartyStorage.java
++++ b/com/pixelmonmod/pixelmon/api/storage/PartyStorage.java
+@@ -348,14 +348,12 @@
+ 
+     @Override
+     public List<ServerPlayer> getPlayersToUpdate() {
+-        return new ArrayList();
++      return new ArrayList<>();
+     }
+ 
+     @Override
+     public File getFile() {
+-        return new File(
+-            ServerLifecycleHooks.getCurrentServer().getLevel(Level.OVERWORLD).getDataStorage().dataFolder, "pokemon/" + this.uuid.toString() + ".pk"
+-        );
++      return new File(ServerLifecycleHooks.getCurrentServer().getLevel(Level.OVERWORLD).getDataStorage().dataFolder, "pokemon/" + this.uuid.toString() + ".pk");
+     }
+ 
+     public int countAblePokemon() {

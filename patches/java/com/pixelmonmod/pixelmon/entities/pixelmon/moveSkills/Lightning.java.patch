@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Lightning.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Lightning.java
+@@ -35,7 +35,7 @@
+                 if (data instanceof LivingEntity) {
+                     pos = ((LivingEntity)data).blockPosition();
+                 } else {
+-                    pos = (BlockPos)((Tuple)data).getA();
++               pos = (BlockPos) ((Tuple)data).getA();
+                 }
+ 
+                 if (canLightningStrike(world, pos) && !world.getServer().isUnderSpawnProtection(world, pos, player)) {

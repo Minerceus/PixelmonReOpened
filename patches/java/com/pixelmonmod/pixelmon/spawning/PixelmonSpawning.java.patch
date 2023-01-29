@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/pixelmon/spawning/PixelmonSpawning.java
++++ b/com/pixelmonmod/pixelmon/spawning/PixelmonSpawning.java
+@@ -61,14 +61,14 @@
+     public static TriggerSpawner seaweedSpawner = null;
+     public static TriggerSpawner caveRockSpawner = null;
+     public static TriggerSpawner forageSpawner = null;
+-    public static PlayerTrackingSpawner.PlayerTrackingSpawnerBuilder<PlayerTrackingSpawner> trackingSpawnerPreset = new PlayerTrackingSpawner.PlayerTrackingSpawnerBuilder(
++   public static PlayerTrackingSpawner.PlayerTrackingSpawnerBuilder<PlayerTrackingSpawner> trackingSpawnerPreset = new PlayerTrackingSpawner.PlayerTrackingSpawnerBuilder<>(
+             
+         )
+         .setCheckSpawns(new PlayerTrackingCheckSpawns());
+-    public static LegendarySpawner.LegendarySpawnerBuilder<LegendarySpawner> legendarySpawnerPreset = new LegendarySpawner.LegendarySpawnerBuilder()
++   public static LegendarySpawner.LegendarySpawnerBuilder<LegendarySpawner> legendarySpawnerPreset = new LegendarySpawner.LegendarySpawnerBuilder<>()
+         .setSelectionAlgorithm(new FlatDistinctAlgorithm())
+         .setCheckSpawns(new LegendaryCheckSpawns("pixelmon.checkspawns.legendary"));
+-    public static LegendarySpawner.LegendarySpawnerBuilder<LegendarySpawner> megaBossSpawnerPreset = new LegendarySpawner.LegendarySpawnerBuilder()
++   public static LegendarySpawner.LegendarySpawnerBuilder<LegendarySpawner> megaBossSpawnerPreset = new LegendarySpawner.LegendarySpawnerBuilder<>()
+         .setFiresChooseEvent(false)
+         .setSelectionAlgorithm(new FlatDistinctAlgorithm())
+         .setCheckSpawns(new LegendaryCheckSpawns("pixelmon.checkspawns.megaboss"));

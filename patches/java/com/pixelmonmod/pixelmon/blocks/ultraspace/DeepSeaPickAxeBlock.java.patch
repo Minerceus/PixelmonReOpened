@@ -1,0 +1,16 @@
+--- a/com/pixelmonmod/pixelmon/blocks/ultraspace/DeepSeaPickAxeBlock.java
++++ b/com/pixelmonmod/pixelmon/blocks/ultraspace/DeepSeaPickAxeBlock.java
+@@ -9,12 +9,7 @@
+ public class DeepSeaPickAxeBlock extends Block {
+     public DeepSeaPickAxeBlock() {
+         super(
+-            Properties.of(Material.STONE)
+-                .strength(1.0F, 1.0F)
+-                .harvestLevel(1)
+-                .harvestTool(ToolType.PICKAXE)
+-                .requiresCorrectToolForDrops()
+-                .sound(SoundType.GLASS)
++         Properties.of(Material.STONE).strength(1.0F, 1.0F).harvestLevel(1).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().sound(SoundType.GLASS)
+         );
+     }
+ }

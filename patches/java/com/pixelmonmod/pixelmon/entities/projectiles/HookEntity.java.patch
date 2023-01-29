@@ -1,0 +1,41 @@
+--- a/com/pixelmonmod/pixelmon/entities/projectiles/HookEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/projectiles/HookEntity.java
+@@ -163,8 +163,7 @@
+                 float f = 0.0F;
+                 BlockPos blockpos = new BlockPos(this.blockPosition());
+                 BlockState blockState = this.level.getBlockState(blockpos);
+-                if (BetterSpawnerConfig.getWaterBlocks().contains(blockState.getBlock())
+-                    || BetterSpawnerConfig.getLavaBlocks().contains(blockState.getBlock())) {
++            if (BetterSpawnerConfig.getWaterBlocks().contains(blockState.getBlock()) || BetterSpawnerConfig.getLavaBlocks().contains(blockState.getBlock())) {
+                     FluidState fluidState = this.level.getFluidState(blockpos);
+                     f = fluidState.getHeight(this.level, blockpos);
+                 }
+@@ -204,9 +203,7 @@
+                                 this.state = HookEntity.HookState.FLYING;
+                             } else {
+                                 this.setPos(
+-                                    this.hookedIn.getX(),
+-                                    this.hookedIn.getBoundingBox().minY + (double)this.hookedIn.getBbHeight() * 0.8,
+-                                    this.hookedIn.getZ()
++                           this.hookedIn.getX(), this.hookedIn.getBoundingBox().minY + (double)this.hookedIn.getBbHeight() * 0.8, this.hookedIn.getZ()
+                                 );
+                             }
+                         }
+@@ -223,15 +220,11 @@
+ 
+                         if (this.level.isClientSide || this.ticksTillCatch != 0 || this.getOwner() == null || this.getOwner().getServer() == null) {
+                             this.setDeltaMovement(
+-                                this.getDeltaMovement().x(),
+-                                this.getDeltaMovement().y() - d0 * (double)this.random.nextFloat() * 0.2,
+-                                this.getDeltaMovement().z()
++                        this.getDeltaMovement().x(), this.getDeltaMovement().y() - d0 * (double)this.random.nextFloat() * 0.2, this.getDeltaMovement().z()
+                             );
+                         } else if (f > 0.0F && this.hookedIn == null) {
+                             this.setDeltaMovement(
+-                                this.getDeltaMovement().x,
+-                                this.getDeltaMovement().y - (double)Math.abs(this.random.nextFloat()) * 0.2,
+-                                this.getDeltaMovement().z
++                        this.getDeltaMovement().x, this.getDeltaMovement().y - (double)Math.abs(this.random.nextFloat()) * 0.2, this.getDeltaMovement().z
+                             );
+                             if (PixelmonSpawning.fishingSpawner == null) {
+                                 return;

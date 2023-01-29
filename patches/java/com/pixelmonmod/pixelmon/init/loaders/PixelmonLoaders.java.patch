@@ -1,0 +1,29 @@
+--- a/com/pixelmonmod/pixelmon/init/loaders/PixelmonLoaders.java
++++ b/com/pixelmonmod/pixelmon/init/loaders/PixelmonLoaders.java
+@@ -211,10 +211,7 @@
+                                         ModelFactoryFactory.NORMAL,
+                                         Lists.newArrayList(
+                                             new Pair[]{
+-                                                Pair.of(
+-                                                    "pixelmon:pokemon/025_pikachu/all/base/none/model.pqc",
+-                                                    "pixelmon:pokemon/025_pikachu/all/base/none/model.pqc"
+-                                                )
++                                    Pair.of("pixelmon:pokemon/025_pikachu/all/base/none/model.pqc", "pixelmon:pokemon/025_pikachu/all/base/none/model.pqc")
+                                             }
+                                         )
+                                     ),
+@@ -349,13 +346,7 @@
+                                                     }
+                                                 } else {
+                                                     Pixelmon.LOGGER
+-                                                        .warn(
+-                                                            "Bad spec: "
+-                                                                + spawnInfoPokemon.getPokemonSpec().toString()
+-                                                                + " in "
+-                                                                + spawnInfo.set.id
+-                                                                + ".set.json"
+-                                                        );
++                                          .warn("Bad spec: " + spawnInfoPokemon.getPokemonSpec().toString() + " in " + spawnInfo.set.id + ".set.json");
+                                                 }
+                 
+                                                 return species == null || species.getValueUnsafe() == null;

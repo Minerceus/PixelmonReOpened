@@ -1,0 +1,17 @@
+--- a/com/pixelmonmod/pixelmon/api/util/helpers/BrigadierHelper.java
++++ b/com/pixelmonmod/pixelmon/api/util/helpers/BrigadierHelper.java
+@@ -8,11 +8,11 @@
+ 
+ public class BrigadierHelper {
+     public static LiteralCommandNode<CommandSourceStack> buildRedirect(String alias, LiteralCommandNode<CommandSourceStack> destination) {
+-        LiteralArgumentBuilder<CommandSourceStack> builder = (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)LiteralArgumentBuilder.literal(
++      LiteralArgumentBuilder<CommandSourceStack> builder = LiteralArgumentBuilder.<CommandSourceStack>literal(
+                         alias.toLowerCase(Locale.ENGLISH)
+                     )
+-                    .requires(destination.getRequirement()))
+-                .forward(destination.getRedirect(), destination.getRedirectModifier(), destination.isFork()))
++               .requires(destination.getRequirement())
++            .forward(destination.getRedirect(), destination.getRedirectModifier(), destination.isFork())
+             .executes(destination.getCommand());
+ 
+         for(CommandNode<CommandSourceStack> child : destination.getChildren()) {

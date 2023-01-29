@@ -1,0 +1,38 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/OreSense.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/OreSense.java
+@@ -46,7 +46,7 @@
+             
+                             @Override
+                             public void run() {
+-                                ArrayList oreLocations = new ArrayList();
++                        ArrayList<BlockPos> oreLocations = new ArrayList<>();
+             
+                                 for(int x = middle.getX() - OreSense.maxSearchRadius; x <= middle.getX() + OreSense.maxSearchRadius; ++x) {
+                                     for(int y = middle.getY() - OreSense.maxSearchRadius; y <= middle.getY() + OreSense.maxSearchRadius; ++y) {
+@@ -69,8 +69,7 @@
+                                                 for(BlockPos pos : oreLocations) {
+                                                     Block block = world.getBlockState(pos).getBlock();
+                                                     if (block.getRegistryName() != null) {
+-                                                        GeneralConfig.OreColor entry = PixelmonConfigProxy.getGeneral()
+-                                                            .getEntryForBlock(block.getRegistryName().toString());
++                                          GeneralConfig.OreColor entry = PixelmonConfigProxy.getGeneral().getEntryForBlock(block.getRegistryName().toString());
+                                                         int color = entry.getColor();
+                                                         if (color != -1) {
+                                                             locationColors.put(pos, entry);
+@@ -82,14 +81,9 @@
+                                                     ChatHandler.sendFormattedChat(pixelmon.getOwner(), ChatFormatting.RED, "pixelmon.moveskill.ore_sense.none");
+                                                 } else {
+                                                     ChatHandler.sendFormattedChat(
+-                                                        pixelmon.getOwner(),
+-                                                        ChatFormatting.WHITE,
+-                                                        "pixelmon.moveskill.ore_sense.some",
+-                                                        pixelmon.getDisplayName()
++                                          pixelmon.getOwner(), ChatFormatting.WHITE, "pixelmon.moveskill.ore_sense.some", pixelmon.getDisplayName()
+                                                     );
+-                                                    NetworkHelper.sendPacket(
+-                                                        new IlluminatePositionsPacket(world, OreSense.durationTicks, locationColors), player
+-                                                    );
++                                       NetworkHelper.sendPacket(new IlluminatePositionsPacket(world, OreSense.durationTicks, locationColors), player);
+                                                 }
+                                             }
+                                         }

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/custom/dialogue/DialogueScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/custom/dialogue/DialogueScreen.java
+@@ -134,9 +134,7 @@
+         for(int i = 0; i < this.currentDialogue.choices.size(); ++i) {
+             this.choiceButtons
+                 .add(
+-                    new RoundButton(
+-                        -30 + (230 - (this.getLargestWidth() + 20)) / 2, 65, this.currentDialogue.choices.get(i).text, this.getLargestWidth() + 20, 20
+-                    )
++               new RoundButton(-30 + (230 - (this.getLargestWidth() + 20)) / 2, 65, this.currentDialogue.choices.get(i).text, this.getLargestWidth() + 20, 20)
+                 );
+         }
+     }

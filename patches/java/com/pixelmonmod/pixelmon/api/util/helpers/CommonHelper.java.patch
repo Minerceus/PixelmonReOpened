@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/pixelmon/api/util/helpers/CommonHelper.java
++++ b/com/pixelmonmod/pixelmon/api/util/helpers/CommonHelper.java
+@@ -101,7 +101,7 @@
+         } else {
+             Class cl = aprimitive.getClass().getComponentType();
+             if (!cl.isPrimitive()) {
+-                return aprimitive;
++            return (Object[]) aprimitive;
+             } else {
+                 cl = Primitives.wrap(cl);
+                 Object awrapper = Array.newInstance(cl, Array.getLength(aprimitive));
+@@ -110,7 +110,7 @@
+                     Array.set(awrapper, i, Array.get(aprimitive, i));
+                 }
+ 
+-                return awrapper;
++            return (Object[]) awrapper;
+             }
+         }
+     }

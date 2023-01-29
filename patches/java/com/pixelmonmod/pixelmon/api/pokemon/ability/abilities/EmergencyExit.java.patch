@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/ability/abilities/EmergencyExit.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/ability/abilities/EmergencyExit.java
+@@ -30,8 +30,7 @@
+                         target.setUpSwitchMove();
+                         if (targetType == ParticipantType.Player) {
+                             NetworkHelper.sendPacket(
+-                                new EnforcedSwitchTask(target.bc.getPositionOfPokemon(target, targetParticipant), target.nextSwitchIsMove),
+-                                target.getPlayerOwner()
++                        new EnforcedSwitchTask(target.bc.getPositionOfPokemon(target, targetParticipant), target.nextSwitchIsMove), target.getPlayerOwner()
+                             );
+                         } else {
+                             target.bc.switchPokemon(target.getPokemonUUID(), target.getBattleAI().getNextSwitch(target), true);

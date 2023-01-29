@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/BattleCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/BattleCommand.java
+@@ -60,7 +60,7 @@
+             }
+ 
+             if (CollectionHelper.find(Lists.newArrayList(entities), e -> e instanceof NPCTrainer) != null) {
+-                NPCTrainer trainer = CollectionHelper.find(Lists.newArrayList(entities), e -> e instanceof NPCTrainer);
++            NPCTrainer trainer = (NPCTrainer) CollectionHelper.find(Lists.newArrayList(entities), e -> e instanceof NPCTrainer);
+                 if (!trainer.battleRules.isDefault()) {
+                     br.importText(trainer.battleRules.exportText());
+                 }

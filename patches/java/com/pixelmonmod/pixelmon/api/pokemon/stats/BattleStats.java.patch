@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/stats/BattleStats.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/stats/BattleStats.java
+@@ -134,9 +134,7 @@
+                 Ability thisAbility = this.pixelmon.getBattleAbility(user);
+                 if (thisAbility instanceof Contrary) {
+                     if (user.attack != null) {
+-                        if (!user.attack.isZ
+-                            || user.attack.isAttack(AttackRegistry.EXTREME_EVOBOOST)
+-                            || user.attack.isAttack(AttackRegistry.CLANGOROUS_SOULBLAZE)) {
++                  if (!user.attack.isZ || user.attack.isAttack(AttackRegistry.EXTREME_EVOBOOST) || user.attack.isAttack(AttackRegistry.CLANGOROUS_SOULBLAZE)) {
+                             amount *= -1;
+                         }
+                     } else {
+@@ -144,9 +142,7 @@
+                     }
+                 } else if (thisAbility instanceof Simple) {
+                     if (user.attack != null) {
+-                        if (!user.attack.isZ
+-                            || user.attack.isAttack(AttackRegistry.EXTREME_EVOBOOST)
+-                            || user.attack.isAttack(AttackRegistry.CLANGOROUS_SOULBLAZE)) {
++                  if (!user.attack.isZ || user.attack.isAttack(AttackRegistry.EXTREME_EVOBOOST) || user.attack.isAttack(AttackRegistry.CLANGOROUS_SOULBLAZE)) {
+                             amount *= 2;
+                         }
+                     } else {

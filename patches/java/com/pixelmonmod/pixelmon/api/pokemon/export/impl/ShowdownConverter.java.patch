@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/export/impl/ShowdownConverter.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/export/impl/ShowdownConverter.java
+@@ -32,7 +32,7 @@
+ import net.minecraftforge.registries.ForgeRegistries;
+ 
+ public class ShowdownConverter implements PokemonConverterProxy {
+-    public static final String SPECIES_TEXT = "Pok\u00e9mon";
++   public static final String SPECIES_TEXT = "Pokémon";
+     public static final String GENDER_TEXT = "Gender";
+     public static final String ABILITY_TEXT = "Ability";
+     public static final String LEVEL_TEXT = "Level";

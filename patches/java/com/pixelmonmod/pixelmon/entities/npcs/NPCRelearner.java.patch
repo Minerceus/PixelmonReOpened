@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/entities/npcs/NPCRelearner.java
++++ b/com/pixelmonmod/pixelmon/entities/npcs/NPCRelearner.java
+@@ -36,7 +36,7 @@
+ import net.minecraft.world.level.Level;
+ 
+ public class NPCRelearner extends NPCEntity {
+-    public static final DataSync<NPCRelearner, ItemStack> SYNC_COST = new DataSync(
++   public static final DataSync<NPCRelearner, ItemStack> SYNC_COST = new DataSync<>(
+         NPCRelearner.class, EntityDataSerializers.ITEM_STACK, (npcEntity, s) -> npcEntity.cost = s
+     );
+     private ItemStack cost;

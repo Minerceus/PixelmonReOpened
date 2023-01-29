@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/screens/pokemon/EnforcedSwitch.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/screens/pokemon/EnforcedSwitch.java
+@@ -45,9 +45,7 @@
+         } else if (!this.menuElement.handleClickPageTurn(mouseX, mouseY)) {
+             for(PokemonMenuButton button : this.menuElement.getPageButtons()) {
+                 if (button.mouseClicked(mouseX, mouseY, 0) && opt.isPresent()) {
+-                    this.bm
+-                        .selectedActions
+-                        .add(new SwitchPokemonPacket(button.getPig().pokemonUUID, this.bm.battleControllerIndex, opt.get().pokemonUUID, true));
++               this.bm.selectedActions.add(new SwitchPokemonPacket(button.getPig().pokemonUUID, this.bm.battleControllerIndex, opt.get().pokemonUUID, true));
+                     this.bm.selectedMove(true);
+                 }
+             }

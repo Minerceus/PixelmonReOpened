@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/blocks/tileentity/PokeChestTileEntity.java
++++ b/com/pixelmonmod/pixelmon/blocks/tileentity/PokeChestTileEntity.java
+@@ -189,8 +189,7 @@
+             LootClaim claim = this.getLootClaim(playerID);
+             if (claim != null) {
+                 return this.timeEnabled
+-                    && (System.currentTimeMillis() - claim.getTimeClaimed()) / 1000L
+-                        > (long)(PixelmonConfigProxy.getSpawning().getPokeLoot().getLootTime() * 3600);
++               && (System.currentTimeMillis() - claim.getTimeClaimed()) / 1000L > (long)(PixelmonConfigProxy.getSpawning().getPokeLoot().getLootTime() * 3600);
+             } else {
+                 return true;
+             }

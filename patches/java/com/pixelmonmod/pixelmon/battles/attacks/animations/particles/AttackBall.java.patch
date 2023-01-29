@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/battles/attacks/animations/particles/AttackBall.java
++++ b/com/pixelmonmod/pixelmon/battles/attacks/animations/particles/AttackBall.java
+@@ -44,9 +44,7 @@
+     @OnlyIn(Dist.CLIENT)
+     @Override
+     public void onTarget(ParticleArcanery particle, AttackEffect effect) {
+-        particle.setMotion(
+-            RandomHelper.getRandom().nextDouble() - 0.5, RandomHelper.getRandom().nextDouble() - 0.5, RandomHelper.getRandom().nextDouble() - 0.5
+-        );
++      particle.setMotion(RandomHelper.getRandom().nextDouble() - 0.5, RandomHelper.getRandom().nextDouble() - 0.5, RandomHelper.getRandom().nextDouble() - 0.5);
+     }
+ 
+     @OnlyIn(Dist.CLIENT)

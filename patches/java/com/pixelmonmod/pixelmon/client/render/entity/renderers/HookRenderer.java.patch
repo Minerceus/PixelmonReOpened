@@ -1,0 +1,29 @@
+--- a/com/pixelmonmod/pixelmon/client/render/entity/renderers/HookRenderer.java
++++ b/com/pixelmonmod/pixelmon/client/render/entity/renderers/HookRenderer.java
+@@ -73,7 +73,7 @@
+ 
+                 float f = playerentity.getAttackAnim(entityYaw);
+                 float f1 = Mth.sin(Mth.sqrt(f) * (float) Math.PI);
+-                float f2 = Mth.lerp(entityYaw, playerentity.yBodyRotO, playerentity.yBodyRot) * (float) (Math.PI / 180.0);
++            float f2 = Mth.lerp(entityYaw, playerentity.yBodyRotO, playerentity.yBodyRot) * ((float) (Math.PI / 180.0));
+                 double d0 = (double)Mth.sin(f2);
+                 double d1 = (double)Mth.cos(f2);
+                 double d2 = (double)i * 0.35;
+@@ -152,16 +152,7 @@
+                 float f1 = Minecraft.getInstance().options.getBackgroundOpacity(0.25F);
+                 int background = (int)(f1 * 255.0F) << 24;
+                 fontRenderer.drawInBatch(
+-                    new TextComponent(text),
+-                    (float)(-fontRenderer.width(text)) / 2.0F + 1.0F,
+-                    0.0F,
+-                    -1,
+-                    false,
+-                    matrix.last().pose(),
+-                    buffer,
+-                    false,
+-                    0,
+-                    packedLight
++               new TextComponent(text), (float)(-fontRenderer.width(text)) / 2.0F + 1.0F, 0.0F, -1, false, matrix.last().pose(), buffer, false, 0, packedLight
+                 );
+                 RenderSystem.depthMask(true);
+                 RenderSystem.disableBlend();

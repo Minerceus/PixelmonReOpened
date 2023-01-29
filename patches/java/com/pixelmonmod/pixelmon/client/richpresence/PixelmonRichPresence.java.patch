@@ -1,0 +1,33 @@
+--- a/com/pixelmonmod/pixelmon/client/richpresence/PixelmonRichPresence.java
++++ b/com/pixelmonmod/pixelmon/client/richpresence/PixelmonRichPresence.java
+@@ -7,8 +7,9 @@
+ import com.pixelmonmod.pixelmon.client.ClientProxy;
+ import com.pixelmonmod.pixelmon.client.storage.ClientStorageManager;
+ import java.util.concurrent.TimeUnit;
++import net.arikia.dev.drpc.DiscordEventHandlers;
+ import net.arikia.dev.drpc.DiscordRPC;
+-import net.arikia.dev.drpc.DiscordEventHandlers.Builder;
++import net.arikia.dev.drpc.DiscordRichPresence;
+ import net.minecraft.ChatFormatting;
+ import net.minecraft.Util;
+ import net.minecraft.client.Minecraft;
+@@ -49,7 +50,7 @@
+     public void init() {
+         if (this.enabled) {
+             this.initing = true;
+-            DiscordRPC.discordInitialize(this.application, new Builder().setReadyEventHandler(user -> {
++         DiscordRPC.discordInitialize(this.application, new DiscordEventHandlers.Builder().setReadyEventHandler(user -> {
+                 ClientProxy.getRichPresence().available = true;
+                 ClientProxy.getRichPresence().active = true;
+                 ClientProxy.getRichPresence().initing = false;
+@@ -75,9 +76,7 @@
+ 
+     public void setState(String state, String details, boolean time, int players, int maxPlayers) {
+         if (this.enabled) {
+-            net.arikia.dev.drpc.DiscordRichPresence.Builder drp = new net.arikia.dev.drpc.DiscordRichPresence.Builder(
+-                    state.replace("%v", Pixelmon.getVersion())
+-                )
++         DiscordRichPresence.Builder drp = new DiscordRichPresence.Builder(state.replace("%v", Pixelmon.getVersion()))
+                 .setBigImage("main", "discord.gg/pixelmon")
+                 .setDetails(details.replace("%v", Pixelmon.getVersion()));
+             if (time) {

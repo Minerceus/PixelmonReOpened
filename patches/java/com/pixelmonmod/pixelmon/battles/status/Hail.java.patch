@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/Hail.java
++++ b/com/pixelmonmod/pixelmon/battles/status/Hail.java
+@@ -20,9 +20,7 @@
+     }
+ 
+     public Hail(int turnsToGo) {
+-        super(
+-            StatusType.Hail, turnsToGo, EnumHeldItems.icyRock, "pixelmon.effect.starthail", "pixelmon.status.heavyhail", "pixelmon.status.hailstopped", false
+-        );
++      super(StatusType.Hail, turnsToGo, EnumHeldItems.icyRock, "pixelmon.effect.starthail", "pixelmon.status.heavyhail", "pixelmon.status.hailstopped", false);
+     }
+ 
+     @Override

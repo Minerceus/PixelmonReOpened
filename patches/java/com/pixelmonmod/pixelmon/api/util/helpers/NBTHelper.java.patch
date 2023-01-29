@@ -1,0 +1,10 @@
+--- a/com/pixelmonmod/pixelmon/api/util/helpers/NBTHelper.java
++++ b/com/pixelmonmod/pixelmon/api/util/helpers/NBTHelper.java
+@@ -5,6 +5,6 @@
+ 
+ public class NBTHelper {
+     public static <T> T getOrDefault(CompoundTag nbt, String key, T defaultValue, BiFunction<CompoundTag, String, T> function) {
+-        return (T)(nbt.contains(key) ? function.apply((T)nbt, key) : defaultValue);
++      return nbt.contains(key) ? function.apply(nbt, key) : defaultValue;
+     }
+ }

@@ -1,0 +1,21 @@
+--- a/com/pixelmonmod/tcg/TCG.java
++++ b/com/pixelmonmod/tcg/TCG.java
+@@ -55,8 +55,7 @@
+         LOGGER.info("Loading TCG version 9.1.1");
+ 
+         try {
+-            Method method = NetworkRegistry.class
+-                .getDeclaredMethod("createInstance", ResourceLocation.class, Supplier.class, Predicate.class, Predicate.class);
++         Method method = NetworkRegistry.class.getDeclaredMethod("createInstance", ResourceLocation.class, Supplier.class, Predicate.class, Predicate.class);
+             method.setAccessible(true);
+             network = new SimpleChannel(
+                 (NetworkInstance)method.invoke(
+@@ -67,7 +66,7 @@
+                                 && !serverVersion.equalsIgnoreCase(NetworkRegistry.ACCEPTVANILLA)
+                             ? "9.1.1".equals(serverVersion)
+                             : true,
+-                    "9.1.1"::equals
++                    (Predicate<String>)"9.1.1"::equals
+                 )
+             );
+         } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException var2) {

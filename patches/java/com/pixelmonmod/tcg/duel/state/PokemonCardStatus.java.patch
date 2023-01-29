@@ -1,0 +1,64 @@
+--- a/com/pixelmonmod/tcg/duel/state/PokemonCardStatus.java
++++ b/com/pixelmonmod/tcg/duel/state/PokemonCardStatus.java
+@@ -13,8 +13,8 @@
+ public class PokemonCardStatus {
+     private static final int NULL_VALUE = -100;
+     private int damage = 0;
+-    private List<Pair<CardCondition, Integer>> conditions = new ArrayList();
+-    private List<Pair<CardCondition, Integer>> clonedConditions = new ArrayList();
++   private List<Pair<CardCondition, Integer>> conditions = new ArrayList<>();
++   private List<Pair<CardCondition, Integer>> clonedConditions = new ArrayList<>();
+     private boolean damageImmune;
+     private boolean conditionImmune;
+     private boolean startTurnParalyzed = false;
+@@ -28,8 +28,8 @@
+ 
+         for(int i = 0; i < effectSize; ++i) {
+             int statusOrdinal = buf.readInt();
+-            Integer modifier = buf.readInt();
+-            this.conditions.add(new MutablePair(CardCondition.values()[statusOrdinal], modifier == -100 ? null : modifier));
++         int modifier = buf.readInt();
++         this.conditions.add(new MutablePair<>(CardCondition.values()[statusOrdinal], modifier == -100 ? null : modifier));
+         }
+ 
+         this.damageImmune = buf.readBoolean();
+@@ -41,7 +41,7 @@
+         buf.writeInt(this.conditions.size());
+ 
+         for(Pair<CardCondition, Integer> effect : this.conditions) {
+-            buf.writeInt(((CardCondition)effect.getLeft()).ordinal());
++         buf.writeInt(effect.getLeft().ordinal());
+             buf.writeInt(effect.getRight() == null ? -100 : effect.getRight());
+         }
+ 
+@@ -54,10 +54,9 @@
+     }
+ 
+     public void cloneConditions() {
+-        this.clonedConditions = new ArrayList();
++      this.clonedConditions = new ArrayList<>();
+         if (this.conditions != null) {
+-            this.clonedConditions
+-                .addAll(this.conditions.stream().map(pair -> new ImmutablePair(pair.getLeft(), pair.getRight())).collect(Collectors.toList()));
++         this.clonedConditions.addAll(this.conditions.stream().map(pair -> new ImmutablePair<>(pair.getLeft(), pair.getRight())).collect(Collectors.toList()));
+         }
+     }
+ 
+@@ -88,7 +87,7 @@
+     public void addCondition(CardCondition cardCondition, Integer modifier) {
+         if (!this.isConditionImmune()) {
+             if (cardCondition == CardCondition.ASLEEP || cardCondition == CardCondition.CONFUSED || cardCondition == CardCondition.PARALYZED) {
+-                for(Pair<CardCondition, Integer> overlap : (List)this.conditions
++            for(Pair<CardCondition, Integer> overlap : this.conditions
+                     .stream()
+                     .filter(c -> c.getLeft() == CardCondition.ASLEEP || c.getLeft() == CardCondition.CONFUSED || c.getLeft() == CardCondition.PARALYZED)
+                     .collect(Collectors.toList())) {
+@@ -117,7 +116,7 @@
+     }
+ 
+     public void removeAllConditions() {
+-        this.conditions = new ArrayList();
++      this.conditions = new ArrayList<>();
+     }
+ 
+     public boolean isStartTurnParalyzed() {

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/ai/MoveTowardsTargetGoal.java
++++ b/com/pixelmonmod/pixelmon/ai/MoveTowardsTargetGoal.java
+@@ -57,9 +57,7 @@
+             if (this.targetEntity.distanceToSqr(this.theEntity) > (double)(this.within * this.within)) {
+                 return false;
+             } else {
+-                Vec3 var1 = RandomPos.getPosTowards(
+-                    this.theEntity, 16, 7, new Vec3(this.targetEntity.getX(), this.targetEntity.getY(), this.targetEntity.getZ())
+-                );
++            Vec3 var1 = RandomPos.getPosTowards(this.theEntity, 16, 7, new Vec3(this.targetEntity.getX(), this.targetEntity.getY(), this.targetEntity.getZ()));
+                 if (var1 == null) {
+                     return false;
+                 } else {

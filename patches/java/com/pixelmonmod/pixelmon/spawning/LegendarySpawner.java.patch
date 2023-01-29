@@ -1,0 +1,22 @@
+--- a/com/pixelmonmod/pixelmon/spawning/LegendarySpawner.java
++++ b/com/pixelmonmod/pixelmon/spawning/LegendarySpawner.java
+@@ -46,7 +46,7 @@
+         ArrayList<ServerPlayer> players = new ArrayList(ServerLifecycleHooks.getCurrentServer().getPlayerList().getPlayers());
+         if (onlyFocus == null) {
+             while(!players.isEmpty()) {
+-                ArrayList<ServerPlayer> cluster = new ArrayList();
++            ArrayList<ServerPlayer> cluster = new ArrayList<>();
+                 ServerPlayer focus = (ServerPlayer)players.remove(0);
+                 cluster.add(focus);
+                 fillNearby(players, cluster, focus);
+@@ -99,9 +99,7 @@
+             int baseSpawnTicks = this.firesChooseEvent
+                 ? PixelmonConfigProxy.getSpawning().getLegendarySpawnTicks()
+                 : PixelmonConfigProxy.getSpawning().getBossSpawning().getBossSpawnTicks();
+-            int spawnTicks = (int)(
+-                (float)baseSpawnTicks / (1.0F + (float)(numPlayers - 1) * PixelmonConfigProxy.getSpawning().getSpawnTicksPlayerMultiplier())
+-            );
++         int spawnTicks = (int)((float)baseSpawnTicks / (1.0F + (float)(numPlayers - 1) * PixelmonConfigProxy.getSpawning().getSpawnTicksPlayerMultiplier()));
+             this.spawnFrequency = RandomHelper.getRandomNumberBetween(0.6F, 1.4F) * (1200.0F / (float)spawnTicks);
+             if ((!this.firesChooseEvent || RandomHelper.getRandomChance(PixelmonConfigProxy.getSpawning().getLegendarySpawnChance()))
+                 && (this.firesChooseEvent || RandomHelper.getRandomChance(PixelmonConfigProxy.getSpawning().getBossSpawning().getBossSpawnChance()))) {

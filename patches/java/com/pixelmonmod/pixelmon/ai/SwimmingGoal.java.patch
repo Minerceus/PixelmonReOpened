@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/ai/SwimmingGoal.java
++++ b/com/pixelmonmod/pixelmon/ai/SwimmingGoal.java
+@@ -153,7 +153,6 @@
+ 
+         double v = (double)this.pixelmon.getSwimDepth();
+         int wdepth = WorldHelper.getWaterDepth(this.pixelmon.blockPosition(), this.pixelmon.level);
+-        this.pixelmon
+-            .setDeltaMovement(new Vec3(this.pixelmon.getDeltaMovement().x(), ((double)wdepth - v) / refreshRate, this.pixelmon.getDeltaMovement().z()));
++      this.pixelmon.setDeltaMovement(new Vec3(this.pixelmon.getDeltaMovement().x(), ((double)wdepth - v) / refreshRate, this.pixelmon.getDeltaMovement().z()));
+     }
+ }

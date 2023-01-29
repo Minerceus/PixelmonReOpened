@@ -1,0 +1,23 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/wiki/DayCareStrategy.java
++++ b/com/pixelmonmod/pixelmon/command/impl/wiki/DayCareStrategy.java
+@@ -59,8 +59,7 @@
+             if (condition.getDurations().size() == 1) {
+                 DayCareDuration duration = condition.getDurations().get(0);
+                 sender.sendSuccess(
+-                    TextHelper.space(1)
+-                        .append(PixelmonCommandUtils.format("pixelmon.command.wiki.daycare.duration.single", duration.getDisplay().getString())),
++               TextHelper.space(1).append(PixelmonCommandUtils.format("pixelmon.command.wiki.daycare.duration.single", duration.getDisplay().getString())),
+                     false
+                 );
+             } else if (condition.getDurations().size() > 1) {
+@@ -68,9 +67,7 @@
+                 condition.getDurations()
+                     .stream()
+                     .sorted(Comparator.comparing(DayCareDuration::getPriority))
+-                    .forEach(
+-                        durationx -> sender.sendSuccess(TextHelper.space(2).append(new TextComponent("- ")).append(durationx.getDisplay().getString()), false)
+-                    );
++               .forEach(durationx -> sender.sendSuccess(TextHelper.space(2).append(new TextComponent("- ")).append(durationx.getDisplay().getString()), false));
+             }
+ 
+             if (!condition.getRequirements().isEmpty()) {

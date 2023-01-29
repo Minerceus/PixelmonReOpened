@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/pixelmon/battles/raids/WeightedItemStacks.java
++++ b/com/pixelmonmod/pixelmon/battles/raids/WeightedItemStacks.java
+@@ -8,7 +8,7 @@
+ 
+ public class WeightedItemStacks {
+     private int total = 0;
+-    private final ArrayList<Tuple<Integer, ItemStack>> stacks = new ArrayList();
++   private final ArrayList<Tuple<Integer, ItemStack>> stacks = new ArrayList<>();
+ 
+     private WeightedItemStacks() {
+     }
+@@ -57,7 +57,7 @@
+             Iterator<Tuple<Integer, ItemStack>> iterator = this.stacks.iterator();
+ 
+             while(iterator.hasNext()) {
+-                Tuple<Integer, ItemStack> tuple = (Tuple)iterator.next();
++            Tuple<Integer, ItemStack> tuple = iterator.next();
+                 value -= tuple.getA();
+                 if (value <= 0) {
+                     iterator.remove();

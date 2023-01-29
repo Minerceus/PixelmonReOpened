@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/render/tileEntities/RenderTileEntityTimespaceAltar.java
++++ b/com/pixelmonmod/pixelmon/client/render/tileEntities/RenderTileEntityTimespaceAltar.java
+@@ -141,9 +141,7 @@
+             }
+ 
+             BlockPos center = new BlockPos(
+-                (double)shrineBlock.getBlockPos().getX() + xOffset,
+-                (double)shrineBlock.getBlockPos().getY(),
+-                (double)shrineBlock.getBlockPos().getZ() + zOffset
++            (double)shrineBlock.getBlockPos().getX() + xOffset, (double)shrineBlock.getBlockPos().getY(), (double)shrineBlock.getBlockPos().getZ() + zOffset
+             );
+             if (shrineBlock.timeSpent > 0) {
+                 RenderSystem.enableBlend();

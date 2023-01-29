@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/pixelmon/blocks/ScrollBlock.java
++++ b/com/pixelmonmod/pixelmon/blocks/ScrollBlock.java
+@@ -159,9 +159,7 @@
+             Direction enumfacing = (Direction)state.getValue(FACING);
+             if (!worldIn.getBlockState(pos.relative(enumfacing.getOpposite())).getMaterial().isSolid()) {
+                 worldIn.addFreshEntity(
+-                    new ItemEntity(
+-                        worldIn, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), new ItemStack(BlockRegistration.getItemFromBlock(this))
+-                    )
++               new ItemEntity(worldIn, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), new ItemStack(BlockRegistration.getItemFromBlock(this)))
+                 );
+                 worldIn.removeBlock(pos, false);
+             }
+@@ -190,9 +188,7 @@
+         public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
+             if (!worldIn.getBlockState(pos.below()).getMaterial().isSolid()) {
+                 worldIn.addFreshEntity(
+-                    new ItemEntity(
+-                        worldIn, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), new ItemStack(BlockRegistration.getItemFromBlock(this))
+-                    )
++               new ItemEntity(worldIn, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), new ItemStack(BlockRegistration.getItemFromBlock(this)))
+                 );
+                 worldIn.removeBlock(pos, false);
+             }

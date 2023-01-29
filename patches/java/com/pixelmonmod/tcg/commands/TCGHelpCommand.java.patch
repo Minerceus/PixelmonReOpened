@@ -1,0 +1,78 @@
+--- a/com/pixelmonmod/tcg/commands/TCGHelpCommand.java
++++ b/com/pixelmonmod/tcg/commands/TCGHelpCommand.java
+@@ -12,7 +12,7 @@
+ public class TCGHelpCommand extends SubcommandBase {
+     @Override
+     String getHelp(CommandSourceStack sender) {
+-        return "Pixelmon TCG (Pixelmon Trading Card Game) brings the Pok\u00e9mon Trading Card Game to Pixelmon, with cards, booster packs, and computer-mediated game boards.\n\nHow to play\n1. Collect cards - \u00a72/tcg help card\n2. Build a deck of 60 cards - \u00a72/tcg help deck\n3. Battle with other players - \u00a72/tcg help battle";
++      return "Pixelmon TCG (Pixelmon Trading Card Game) brings the Pokémon Trading Card Game to Pixelmon, with cards, booster packs, and computer-mediated game boards.\n\nHow to play\n1. Collect cards - §2/tcg help card\n2. Build a deck of 60 cards - §2/tcg help deck\n3. Battle with other players - §2/tcg help battle";
+     }
+ 
+     @Override
+@@ -37,8 +37,7 @@
+                         .withClickEvent(new ClickEvent(Action.OPEN_URL, "http://bulbapedia.bulbagarden.net/wiki/Booster_pack_(TCG)"))
+                         .withHoverEvent(
+                             new HoverEvent(
+-                                net.minecraft.network.chat.HoverEvent.Action.SHOW_TEXT,
+-                                new TextComponent("http://bulbapedia.bulbagarden.net/wiki/Booster_pack_(TCG)")
++                        net.minecraft.network.chat.HoverEvent.Action.SHOW_TEXT, new TextComponent("http://bulbapedia.bulbagarden.net/wiki/Booster_pack_(TCG)")
+                             )
+                         );
+                     sender.sendSuccess(chat, false);
+@@ -50,9 +49,7 @@
+                     chat.getStyle()
+                         .withClickEvent(new ClickEvent(Action.OPEN_URL, "http://bulbapedia.bulbagarden.net/wiki/Deck"))
+                         .withHoverEvent(
+-                            new HoverEvent(
+-                                net.minecraft.network.chat.HoverEvent.Action.SHOW_TEXT, new TextComponent("http://bulbapedia.bulbagarden.net/wiki/Deck")
+-                            )
++                     new HoverEvent(net.minecraft.network.chat.HoverEvent.Action.SHOW_TEXT, new TextComponent("http://bulbapedia.bulbagarden.net/wiki/Deck"))
+                         );
+                     sender.sendSuccess(chat, false);
+                     Component var11 = new TextComponent("- Purchase theme decks from shops [Link]");
+@@ -60,8 +57,7 @@
+                         .withClickEvent(new ClickEvent(Action.OPEN_URL, "http://bulbapedia.bulbagarden.net/wiki/Theme_Deck_(TCG)"))
+                         .withHoverEvent(
+                             new HoverEvent(
+-                                net.minecraft.network.chat.HoverEvent.Action.SHOW_TEXT,
+-                                new TextComponent("http://bulbapedia.bulbagarden.net/wiki/Theme_Deck_(TCG)")
++                        net.minecraft.network.chat.HoverEvent.Action.SHOW_TEXT, new TextComponent("http://bulbapedia.bulbagarden.net/wiki/Theme_Deck_(TCG)")
+                             )
+                         );
+                     sender.sendSuccess(var11, false);
+@@ -76,9 +72,7 @@
+                     );
+                     Component chat = new TextComponent("- Official Battle Rule [Link]");
+                     chat.getStyle()
+-                        .withClickEvent(
+-                            new ClickEvent(Action.OPEN_URL, "http://assets.pokemon.com/assets/cms2/pdf/trading-card-game/rulebook/xy8-rulebook-en.pdf")
+-                        )
++                  .withClickEvent(new ClickEvent(Action.OPEN_URL, "http://assets.pokemon.com/assets/cms2/pdf/trading-card-game/rulebook/xy8-rulebook-en.pdf"))
+                         .withHoverEvent(
+                             new HoverEvent(
+                                 net.minecraft.network.chat.HoverEvent.Action.SHOW_TEXT,
+@@ -105,20 +99,20 @@
+             sendMessage(
+                 sender,
+                 ChatFormatting.AQUA,
+-                "Pixelmon TCG (Pixelmon Trading Card Game) brings the Pok\u00e9mon Trading Card Game to Pixelmon, with cards, booster packs, and computer-mediated game boards."
++            "Pixelmon TCG (Pixelmon Trading Card Game) brings the Pokémon Trading Card Game to Pixelmon, with cards, booster packs, and computer-mediated game boards."
+             );
+             sendMessage(sender, ChatFormatting.RESET, "How to play");
+-            Component chat = new TextComponent("1. Collect cards - \u00a72/tcg help card");
++         Component chat = new TextComponent("1. Collect cards - §2/tcg help card");
+             chat.getStyle()
+                 .withClickEvent(new ClickEvent(Action.RUN_COMMAND, "/tcg help card"))
+                 .withHoverEvent(new HoverEvent(net.minecraft.network.chat.HoverEvent.Action.SHOW_TEXT, new TextComponent("/tcg help card")));
+             sender.sendSuccess(chat, false);
+-            Component var6 = new TextComponent("2. Build a deck of 60 cards - \u00a72/tcg help deck");
++         Component var6 = new TextComponent("2. Build a deck of 60 cards - §2/tcg help deck");
+             var6.getStyle()
+                 .withClickEvent(new ClickEvent(Action.RUN_COMMAND, "/tcg help deck"))
+                 .withHoverEvent(new HoverEvent(net.minecraft.network.chat.HoverEvent.Action.SHOW_TEXT, new TextComponent("/tcg help deck")));
+             sender.sendSuccess(var6, false);
+-            var6 = new TextComponent("3. Battle with other players - \u00a72/tcg help battle");
++         var6 = new TextComponent("3. Battle with other players - §2/tcg help battle");
+             var6.getStyle()
+                 .withClickEvent(new ClickEvent(Action.RUN_COMMAND, "/tcg help battle"))
+                 .withHoverEvent(new HoverEvent(net.minecraft.network.chat.HoverEvent.Action.SHOW_TEXT, new TextComponent("/tcg help battle")));

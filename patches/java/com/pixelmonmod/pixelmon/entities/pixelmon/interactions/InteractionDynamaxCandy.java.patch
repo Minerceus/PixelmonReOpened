@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/interactions/InteractionDynamaxCandy.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/interactions/InteractionDynamaxCandy.java
+@@ -19,9 +19,7 @@
+         if (player instanceof ServerPlayer && entityPixelmon.getOwner() == player && itemstack.getItem() instanceof DynamaxCandyItem) {
+             Pokemon pokemon = entityPixelmon.getPokemon();
+             if (pokemon.getDynamaxLevel() >= 10) {
+-                player.sendMessage(
+-                    new TranslatableComponent("pixelmon.interaction.dynamaxcandy.fail", new Object[]{entityPixelmon.getNickname()}), Util.NIL_UUID
+-                );
++            player.sendMessage(new TranslatableComponent("pixelmon.interaction.dynamaxcandy.fail", new Object[]{entityPixelmon.getNickname()}), Util.NIL_UUID);
+                 return true;
+             }
+ 

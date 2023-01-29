@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/blocks/tileentity/ReassemblyUnitTileEntity.java
++++ b/com/pixelmonmod/pixelmon/blocks/tileentity/ReassemblyUnitTileEntity.java
+@@ -161,9 +161,7 @@
+                         int cores = ZygardeCubeItem.getCoreCount(cube);
+                         Pokemon zygarde = PokemonFactory.create(PixelmonSpecies.ZYGARDE.getValueUnsafe());
+                         zygarde.initialize();
+-                        ZygardeEvent.Assemble.New.Start startEvent = new ZygardeEvent.Assemble.New.Start(
+-                            player, this, zygarde, this.position, cube, count, cores
+-                        );
++                  ZygardeEvent.Assemble.New.Start startEvent = new ZygardeEvent.Assemble.New.Start(player, this, zygarde, this.position, cube, count, cores);
+                         if (!Pixelmon.EVENT_BUS.post(startEvent)) {
+                             count = startEvent.cells;
+                             cores = startEvent.cores;

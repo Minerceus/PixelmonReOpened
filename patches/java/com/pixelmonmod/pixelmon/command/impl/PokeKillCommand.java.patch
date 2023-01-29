@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/PokeKillCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/PokeKillCommand.java
+@@ -37,7 +37,7 @@
+         Specification<?, ?> spec = PokemonSpecificationProxy.create(args);
+         int count = 0;
+ 
+-        for(Entity entity : (List)world.getEntities().collect(Collectors.toList())) {
++      for(Entity entity : world.getEntities().collect(Collectors.toList())) {
+             if (entity instanceof PixelmonEntity) {
+                 PixelmonEntity pixelmon = (PixelmonEntity)entity;
+                 if (!pixelmon.hasOwner() && pixelmon.battleController == null && (spec == null || spec.matches(pixelmon))) {

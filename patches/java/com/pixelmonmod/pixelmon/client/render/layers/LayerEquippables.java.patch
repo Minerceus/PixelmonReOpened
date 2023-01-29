@@ -1,0 +1,19 @@
+--- a/com/pixelmonmod/pixelmon/client/render/layers/LayerEquippables.java
++++ b/com/pixelmonmod/pixelmon/client/render/layers/LayerEquippables.java
+@@ -202,15 +202,7 @@
+                     Minecraft.getInstance()
+                         .getItemRenderer()
+                         .renderStatic(
+-                            player,
+-                            new ItemStack(equippable.getEquippableItem()),
+-                            TransformType.NONE,
+-                            true,
+-                            matrix,
+-                            buffer,
+-                            player.level,
+-                            packedLight,
+-                            packedOverlay
++                     player, new ItemStack(equippable.getEquippableItem()), TransformType.NONE, true, matrix, buffer, player.level, packedLight, packedOverlay
+                         );
+                 }
+ 

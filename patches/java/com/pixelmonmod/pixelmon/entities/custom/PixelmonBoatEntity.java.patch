@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/entities/custom/PixelmonBoatEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/custom/PixelmonBoatEntity.java
+@@ -22,7 +22,7 @@
+ import net.minecraftforge.fml.network.NetworkHooks;
+ 
+ public class PixelmonBoatEntity extends Boat {
+-    public static final DataSync<PixelmonBoatEntity, WoodType> WOOD_TYPE_DATA_SYNC = new DataSync(
++   public static final DataSync<PixelmonBoatEntity, WoodType> WOOD_TYPE_DATA_SYNC = new DataSync<>(
+         PixelmonBoatEntity.class, PixelmonDataSerializers.WOOD_TYPE, (pixelmonBoatEntity, woodType1) -> pixelmonBoatEntity.woodType = woodType1
+     );
+     protected WoodType woodType;

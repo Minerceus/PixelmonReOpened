@@ -1,0 +1,14 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/Burn.java
++++ b/com/pixelmonmod/pixelmon/battles/status/Burn.java
+@@ -127,10 +127,7 @@
+             for(PixelmonWrapper target : userChoice.targets) {
+                 if (!offensive || burn(pw, target, userChoice.attack, false)) {
+                     Ability ability = target.getBattleAbility();
+-                    boolean beneficial = ability instanceof FlareBoost
+-                        || ability instanceof Guts
+-                        || ability instanceof MarvelScale
+-                        || ability instanceof QuickFeet;
++               boolean beneficial = ability instanceof FlareBoost || ability instanceof Guts || ability instanceof MarvelScale || ability instanceof QuickFeet;
+                     if (beneficial && hitsAlly) {
+                         if (ability instanceof Guts || !target.getMoveset().hasAttackCategory(AttackCategory.PHYSICAL)) {
+                             userChoice.raiseWeight(weight);

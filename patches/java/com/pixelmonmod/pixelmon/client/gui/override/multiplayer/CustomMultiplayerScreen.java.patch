@@ -1,0 +1,19 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/override/multiplayer/CustomMultiplayerScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/override/multiplayer/CustomMultiplayerScreen.java
+@@ -112,14 +112,10 @@
+             })
+         );
+         this.addButton(
+-            new Button(
+-                this.width / 2 + 4, this.height - 28, 70, 20, new TranslatableComponent("selectServer.refresh"), p_214291_1_ -> this.refreshServerList()
+-            )
++         new Button(this.width / 2 + 4, this.height - 28, 70, 20, new TranslatableComponent("selectServer.refresh"), p_214291_1_ -> this.refreshServerList())
+         );
+         this.addButton(
+-            new Button(
+-                this.width / 2 + 4 + 76, this.height - 28, 75, 20, CommonComponents.GUI_CANCEL, p_214289_1_ -> this.minecraft.setScreen(this.lastScreen)
+-            )
++         new Button(this.width / 2 + 4 + 76, this.height - 28, 75, 20, CommonComponents.GUI_CANCEL, p_214289_1_ -> this.minecraft.setScreen(this.lastScreen))
+         );
+         this.onSelectedChange();
+     }

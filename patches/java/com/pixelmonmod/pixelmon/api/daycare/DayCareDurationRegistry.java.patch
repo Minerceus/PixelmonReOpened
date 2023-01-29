@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/daycare/DayCareDurationRegistry.java
++++ b/com/pixelmonmod/pixelmon/api/daycare/DayCareDurationRegistry.java
+@@ -16,7 +16,7 @@
+     private static final Map<String, Supplier<DayCareDuration>> REGISTERED_DURATION_TYPES = Maps.newHashMap();
+ 
+     public static <T extends DayCareDuration> void registerDuration(Supplier<T> t) {
+-        REGISTERED_DURATION_TYPES.put(t.get().getId().toLowerCase(Locale.ROOT), t);
++      REGISTERED_DURATION_TYPES.put(t.get().getId().toLowerCase(Locale.ROOT), (Supplier<DayCareDuration>) t);
+     }
+ 
+     public static <T extends DayCareDuration> Optional<T> getDuration(String id) {

@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/world/dimension/SurfaceBuilders.java
++++ b/com/pixelmonmod/pixelmon/world/dimension/SurfaceBuilders.java
+@@ -46,8 +46,6 @@
+         BuiltinRegistries.CONFIGURED_SURFACE_BUILDER,
+         ResourceLocationHelper.of("pixelmon:drowned_world"),
+         SurfaceBuilder.DEFAULT
+-            .configured(
+-                new SurfaceBuilderBaseConfiguration(Blocks.WATER.defaultBlockState(), Blocks.WATER.defaultBlockState(), Blocks.WATER.defaultBlockState())
+-            )
++         .configured(new SurfaceBuilderBaseConfiguration(Blocks.WATER.defaultBlockState(), Blocks.WATER.defaultBlockState(), Blocks.WATER.defaultBlockState()))
+     );
+ }

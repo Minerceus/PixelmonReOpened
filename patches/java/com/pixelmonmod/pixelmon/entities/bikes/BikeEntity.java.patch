@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/pixelmon/entities/bikes/BikeEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/bikes/BikeEntity.java
+@@ -43,7 +43,7 @@
+     private static final DataSync<BikeEntity, EnumBike> SYNC_TYPE = new DataSync<>(
+         BikeEntity.class, PixelmonDataSerializers.BIKE_TYPE, (bikeEntity, enumBike) -> bikeEntity.bikeType = enumBike
+     );
+-    private static final DataSync<BikeEntity, DyeColor> SYNC_COLOR = new DataSync(
++   private static final DataSync<BikeEntity, DyeColor> SYNC_COLOR = new DataSync<>(
+         BikeEntity.class, PixelmonDataSerializers.DYE_COLOR, (bikeEntity, dyeColor) -> bikeEntity.color = dyeColor
+     );
+     public boolean field_70703_bu = false;
+@@ -255,7 +255,7 @@
+     public void positionRider(Entity passenger) {
+         if (this.hasPassenger(passenger)) {
+             float offset = -0.1F;
+-            Vec3 vec3d = new Vec3((double)offset, 0.0, 0.0).yRot(-this.yRot * (float) (Math.PI / 180.0) - (float) (Math.PI / 2));
++         Vec3 vec3d = new Vec3((double)offset, 0.0, 0.0).yRot(-this.yRot * (float) (Math.PI / 180.0) - ((float) (Math.PI / 2)));
+             passenger.setPos(this.getX() + vec3d.x, this.getY() + this.getPassengersRidingOffset() + passenger.getMyRidingOffset(), this.getZ() + vec3d.z);
+             this.applyYawToEntity(passenger);
+         }

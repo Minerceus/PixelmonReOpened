@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/pc/PCScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/pc/PCScreen.java
+@@ -137,9 +137,7 @@
+     protected void updateName(PCBox data) {
+         this.boxButton
+             .setMessage(
+-                (Component)(data.getName() == null
+-                    ? new TranslatableComponent("gui.pc.box", new Object[]{this.boxNumber + 1})
+-                    : new TextComponent(data.getName()))
++            (Component)(data.getName() == null ? new TranslatableComponent("gui.pc.box", new Object[]{this.boxNumber + 1}) : new TextComponent(data.getName()))
+             );
+     }
+ 

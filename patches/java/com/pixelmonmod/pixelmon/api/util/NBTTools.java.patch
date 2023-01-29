@@ -1,0 +1,17 @@
+--- a/com/pixelmonmod/pixelmon/api/util/NBTTools.java
++++ b/com/pixelmonmod/pixelmon/api/util/NBTTools.java
+@@ -53,11 +53,11 @@
+         for(String key : map.keySet()) {
+             try {
+                 if (map.get(key) instanceof List) {
+-                    List<?> list = (List)map.get(key);
++               List<?> list = (List<?>) map.get(key);
+                     ListTag tagList = new ListTag();
+ 
+-                    for(int i = 0; i < list.size(); ++i) {
+-                        tagList.add(StringTag.valueOf((String)list.get(i)));
++               for (Object o : list) {
++                  tagList.add(StringTag.valueOf((String) o));
+                     }
+ 
+                     nbt.put(key, tagList);

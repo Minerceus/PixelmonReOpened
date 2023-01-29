@@ -1,0 +1,74 @@
+--- a/com/pixelmonmod/tcg/tileentity/ServerOwnedTileEntityBattleController.java
++++ b/com/pixelmonmod/tcg/tileentity/ServerOwnedTileEntityBattleController.java
+@@ -144,9 +144,7 @@
+ 
+                     this.server.setGameInProgress(true);
+                     if (this.startingCommand != null) {
+-                        this.trigger(
+-                            this.getLevel(), this.startingCommand, this.server.getPlayers()[0].getPlayerName(), this.server.getPlayers()[1].getPlayerName()
+-                        );
++                  this.trigger(this.getLevel(), this.startingCommand, this.server.getPlayers()[0].getPlayerName(), this.server.getPlayers()[1].getPlayerName());
+                     }
+ 
+                     for(PlayerServerState player : this.server.getPlayers()) {
+@@ -373,9 +371,7 @@
+                                 if (player.getPrizeCards() != null && !player.hasPrizeLeft()) {
+                                     ChatHandler.sendFormattedChat(player.getEntityPlayer(), ChatFormatting.YELLOW, "You have won all prize cards!");
+                                     ChatHandler.sendFormattedChat(
+-                                        this.server.getOpponent(player).getEntityPlayer(),
+-                                        ChatFormatting.RED,
+-                                        player.getPlayerName() + " has won all prize cards!"
++                              this.server.getOpponent(player).getEntityPlayer(), ChatFormatting.RED, player.getPlayerName() + " has won all prize cards!"
+                                     );
+                                     winningScores[i]++;
+                                 }
+@@ -891,7 +887,7 @@
+                 return true;
+             }
+ 
+-            List<Pair<CardCondition, Integer>> conditionsEffect = new ArrayList();
++         List<Pair<CardCondition, Integer>> conditionsEffect = new ArrayList<>();
+             if (oppPokemon.getStatus().getConditions() != null) {
+                 conditionsEffect.addAll(oppPokemon.getStatus().getConditions());
+             }
+@@ -1127,7 +1123,7 @@
+         for(int i = 0; i < this.server.getPlayers().length; ++i) {
+             for(PokemonCardState card : this.server.getPlayer(i).getActiveAndBenchCards()) {
+                 if (card.getStatus().getConditions().stream().anyMatch(s -> s.getLeft() == cardCondition)) {
+-                    queue.add(new ImmutablePair(card, i));
++               queue.add(new ImmutablePair<>(card, i));
+                 }
+             }
+         }
+@@ -1513,9 +1509,7 @@
+                                 TrainerCardState trainerState = new TrainerCardState(card);
+                                 if (trainerState.getData().getEffect().canSkipSelector()
+                                     && trainerState.getData().getEffect().canPlaceOn(new CardWithLocation(benchCard, true, BoardLocation.Bench, benchIndex))) {
+-                                    trainerState.getData()
+-                                        .getEffect()
+-                                        .applySkipSelector(trainerState, benchCard, this.server, BoardLocation.Bench, benchIndex);
++                           trainerState.getData().getEffect().applySkipSelector(trainerState, benchCard, this.server, BoardLocation.Bench, benchIndex);
+                                     this.server.getLog().trackPlayCard(trainerState, this.server.getTurn(player), this.server);
+                                     if (this.server.getOpponent(player).hasItem(TCGItems.rod)) {
+                                         this.server.getOpponent(player).getHand().add(card);
+@@ -1607,8 +1601,7 @@
+                     NetworkHelper.sendPacket(new TrainerPlayedPacket(player.getPlayerName(), trainer), entityPlayer);
+ 
+                     for(UUID spectator : this.server.getSpectators().keySet()) {
+-                        PlayerHelper.getPlayer(spectator)
+-                            .ifPresent(p -> NetworkHelper.sendPacket(new TrainerPlayedPacket(player.getPlayerName(), trainer), p));
++                  PlayerHelper.getPlayer(spectator).ifPresent(p -> NetworkHelper.sendPacket(new TrainerPlayedPacket(player.getPlayerName(), trainer), p));
+                     }
+                 }
+             }
+@@ -1703,9 +1696,7 @@
+             int playerIndex = this.server.getSpectators().get(spectator);
+             PlayerServerState player = this.server.getPlayer(playerIndex);
+             PlayerHelper.getPlayer(spectator)
+-                .ifPresent(
+-                    p -> NetworkHelper.sendPacket(new GameStateSyncPacket(this.worldPosition, playerIndex, true, this.server, player.getEntityPlayer()), p)
+-                );
++            .ifPresent(p -> NetworkHelper.sendPacket(new GameStateSyncPacket(this.worldPosition, playerIndex, true, this.server, player.getEntityPlayer()), p));
+         }
+     }
+ 

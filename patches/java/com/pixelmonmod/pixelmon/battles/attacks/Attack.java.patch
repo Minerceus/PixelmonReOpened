@@ -1,0 +1,30 @@
+--- a/com/pixelmonmod/pixelmon/battles/attacks/Attack.java
++++ b/com/pixelmonmod/pixelmon/battles/attacks/Attack.java
+@@ -268,8 +268,7 @@
+                                 user.bc
+                                     .battleLog
+                                     .onCrash(
+-                                        var24,
+-                                        "Error calculating stopsIncomingAttack for " + e.type.toString() + " for attack " + this.getMove().getLocalizedName()
++                              var24, "Error calculating stopsIncomingAttack for " + e.type.toString() + " for attack " + this.getMove().getLocalizedName()
+                                     );
+                             }
+                         }
+@@ -284,8 +283,7 @@
+                                 user.bc
+                                     .battleLog
+                                     .onCrash(
+-                                        var23,
+-                                        "Error calculating stopsIncomingAttack for " + e.type.toString() + " for attack " + this.getMove().getLocalizedName()
++                              var23, "Error calculating stopsIncomingAttack for " + e.type.toString() + " for attack " + this.getMove().getLocalizedName()
+                                     );
+                             }
+                         }
+@@ -659,7 +657,6 @@
+         int power = (int)((float)this.doDamageCalc(user, target, crit) * damageMultiplier);
+         this.damageResult = (float)power;
+         if (this.getAttackCategory() == AttackCategory.STATUS) {
+-            int var10 = false;
+         } else if (target.isAlive()) {
+             if (crit > 1.0) {
+                 if (user.targets.size() > 1) {

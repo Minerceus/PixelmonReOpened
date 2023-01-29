@@ -1,0 +1,133 @@
+--- a/com/pixelmonmod/pixelmon/battles/controller/BattleController.java
++++ b/com/pixelmonmod/pixelmon/battles/controller/BattleController.java
+@@ -492,7 +492,7 @@
+                         nextFastestPokemon.takenTurn = this.switchThisTurn(nextFastestPokemon);
+                     }
+                 } catch (Exception var8) {
+-                    this.battleLog.onCrash(var8, "Problem switching out a Pok\u00e9mon.");
++               this.battleLog.onCrash(var8, "Problem switching out a Pokémon.");
+                 }
+             }
+ 
+@@ -733,9 +733,9 @@
+             && p.countAblePokemon() > p.controlledPokemon.size()) {
+             PlayerParticipant player = (PlayerParticipant)p;
+             List<StatusBase> wholeTeamStatuses = new ArrayList<>();
+-            Iterator oldPosition = p.controlledPokemon.iterator();
+-            if (oldPosition.hasNext()) {
+-                PixelmonWrapper pw = (PixelmonWrapper)oldPosition.next();
++         Iterator<PixelmonWrapper> iter = p.controlledPokemon.iterator();
++         if (iter.hasNext()) {
++            PixelmonWrapper pw = iter.next();
+                 wholeTeamStatuses = new ArrayList<>();
+ 
+                 for(StatusBase status : pw.getStatuses()) {
+@@ -745,18 +745,18 @@
+                 }
+             }
+ 
+-            int oldPosition = 0;
++         int oldPosition;
+             int newPosition = 0;
+ 
+             do {
+-                var13 = newPosition;
++            oldPosition = newPosition; // Maybe a bug here
+ 
+                 for(PixelmonWrapper pw : p.controlledPokemon) {
+                     if (newPosition == pw.battlePosition) {
+                         ++newPosition;
+                     }
+                 }
+-            } while(var13 != newPosition);
++         } while(oldPosition != newPosition);
+ 
+             PixelmonWrapper revived = null;
+ 
+@@ -815,9 +815,9 @@
+     public void reviveAfterDefeat(BattleParticipant p) {
+         if (p != null) {
+             List<StatusBase> wholeTeamStatuses = new ArrayList<>();
+-            Iterator oldPosition = p.controlledPokemon.iterator();
+-            if (oldPosition.hasNext()) {
+-                PixelmonWrapper pw = (PixelmonWrapper)oldPosition.next();
++         Iterator iter = p.controlledPokemon.iterator();
++         if (iter.hasNext()) {
++            PixelmonWrapper pw = (PixelmonWrapper)iter.next();
+                 wholeTeamStatuses = new ArrayList<>();
+ 
+                 for(StatusBase status : pw.getStatuses()) {
+@@ -831,14 +831,14 @@
+             int newPosition = 0;
+ 
+             do {
+-                var12 = newPosition;
++            oldPosition = newPosition;
+ 
+                 for(PixelmonWrapper pw : p.controlledPokemon) {
+                     if (newPosition == pw.battlePosition) {
+                         ++newPosition;
+                     }
+                 }
+-            } while(var12 != newPosition);
++         } while(oldPosition != newPosition);
+ 
+             PixelmonWrapper revived = null;
+ 
+@@ -1073,9 +1073,7 @@
+         if (this.participants.size() == 2) {
+             BattleParticipant bp1 = this.participants.get(0);
+             BattleParticipant bp2 = this.participants.get(1);
+-            if (bp1 instanceof PlayerParticipant && bp2 instanceof TrainerParticipant || bp2 instanceof PlayerParticipant && bp1 instanceof TrainerParticipant
+-                )
+-             {
++         if (bp1 instanceof PlayerParticipant && bp2 instanceof TrainerParticipant || bp2 instanceof PlayerParticipant && bp1 instanceof TrainerParticipant) {
+                 NPCEvent.EndBattle npcEndBattleEvent = new NPCEvent.EndBattle(this, cause, abnormal, results);
+                 Pixelmon.EVENT_BUS.post(npcEndBattleEvent);
+             }
+@@ -1573,11 +1571,11 @@
+     }
+ 
+     public ArrayList<BattleParticipant> getOpponents(BattleParticipant participant) {
+-        return this.participants.stream().filter(p -> p.team != participant.team).collect(Collectors.toList());
++      return (ArrayList<BattleParticipant>) this.participants.stream().filter(p -> p.team != participant.team).collect(Collectors.toList());
+     }
+ 
+     public ArrayList<BattleParticipant> getTeam(BattleParticipant participant) {
+-        return participant == null ? new ArrayList<>() : this.participants.stream().filter(p -> p.team == participant.team).collect(Collectors.toList());
++      return participant == null ? new ArrayList<>() : (ArrayList<BattleParticipant>) this.participants.stream().filter(p -> p.team == participant.team).collect(Collectors.toList());
+     }
+ 
+     public ArrayList<PixelmonWrapper> getActivePokemon() {
+@@ -1591,15 +1589,15 @@
+     }
+ 
+     public ArrayList<PixelmonWrapper> getActiveUnfaintedPokemon() {
+-        return this.getActivePokemon().stream().filter(pw -> !pw.isFainted()).collect(Collectors.toList());
++      return (ArrayList<PixelmonWrapper>) this.getActivePokemon().stream().filter(pw -> !pw.isFainted()).collect(Collectors.toList());
+     }
+ 
+     public ArrayList<PixelmonWrapper> getActiveFaintedPokemon() {
+-        return this.getActivePokemon().stream().filter(PixelmonWrapper::isFainted).collect(Collectors.toList());
++      return (ArrayList<PixelmonWrapper>) this.getActivePokemon().stream().filter(PixelmonWrapper::isFainted).collect(Collectors.toList());
+     }
+ 
+     public ArrayList<PixelmonWrapper> getAdjacentPokemon(PixelmonWrapper pokemon) {
+-        return this.getActiveUnfaintedPokemon()
++      return (ArrayList<PixelmonWrapper>) this.getActiveUnfaintedPokemon()
+             .stream()
+             .filter(pw -> Math.abs(pw.battlePosition - pokemon.battlePosition) <= 1 && pw != pokemon)
+             .collect(Collectors.toList());
+@@ -1914,11 +1912,7 @@
+                     }
+ 
+                     Pixelmon.EVENT_BUS
+-                        .post(
+-                            new PokedexEvent.Post(
+-                                player.getUUID(), preEvent.getOldStatus(), preEvent.getPokemon(), preEvent.getNewStatus(), preEvent.getCause()
+-                            )
+-                        );
++                  .post(new PokedexEvent.Post(player.getUUID(), preEvent.getOldStatus(), preEvent.getPokemon(), preEvent.getNewStatus(), preEvent.getCause()));
+                 }
+             }
+         }

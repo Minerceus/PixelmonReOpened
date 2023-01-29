@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/api/tcg/requirement/AbstractCardRequirement.java
++++ b/com/pixelmonmod/api/tcg/requirement/AbstractCardRequirement.java
+@@ -17,10 +17,10 @@
+     public abstract List<Requirement<Card, ItemStack, ?>> createSimple(String var1, String var2);
+ 
+     public void applyMinecraft(ItemStack itemStack) {
+-        this.applyData((A)CardProxy.readCard(itemStack));
++      this.applyData(CardProxy.readCard(itemStack));
+     }
+ 
+     public boolean isMinecraftMatch(ItemStack itemStack) {
+-        return this.isDataMatch((A)CardProxy.readCard(itemStack));
++      return this.isDataMatch(CardProxy.readCard(itemStack));
+     }
+ }

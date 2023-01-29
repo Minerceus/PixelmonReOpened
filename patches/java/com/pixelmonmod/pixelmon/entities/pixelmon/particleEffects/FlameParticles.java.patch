@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/particleEffects/FlameParticles.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/particleEffects/FlameParticles.java
+@@ -73,9 +73,7 @@
+                         color = new Color(0.63F, 0.26F, 0.64F);
+                     }
+ 
+-                    Minecraft.getInstance()
+-                        .particleEngine
+-                        .createParticle(new FlameParticleData(color, this.random((double)this.size)), x, y, z, 0.0, 0.0, 0.0);
++               Minecraft.getInstance().particleEngine.createParticle(new FlameParticleData(color, this.random((double)this.size)), x, y, z, 0.0, 0.0, 0.0);
+                 }
+             }
+ 

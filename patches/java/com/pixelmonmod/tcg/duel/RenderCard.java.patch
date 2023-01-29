@@ -1,0 +1,60 @@
+--- a/com/pixelmonmod/tcg/duel/RenderCard.java
++++ b/com/pixelmonmod/tcg/duel/RenderCard.java
+@@ -369,7 +369,7 @@
+                         true,
+                         90,
+                         1.0F,
+-                        "\u00a7l"
++                  "§l"
+                     );
+                     ++line;
+                     matrix.popPose();
+@@ -391,7 +391,7 @@
+                             1.0F,
+                             true,
+                             linesForAbility,
+-                            "\u00a7o"
++                     "§o"
+                         );
+                         line += linesForAbility;
+                     }
+@@ -408,17 +408,15 @@
+                         double moveDist = ((double)size + 0.01) * (double)i;
+                         double o = -0.1;
+                         int finalLine = line;
+-                        RenderingTCG.draw(
+-                            cardAttackData.getCosts().get(i).getTexture(), 7, DefaultVertexFormat.POSITION_COLOR_TEX_LIGHTMAP, matrix, buffer -> {
++                  RenderingTCG.draw(cardAttackData.getCosts().get(i).getTexture(), 7, DefaultVertexFormat.POSITION_COLOR_TEX_LIGHTMAP, matrix, buffer -> {
+                                 double x1 = (double)(x + dx - (float)finalLine * offset) + o;
+                                 double x2 = (double)(x + dx + size - (float)finalLine * offset) + o;
+                                 buffer.vertex(x1, (double)y, (double)(z + dz) + moveDist + (double)size, 1.0F, 1.0F);
+                                 buffer.vertex(x2, (double)y, (double)(z + dz) + moveDist + (double)size, 1.0F, 0.0F);
+                                 buffer.vertex(x2, (double)y, (double)(z + dz) + moveDist, 0.0F, 0.0F);
+                                 buffer.vertex(x1, (double)y, (double)(z + dz) + moveDist, 0.0F, 1.0F);
++                  });
+                             }
+-                        );
+-                    }
+ 
+                     String modifier = cardAttackData.getModifier() == null ? "" : cardAttackData.getModifier().toString();
+                     int damage = cardAttackData.getDamage();
+@@ -474,7 +472,7 @@
+                             1.0F,
+                             true,
+                             descriptionLines[attackIndex],
+-                            "\u00a7o"
++                     "§o"
+                         );
+                     }
+                 }
+@@ -670,9 +668,7 @@
+         int maxLines,
+         String formatting
+     ) {
+-        drawUnlocalizedString(
+-            matrix, x, y, z, new TranslatableComponent(unlocalizedString), color, isUnicode, rotation, scale, isExtended, maxLines, formatting
+-        );
++      drawUnlocalizedString(matrix, x, y, z, new TranslatableComponent(unlocalizedString), color, isUnicode, rotation, scale, isExtended, maxLines, formatting);
+     }
+ 
+     @OnlyIn(Dist.CLIENT)

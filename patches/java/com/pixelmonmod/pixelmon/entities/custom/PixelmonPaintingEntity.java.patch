@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/entities/custom/PixelmonPaintingEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/custom/PixelmonPaintingEntity.java
+@@ -24,7 +24,7 @@
+ import net.minecraftforge.fml.network.NetworkHooks;
+ 
+ public class PixelmonPaintingEntity extends HangingEntity {
+-    public static final DataSync<PixelmonPaintingEntity, ItemStack> SYNC_ITEM_STACK = new DataSync(
++   public static final DataSync<PixelmonPaintingEntity, ItemStack> SYNC_ITEM_STACK = new DataSync<>(
+         PixelmonPaintingEntity.class, EntityDataSerializers.ITEM_STACK, (pixelmonPaintingEntity, itemStack) -> pixelmonPaintingEntity.item = itemStack
+     );
+     private ItemStack item;

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/items/heldItems/IncensePowerIncreaseItem.java
++++ b/com/pixelmonmod/pixelmon/items/heldItems/IncensePowerIncreaseItem.java
+@@ -61,9 +61,7 @@
+             if (this.placeBlockAt(itemstack, player, worldIn, pos, iblockstate1)) {
+                 iblockstate1 = worldIn.getBlockState(pos);
+                 SoundType soundtype = iblockstate1.getBlock().getSoundType(iblockstate1, worldIn, pos, player);
+-                worldIn.playSound(
+-                    player, pos, soundtype.getPlaceSound(), SoundSource.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F
+-                );
++            worldIn.playSound(player, pos, soundtype.getPlaceSound(), SoundSource.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
+                 itemstack.shrink(1);
+             }
+ 

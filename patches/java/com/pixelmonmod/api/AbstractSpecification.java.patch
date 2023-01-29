@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/api/AbstractSpecification.java
++++ b/com/pixelmonmod/api/AbstractSpecification.java
+@@ -75,7 +75,7 @@
+     public <T> Optional<Requirement<A, B, T>> getRequirement(Class<? extends Requirement<A, B, T>> clazz) {
+         for(Requirement<A, B, ?> requirement : this.requirements) {
+             if (Objects.equals(requirement.getClass(), clazz)) {
+-                return Optional.of(requirement);
++            return Optional.of((Requirement<A, B, T>) requirement);
+             }
+         }
+ 
+@@ -88,7 +88,7 @@
+ 
+         for(Requirement<A, B, ?> requirement : this.requirements) {
+             if (Objects.equals(requirement.getClass(), clazz)) {
+-                requirements.add(requirement);
++            requirements.add((Requirement<A, B, T>) requirement);
+             }
+         }
+ 

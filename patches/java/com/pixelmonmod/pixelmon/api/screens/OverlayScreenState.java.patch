@@ -1,0 +1,111 @@
+--- a/com/pixelmonmod/pixelmon/api/screens/OverlayScreenState.java
++++ b/com/pixelmonmod/pixelmon/api/screens/OverlayScreenState.java
+@@ -66,9 +66,7 @@
+                     1.0F
+                 );
+             } else {
+-                ScreenHelper.drawImageQuad(
+-                    Resources.dock, matrix, 0.0F, (float)topSideBar, 22.0F, 203.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.5F, 0.5F, 0.5F, 1.0F, 0.0F
+-                );
++            ScreenHelper.drawImageQuad(Resources.dock, matrix, 0.0F, (float)topSideBar, 22.0F, 203.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.5F, 0.5F, 0.5F, 1.0F, 0.0F);
+             }
+ 
+             for(Pokemon pokemon : party) {
+@@ -77,21 +75,7 @@
+                 if (pokemon != null) {
+                     boolean isSentOut = SendoutListener.isInWorld(pokemon.getUUID(), mc.level);
+                     ScreenHelper.drawImageQuad(
+-                        Resources.textbox,
+-                        matrix,
+-                        (float)(leftText - 28),
+-                        (float)(yPos - 10),
+-                        123.0F,
+-                        34.0F,
+-                        0.0F,
+-                        0.0F,
+-                        1.0F,
+-                        1.0F,
+-                        1.0F,
+-                        1.0F,
+-                        1.0F,
+-                        1.0F,
+-                        0.0F
++                  Resources.textbox, matrix, (float)(leftText - 28), (float)(yPos - 10), 123.0F, 34.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+                     );
+                     float textureX = -1.0F;
+                     float textureY = -1.0F;
+@@ -264,9 +248,7 @@
+                     1.0F
+                 );
+             } else {
+-                ScreenHelper.drawImageQuad(
+-                    Resources.dock, matrix, 0.0F, (float)topSideBar, 22.0F, 203.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.5F, 0.5F, 0.5F, 1.0F, 0.0F
+-                );
++            ScreenHelper.drawImageQuad(Resources.dock, matrix, 0.0F, (float)topSideBar, 22.0F, 203.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.5F, 0.5F, 0.5F, 1.0F, 0.0F);
+             }
+ 
+             for(Pokemon pokemon : party) {
+@@ -419,13 +401,9 @@
+             }
+ 
+             ScreenHelper.drawImageQuad(rl, matrix, -3.0F, (float)(yPos - 7), 32.0F, 32.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+-            ScreenHelper.drawImageQuad(
+-                pokemon.getSprite(), matrix, 1.0F, (float)(yPos - 6), 24.0F, 24.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+-            );
++         ScreenHelper.drawImageQuad(pokemon.getSprite(), matrix, 1.0F, (float)(yPos - 6), 24.0F, 24.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+             if (!pokemon.getHeldItem().isEmpty()) {
+-                ScreenHelper.drawImageQuad(
+-                    Resources.heldItem, matrix, 18.0F, (float)(yPos + 13), 6.0F, 6.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+-                );
++            ScreenHelper.drawImageQuad(Resources.heldItem, matrix, 18.0F, (float)(yPos + 13), 6.0F, 6.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+             }
+ 
+             if (!pokemon.isEgg()) {
+@@ -495,13 +473,9 @@
+             }
+ 
+             ScreenHelper.drawImageQuad(rl, matrix, -3.0F, (float)(yPos - 7), 32.0F, 32.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+-            ScreenHelper.drawImageQuad(
+-                pokemon.getSprite(), matrix, 1.0F, (float)(yPos - 6), 24.0F, 24.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+-            );
++         ScreenHelper.drawImageQuad(pokemon.getSprite(), matrix, 1.0F, (float)(yPos - 6), 24.0F, 24.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+             if (!pokemon.getHeldItem().isEmpty()) {
+-                ScreenHelper.drawImageQuad(
+-                    Resources.heldItem, matrix, 18.0F, (float)(yPos + 13), 6.0F, 6.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+-                );
++            ScreenHelper.drawImageQuad(Resources.heldItem, matrix, 18.0F, (float)(yPos + 13), 6.0F, 6.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+             }
+         }
+     },
+@@ -609,13 +583,9 @@
+             }
+ 
+             ScreenHelper.drawImageQuad(rl, matrix, -3.0F, (float)(yPos - 7), 32.0F, 32.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+-            ScreenHelper.drawImageQuad(
+-                pokemon.getSprite(), matrix, 1.0F, (float)(yPos - 6), 24.0F, 24.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+-            );
++         ScreenHelper.drawImageQuad(pokemon.getSprite(), matrix, 1.0F, (float)(yPos - 6), 24.0F, 24.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+             if (!pokemon.getHeldItem().isEmpty()) {
+-                ScreenHelper.drawImageQuad(
+-                    Resources.heldItem, matrix, 18.0F, (float)(yPos + 13), 6.0F, 6.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+-                );
++            ScreenHelper.drawImageQuad(Resources.heldItem, matrix, 18.0F, (float)(yPos + 13), 6.0F, 6.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+             }
+ 
+             if (!pokemon.isEgg()) {
+@@ -685,13 +655,9 @@
+             }
+ 
+             ScreenHelper.drawImageQuad(rl, matrix, -3.0F, (float)(yPos - 7), 32.0F, 32.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+-            ScreenHelper.drawImageQuad(
+-                pokemon.getSprite(), matrix, 1.0F, (float)(yPos - 6), 24.0F, 24.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+-            );
++         ScreenHelper.drawImageQuad(pokemon.getSprite(), matrix, 1.0F, (float)(yPos - 6), 24.0F, 24.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+             if (!pokemon.getHeldItem().isEmpty()) {
+-                ScreenHelper.drawImageQuad(
+-                    Resources.heldItem, matrix, 18.0F, (float)(yPos + 13), 6.0F, 6.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+-                );
++            ScreenHelper.drawImageQuad(Resources.heldItem, matrix, 18.0F, (float)(yPos + 13), 6.0F, 6.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+             }
+         }
+     },

@@ -1,0 +1,30 @@
+--- a/com/pixelmonmod/pixelmon/blocks/spawning/BlockSpawningHandler.java
++++ b/com/pixelmonmod/pixelmon/blocks/spawning/BlockSpawningHandler.java
+@@ -246,13 +246,10 @@
+ 
+                 if (pixelmon != null) {
+                     this.setupBattle(worldIn, pos, player, startType, fightingPokemon, pixelmon);
+-                    player.sendMessage(
+-                        new TranslatableComponent("pixelmon.moveskill.headbutt.battle", new Object[]{pixelmon.getLocalizedName()}), Util.NIL_UUID
+-                    );
++               player.sendMessage(new TranslatableComponent("pixelmon.moveskill.headbutt.battle", new Object[]{pixelmon.getLocalizedName()}), Util.NIL_UUID);
+                 } else if (item != null) {
+                     player.sendMessage(
+-                        new TranslatableComponent("pixelmon.moveskill.headbutt.item", new Object[]{item.getItem().getItem().getName(item.getItem())}),
+-                        Util.NIL_UUID
++                  new TranslatableComponent("pixelmon.moveskill.headbutt.item", new Object[]{item.getItem().getItem().getName(item.getItem())}), Util.NIL_UUID
+                     );
+                 } else {
+                     player.sendMessage(new TranslatableComponent("pixelmon.moveskill.headbutt.nothing"), Util.NIL_UUID);
+@@ -405,8 +402,9 @@
+     ) {
+         PlayerParticipant playerParticipant = new PlayerParticipant(player, fightingPokemon);
+         WildPixelmonParticipant wildPixelmonParticipant = new WildPixelmonParticipant(true, pixelmon);
+-        if (pixelmon != null
+-            && !Pixelmon.EVENT_BUS.post(new PixelmonBlockStartingBattleEvent(worldIn, pos, player, startType, fightingPokemon, pixelmon, null))) {
++      if (pixelmon != null && !Pixelmon.EVENT_BUS.post(new PixelmonBlockStartingBattleEvent(worldIn, pos, player, startType, fightingPokemon, pixelmon, null))
++         )
++       {
+             wildPixelmonParticipant.startedBattle = true;
+             BattleRegistry.startBattle(playerParticipant, wildPixelmonParticipant);
+         }

@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/comm/packetHandlers/badgecase/OpenBadgeCasePacket.java
++++ b/com/pixelmonmod/pixelmon/comm/packetHandlers/badgecase/OpenBadgeCasePacket.java
+@@ -70,7 +70,7 @@
+             }
+         }
+ 
+-        this.badges = new ArrayList();
++      this.badges = new ArrayList<>();
+         CompoundTag superCompound = buffer.readNbt();
+ 
+         for(Tag base : superCompound.getList("list", 10)) {

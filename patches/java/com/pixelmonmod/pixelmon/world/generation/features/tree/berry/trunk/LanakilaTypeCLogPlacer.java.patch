@@ -1,0 +1,14 @@
+--- a/com/pixelmonmod/pixelmon/world/generation/features/tree/berry/trunk/LanakilaTypeCLogPlacer.java
++++ b/com/pixelmonmod/pixelmon/world/generation/features/tree/berry/trunk/LanakilaTypeCLogPlacer.java
+@@ -64,10 +64,7 @@
+     ) {
+         if (TreeFeature.validTreePos(p_236911_0_, p_236911_2_)) {
+             setBlock(
+-                p_236911_0_,
+-                p_236911_2_,
+-                (BlockState)p_236911_5_.trunkProvider.getState(p_236911_1_, p_236911_2_).setValue(LogBlock.AXIS, Axis.X),
+-                p_236911_4_
++            p_236911_0_, p_236911_2_, (BlockState)p_236911_5_.trunkProvider.getState(p_236911_1_, p_236911_2_).setValue(LogBlock.AXIS, Axis.X), p_236911_4_
+             );
+             p_236911_3_.add(p_236911_2_.immutable());
+             return true;

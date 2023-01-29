@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/world/generation/AddToBiomes.java
++++ b/com/pixelmonmod/pixelmon/world/generation/AddToBiomes.java
+@@ -117,9 +117,7 @@
+             } catch (Exception var6) {
+             }
+ 
+-            Map<StructureFeature<?>, StructureFeatureConfiguration> tempMap = Maps.newHashMap(
+-                world.getChunkSource().getGenerator().getSettings().structureConfig
+-            );
++         Map<StructureFeature<?>, StructureFeatureConfiguration> tempMap = Maps.newHashMap(world.getChunkSource().getGenerator().getSettings().structureConfig);
+ 
+             for(RegistryObject<StructureFeature<NoneFeatureConfiguration>> structure : PixelmonStructures.ALL_STRUCTURES) {
+                 tempMap.putIfAbsent(structure.get(), StructureSettings.DEFAULTS.get(structure.get()));

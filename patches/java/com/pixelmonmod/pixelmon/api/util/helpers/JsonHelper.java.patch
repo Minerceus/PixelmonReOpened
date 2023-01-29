@@ -1,0 +1,28 @@
+--- a/com/pixelmonmod/pixelmon/api/util/helpers/JsonHelper.java
++++ b/com/pixelmonmod/pixelmon/api/util/helpers/JsonHelper.java
+@@ -16,14 +16,14 @@
+ 
+ public class JsonHelper {
+     public static <T> T getOrDefault(JsonObject object, String key, Class<T> type, T def, JsonDeserializationContext context) {
+-        return (T)(object.has(key) && !object.get(key).isJsonNull() ? context.deserialize(object.get(key), type) : def);
++      return object.has(key) && !object.get(key).isJsonNull() ? context.deserialize(object.get(key), type) : def;
+     }
+ 
+     public static <T> JsonArray serializeList(Collection<T> collection, Function<T, JsonElement> serializer) {
+         JsonArray array = new JsonArray();
+ 
+         for(T element : collection) {
+-            array.add((JsonElement)serializer.apply(element));
++         array.add(serializer.apply(element));
+         }
+ 
+         return array;
+@@ -33,7 +33,7 @@
+         List<T> list = Lists.newArrayList();
+ 
+         for(JsonElement property : array) {
+-            T apply = deserializer.apply((T)property);
++         T apply = deserializer.apply(property);
+             if (apply != null) {
+                 list.add(apply);
+             }

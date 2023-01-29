@@ -1,0 +1,14 @@
+--- a/com/pixelmonmod/pixelmon/api/config/FormLogRegistry.java
++++ b/com/pixelmonmod/pixelmon/api/config/FormLogRegistry.java
+@@ -86,10 +86,7 @@
+             PixelmonSpecies.MAGIKARP, 10, PokemonSpecificationProxy.create("palette:blue_saucy"), PokemonSpecificationProxy.create("palette:blue_raindrops")
+         );
+         createCategory(
+-            PixelmonSpecies.MAGIKARP,
+-            11,
+-            PokemonSpecificationProxy.create("palette:violet_saucy"),
+-            PokemonSpecificationProxy.create("palette:violet_raindrops")
++         PixelmonSpecies.MAGIKARP, 11, PokemonSpecificationProxy.create("palette:violet_saucy"), PokemonSpecificationProxy.create("palette:violet_raindrops")
+         );
+         createCategory(
+             PixelmonSpecies.MAGIKARP,

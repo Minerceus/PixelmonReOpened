@@ -1,0 +1,44 @@
+--- a/com/pixelmonmod/pixelmon/api/registries/PixelmonItems.java
++++ b/com/pixelmonmod/pixelmon/api/registries/PixelmonItems.java
+@@ -1360,15 +1360,15 @@
+     public static TumblestoneItem tumblestone = null;
+     public static TumblestoneItem sky_tumblestone = null;
+     public static TumblestoneItem black_tumblestone = null;
+-    public static ArrayList<Item> potionElixirList = new ArrayList();
+-    public static ArrayList<Item> evostoneList = new ArrayList();
+-    public static ArrayList<Item> weakLures = new ArrayList();
+-    public static ArrayList<Item> strongLures = new ArrayList();
++   public static ArrayList<Item> potionElixirList = new ArrayList<>();
++   public static ArrayList<Item> evostoneList = new ArrayList<>();
++   public static ArrayList<Item> weakLures = new ArrayList<>();
++   public static ArrayList<Item> strongLures = new ArrayList<>();
+     public static ArrayList<Item> mailItems = new ArrayList(ItemRegistration.mailTypes.length);
+-    public static List<Item> HMs = new ArrayList();
+-    private static List<Item> heldItemList = new ArrayList();
+-    public static List<Item> zCrystals = new ArrayList();
+-    public static List<Item> megaStones = new ArrayList();
++   public static List<Item> HMs = new ArrayList<>();
++   private static List<Item> heldItemList = new ArrayList<>();
++   public static List<Item> zCrystals = new ArrayList<>();
++   public static List<Item> megaStones = new ArrayList<>();
+     public static HashMap<Element, List<BadgeItem>> badgeList;
+     private static ArrayList<Item> pokeballList;
+ 
+@@ -1381,7 +1381,7 @@
+     }
+ 
+     public static ArrayList<Item> initializeEvostoneList() {
+-        ArrayList<Item> list = new ArrayList();
++      ArrayList<Item> list = new ArrayList<>();
+         list.add(fire_stone);
+         list.add(water_stone);
+         list.add(moon_stone);
+@@ -1559,7 +1559,7 @@
+     }
+ 
+     public static LureItem getLure(LureItem.LureType type, LureItem.LureStrength strength) {
+-        return CollectionHelper.find(strength == LureItem.LureStrength.WEAK ? weakLures : strongLures, lure -> lure.type == type);
++      return (LureItem) CollectionHelper.find(strength == LureItem.LureStrength.WEAK ? weakLures : strongLures, lure -> ((LureItem) lure).type == type);
+     }
+ 
+     public static ItemStack createTMStackFor(ITechnicalMove move) {

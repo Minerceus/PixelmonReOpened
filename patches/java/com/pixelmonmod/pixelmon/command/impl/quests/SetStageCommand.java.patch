@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/quests/SetStageCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/quests/SetStageCommand.java
+@@ -50,8 +50,7 @@
+         progress.sendTo(player);
+         sender.sendSuccess(
+             new TranslatableComponent(
+-                "pixelmon.command.setstage.notify",
+-                new Object[]{sender.getTextName(), player.getDisplayName().getString(), args[0].replace("_", " "), args[1]}
++            "pixelmon.command.setstage.notify", new Object[]{sender.getTextName(), player.getDisplayName().getString(), args[0].replace("_", " "), args[1]}
+             ),
+             true
+         );

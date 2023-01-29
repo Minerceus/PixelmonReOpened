@@ -1,0 +1,16 @@
+--- a/com/pixelmonmod/pixelmon/client/render/tileEntities/RenderTileEntityBell.java
++++ b/com/pixelmonmod/pixelmon/client/render/tileEntities/RenderTileEntityBell.java
+@@ -92,12 +92,7 @@
+     }
+ 
+     public void renderModel(
+-        PoseStack matrix,
+-        MultiBufferSource buffer,
+-        int combinedLight,
+-        int combinedOverlay,
+-        GenericModelHolder<GenericSmdModel> model,
+-        ResourceLocation texture
++      PoseStack matrix, MultiBufferSource buffer, int combinedLight, int combinedOverlay, GenericModelHolder<GenericSmdModel> model, ResourceLocation texture
+     ) {
+         matrix.pushPose();
+         float rotate = -90.0F;

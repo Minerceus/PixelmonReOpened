@@ -1,0 +1,27 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/pokemoneditor/PokemonEditorAdvancedScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/pokemoneditor/PokemonEditorAdvancedScreen.java
+@@ -84,9 +84,7 @@
+         super.init();
+         this.buttons
+             .add(
+-                new IndexedButton(
+-                    1, this.width / 2 + 155, this.height / 2 + 90, 30, 20, new TranslatableComponent("gui.guiItemDrops.ok"), this::actionPerformed
+-                )
++            new IndexedButton(1, this.width / 2 + 155, this.height / 2 + 90, 30, 20, new TranslatableComponent("gui.guiItemDrops.ok"), this::actionPerformed)
+             );
+         Ability[] allAbilities = this.data.getForm().getAbilities().getAll();
+         List<String> abilityList = Arrays.stream(allAbilities).filter(Objects::nonNull).map(Ability::getName).collect(Collectors.toList());
+@@ -215,12 +213,7 @@
+             matrix, I18n.get("gui.screenpokechecker.nature", new Object[0]), (float)this.width / 2.0F - 90.0F, (float)(this.natureText.y - 10), 0, false
+         );
+         ScreenHelper.drawCenteredString(
+-            matrix,
+-            I18n.get("gui.screenpokechecker.happiness", new Object[0]),
+-            (float)this.width / 2.0F - 90.0F,
+-            (float)(this.friendshipText.y - 10),
+-            0,
+-            false
++         matrix, I18n.get("gui.screenpokechecker.happiness", new Object[0]), (float)this.width / 2.0F - 90.0F, (float)(this.friendshipText.y - 10), 0, false
+         );
+         if (!this.heldItem.isEmpty()) {
+             this.itemRenderer.renderAndDecorateItem(this.heldItem, this.width / 2 - 150, this.heldText.y);

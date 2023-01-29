@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/moveskills/MoveSkillSelectScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/moveskills/MoveSkillSelectScreen.java
+@@ -196,10 +196,10 @@
+ 
+         if (mouseX == this.lastMouseX && mouseY == this.lastMouseY && System.currentTimeMillis() > this.mouseStationaryTime + 1250L && hovering != -1) {
+             MoveSkill moveSkill = this.moveSkills.get(focused);
+-            StringBuilder str = new StringBuilder("\u00a7n" + I18n.get(moveSkill.name, new Object[0]));
++         StringBuilder str = new StringBuilder("§n" + I18n.get(moveSkill.name, new Object[0]));
+ 
+             for(String description : moveSkill.descriptions) {
+-                str.append("\n\n\u00a7r").append(I18n.get(description, new Object[0]));
++            str.append("\n\n§r").append(I18n.get(description, new Object[0]));
+             }
+ 
+             List<String> strings = ScreenHelper.splitString(str.toString(), this.width - mouseX - 10);

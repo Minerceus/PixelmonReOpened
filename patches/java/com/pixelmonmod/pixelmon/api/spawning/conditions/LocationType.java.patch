@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/api/spawning/conditions/LocationType.java
++++ b/com/pixelmonmod/pixelmon/api/spawning/conditions/LocationType.java
+@@ -48,9 +48,7 @@
+         .setBaseBlockCondition(state -> LAND.baseBlockCondition.test(state) || WATER.baseBlockCondition.test(state))
+         .setSurroundingBlockCondition(state -> LAND.surroundingBlockCondition.test(state) || WATER.surroundingBlockCondition.test(state))
+         .setLocationMutator(spawnLocation -> {
+-            MutableBlockPos highest = new MutableBlockPos(
+-                spawnLocation.location.pos.getX(), spawnLocation.location.pos.getY(), spawnLocation.location.pos.getZ()
+-            );
++         MutableBlockPos highest = new MutableBlockPos(spawnLocation.location.pos.getX(), spawnLocation.location.pos.getY(), spawnLocation.location.pos.getZ());
+             highest.setY(230);
+     
+             while(highest.getY() > 0) {

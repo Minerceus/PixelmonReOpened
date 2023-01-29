@@ -1,0 +1,29 @@
+--- a/com/pixelmonmod/pixelmon/client/render/entity/renderers/NPCRenderer.java
++++ b/com/pixelmonmod/pixelmon/client/render/entity/renderers/NPCRenderer.java
+@@ -94,14 +94,7 @@
+     }
+ 
+     protected void renderLivingLabel(
+-        NPCEntity npc,
+-        String displayText,
+-        String subtitleText,
+-        float entityYaw,
+-        float partialTicks,
+-        PoseStack matrix,
+-        MultiBufferSource buffer,
+-        int packedLight
++      NPCEntity npc, String displayText, String subtitleText, float entityYaw, float partialTicks, PoseStack matrix, MultiBufferSource buffer, int packedLight
+     ) {
+         Font fontRenderer = this.getFont();
+         float var13 = 1.6F;
+@@ -256,9 +249,7 @@
+         rendererArm.xRot = 0.0F;
+         rendererArm.render(matrix, buffer.getBuffer(RenderType.entitySolid(this.getTextureLocation(npc))), combinedLightIn, OverlayTexture.NO_OVERLAY);
+         rendererArmwear.xRot = 0.0F;
+-        rendererArmwear.render(
+-            matrix, buffer.getBuffer(RenderType.entityTranslucent(this.getTextureLocation(npc))), combinedLightIn, OverlayTexture.NO_OVERLAY
+-        );
++      rendererArmwear.render(matrix, buffer.getBuffer(RenderType.entityTranslucent(this.getTextureLocation(npc))), combinedLightIn, OverlayTexture.NO_OVERLAY);
+     }
+ 
+     protected void setupRotations(NPCEntity entityLiving, PoseStack matrixStackIn, float ageInTicks, float rotationYaw, float partialTicks) {

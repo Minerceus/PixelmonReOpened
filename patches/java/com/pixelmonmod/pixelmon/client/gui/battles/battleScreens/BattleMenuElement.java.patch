@@ -1,0 +1,21 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/BattleMenuElement.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/BattleMenuElement.java
+@@ -185,17 +185,7 @@
+         public void renderButton(PoseStack matrix, int mouseX, int mouseY, float partialTicks) {
+             if (this.visible) {
+                 ScreenHelper.drawImage(
+-                    matrix,
+-                    BattleMenuElement.MENU_LIST_ITEM,
+-                    (float)this.x,
+-                    (float)this.y,
+-                    (float)this.width,
+-                    (float)this.height,
+-                    1.0F,
+-                    1.0F,
+-                    1.0F,
+-                    1.0F,
+-                    0.0F
++               matrix, BattleMenuElement.MENU_LIST_ITEM, (float)this.x, (float)this.y, (float)this.width, (float)this.height, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+                 );
+             }
+         }

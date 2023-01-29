@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/api/registry/RegistryManager.java
++++ b/com/pixelmonmod/api/registry/RegistryManager.java
+@@ -17,7 +17,7 @@
+     }
+ 
+     public static <T> void register(String key, T value) {
+-        register(key, value, value.getClass());
++      register(key, value, (Class<T>) value.getClass());
+     }
+ 
+     public static <T> void register(String key, T value, Class<T> clazz) {
+@@ -25,7 +25,7 @@
+     }
+ 
+     public static <T> RegistryValue<T> getRegistryValue(T value) {
+-        return getRegistry(value.getClass()).getKeyForValue(value);
++      return (RegistryValue<T>) getRegistry(value.getClass()).getKeyForValue(value);
+     }
+ 
+     public static <T> List<T> getAllValues(Class<T> type) {

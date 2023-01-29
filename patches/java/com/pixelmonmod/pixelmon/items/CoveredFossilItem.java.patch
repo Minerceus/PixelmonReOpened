@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/items/CoveredFossilItem.java
++++ b/com/pixelmonmod/pixelmon/items/CoveredFossilItem.java
+@@ -6,7 +6,7 @@
+ import net.minecraft.world.item.Item.Properties;
+ 
+ public class CoveredFossilItem extends PixelmonItem {
+-    public static ArrayList<CoveredFossilItem> fossilList = new ArrayList();
++   public static ArrayList<CoveredFossilItem> fossilList = new ArrayList<>();
+     public EnumFossils fossils;
+ 
+     public CoveredFossilItem(EnumFossils fossils) {

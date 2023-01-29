@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/egg/impl/PixelmonBreedingLogic.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/egg/impl/PixelmonBreedingLogic.java
+@@ -307,8 +307,7 @@
+                 inherit.computeIfAbsent(BattleStatsType.DEFENSE, ___ -> Lists.newArrayList()).add(pokemon.getIVs().getStat(BattleStatsType.DEFENSE));
+                 --numberToInherit;
+             } else if (heldItem == PixelmonItems.power_lens) {
+-                inherit.computeIfAbsent(BattleStatsType.SPECIAL_ATTACK, ___ -> Lists.newArrayList())
+-                    .add(pokemon.getIVs().getStat(BattleStatsType.SPECIAL_ATTACK));
++            inherit.computeIfAbsent(BattleStatsType.SPECIAL_ATTACK, ___ -> Lists.newArrayList()).add(pokemon.getIVs().getStat(BattleStatsType.SPECIAL_ATTACK));
+                 --numberToInherit;
+             } else if (heldItem == PixelmonItems.power_band) {
+                 inherit.computeIfAbsent(BattleStatsType.SPECIAL_DEFENSE, ___ -> Lists.newArrayList())

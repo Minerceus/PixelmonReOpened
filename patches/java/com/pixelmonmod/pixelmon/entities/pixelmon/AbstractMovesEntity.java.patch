@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/AbstractMovesEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/AbstractMovesEntity.java
+@@ -88,7 +88,7 @@
+         SYNC_FLYING.set(this, isFlying);
+     }
+ 
+-    @Override
++   // @Override
+     public boolean isFlying() {
+         return this.isFlying;
+     }

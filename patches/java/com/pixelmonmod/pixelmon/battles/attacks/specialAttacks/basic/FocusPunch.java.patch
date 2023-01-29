@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/FocusPunch.java
++++ b/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/FocusPunch.java
+@@ -38,9 +38,9 @@
+     ) {
+         if (!pw.hasStatus(StatusType.Substitute)) {
+             for(PixelmonWrapper opponent : pw.getOpponentPokemon()) {
+-                if (opponent.lastAttack != null
+-                    && opponent.lastAttack.moveResult.target == pw
+-                    && opponent.lastAttack.getAttackCategory() != AttackCategory.STATUS) {
++            if (opponent.lastAttack != null && opponent.lastAttack.moveResult.target == pw && opponent.lastAttack.getAttackCategory() != AttackCategory.STATUS
++               )
++             {
+                     userChoice.lowerTier(2);
+                     userChoice.weight = 0.0F;
+                 }

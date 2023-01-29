@@ -1,0 +1,23 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/StatueEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/StatueEntity.java
+@@ -218,8 +218,7 @@
+     @Override
+     public Stats getForm() {
+         if (this.pokemon.getForm() == null) {
+-            PokemonBase.SYNC_POKEMON_BASE
+-                .set(this, new PokemonBase(this.getSpecies(), this.getSpecies().getDefaultForm(), this.getPalette(), this.getGender()));
++         PokemonBase.SYNC_POKEMON_BASE.set(this, new PokemonBase(this.getSpecies(), this.getSpecies().getDefaultForm(), this.getPalette(), this.getGender()));
+         }
+ 
+         return this.pokemon.getForm();
+@@ -543,9 +542,7 @@
+ 
+     @Override
+     public float getScaleFactor() {
+-        return this.getGrowth() == null
+-            ? 1.0F
+-            : (float)Math.pow((double)this.getGrowth().scaleValue, PixelmonConfigProxy.getGeneral().getGrowthScaleModifier());
++      return this.getGrowth() == null ? 1.0F : (float)Math.pow((double)this.getGrowth().scaleValue, PixelmonConfigProxy.getGeneral().getGrowthScaleModifier());
+     }
+ 
+     @Override

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/spawning/TrackingSpawnerCoordinator.java
++++ b/com/pixelmonmod/pixelmon/spawning/TrackingSpawnerCoordinator.java
+@@ -35,9 +35,7 @@
+     public void onPlayerLogout(PlayerLoggedOutEvent event) {
+         if (!event.getPlayer().level.isClientSide) {
+             this.spawners
+-                .removeIf(
+-                    spawner -> spawner instanceof PlayerTrackingSpawner && ((PlayerTrackingSpawner)spawner).playerUUID.equals(event.getPlayer().getUUID())
+-                );
++            .removeIf(spawner -> spawner instanceof PlayerTrackingSpawner && ((PlayerTrackingSpawner)spawner).playerUUID.equals(event.getPlayer().getUUID()));
+         }
+     }
+ }

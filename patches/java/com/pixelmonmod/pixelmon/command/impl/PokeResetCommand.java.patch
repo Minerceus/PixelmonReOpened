@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/PokeResetCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/PokeResetCommand.java
+@@ -46,11 +46,7 @@
+         int level = 5;
+         if (args.length == 3) {
+             level = PixelmonCommandUtils.requireInt(
+-                args[2],
+-                1,
+-                PixelmonConfigProxy.getGeneral().getMaxLevel(),
+-                "pixelmon.command.pokereset.maxLvl",
+-                PixelmonConfigProxy.getGeneral().getMaxLevel()
++            args[2], 1, PixelmonConfigProxy.getGeneral().getMaxLevel(), "pixelmon.command.pokereset.maxLvl", PixelmonConfigProxy.getGeneral().getMaxLevel()
+             );
+         }
+ 

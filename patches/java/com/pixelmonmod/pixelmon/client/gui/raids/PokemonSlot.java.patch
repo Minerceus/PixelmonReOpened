@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/raids/PokemonSlot.java
++++ b/com/pixelmonmod/pixelmon/client/gui/raids/PokemonSlot.java
+@@ -77,9 +77,7 @@
+             }
+         }
+ 
+-        ScreenHelper.drawEllipse(
+-            matrix, this.x, this.y, this.z - 1.0, this.w, height / 40.0, 40, disabled ? color : (!hover && !selected ? Color.WHITE : color)
+-        );
++      ScreenHelper.drawEllipse(matrix, this.x, this.y, this.z - 1.0, this.w, height / 40.0, 40, disabled ? color : (!hover && !selected ? Color.WHITE : color));
+         if (this.player != null || this.pokemon != null) {
+             ResourceLocation rl;
+             if (this.player != null) {

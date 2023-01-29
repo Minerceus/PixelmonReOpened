@@ -1,0 +1,60 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/raids/RaidCatchScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/raids/RaidCatchScreen.java
+@@ -220,19 +220,13 @@
+                                 : (
+                                     this.balls.isEmpty()
+                                         ? I18n.get("raid.button.noballs", new Object[0])
+-                                        : (
+-                                            this.canUseCurrentBall()
+-                                                ? I18n.get("raid.button.catch", new Object[0])
+-                                                : I18n.get("raid.button.cantuse", new Object[0])
+-                                        )
++                              : (this.canUseCurrentBall() ? I18n.get("raid.button.catch", new Object[0]) : I18n.get("raid.button.cantuse", new Object[0]))
+                                 ),
+                             this.raid,
+                             button -> NetworkHelper.sendToServer(
+-                                    new RaidActionPacket(
+-                                        this.raid.getDen(), 10, ((Triple)this.balls.get(this.ballIndex)).a, ((Triple)this.balls.get(this.ballIndex)).b
++                           new RaidActionPacket(this.raid.getDen(), 10, (this.balls.get(this.ballIndex)).a, (this.balls.get(this.ballIndex)).b)
+                                     )
+                                 )
+-                        )
+                         .setEnabled(this.canCatch && !this.balls.isEmpty() && !this.pcFull && this.canUseCurrentBall())
+                         .setVisible(this.canCatch)
+                 );
+@@ -320,7 +314,7 @@
+             matrix.pushPose();
+             matrix.translate((double)((float)this.width * 0.525F), (double)this.height * 0.7675, 0.0);
+             matrix.scale(scale, scale, scale);
+-            this.drawItem(matrix, (ItemStack)((Triple)this.balls.get(this.ballIndex)).c, 0.0F, 0.0F, 770, 771);
++         this.drawItem(matrix, (ItemStack)(this.balls.get(this.ballIndex)).c, 0.0F, 0.0F, 770, 771);
+             matrix.popPose();
+         }
+ 
+@@ -491,7 +485,7 @@
+                         }
+                     } else {
+                         SoundHelper.playSound(SoundEvents.ITEM_BREAK, 0.8F, 0.8F + this.minecraft.level.random.nextFloat() * 0.4F);
+-                        PokeBall ball = PokeBallPart.getPokeBall((ItemStack)((Triple)this.balls.get(this.ballIndex)).c).get();
++                  PokeBall ball = PokeBallPart.getPokeBall((ItemStack)(this.balls.get(this.ballIndex)).c).get();
+                         ItemStack[] stacks = new ItemStack[]{ball.getLidItem(), new ItemStack(ball.getRandomBaseAsItem()), new ItemStack(Blocks.STONE_BUTTON)};
+ 
+                         for(ItemStack stack : stacks) {
+@@ -529,7 +523,7 @@
+             }
+ 
+             if (this.shakes > 0 || this.catchSuccess) {
+-                this.drawItem(matrix, (ItemStack)((Triple)this.balls.get(this.ballIndex)).c, 0.0F, 0.0F, 770, 771, this.shakes == 0);
++            this.drawItem(matrix, (ItemStack)(this.balls.get(this.ballIndex)).c, 0.0F, 0.0F, 770, 771, this.shakes == 0);
+             }
+ 
+             matrix.popPose();
+@@ -762,7 +756,7 @@
+         if (this.balls.isEmpty()) {
+             return false;
+         } else {
+-            PokeBall ball = PokeBallPart.getPokeBall((ItemStack)((Triple)this.balls.get(this.ballIndex)).c).get();
++         PokeBall ball = PokeBallPart.getPokeBall((ItemStack)(this.balls.get(this.ballIndex)).c).get();
+             return this.raid.canUseMaster || !ball.isGuaranteedCatch();
+         }
+     }

@@ -1,0 +1,29 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/statueEditor/PokeDisplayEditor.java
++++ b/com/pixelmonmod/pixelmon/client/gui/statueEditor/PokeDisplayEditor.java
+@@ -176,9 +176,7 @@
+                     new DropDown<>(textures, current, this.controlLeft + 45, this.controlTop + 78, 80, 120)
+                         .setGetOptionString(ITranslatable::getLocalizedName)
+                         .setOnSelected(texture -> {
+-                            NetworkHelper.sendToServer(
+-                                new PokeDisplayUpdatePacket(EnumStatuePacketMode.SetTextureType, this.displayTileEntity, texture.toString())
+-                            );
++                     NetworkHelper.sendToServer(new PokeDisplayUpdatePacket(EnumStatuePacketMode.SetTextureType, this.displayTileEntity, texture.toString()));
+                             this.displayTileEntity.setTextureMode(texture);
+                         })
+                         .setInactiveTop(this.controlTop + 78)
+@@ -357,14 +355,7 @@
+     @Override
+     protected void drawBackgroundUnderMenus(PoseStack matrix, float partialTicks, int mouseX, int mouseY) {
+         ScreenHelper.drawGradientRect(
+-            matrix,
+-            this.controlLeft,
+-            this.controlTop,
+-            0.0F,
+-            this.controlLeft + this.controlWidth,
+-            this.controlTop + this.controlHeight,
+-            -1713512995,
+-            -1713512995
++         matrix, this.controlLeft, this.controlTop, 0.0F, this.controlLeft + this.controlWidth, this.controlTop + this.controlHeight, -1713512995, -1713512995
+         );
+         if (this.displayTileEntity.getModel() != this.lastModel) {
+             int i = this.minecraft.getWindow().getGuiScaledWidth();

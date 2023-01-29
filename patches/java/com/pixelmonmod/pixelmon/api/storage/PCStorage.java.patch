@@ -1,0 +1,14 @@
+--- a/com/pixelmonmod/pixelmon/api/storage/PCStorage.java
++++ b/com/pixelmonmod/pixelmon/api/storage/PCStorage.java
+@@ -117,10 +117,7 @@
+             PCBox overflowHandleBox = new PCBox(this, this.boxes.length);
+             overflowHandleBox.shouldSendUpdates = false;
+ 
+-            for(int overflowIndex = this.boxes.length;
+-                nbt.contains("BoxNumber" + overflowIndex) || nbt.contains(String.valueOf(overflowIndex));
+-                ++overflowIndex
+-            ) {
++         for(int overflowIndex = this.boxes.length; nbt.contains("BoxNumber" + overflowIndex) || nbt.contains(String.valueOf(overflowIndex)); ++overflowIndex) {
+                 String key = nbt.contains("BoxNumber" + overflowIndex) ? "BoxNumber" + overflowIndex : String.valueOf(overflowIndex);
+                 PCBox overflowingBox = new PCBox(this, -1).readFromNBT(nbt.getCompound(key));
+                 overflowingBox.shouldSendUpdates = false;

@@ -1,0 +1,28 @@
+--- a/com/pixelmonmod/pixelmon/world/generation/features/ultraspace/spike/DeepSeaSpikeFeature.java
++++ b/com/pixelmonmod/pixelmon/world/generation/features/ultraspace/spike/DeepSeaSpikeFeature.java
+@@ -51,22 +51,16 @@
+                                 Block block = blockstate.getBlock();
+                                 if (blockstate.isAir(p_241855_1_, p_241855_4_.offset(i1, k, j1)) || block == BlockRegistration.ULTRA_DEEP_SEA_STONE.get()) {
+                                     this.setBlock(
+-                                        p_241855_1_,
+-                                        p_241855_4_.offset(i1, k, j1),
+-                                        ((Block)BlockRegistration.ULTRA_DEEP_CRYING_CRYSTAL.get()).defaultBlockState()
++                              p_241855_1_, p_241855_4_.offset(i1, k, j1), ((Block)BlockRegistration.ULTRA_DEEP_CRYING_CRYSTAL.get()).defaultBlockState()
+                                     );
+                                 }
+ 
+                                 if (k != 0 && l > 1) {
+                                     blockstate = p_241855_1_.getBlockState(p_241855_4_.offset(i1, -k, j1));
+                                     block = blockstate.getBlock();
+-                                    if (blockstate.isAir(p_241855_1_, p_241855_4_.offset(i1, -k, j1)) || block == BlockRegistration.ULTRA_DEEP_SEA_STONE.get()
+-                                        )
+-                                     {
++                           if (blockstate.isAir(p_241855_1_, p_241855_4_.offset(i1, -k, j1)) || block == BlockRegistration.ULTRA_DEEP_SEA_STONE.get()) {
+                                         this.setBlock(
+-                                            p_241855_1_,
+-                                            p_241855_4_.offset(i1, -k, j1),
+-                                            ((Block)BlockRegistration.ULTRA_DEEP_CRYING_CRYSTAL.get()).defaultBlockState()
++                                 p_241855_1_, p_241855_4_.offset(i1, -k, j1), ((Block)BlockRegistration.ULTRA_DEEP_CRYING_CRYSTAL.get()).defaultBlockState()
+                                         );
+                                     }
+                                 }

@@ -1,0 +1,22 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/screens/bag/ChooseBag.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/screens/bag/ChooseBag.java
+@@ -41,9 +41,7 @@
+ 
+     @Override
+     public Component getTitle() {
+-        return (Component)(this.bm.bagSection == null
+-            ? new TranslatableComponent("gui.mainmenu.bag")
+-            : new TextComponent(this.bm.bagSection.getLocalizedName()));
++      return (Component)(this.bm.bagSection == null ? new TranslatableComponent("gui.mainmenu.bag") : new TextComponent(this.bm.bagSection.getLocalizedName()));
+     }
+ 
+     @Override
+@@ -117,7 +115,7 @@
+                         } else {
+                             List<ItemData> bag = this.bm.getBagItems(this.bm.bagSection);
+                             this.bm.itemToUse = bag.get(button.id);
+-                            this.bm.lastItem = new ImmutablePair(this.bm.bagSection, bag.get(button.id));
++                     this.bm.lastItem = new ImmutablePair<>(this.bm.bagSection, bag.get(button.id));
+                             if (this.bm.bagSection == BagSection.POKEBALLS) {
+                                 this.bm.selectedActions.clear();
+                                 NetworkHelper.sendToServer(

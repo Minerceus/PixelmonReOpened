@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/comm/packetHandlers/PlayBattleParticleSystemPacket.java
++++ b/com/pixelmonmod/pixelmon/comm/packetHandlers/PlayBattleParticleSystemPacket.java
+@@ -98,9 +98,7 @@
+             Minecraft mc = Minecraft.getInstance();
+             if (mc.level.dimension().location().equals(this.dimension)) {
+                 this.effect
+-                    .createSystem(
+-                        mc, this.startID, new float[]{this.startX, this.startY, this.startZ}, this.endID, new float[]{this.endX, this.endY, this.endZ}
+-                    );
++               .createSystem(mc, this.startID, new float[]{this.startX, this.startY, this.startZ}, this.endID, new float[]{this.endX, this.endY, this.endZ});
+             }
+         }
+     }

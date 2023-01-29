@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/items/EtherItem.java
++++ b/com/pixelmonmod/pixelmon/items/EtherItem.java
+@@ -17,9 +17,7 @@
+         String message = this.getMessage(restorePP);
+         if (pokemon.getPlayerOwner() != null) {
+             pokemon.getPlayerOwner()
+-                .sendMessage(
+-                    new TranslatableComponent(message, new Object[]{pokemon.getMoveset().get(selectedMove).getMove().getTranslatedName()}), Util.NIL_UUID
+-                );
++            .sendMessage(new TranslatableComponent(message, new Object[]{pokemon.getMoveset().get(selectedMove).getMove().getTranslatedName()}), Util.NIL_UUID);
+         }
+ 
+         return restorePP;

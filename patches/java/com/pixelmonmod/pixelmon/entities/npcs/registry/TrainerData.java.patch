@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/entities/npcs/registry/TrainerData.java
++++ b/com/pixelmonmod/pixelmon/entities/npcs/registry/TrainerData.java
+@@ -59,8 +59,7 @@
+         }
+ 
+         if (filteredForms.isEmpty()) {
+-            Pixelmon.LOGGER
+-                .error("Tried to generate a random party on TrainerData \"" + this.id + "\" with no valid Pok\u00e9mon on the enabled generations!");
++         Pixelmon.LOGGER.error("Tried to generate a random party on TrainerData \"" + this.id + "\" with no valid Pokémon on the enabled generations!");
+             return list;
+         } else {
+             for(int i = 0; i < numPokemon; ++i) {

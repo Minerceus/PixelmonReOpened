@@ -1,0 +1,22 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/override/multiplayer/CustomAddServerScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/override/multiplayer/CustomAddServerScreen.java
+@@ -38,7 +38,7 @@
+                 try {
+                     String s = IDN.toASCII(astring[0]);
+                     return true;
+-                } catch (IllegalArgumentException var3) {
++            } catch (IllegalArgumentException var3x) {
+                     return false;
+                 }
+             }
+@@ -79,9 +79,7 @@
+                 createServerButtonText(this.serverData.getResourcePackStatus()),
+                 p_213031_1_ -> {
+                     this.serverData
+-                        .setResourcePackStatus(
+-                            ServerPackStatus.values()[(this.serverData.getResourcePackStatus().ordinal() + 1) % ServerPackStatus.values().length]
+-                        );
++                  .setResourcePackStatus(ServerPackStatus.values()[(this.serverData.getResourcePackStatus().ordinal() + 1) % ServerPackStatus.values().length]);
+                     this.serverPackButton.setMessage(createServerButtonText(this.serverData.getResourcePackStatus()));
+                 }
+             )

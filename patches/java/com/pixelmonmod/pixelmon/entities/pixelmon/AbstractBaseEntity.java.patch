@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/AbstractBaseEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/AbstractBaseEntity.java
+@@ -264,9 +264,7 @@
+                 (float)this.getForm().getDimensions().getWidth(), (float)this.getForm().getDimensions().getHeight() + this.getForm().getHoverHeight(), false
+             )
+         );
+-        this.isImmuneToFire = types.contains(Element.FIRE)
+-            || types.contains(Element.WATER)
+-            || this.getForm().getEggGroups().contains(PixelmonEggGroups.MINERAL);
++      this.isImmuneToFire = types.contains(Element.FIRE) || types.contains(Element.WATER) || this.getForm().getEggGroups().contains(PixelmonEggGroups.MINERAL);
+     }
+ 
+     public boolean fireImmune() {

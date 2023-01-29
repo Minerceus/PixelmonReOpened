@@ -1,0 +1,59 @@
+--- a/com/pixelmonmod/pixelmon/api/config/SpawningConfig.java
++++ b/com/pixelmonmod/pixelmon/api/config/SpawningConfig.java
+@@ -7,7 +7,7 @@
+ import com.pixelmonmod.pixelmon.api.config.api.yaml.AbstractYamlConfig;
+ import com.pixelmonmod.pixelmon.api.util.helpers.RandomHelper;
+ import com.pixelmonmod.pixelmon.world.dimension.ultraspace.UltraSpace;
+-import info.pixelmon.repack.org.spongepowered.objectmapping.ConfigSerializable;
++import org.spongepowered.configurate.objectmapping.ConfigSerializable;
+ import java.util.ArrayList;
+ import java.util.List;
+ import net.minecraft.resources.ResourceKey;
+@@ -33,20 +33,7 @@
+     private double meltanTransformChance = 0.25;
+     private List<String> canTransformToDittoOnCatch = Lists.newArrayList(
+         new String[]{
+-            "Pidgey",
+-            "Rattata",
+-            "Gastly",
+-            "Zubat",
+-            "Mankey",
+-            "Yanma",
+-            "Hoothoot",
+-            "Sentret",
+-            "Zigzagoon",
+-            "Gulpin",
+-            "Whismur",
+-            "Taillow",
+-            "Remoraid",
+-            "Starly"
++         "Pidgey", "Rattata", "Gastly", "Zubat", "Mankey", "Yanma", "Hoothoot", "Sentret", "Zigzagoon", "Gulpin", "Whismur", "Taillow", "Remoraid", "Starly"
+         }
+     );
+     private float gigantamaxFactorRate = 512.0F;
+@@ -137,7 +124,7 @@
+         if (dimension == null || dimension != UltraSpace.WORLD) {
+             return this.gigantamaxFactorRate;
+         } else {
+-            return this.ultraSpaceGigantamaxFactorModifier == -1.0F ? -1.0F : this.ultraSpaceGigantamaxFactorModifier * this.gigantamaxFactorRate;
++         return -1.0F;
+         }
+     }
+ 
+@@ -359,7 +346,6 @@
+         private int minimumDistanceFromCentre = 18;
+         private int maximumDistanceFromCentre = 64;
+         private float horizontalTrackFactor = 80.0F;
+-        private float verticalTrackFactor = 0.0F;
+         private int horizontalSliceRadius = 10;
+         private int verticalSliceRadius = 25;
+         private int maximumSpawnedPokemon = 3000;
+@@ -395,7 +381,7 @@
+         }
+ 
+         public float getVerticalTrackFactor() {
+-            return this.verticalTrackFactor;
++         return 0.0f;
+         }
+ 
+         public int getHorizontalSliceRadius() {

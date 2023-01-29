@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/SwitchOut.java
++++ b/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/SwitchOut.java
+@@ -35,9 +35,7 @@
+                                     break;
+                                 }
+ 
+-                                if (queuedPokemon.attack.isAttack(AttackRegistry.PURSUIT)
+-                                    && queuedPokemon.targets.contains(userWrapper)
+-                                    && userIndex < queuedIndex) {
++                        if (queuedPokemon.attack.isAttack(AttackRegistry.PURSUIT) && queuedPokemon.targets.contains(userWrapper) && userIndex < queuedIndex) {
+                                     queuedPokemon.bc.turnList.remove(queuedPokemon);
+                                     queuedPokemon.bc.turnList.add(userWrapper.bc.turn + 1, queuedPokemon);
+                                     pursuitAttacker = true;
+@@ -50,9 +48,7 @@
+                             if (!pursuitAttacker) {
+                                 userWrapper.wait = true;
+                                 NetworkHelper.sendPacket(
+-                                    new EnforcedSwitchTask(
+-                                        userWrapper.bc.getPositionOfPokemon(userWrapper, userWrapper.getParticipant()), userWrapper.nextSwitchIsMove
+-                                    ),
++                           new EnforcedSwitchTask(userWrapper.bc.getPositionOfPokemon(userWrapper, userWrapper.getParticipant()), userWrapper.nextSwitchIsMove),
+                                     userWrapper.getPlayerOwner()
+                                 );
+                             }

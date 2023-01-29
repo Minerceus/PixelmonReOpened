@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/particle/ParticleEvents.java
++++ b/com/pixelmonmod/pixelmon/client/particle/ParticleEvents.java
+@@ -66,9 +66,7 @@
+         bufferbuilder.vertex((double)(x + width), (double)(y + 0), zLevel)
+             .uv((float)(textureX + width) * 0.00390625F, (float)(textureY + 0) * 0.00390625F)
+             .endVertex();
+-        bufferbuilder.vertex((double)(x + 0), (double)(y + 0), zLevel)
+-            .uv((float)(textureX + 0) * 0.00390625F, (float)(textureY + 0) * 0.00390625F)
+-            .endVertex();
++      bufferbuilder.vertex((double)(x + 0), (double)(y + 0), zLevel).uv((float)(textureX + 0) * 0.00390625F, (float)(textureY + 0) * 0.00390625F).endVertex();
+         tessellator.end();
+     }
+ }

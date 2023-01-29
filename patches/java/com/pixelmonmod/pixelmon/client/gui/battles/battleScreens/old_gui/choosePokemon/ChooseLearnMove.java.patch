@@ -1,0 +1,16 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/old_gui/choosePokemon/ChooseLearnMove.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/old_gui/choosePokemon/ChooseLearnMove.java
+@@ -18,10 +18,9 @@
+ 
+     @Override
+     public void click(int width, int height, double mouseX, double mouseY) {
+-        if (mouseX > (double)(width / 2 + 63)
+-            && mouseX < (double)(width / 2 + 63 + 48)
+-            && mouseY > (double)(height - 27)
+-            && mouseY < (double)(height - 27 + 17)) {
++      if (mouseX > (double)(width / 2 + 63) && mouseX < (double)(width / 2 + 63 + 48) && mouseY > (double)(height - 27) && mouseY < (double)(height - 27 + 17)
++         )
++       {
+             this.onClose();
+         } else {
+             PixelmonClientData pokemon = this.choosePokemonSlot(width, height, mouseX, mouseY);

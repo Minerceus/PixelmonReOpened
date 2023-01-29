@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/tcg/network/packets/battles/ForceEndBattlePacket.java
++++ b/com/pixelmonmod/tcg/network/packets/battles/ForceEndBattlePacket.java
+@@ -47,9 +47,7 @@
+             && b.getGameServer().getPlayers() != null
+             && b.getGameServer().getPlayers().length == 2) {
+             PlayerServerState[] players = b.getGameServer().getPlayers();
+-            PlayerServerState winner = players[0] != null && players[0].isInGUI()
+-                ? players[0]
+-                : (players[1] != null && players[1].isInGUI() ? players[1] : null);
++         PlayerServerState winner = players[0] != null && players[0].isInGUI() ? players[0] : (players[1] != null && players[1].isInGUI() ? players[1] : null);
+             PlayerServerState loser = players[0] != null && !players[0].isInGUI()
+                 ? players[0]
+                 : (players[1] != null && !players[1].isInGUI() ? players[1] : null);

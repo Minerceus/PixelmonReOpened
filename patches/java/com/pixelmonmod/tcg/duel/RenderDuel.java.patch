@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/tcg/duel/RenderDuel.java
++++ b/com/pixelmonmod/tcg/duel/RenderDuel.java
+@@ -426,9 +426,7 @@
+         if (damage > 0) {
+             String str = Integer.toString(damage);
+             RenderCard.handleRotation(matrix, x0, y0, z0, rotation, 1.0F);
+-            RenderCard.drawSprite(
+-                matrix, (float)(x0 + 0.55F), (float)(y0 + 0.01F), (float)(z0 + 1.0), 3.0, 0, new ResourceLocation("tcg:gui/cards/damage.png")
+-            );
++         RenderCard.drawSprite(matrix, (float)(x0 + 0.55F), (float)(y0 + 0.01F), (float)(z0 + 1.0), 3.0, 0, new ResourceLocation("tcg:gui/cards/damage.png"));
+             RenderCard.drawUnlocalizedString(
+                 matrix, x0 + 2.2, y0 - 1.68F, z0 + 0.17 - 0.125 * (double)str.toCharArray().length, str, 16777215, false, 90, 3.5F, ""
+             );

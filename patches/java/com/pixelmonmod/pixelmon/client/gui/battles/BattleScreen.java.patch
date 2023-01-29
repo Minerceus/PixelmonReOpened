@@ -1,0 +1,35 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/BattleScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/BattleScreen.java
+@@ -66,7 +66,7 @@
+     private int guiWidth = 300;
+     private int guiHeight = 60;
+     public ClientBattleManager bm;
+-    ArrayList<BattleBaseScreen> screenList = new ArrayList();
++   ArrayList<BattleBaseScreen> screenList = new ArrayList<>();
+     BattleBaseScreen currentScreen = null;
+     public OverlayBase pokemonOverlay = null;
+     private Button stopSpectateButton = null;
+@@ -345,10 +345,8 @@
+                     timeString = "Waiting...";
+                 }
+ 
++            ScreenHelper.drawCenteredSquashedString(matrix, this.minecraft.font, timeString, false, 75.0, this.width - 40, this.height - 53, 16777215, false);
+                 ScreenHelper.drawCenteredSquashedString(
+-                    matrix, this.minecraft.font, timeString, false, 75.0, this.width - 40, this.height - 53, 16777215, false
+-                );
+-                ScreenHelper.drawCenteredSquashedString(
+                     matrix,
+                     this.minecraft.font,
+                     this.bm.weather == null ? I18n.get("gui.battle.noweather", new Object[0]) : this.bm.weather.getLocalizedName(),
+@@ -435,8 +433,9 @@
+         int ourCount = this.bm.displayedOurPokemon != null ? this.bm.displayedOurPokemon.length : 0;
+         int allyCount = this.bm.displayedAllyPokemon != null ? this.bm.displayedAllyPokemon.length : 0;
+         if (attackCategory == AttackCategory.STATUS || !attackHasZMove || !usingZMove || enemyCount <= 1 && ourCount <= 1 && allyCount <= 0) {
+-            if ((attackCategory == AttackCategory.STATUS || !this.bm.dynamaxing) && this.bm.dynamax == null
+-                || enemyCount <= 1 && ourCount <= 1 && allyCount <= 0) {
++         if ((attackCategory == AttackCategory.STATUS || !this.bm.dynamaxing) && this.bm.dynamax == null || enemyCount <= 1 && ourCount <= 1 && allyCount <= 0
++            )
++          {
+                 TargetingInfo info = attack.getMove().getTargetingInfo();
+                 if (info.hitsOppositeFoe && info.hitsAdjacentFoe && !info.hitsAdjacentAlly && !attack.isAttack(AttackRegistry.ME_FIRST)) {
+                     return false;

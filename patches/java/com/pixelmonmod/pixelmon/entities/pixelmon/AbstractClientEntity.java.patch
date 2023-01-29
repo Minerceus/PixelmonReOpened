@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/AbstractClientEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/AbstractClientEntity.java
+@@ -227,9 +227,7 @@
+     public void updateTransformed() {
+         TransformPacket transform;
+         if (this.transformed != null) {
+-            transform = new TransformPacket(
+-                this.getId(), this.transformed.getSpecies(), this.transformedTexture.toString(), this.transformed.getForm().getName()
+-            );
++         transform = new TransformPacket(this.getId(), this.transformed.getSpecies(), this.transformedTexture.toString(), this.transformed.getForm().getName());
+         } else {
+             transform = new TransformPacket(this.getId(), this.pokemon.getSpecies(), this.getRealTexture().toString(), this.pokemon.getForm().getName());
+         }

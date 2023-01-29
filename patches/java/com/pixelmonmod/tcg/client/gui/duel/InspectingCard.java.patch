@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/tcg/client/gui/duel/InspectingCard.java
++++ b/com/pixelmonmod/tcg/client/gui/duel/InspectingCard.java
+@@ -35,9 +35,7 @@
+         this.set(card, isMine, location, locationSubIndex, isLocked, title, false);
+     }
+ 
+-    public void set(
+-        CommonCardState card, boolean isMine, BoardLocation location, int locationSubIndex, boolean isLocked, String title, boolean isPickingAttack
+-    ) {
++   public void set(CommonCardState card, boolean isMine, BoardLocation location, int locationSubIndex, boolean isLocked, String title, boolean isPickingAttack) {
+         if (isMine != this.isMine || location != this.location || locationSubIndex != this.locationSubIndex) {
+             this.opacity = 0.0F;
+             this.set(card, isMine, location, locationSubIndex);

@@ -1,0 +1,37 @@
+--- a/com/pixelmonmod/pixelmon/storage/extras/PixelExtrasData.java
++++ b/com/pixelmonmod/pixelmon/storage/extras/PixelExtrasData.java
+@@ -63,7 +63,7 @@
+         if (!this.isReady()) {
+             return hash;
+         } else {
+-            for(ExtrasContact.Groups group : (EnumSet)this.apiData.getA()) {
++         for(ExtrasContact.Groups group : this.apiData.getA()) {
+                 if (group != null) {
+                     hash = 31 * hash + group.ordinal() + 1;
+                 }
+@@ -338,15 +338,11 @@
+                                                 : (
+                                                     this.has(ExtrasContact.Groups.NitroBooster)
+                                                         ? PixelExtrasData.SashType.BOOSTER
+-                                                        : (
+-                                                            this.has(ExtrasContact.Groups.Sash)
+-                                                                ? PixelExtrasData.SashType.REGULAR
+-                                                                : PixelExtrasData.SashType.NONE
++                                          : (this.has(ExtrasContact.Groups.Sash) ? PixelExtrasData.SashType.REGULAR : PixelExtrasData.SashType.NONE)
+                                                         )
+                                                 )
+                                         )
+                                 )
+-                        )
+                 );
+         } else {
+             switch(this.sashType) {
+@@ -598,7 +594,7 @@
+     final boolean has(ExtrasContact.Groups... groups) {
+         if (this.apiData != null) {
+             for(ExtrasContact.Groups group : groups) {
+-                if (((EnumSet)this.apiData.getA()).contains(group)) {
++            if ((this.apiData.getA()).contains(group)) {
+                     return true;
+                 }
+             }

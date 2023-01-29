@@ -1,0 +1,10 @@
+--- a/com/pixelmonmod/pixelmon/client/listener/TooltipListener.java
++++ b/com/pixelmonmod/pixelmon/client/listener/TooltipListener.java
+@@ -12,6 +12,6 @@
+ public class TooltipListener {
+     @SubscribeEvent
+     public static void onItemTooltip(ItemTooltipEvent event) {
+-        event.getToolTip().removeIf(text -> text.getString().contains("[\u2c10\u2517\u2739\u2ae2\u2175\u2cb5\u227c\u2d64\u2363\u2810\u21c6]"));
++      event.getToolTip().removeIf(text -> text.getString().contains("[Ⱀ┗✹⫢ⅵⲵ≼ⵤ⍣⠐⇆]"));
+     }
+ }

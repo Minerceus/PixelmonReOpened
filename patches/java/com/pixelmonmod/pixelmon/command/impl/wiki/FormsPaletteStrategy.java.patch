@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/wiki/FormsPaletteStrategy.java
++++ b/com/pixelmonmod/pixelmon/command/impl/wiki/FormsPaletteStrategy.java
+@@ -94,8 +94,7 @@
+                             .withStyle(
+                                 s -> s.withHoverEvent(
+                                             new HoverEvent(
+-                                                Action.SHOW_TEXT,
+-                                                new TranslatableComponent("pixelmon.command.wiki.formsandpalette.anchor.hover", new Object[]{name})
++                                    Action.SHOW_TEXT, new TranslatableComponent("pixelmon.command.wiki.formsandpalette.anchor.hover", new Object[]{name})
+                                             )
+                                         )
+                                         .withClickEvent(new ClickEvent(net.minecraft.network.chat.ClickEvent.Action.RUN_COMMAND, wiki))

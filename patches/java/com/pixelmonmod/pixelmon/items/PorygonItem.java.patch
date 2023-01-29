@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/items/PorygonItem.java
++++ b/com/pixelmonmod/pixelmon/items/PorygonItem.java
+@@ -21,8 +21,7 @@
+         stack.setCount(0);
+         if (!worldIn.isClientSide) {
+             Player entityIn = context.getPlayer();
+-            PokemonFactory.create(PixelmonSpecies.PORYGON.getValueUnsafe())
+-                .getOrSpawnPixelmon(worldIn, entityIn.getX(), entityIn.getY() + 2.0, entityIn.getZ());
++         PokemonFactory.create(PixelmonSpecies.PORYGON.getValueUnsafe()).getOrSpawnPixelmon(worldIn, entityIn.getX(), entityIn.getY() + 2.0, entityIn.getZ());
+         }
+ 
+         return InteractionResult.SUCCESS;

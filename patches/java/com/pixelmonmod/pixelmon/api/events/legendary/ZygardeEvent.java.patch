@@ -1,0 +1,27 @@
+--- a/com/pixelmonmod/pixelmon/api/events/legendary/ZygardeEvent.java
++++ b/com/pixelmonmod/pixelmon/api/events/legendary/ZygardeEvent.java
+@@ -69,9 +69,7 @@
+         }
+ 
+         public abstract static class New extends ZygardeEvent.Assemble {
+-            public New(
+-                ServerPlayer player, ReassemblyUnitTileEntity unit, Pokemon zygarde, StoragePosition storagePosition, ItemStack cube, int cells, int cores
+-            ) {
++         public New(ServerPlayer player, ReassemblyUnitTileEntity unit, Pokemon zygarde, StoragePosition storagePosition, ItemStack cube, int cells, int cores) {
+                 super(player, unit, zygarde, storagePosition, cube, cells, cores);
+             }
+ 
+@@ -102,12 +100,7 @@
+         public final int cubeSlot;
+ 
+         public Select(
+-            ServerPlayer player,
+-            ReassemblyUnitTileEntity unit,
+-            ReassemblyUnitTileEntity.Mode mode,
+-            StoragePosition storagePosition,
+-            ItemStack cube,
+-            int cubeSlot
++         ServerPlayer player, ReassemblyUnitTileEntity unit, ReassemblyUnitTileEntity.Mode mode, StoragePosition storagePosition, ItemStack cube, int cubeSlot
+         ) {
+             super(player, unit);
+             this.mode = mode;

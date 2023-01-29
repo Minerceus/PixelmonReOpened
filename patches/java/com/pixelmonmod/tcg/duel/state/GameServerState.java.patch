@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/tcg/duel/state/GameServerState.java
++++ b/com/pixelmonmod/tcg/duel/state/GameServerState.java
+@@ -54,8 +54,7 @@
+     }
+ 
+     public boolean hasPlayer(ServerPlayer player) {
+-        return this.players[0] != null && this.players[0].getEntityPlayer() == player
+-            || this.players[1] != null && this.players[1].getEntityPlayer() == player;
++      return this.players[0] != null && this.players[0].getEntityPlayer() == player || this.players[1] != null && this.players[1].getEntityPlayer() == player;
+     }
+ 
+     public PlayerServerState[] getPlayers() {

@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/PsychicTerrain.java
++++ b/com/pixelmonmod/pixelmon/battles/status/PsychicTerrain.java
+@@ -84,8 +84,7 @@
+ 
+         if (this.affectsPokemon(target)) {
+             for(Attack a : user.getMoveset()) {
+-                if (a != null
+-                    && (a.getMove().getPriority(user) > 0 || a.getAttackCategory() == AttackCategory.STATUS && user.getAbility() instanceof Prankster)) {
++            if (a != null && (a.getMove().getPriority(user) > 0 || a.getAttackCategory() == AttackCategory.STATUS && user.getAbility() instanceof Prankster)) {
+                     --benefits;
+                 }
+             }

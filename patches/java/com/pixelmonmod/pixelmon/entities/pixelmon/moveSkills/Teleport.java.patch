@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Teleport.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Teleport.java
+@@ -40,8 +40,7 @@
+                         return -1;
+                     } else {
+                         party.teleportPos.teleport(player);
+-                        return moveSkill.cooldownTicks
+-                            + (int)Math.max(0.0F, (300.0F - (float)pixelmon.getPokemon().getStat(BattleStatsType.SPEED)) / 50.0F * 20.0F);
++                  return moveSkill.cooldownTicks + (int)Math.max(0.0F, (300.0F - (float)pixelmon.getPokemon().getStat(BattleStatsType.SPEED)) / 50.0F * 20.0F);
+                     }
+                 }
+             } else {

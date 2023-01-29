@@ -1,0 +1,19 @@
+--- a/com/pixelmonmod/pixelmon/api/util/helpers/ReflectionHelper.java
++++ b/com/pixelmonmod/pixelmon/api/util/helpers/ReflectionHelper.java
+@@ -46,16 +46,4 @@
+             return null;
+         }
+     }
+-
+-    public static void flipVariableFinality(Field field) throws NoSuchFieldException, IllegalAccessException {
+-        Field modifiersField = Field.class.getDeclaredField("modifiers");
+-        modifiersField.setAccessible(true);
+-        modifiersField.setInt(field, field.getModifiers() & -17);
+     }
+-
+-    public static void flipVariableFinality(Field field, Runnable runnable) throws NoSuchFieldException, IllegalAccessException {
+-        flipVariableFinality(field);
+-        runnable.run();
+-        flipVariableFinality(field);
+-    }
+-}

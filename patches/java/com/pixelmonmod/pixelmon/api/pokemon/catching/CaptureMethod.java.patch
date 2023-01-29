@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/catching/CaptureMethod.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/catching/CaptureMethod.java
+@@ -52,8 +52,7 @@
+ 
+     default CaptureValues constructValues(PokeBall pokeBall, @Nullable PokeBallEntity pokeBallEntity, ServerPlayer thrower, Pokemon pokemon, PokeBallMode mode) {
+         return new CaptureValues(
+-            this.calculateCatchRate(pokeBall, pokeBallEntity, thrower, pokemon, mode),
+-            this.calculateBallBonus(pokeBall, pokeBallEntity, thrower, pokemon, mode)
++         this.calculateCatchRate(pokeBall, pokeBallEntity, thrower, pokemon, mode), this.calculateBallBonus(pokeBall, pokeBallEntity, thrower, pokemon, mode)
+         );
+     }
+ 

@@ -1,0 +1,33 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/inventory/InventoryPixelmonExtendedScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/inventory/InventoryPixelmonExtendedScreen.java
+@@ -61,7 +61,7 @@
+             this.renderSpecialBg(matrix, partialTicks, mouseX, mouseY);
+         }
+ 
+-        SurvivalTab selectedTab = PixelmonTabs.getAll().stream().filter(survivalTab -> survivalTab.getId() == selectedTab).findFirst().orElse(null);
++      SurvivalTab selectedTab = PixelmonTabs.getAll().stream().filter(survivalTab -> survivalTab.getId() == InventoryPixelmonExtendedScreen.selectedTab).findFirst().orElse(null);
+         if (InventoryPixelmonExtendedScreen.selectedTab == 1) {
+             super.render(matrix, mouseX, mouseY, partialTicks);
+         } else {
+@@ -184,7 +184,7 @@
+             }
+         }
+ 
+-        SurvivalTab selectedTab = PixelmonTabs.getAll().stream().filter(survivalTab -> survivalTab.getId() == selectedTab).findFirst().orElse(null);
++      SurvivalTab selectedTab = PixelmonTabs.getAll().stream().filter(survivalTab -> survivalTab.getId() == InventoryPixelmonExtendedScreen.selectedTab).findFirst().orElse(null);
+         if (selectedTab != null && selectedTab.mouseClicked(x, y, mouseButton)) {
+             return true;
+         } else {
+@@ -230,11 +230,7 @@
+             for(SurvivalTab tab : PixelmonTabs.getAll()) {
+                 if (tab != null && this.checkTabClicked(tab, relativeX, relativeY)) {
+                     InventoryPixelmonExtendedScreen.selectedTab = tab.getId();
+-                    SurvivalTab selectedTab = PixelmonTabs.getAll()
+-                        .stream()
+-                        .filter(survivalTab -> survivalTab.getId() == selectedTab)
+-                        .findFirst()
+-                        .orElse(null);
++               SurvivalTab selectedTab = PixelmonTabs.getAll().stream().filter(survivalTab -> survivalTab.getId() == InventoryPixelmonExtendedScreen.selectedTab).findFirst().orElse(null);
+                     if (selectedTab != null) {
+                         if (this.getRecipeBookComponent().isVisible()) {
+                             this.getRecipeBookComponent().toggleVisibility();

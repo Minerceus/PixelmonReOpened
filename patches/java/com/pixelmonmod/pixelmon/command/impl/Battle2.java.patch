@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/Battle2.java
++++ b/com/pixelmonmod/pixelmon/command/impl/Battle2.java
+@@ -173,7 +173,7 @@
+                     player.level.addFreshEntity(p);
+                 }
+ 
+-                new ArrayList();
++            new ArrayList<>();
+                 BattleParticipant[] team1;
+                 BattleParticipant[] team2;
+                 if (numParticipants == 2) {

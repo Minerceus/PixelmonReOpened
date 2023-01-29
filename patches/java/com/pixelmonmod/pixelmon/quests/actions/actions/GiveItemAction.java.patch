@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/quests/actions/actions/GiveItemAction.java
++++ b/com/pixelmonmod/pixelmon/quests/actions/actions/GiveItemAction.java
+@@ -58,7 +58,7 @@
+             Argument.from(args.get(5), s -> {
+                 try {
+                     return TagParser.parseTag(s);
+-                } catch (Exception var2) {
++            } catch (Exception var2x) {
+                     return null;
+                 }
+             }, null),

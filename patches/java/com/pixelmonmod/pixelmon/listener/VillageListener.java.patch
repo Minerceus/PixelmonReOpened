@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/listener/VillageListener.java
++++ b/com/pixelmonmod/pixelmon/listener/VillageListener.java
+@@ -38,9 +38,7 @@
+             ChunkGenerator chunkgenerator = world.getChunkSource().getGenerator();
+             BiomeSource biomeprovider = chunkgenerator.getBiomeSource();
+             Random random = new Random(world.getSeed());
+-            BlockPos blockpos = biomeprovider.findBiomeHorizontal(
+-                0, world.getSeaLevel(), 0, 256, biome -> biome.getMobSettings().playerSpawnFriendly(), random
+-            );
++         BlockPos blockpos = biomeprovider.findBiomeHorizontal(0, world.getSeaLevel(), 0, 256, biome -> biome.getMobSettings().playerSpawnFriendly(), random);
+             ChunkPos chunkpos = blockpos == null ? new ChunkPos(0, 0) : new ChunkPos(blockpos);
+             if (blockpos == null) {
+                 Pixelmon.LOGGER.warn("Unable to find spawn biome");

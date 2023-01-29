@@ -1,0 +1,37 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/PixelmonEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/PixelmonEntity.java
+@@ -356,11 +356,11 @@
+             UUID trainerUUID = this.pokemon.getOwnerTrainerUUID();
+             if (trainerUUID != null) {
+                 if (this.level instanceof ServerLevel) {
+-                    return CollectionHelper.find(((ServerLevel)this.level).getEntities().collect(Collectors.toList()), e -> e.getUUID().equals(trainerUUID));
++               return (LivingEntity) CollectionHelper.find(((ServerLevel)this.level).getEntities().collect(Collectors.toList()), e -> e.getUUID().equals(trainerUUID));
+                 }
+ 
+                 if (this.level instanceof ClientLevel) {
+-                    return CollectionHelper.find(Lists.newArrayList(((ClientLevel)this.level).entitiesForRendering()), e -> e.getUUID().equals(trainerUUID));
++               return (LivingEntity) CollectionHelper.find(Lists.newArrayList(((ClientLevel)this.level).entitiesForRendering()), e -> e.getUUID().equals(trainerUUID));
+                 }
+             }
+ 
+@@ -531,8 +531,7 @@
+                             || baseStats.getEggGroups().contains(PixelmonEggGroups.WATER_TWO)
+                             || baseStats.getEggGroups().contains(PixelmonEggGroups.WATER_THREE)
+                             || waterSpawn
+-                            || baseStats.getMovement().getSwimmingParameters() != null
+-                                && baseStats.getMovement().getSwimmingParameters().getDepthRangeEnd() > 2
++                     || baseStats.getMovement().getSwimmingParameters() != null && baseStats.getMovement().getSwimmingParameters().getDepthRangeEnd() > 2
+                     )
+                     && source == DamageSource.DROWN) {
+                     return false;
+@@ -554,9 +553,7 @@
+             if (knockback > 0) {
+                 if (!player.isCreative() && RandomHelper.getRandomChance(40)) {
+                     player.getLevel()
+-                        .playSound(
+-                            null, player.blockPosition(), SoundEvents.ITEM_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F + this.level.random.nextFloat() * 0.4F
+-                        );
++                  .playSound(null, player.blockPosition(), SoundEvents.ITEM_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F + this.level.random.nextFloat() * 0.4F);
+                     player.getMainHandItem().shrink(1);
+                 } else {
+                     this.setDeltaMovement(player.getLookAngle().x * (double)knockback, 0.3 * (double)knockback, player.getLookAngle().z * (double)knockback);

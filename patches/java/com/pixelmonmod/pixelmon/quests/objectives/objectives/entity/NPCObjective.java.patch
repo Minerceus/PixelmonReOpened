@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/quests/objectives/objectives/entity/NPCObjective.java
++++ b/com/pixelmonmod/pixelmon/quests/objectives/objectives/entity/NPCObjective.java
+@@ -86,7 +86,7 @@
+                 Argument.from(args.get(6), s -> {
+                     try {
+                         return TagParser.parseTag(s);
+-                    } catch (Exception var2) {
++               } catch (Exception var2x) {
+                         return new CompoundTag();
+                     }
+                 }, new CompoundTag())

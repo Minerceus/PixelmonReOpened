@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/interactions/InteractionTechnicalMove.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/interactions/InteractionTechnicalMove.java
+@@ -31,9 +31,7 @@
+                 return true;
+             } else if (!pixelmon.getForm().getMoves().canLearn(technicalMove)) {
+                 if (pixelmon.getForm().getMoves().canLearnViaOtherSet(technicalMove)) {
+-                    ChatHandler.sendChat(
+-                        player, "pixelmon.interaction.tmcantlearncanother", pixelmon.getNickname(), technicalMove.getAttack().getTranslatedName()
+-                    );
++               ChatHandler.sendChat(player, "pixelmon.interaction.tmcantlearncanother", pixelmon.getNickname(), technicalMove.getAttack().getTranslatedName());
+                 } else {
+                     ChatHandler.sendChat(player, "pixelmon.interaction.tmcantlearn", pixelmon.getNickname(), technicalMove.getAttack().getTranslatedName());
+                 }

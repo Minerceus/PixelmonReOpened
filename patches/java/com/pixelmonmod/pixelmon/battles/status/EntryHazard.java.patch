@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/EntryHazard.java
++++ b/com/pixelmonmod/pixelmon/battles/status/EntryHazard.java
+@@ -123,9 +123,7 @@
+             return false;
+         } else {
+             PixelmonWrapper attacker = pw.bc.turnList.get(pw.bc.turn);
+-            return AbilityRegistry.ignoreAbility(attacker, pw)
+-                && attacker.targets.get(0).battlePosition == pw.battlePosition
+-                && this.wasForcedSwitch(attacker);
++         return AbilityRegistry.ignoreAbility(attacker, pw) && attacker.targets.get(0).battlePosition == pw.battlePosition && this.wasForcedSwitch(attacker);
+         }
+     }
+ 

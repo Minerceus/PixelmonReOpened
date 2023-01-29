@@ -1,0 +1,86 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/Pokemon.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/Pokemon.java
+@@ -139,7 +139,7 @@
+         (abstractBaseEntity, uuid) -> uuid.ifPresent(actualUuid -> abstractBaseEntity.getPokemon().uuid = actualUuid),
+         (pokemon, uuid1) -> uuid1.ifPresent(uuid2 -> pokemon.uuid = uuid2)
+     );
+-    public static final DataSync<? extends AbstractBaseEntity, Component> SYNC_NICK_NAME = new DataSync(
++   public static final DataSync<? extends AbstractBaseEntity, Component> SYNC_NICK_NAME = new DataSync<>(
+         AbstractBaseEntity.class,
+         EntityDataSerializers.COMPONENT,
+         (abstractBaseEntity, nickName) -> abstractBaseEntity.getPokemon().nickname = nickName,
+@@ -395,11 +395,8 @@
+                                 stats.getSpawn().getSpawnLevel(),
+                                 Math.max(
+                                     stats.getSpawn().getSpawnLevel(),
+-                                    Math.min(
+-                                        PixelmonConfigProxy.getGeneral().getMaxLevel(),
+-                                        stats.getSpawn().getSpawnLevel() + stats.getSpawn().getSpawnLevelRange()
++                           Math.min(PixelmonConfigProxy.getGeneral().getMaxLevel(), stats.getSpawn().getSpawnLevel() + stats.getSpawn().getSpawnLevelRange())
+                                     )
+-                                )
+                             ),
+                             PixelmonConfigProxy.getGeneral().getMaxLevel()
+                         )
+@@ -591,11 +588,7 @@
+                             }
+         
+                             Pixelmon.EVENT_BUS
+-                                .post(
+-                                    new PokedexEvent.Post(
+-                                        playerUUID, preEvent.getOldStatus(), preEvent.getPokemon(), preEvent.getNewStatus(), preEvent.getCause()
+-                                    )
+-                                );
++                        .post(new PokedexEvent.Post(playerUUID, preEvent.getOldStatus(), preEvent.getPokemon(), preEvent.getNewStatus(), preEvent.getCause()));
+                         }
+                     }
+         
+@@ -1192,9 +1185,7 @@
+             PokemonBase.SYNC_POKEMON_BASE
+                 .set(
+                     this,
+-                    new PokemonBase(
+-                        this.species, this.form, this.form.getGenderProperties(this.gender).getPalette(palette), this.gender, this.eggCycles, this.ball
+-                    )
++               new PokemonBase(this.species, this.form, this.form.getGenderProperties(this.gender).getPalette(palette), this.gender, this.eggCycles, this.ball)
+                 );
+             if (sync) {
+                 this.markDirty(EMPTY);
+@@ -1419,7 +1410,7 @@
+     }
+ 
+     public int getMoveSkillCooldownTicks(MoveSkill moveSkill) {
+-        Tuple<Long, Long> tup = (Tuple)this.moveSkillCooldownData.get(moveSkill.id);
++      Tuple<Long, Long> tup = this.moveSkillCooldownData.get(moveSkill.id);
+         if (tup == null) {
+             return -1;
+         } else {
+@@ -1435,7 +1426,7 @@
+     }
+ 
+     public double getMoveSkillCooldownRatio(MoveSkill moveSkill) {
+-        Tuple<Long, Long> tup = (Tuple)this.moveSkillCooldownData.get(moveSkill.id);
++      Tuple<Long, Long> tup = this.moveSkillCooldownData.get(moveSkill.id);
+         long cur = System.currentTimeMillis();
+         return tup != null && cur <= tup.getB() ? (double)(System.currentTimeMillis() - tup.getA()) * 1.0 / (double)(tup.getB() - tup.getA()) : 1.0;
+     }
+@@ -1740,7 +1731,7 @@
+ 
+                     for(Entry<String, Tuple<Long, Long>> entry : this.moveSkillCooldownData.entrySet()) {
+                         buf.writeUtf(entry.getKey());
+-                        long difference = ((Tuple)entry.getValue()).getB() - System.currentTimeMillis();
++                  long difference = (entry.getValue()).getB() - System.currentTimeMillis();
+                         buf.writeLong(difference);
+                     }
+                     break;
+@@ -2189,8 +2180,8 @@
+         for(Entry<String, Tuple<Long, Long>> entry : this.moveSkillCooldownData.entrySet()) {
+             CompoundTag entryNBT = new CompoundTag();
+             entryNBT.putString("MoveSkillCooldownId", entry.getKey());
+-            entryNBT.putLong("MoveSkillCooldownCurrent", ((Tuple)entry.getValue()).getA());
+-            entryNBT.putLong("MoveSkillCooldownTarget", ((Tuple)entry.getValue()).getB());
++         entryNBT.putLong("MoveSkillCooldownCurrent", (entry.getValue()).getA());
++         entryNBT.putLong("MoveSkillCooldownTarget", (entry.getValue()).getB());
+             moveSkillCooldowns.add(entryNBT);
+         }
+ 

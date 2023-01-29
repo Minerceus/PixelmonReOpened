@@ -1,0 +1,42 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/inventory/SearchTreeExtender.java
++++ b/com/pixelmonmod/pixelmon/client/gui/inventory/SearchTreeExtender.java
+@@ -30,7 +30,7 @@
+     public static void reloadSearchTrees() {
+         ReloadableIdSearchTree<ItemStack> searchTree = (ReloadableIdSearchTree)Minecraft.getInstance().getSearchTree(SearchRegistry.CREATIVE_NAMES);
+         addToTree(searchTree, PokeBallRegistry.getAll(), pokeBall -> {
+-            List<Pair<String, ItemStack>> itemStacks = Lists.newArrayList(new Pair[]{Pair.of(pokeBall.getName(), pokeBall.getBallItem())});
++         List<Pair<String, ItemStack>> itemStacks = Lists.newArrayList(Pair.of(pokeBall.getName(), pokeBall.getBallItem()));
+             if (pokeBall.hasLid()) {
+                 itemStacks.add(Pair.of(pokeBall.getName() + "_lid", pokeBall.getLidItem()));
+             }
+@@ -43,11 +43,8 @@
+             searchTree,
+             Lists.newArrayList(DyeColor.values()),
+             colour -> Lists.newArrayList(
+-                    new Pair[]{
+                         Pair.of(colour.name().toLowerCase(Locale.ROOT) + "_essence_jar", EssenceJarBlock.createJarItem(colour)),
+-                        Pair.of(colour.name().toLowerCase(Locale.ROOT) + "_essence_jar", EssenceJarBlock.createFullJarItem(colour))
+-                    }
+-                )
++                 Pair.of(colour.name().toLowerCase(Locale.ROOT) + "_essence_jar", EssenceJarBlock.createFullJarItem(colour)))
+         );
+         searchTree.refresh();
+     }
+@@ -55,7 +52,7 @@
+     public static <T> void addToTree(ReloadableIdSearchTree<ItemStack> tree, Collection<T> entries, Function<T, List<Pair<String, ItemStack>>> function) {
+         for(T entry : entries) {
+             for(Pair<String, ItemStack> itemAndName : function.apply(entry)) {
+-                addToTree(tree, itemAndName.getSecond(), (String)itemAndName.getFirst());
++            addToTree(tree, itemAndName.getSecond(), itemAndName.getFirst());
+             }
+         }
+     }
+@@ -64,7 +61,7 @@
+         if (!tree.orderT.containsKey(toAdd)) {
+             tree.orderT.put(toAdd, tree.contents.size());
+             tree.contents.add(toAdd);
+-            ((Stream)tree.idGetter.apply(toAdd)).forEach(id -> {
++         tree.idGetter.apply(toAdd).forEach(id -> {
+                 tree.namespaceTree.add(toAdd, id.getNamespace().toLowerCase(Locale.ROOT));
+                 tree.pathTree.add(toAdd, path.toLowerCase(Locale.ROOT));
+             });

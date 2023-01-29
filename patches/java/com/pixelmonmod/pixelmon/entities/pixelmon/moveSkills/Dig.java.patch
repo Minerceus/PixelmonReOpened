@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Dig.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/moveSkills/Dig.java
+@@ -20,7 +20,7 @@
+ import net.minecraft.world.level.material.FluidState;
+ 
+ public class Dig {
+-    public static ArrayList<Block> allowedBlocks = new ArrayList();
++   public static ArrayList<Block> allowedBlocks = new ArrayList<>();
+ 
+     public static MoveSkill createMoveSkill() {
+         allowedBlocks = Lists.newArrayList(

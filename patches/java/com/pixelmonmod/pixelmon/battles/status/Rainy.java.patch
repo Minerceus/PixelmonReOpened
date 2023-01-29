@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/Rainy.java
++++ b/com/pixelmonmod/pixelmon/battles/status/Rainy.java
+@@ -25,9 +25,7 @@
+     }
+ 
+     public Rainy(int turnsToGo) {
+-        super(
+-            StatusType.Rainy, turnsToGo, EnumHeldItems.dampRock, "pixelmon.effect.raining", "pixelmon.status.heavyrain", "pixelmon.status.rainstopped", false
+-        );
++      super(StatusType.Rainy, turnsToGo, EnumHeldItems.dampRock, "pixelmon.effect.raining", "pixelmon.status.heavyrain", "pixelmon.status.rainstopped", false);
+     }
+ 
+     @Override

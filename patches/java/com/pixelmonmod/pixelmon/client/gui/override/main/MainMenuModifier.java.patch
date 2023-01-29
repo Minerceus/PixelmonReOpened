@@ -1,0 +1,25 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/override/main/MainMenuModifier.java
++++ b/com/pixelmonmod/pixelmon/client/gui/override/main/MainMenuModifier.java
+@@ -47,22 +47,6 @@
+                 p_onPress_1_ -> Minecraft.getInstance().setScreen(new ExtrasEditorScreen())
+             )
+         );
+-        event.addWidget(
+-            new DiscordButton(
+-                event.getGui().width / 2 + 2,
+-                multiplayerY,
+-                98,
+-                20,
+-                new TranslatableComponent("menu.discord"),
+-                p_213067_1_ -> Minecraft.getInstance().setScreen(new ConfirmLinkScreen(p_213064_1_ -> {
+-                        if (p_213064_1_) {
+-                            Util.getPlatform().openUri("https://discord.gg/pixelmon");
+-                        }
+-        
+-                        Minecraft.getInstance().setScreen(event.getGui());
+-                    }, "https://discord.gg/pixelmon", true))
+-            )
+-        );
+         ClientProxy.getRichPresence().resetTime();
+         ClientProxy.getRichPresence().setState("Main Menu (%v)", true);
+         ClientProxy.getRichPresence().setAcknowledgedServer(false);

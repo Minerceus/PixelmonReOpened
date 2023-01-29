@@ -1,0 +1,74 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/pokedex/PokedexScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/pokedex/PokedexScreen.java
+@@ -97,9 +97,7 @@
+         int id = 0;
+         this.upButton = (IndexedButton)this.addButton(new IndexedButton(++id, this.centerW + 69, 153, 10, 24, TextComponent.EMPTY, this::actionPerformed));
+         this.downButton = (IndexedButton)this.addButton(new IndexedButton(++id, this.centerW + 69, 181, 10, 24, TextComponent.EMPTY, this::actionPerformed));
+-        this.dexOptionsMenu = (IndexedButton)this.addButton(
+-            new IndexedButton(++id, this.centerW - 120, 110, 15, 15, TextComponent.EMPTY, this::actionPerformed)
+-        );
++      this.dexOptionsMenu = (IndexedButton)this.addButton(new IndexedButton(++id, this.centerW - 120, 110, 15, 15, TextComponent.EMPTY, this::actionPerformed));
+         this.dexTypeButtons = Lists.newArrayList();
+ 
+         for(int i = 0; i <= 8; ++i) {
+@@ -177,12 +175,7 @@
+                 dexTypeButton.setWidth((int)((double)this.dexMenuFrame * 1.03));
+                 if (this.dexMenuFrame != 0) {
+                     fill(
+-                        matrix,
+-                        dexTypeButton.x,
+-                        dexTypeButton.y,
+-                        dexTypeButton.x + dexTypeButton.getWidth(),
+-                        dexTypeButton.y + dexTypeButton.getHeight(),
+-                        -9341834
++                  matrix, dexTypeButton.x, dexTypeButton.y, dexTypeButton.x + dexTypeButton.getWidth(), dexTypeButton.y + dexTypeButton.getHeight(), -9341834
+                     );
+                     if (this.dexVersion != i) {
+                         fill(
+@@ -254,9 +247,7 @@
+                 false,
+                 10.0F
+             );
+-            ScreenHelper.drawScaledCenteredString(
+-                matrix, I18n.get("gui.pokedex.description", new Object[0]), (float)(this.centerW + 28), 40.0F, 16777215, 14.0F
+-            );
++         ScreenHelper.drawScaledCenteredString(matrix, I18n.get("gui.pokedex.description", new Object[0]), (float)(this.centerW + 28), 40.0F, 16777215, 14.0F);
+             String s;
+             if (ClientStorageManager.pokedex.get(this.currentPokemon.getDex()) == PokedexRegistrationStatus.CAUGHT) {
+                 String key = this.forms.get(this.currentForm).getForm().getName() + ".description";
+@@ -284,21 +275,7 @@
+ 
+                 if (this.currentForm + 1 < this.forms.size()) {
+                     ScreenHelper.drawImageQuad(
+-                        Resources.pokedexForward,
+-                        matrix,
+-                        (float)(this.centerW - 44),
+-                        102.0F,
+-                        15.0F,
+-                        15.0F,
+-                        0.0F,
+-                        0.0F,
+-                        1.0F,
+-                        1.0F,
+-                        1.0F,
+-                        1.0F,
+-                        1.0F,
+-                        1.0F,
+-                        1.0F
++                  Resources.pokedexForward, matrix, (float)(this.centerW - 44), 102.0F, 15.0F, 15.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F
+                     );
+                 }
+             }
+@@ -445,11 +422,7 @@
+                     if (this.currentForm - 1 >= 0 && mouseCenterX >= -88.0 && mouseCenterX <= -74.0 && mouseY >= 105.0 && mouseY <= 120.0) {
+                         --this.currentForm;
+                         this.setupDisplayedPokemon();
+-                    } else if (this.currentForm + 1 < this.forms.size()
+-                        && mouseCenterX >= -42.0
+-                        && mouseCenterX <= -26.0
+-                        && mouseY >= 105.0
+-                        && mouseY <= 120.0) {
++               } else if (this.currentForm + 1 < this.forms.size() && mouseCenterX >= -42.0 && mouseCenterX <= -26.0 && mouseY >= 105.0 && mouseY <= 120.0) {
+                         ++this.currentForm;
+                         this.setupDisplayedPokemon();
+                     }

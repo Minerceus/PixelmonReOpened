@@ -1,0 +1,26 @@
+--- a/com/pixelmonmod/pixelmon/comm/packetHandlers/battles/ChooseAttackPacket.java
++++ b/com/pixelmonmod/pixelmon/comm/packetHandlers/battles/ChooseAttackPacket.java
+@@ -103,8 +103,7 @@
+                 if (pixelmonWrapper == null) {
+                     battleController.battleLog
+                         .onCrash(
+-                            new Exception("Invalid pokemon"),
+-                            "Invalid pokemon selected! player:" + player.getName() + " pokemon:" + this.pokemonUUID.toString()
++                     new Exception("Invalid pokemon"), "Invalid pokemon selected! player:" + player.getName() + " pokemon:" + this.pokemonUUID.toString()
+                         );
+                 } else {
+                     BattleParticipant parent = pixelmonWrapper.getParticipant();
+@@ -117,12 +116,7 @@
+                                 battleController.battleLog
+                                     .onCrash(
+                                         new Exception("Invalid attack"),
+-                                        "Invalid attack selected! player:"
+-                                            + player.getName()
+-                                            + " pokemon:"
+-                                            + this.pokemonUUID.toString()
+-                                            + " index:"
+-                                            + this.buttonId
++                              "Invalid attack selected! player:" + player.getName() + " pokemon:" + this.pokemonUUID.toString() + " index:" + this.buttonId
+                                     );
+                                 return;
+                             }

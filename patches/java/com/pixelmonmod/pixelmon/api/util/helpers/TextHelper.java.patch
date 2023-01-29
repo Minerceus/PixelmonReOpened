@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/pixelmon/api/util/helpers/TextHelper.java
++++ b/com/pixelmonmod/pixelmon/api/util/helpers/TextHelper.java
+@@ -21,7 +21,7 @@
+     private static final Pattern PATTERN = Pattern.compile("(&([a-f0-9k-r]))", 2);
+     private static final Pattern COLOUR_PATTERN = Pattern.compile("&(#\\w{6}|[\\da-zA-Z])");
+     public static final List<String> DENY_CHARS = Lists.newArrayList(new String[]{"%"});
+-    public static final Pattern DENY_PATTERN = Pattern.compile("[&\u00a7][0-9a-fk-orA-FK-OR]");
++   public static final Pattern DENY_PATTERN = Pattern.compile("[&§][0-9a-fk-orA-FK-OR]");
+     public static final int NAME_MAX_LENGTH = 16;
+     public static final MutableComponent OR_DELIMITER = new TranslatableComponent("pixelmon.text.delimiter.or");
+     public static final MutableComponent AND_DELIMITER = new TranslatableComponent("pixelmon.text.delimiter.and");
+@@ -214,7 +214,7 @@
+     public static String format(String line) {
+         Matcher matcher = PATTERN.matcher(line);
+         if (matcher.find()) {
+-            line = line.replaceAll("(&([a-f0-9k-r]))", "\u00a7$2");
++         line = line.replaceAll("(&([a-f0-9k-r]))", "§$2");
+         }
+ 
+         return line;

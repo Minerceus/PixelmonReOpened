@@ -1,0 +1,35 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/PixelmonOverlayScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/PixelmonOverlayScreen.java
+@@ -225,9 +225,7 @@
+ 
+                                 if (isSentOut && PixelmonServerConfig.allowExternalMoves) {
+                                     ArrayList<MoveSkill> moveSkills = ClientProxy.getMoveSkills(ClientStorageManager.party.getSelectedPokemon());
+-                                    MoveSkill selected = selectedMoveSkill == null
+-                                        ? null
+-                                        : CollectionHelper.find(moveSkills, ms -> ms.id.equals(selectedMoveSkill));
++                           MoveSkill selected = selectedMoveSkill == null ? null : CollectionHelper.find(moveSkills, ms -> ms.id.equals(selectedMoveSkill));
+                                     if (selected == null && !moveSkills.isEmpty()) {
+                                         selected = moveSkills.get(0);
+                                         selectedMoveSkill = selected.id;
+@@ -404,9 +402,7 @@
+             int width = ScreenHelper.getStringWidth(spectateString, true);
+             float alpha = 1.0F - (float)fadeInTicks / 20.0F * 0.7F;
+             int c = ScreenHelper.toColourValue(0.7F, 0.7F, 0.7F, alpha);
+-            ScreenHelper.drawString(
+-                matrix, spectateString, (float)screenWidth / 2.0F - (float)width / 2.0F, (float)screenHeight / 2.0F + 30.0F, c, false, true
+-            );
++         ScreenHelper.drawString(matrix, spectateString, (float)screenWidth / 2.0F - (float)width / 2.0F, (float)screenHeight / 2.0F + 30.0F, c, false, true);
+         }
+ 
+         if (oldMessageName != null && fadeOutTicks > 0) {
+@@ -416,9 +412,7 @@
+             int width = ScreenHelper.getStringWidth(spectateString, true);
+             float alpha = (float)fadeOutTicks / 15.0F * 0.7F;
+             int c = ScreenHelper.toColourValue(0.7F, 0.7F, 0.7F, alpha);
+-            ScreenHelper.drawString(
+-                matrix, spectateString, (float)screenWidth / 2.0F - (float)width / 2.0F, (float)screenHeight / 2.0F + 30.0F, c, false, true
+-            );
++         ScreenHelper.drawString(matrix, spectateString, (float)screenWidth / 2.0F - (float)width / 2.0F, (float)screenHeight / 2.0F + 30.0F, c, false, true);
+         }
+     }
+ 

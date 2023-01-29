@@ -1,0 +1,17 @@
+--- a/com/pixelmonmod/pixelmon/api/daycare/event/DayCareEvent.java
++++ b/com/pixelmonmod/pixelmon/api/daycare/event/DayCareEvent.java
+@@ -177,13 +177,7 @@
+         protected final boolean showChild;
+ 
+         public PostEggCalculate(
+-            ServerPlayer player,
+-            PlayerPartyStorage party,
+-            Pokemon parentOne,
+-            Pokemon parentTwo,
+-            Pokemon calculatedChild,
+-            boolean childExists,
+-            boolean showChild
++         ServerPlayer player, PlayerPartyStorage party, Pokemon parentOne, Pokemon parentTwo, Pokemon calculatedChild, boolean childExists, boolean showChild
+         ) {
+             super(player, party);
+             this.parentOne = parentOne;

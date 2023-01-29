@@ -1,0 +1,68 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/statueEditor/StatueEditorScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/statueEditor/StatueEditorScreen.java
+@@ -103,9 +103,7 @@
+                 this.controlHeight = this.height - 20;
+                 int buttonHeight = 20;
+                 int textFieldHeight = 10;
+-                this.tbName = new TabCompleteTextField(
+-                        6, this.minecraft.font, this.controlLeft + 45, this.controlTop + 3, this.controlWidth - 55, textFieldHeight
+-                    )
++            this.tbName = new TabCompleteTextField(6, this.minecraft.font, this.controlLeft + 45, this.controlTop + 3, this.controlWidth - 55, textFieldHeight)
+                     .setCompletions(PixelmonSpecies.getFormattedEnglishNameSet());
+                 this.tbName.setValue(this.statue.getSpecies().getLocalizedName());
+                 this.tbName.setResponder(this::setSpecies);
+@@ -165,9 +163,7 @@
+                 this.addDropDown(
+                     new DropDown<>(palettes, currentPalette, this.controlLeft + 45, this.controlTop + 78, 80, 120)
+                         .setGetOptionString(PaletteProperties::getName)
+-                        .setOnSelected(
+-                            texture -> NetworkHelper.sendToServer(new StatueUpdatePacket(EnumStatuePacketMode.SetPalette, statueId, texture.getName()))
+-                        )
++                  .setOnSelected(texture -> NetworkHelper.sendToServer(new StatueUpdatePacket(EnumStatuePacketMode.SetPalette, statueId, texture.getName())))
+                         .setInactiveTop(this.controlTop + 78)
+                 );
+                 List<ITranslatable> textures = Lists.newArrayList(EnumStatueTextureType.values());
+@@ -183,24 +179,15 @@
+                 this.addDropDown(
+                     new DropDown<>(EnumGrowth.orderedList, this.statue.getGrowth(), this.controlLeft + 45, this.controlTop + 108, 80, 150)
+                         .setGetOptionString(ITranslatable::getLocalizedName)
+-                        .setOnSelected(
+-                            growth -> Pixelmon.network.sendToServer(new StatueUpdatePacket(EnumStatuePacketMode.SetGrowth, statueId, growth.toString()))
+-                        )
++                  .setOnSelected(growth -> Pixelmon.network.sendToServer(new StatueUpdatePacket(EnumStatuePacketMode.SetGrowth, statueId, growth.toString())))
+                         .setInactiveTop(this.controlTop + 108)
+                 );
+                 this.addDropDown(
+                     new DropDown<>(
+-                            Lists.newArrayList(EnumBoundingBoxMode.values()),
+-                            this.statue.getBoundingMode(),
+-                            this.controlLeft + 45,
+-                            this.controlTop + 123,
+-                            80,
+-                            150
++                     Lists.newArrayList(EnumBoundingBoxMode.values()), this.statue.getBoundingMode(), this.controlLeft + 45, this.controlTop + 123, 80, 150
+                         )
+                         .setGetOptionString(val -> val.name().toUpperCase())
+-                        .setOnSelected(
+-                            mode -> Pixelmon.network.sendToServer(new StatueUpdatePacket(EnumStatuePacketMode.SetBoundingBoxMode, statueId, mode.name()))
+-                        )
++                  .setOnSelected(mode -> Pixelmon.network.sendToServer(new StatueUpdatePacket(EnumStatuePacketMode.SetBoundingBoxMode, statueId, mode.name())))
+                         .setInactiveTop(this.controlTop + 123)
+                 );
+                 this.addDropDown(
+@@ -434,14 +421,7 @@
+     @Override
+     protected void drawBackgroundUnderMenus(PoseStack matrix, float partialTicks, int mouseX, int mouseY) {
+         ScreenHelper.drawGradientRect(
+-            matrix,
+-            this.controlLeft,
+-            this.controlTop,
+-            0.0F,
+-            this.controlLeft + this.controlWidth,
+-            this.controlTop + this.controlHeight,
+-            -1713512995,
+-            -1713512995
++         matrix, this.controlLeft, this.controlTop, 0.0F, this.controlLeft + this.controlWidth, this.controlTop + this.controlHeight, -1713512995, -1713512995
+         );
+         if (this.statue.getModel() != this.lastModel) {
+             int i = this.minecraft.getWindow().getGuiScaledWidth();

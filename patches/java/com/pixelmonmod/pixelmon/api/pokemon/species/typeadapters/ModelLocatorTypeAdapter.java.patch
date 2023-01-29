@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/species/typeadapters/ModelLocatorTypeAdapter.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/species/typeadapters/ModelLocatorTypeAdapter.java
+@@ -79,8 +79,8 @@
+                     field.setAccessible(true);
+ 
+                     try {
+-                        float valueSrc = field.get(src);
+-                        float valueDefault = field.get(DEFAULTS);
++                  float valueSrc = (float) field.get(src);
++                  float valueDefault = (float) field.get(DEFAULTS);
+                         if (valueSrc != valueDefault) {
+                             object.addProperty(name, valueSrc);
+                         }

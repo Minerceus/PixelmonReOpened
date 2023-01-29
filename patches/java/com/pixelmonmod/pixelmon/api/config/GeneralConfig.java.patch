@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/config/GeneralConfig.java
++++ b/com/pixelmonmod/pixelmon/api/config/GeneralConfig.java
+@@ -6,7 +6,7 @@
+ import com.pixelmonmod.pixelmon.api.config.api.yaml.AbstractYamlConfig;
+ import com.pixelmonmod.pixelmon.api.util.helpers.JavaHelper;
+ import com.pixelmonmod.pixelmon.enums.EnumEncounterMode;
+-import info.pixelmon.repack.org.spongepowered.objectmapping.ConfigSerializable;
++import org.spongepowered.configurate.objectmapping.ConfigSerializable;
+ import java.util.Arrays;
+ import java.util.HashMap;
+ import java.util.List;

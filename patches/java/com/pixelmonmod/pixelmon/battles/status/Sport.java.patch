@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/Sport.java
++++ b/com/pixelmonmod/pixelmon/battles/status/Sport.java
+@@ -50,8 +50,7 @@
+     public void applyRepeatedEffect(GlobalStatusController gsc) {
+         if (--this.turnsLeft <= 0) {
+             gsc.removeGlobalStatus(this);
+-            gsc.bc
+-                .sendToAll("pixelmon.status.sportfade", new TranslatableComponent("attack." + this.moveName.toLowerCase(Locale.ROOT).replace(" ", "_") + ""));
++         gsc.bc.sendToAll("pixelmon.status.sportfade", new TranslatableComponent("attack." + this.moveName.toLowerCase(Locale.ROOT).replace(" ", "_") + ""));
+         }
+     }
+ 

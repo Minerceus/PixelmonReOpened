@@ -1,0 +1,21 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/AbstractInteractionsEntity.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/AbstractInteractionsEntity.java
+@@ -86,14 +86,13 @@
+             return super.mobInteract(player, hand);
+         } else if (hand == InteractionHand.OFF_HAND) {
+             return InteractionResult.FAIL;
+-        } else if (this.interaction != null
+-            && this.getNumInteractions() > 0
+-            && this.interaction.processInteract(this, player, hand, player.getItemInHand(hand))) {
++      } else if (this.interaction != null && this.getNumInteractions() > 0 && this.interaction.processInteract(this, player, hand, player.getItemInHand(hand))
++         )
++       {
+             return InteractionResult.FAIL;
+         } else {
+             if (player.getItemInHand(InteractionHand.MAIN_HAND) != null) {
+-                InteractionResult actionResultType = player.getItemInHand(InteractionHand.MAIN_HAND)
+-                    .interactLivingEntity(player, this, InteractionHand.MAIN_HAND);
++            InteractionResult actionResultType = player.getItemInHand(InteractionHand.MAIN_HAND).interactLivingEntity(player, this, InteractionHand.MAIN_HAND);
+                 if (actionResultType != InteractionResult.PASS) {
+                     return actionResultType;
+                 }

@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/client/render/GenericModelHolder.java
++++ b/com/pixelmonmod/pixelmon/client/render/GenericModelHolder.java
+@@ -30,7 +30,7 @@
+     }
+ 
+     public GenericModelHolder(ResourceLocation model) {
+-        this(GenericSmdModel.class, model);
++      this((Class<M>) GenericSmdModel.class, model);
+     }
+ 
+     public GenericModelHolder(String modelPath) {

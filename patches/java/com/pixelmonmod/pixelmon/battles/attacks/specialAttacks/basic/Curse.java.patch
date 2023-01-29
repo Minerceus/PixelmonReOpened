@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/Curse.java
++++ b/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/Curse.java
+@@ -34,8 +34,7 @@
+                 return AttackResult.failed;
+             }
+         } else {
+-            user.getBattleStats()
+-                .modifyStat(new int[]{1, 1, -1}, new BattleStatsType[]{BattleStatsType.ATTACK, BattleStatsType.DEFENSE, BattleStatsType.SPEED});
++         user.getBattleStats().modifyStat(new int[]{1, 1, -1}, new BattleStatsType[]{BattleStatsType.ATTACK, BattleStatsType.DEFENSE, BattleStatsType.SPEED});
+             return AttackResult.succeeded;
+         }
+     }

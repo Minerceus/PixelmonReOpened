@@ -1,0 +1,14 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/fishingLog/FishingLogScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/fishingLog/FishingLogScreen.java
+@@ -103,10 +103,8 @@
+                 .put(
+                     spec,
+                     this.addButton(
+-                        new IndexedButton(
+-                            FormLogRegistry.getFormId(this.species, spec), 0, 0, 40, 46, new TextComponent(spec.toString()), this::actionPerformed
++                  new IndexedButton(FormLogRegistry.getFormId(this.species, spec), 0, 0, 40, 46, new TextComponent(spec.toString()), this::actionPerformed)
+                         )
+-                    )
+                 );
+         }
+     }

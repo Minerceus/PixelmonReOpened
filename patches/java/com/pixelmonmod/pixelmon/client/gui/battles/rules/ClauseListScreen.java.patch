@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/rules/ClauseListScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/rules/ClauseListScreen.java
+@@ -39,11 +39,7 @@
+             Minecraft.getInstance()
+                 .font
+                 .draw(
+-                    matrix,
+-                    ScreenHelper.getLimitedString(this.clauses.get(index).getLocalizedName(), this.field_230688_j_),
+-                    (float)(x + 2),
+-                    (float)(yTop - 1),
+-                    0
++               matrix, ScreenHelper.getLimitedString(this.clauses.get(index).getLocalizedName(), this.field_230688_j_), (float)(x + 2), (float)(yTop - 1), 0
+                 );
+         }
+     }

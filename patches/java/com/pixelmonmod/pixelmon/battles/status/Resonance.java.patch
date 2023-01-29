@@ -1,0 +1,16 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/Resonance.java
++++ b/com/pixelmonmod/pixelmon/battles/status/Resonance.java
+@@ -40,12 +40,7 @@
+ 
+     public Resonance(PixelmonWrapper user, int turns) {
+         super(
+-            StatusType.AuroraVeil,
+-            null,
+-            turns,
+-            "pixelmon.effect.auroraveil.raised",
+-            "pixelmon.effect.auroraveil.already",
+-            "pixelmon.status.auroraveil.woreoff"
++         StatusType.AuroraVeil, null, turns, "pixelmon.effect.auroraveil.raised", "pixelmon.effect.auroraveil.already", "pixelmon.status.auroraveil.woreoff"
+         );
+         this.user = user;
+     }

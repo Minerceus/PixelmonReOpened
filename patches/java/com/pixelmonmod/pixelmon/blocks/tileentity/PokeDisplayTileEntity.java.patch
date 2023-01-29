@@ -1,0 +1,16 @@
+--- a/com/pixelmonmod/pixelmon/blocks/tileentity/PokeDisplayTileEntity.java
++++ b/com/pixelmonmod/pixelmon/blocks/tileentity/PokeDisplayTileEntity.java
+@@ -82,12 +82,7 @@
+         } else {
+             this.storedEntity = PokemonFactory.create(PixelmonSpecies.MISSINGNO.getValueUnsafe())
+                 .getOrCreatePixelmon(
+-                    this.level,
+-                    (double)this.getBlockPos().getX() + 0.5,
+-                    (double)this.getBlockPos().getY(),
+-                    (double)this.getBlockPos().getZ() + 0.5,
+-                    0.0F,
+-                    0.0F
++               this.level, (double)this.getBlockPos().getX() + 0.5, (double)this.getBlockPos().getY(), (double)this.getBlockPos().getZ() + 0.5, 0.0F, 0.0F
+                 );
+             this.storedEntity.getPokemon().setGrowth(EnumGrowth.Ordinary);
+         }

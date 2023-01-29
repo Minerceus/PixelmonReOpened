@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/SelectStatScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/SelectStatScreen.java
+@@ -75,9 +75,7 @@
+                         new TextComponent(
+                             types[i].getLocalizedName()
+                                 + " "
+-                                + this.pokemon
+-                                    .getStats()
+-                                    .calculateStat(types[i], this.pokemon.getNature(), this.pokemon.getForm(), this.pokemon.getPokemonLevel())
++                        + this.pokemon.getStats().calculateStat(types[i], this.pokemon.getNature(), this.pokemon.getForm(), this.pokemon.getPokemonLevel())
+                                 + " -> "
+                                 + this.data[i]
+                         ),

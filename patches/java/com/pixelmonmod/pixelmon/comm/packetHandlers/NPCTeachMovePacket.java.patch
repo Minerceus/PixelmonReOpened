@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/comm/packetHandlers/NPCTeachMovePacket.java
++++ b/com/pixelmonmod/pixelmon/comm/packetHandlers/NPCTeachMovePacket.java
+@@ -62,7 +62,7 @@
+         if (attack != null) {
+             Pokemon pokemon = StorageProxy.getParty(player).find(this.pokemonUUID);
+             if (pokemon != null) {
+-                List<ItemStack> costs = new ArrayList();
++            List<ItemStack> costs = new ArrayList<>();
+                 Optional<NPCEntity> npc = NPCEntity.locateNPCServer(player.level, this.npcId, NPCEntity.class);
+                 if (npc.isPresent() && !(((NPCEntity)npc.get()).distanceToSqr(player) > 4096.0)) {
+                     if (npc.get() instanceof NPCRelearner || npc.get() instanceof NPCTutor) {

@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/tcg/client/gui/DeckScreen.java
++++ b/com/pixelmonmod/tcg/client/gui/DeckScreen.java
+@@ -48,7 +48,7 @@
+         int k = (this.width - 226) / 2 - 6;
+         int l = (this.height - 202) / 2;
+         this.blit(matrix, k, l, 0, 0, 226, 202);
+-        List<ItemStack> cards = new ArrayList();
++      List<ItemStack> cards = new ArrayList<>();
+ 
+         for(int i = 0; i < 60; ++i) {
+             ItemStack s = this.deck.getItem(i);

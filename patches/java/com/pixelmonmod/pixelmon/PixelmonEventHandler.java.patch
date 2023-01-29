@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/PixelmonEventHandler.java
++++ b/com/pixelmonmod/pixelmon/PixelmonEventHandler.java
+@@ -130,7 +130,7 @@
+             && !event.pixelmon.getPokemon().getPersistentData().getBoolean("Pichu_friend")
+             && event.data instanceof Tuple
+             && StorageProxy.getParty(trainer).hasSpace()) {
+-            Tuple<BlockPos, Direction> data = (Tuple)event.data;
++         Tuple<BlockPos, Direction> data = (Tuple<BlockPos, Direction>) event.data;
+             if (event.pixelmon.level.getBlockState((BlockPos)data.getA()).getBlock() == PixelmonBlocks.ilex_shrine.getBlock()) {
+                 event.pixelmon.getPokemon().getPersistentData().putBoolean("Pichu_friend", true);
+                 Pokemon pichu = PokemonFactory.create(PixelmonSpecies.PICHU.getValueUnsafe());

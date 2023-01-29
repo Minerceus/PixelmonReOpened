@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/pokechecker/PokeCheckerTMsScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/pokechecker/PokeCheckerTMsScreen.java
+@@ -195,9 +195,7 @@
+                 if (this.selectedMoveset == 0) {
+                     this.drawMoveInfo(matrix, this.eggMoves.get(this.selectedNumber));
+                 } else if (this.selectedMoveset == -1) {
+-                    this.drawMoveInfo(
+-                        matrix, (ImmutableAttack)((Pair)this.pokemon.getForm().getMoves().getFormatLevelMoves().get(this.selectedNumber)).getRight()
+-                    );
++               this.drawMoveInfo(matrix, (ImmutableAttack)((Pair)this.pokemon.getForm().getMoves().getFormatLevelMoves().get(this.selectedNumber)).getRight());
+                 } else if (displayMoves.get(this.selectedNumber) instanceof ITechnicalMove) {
+                     this.drawMoveInfo(matrix, displayMoves.get(this.selectedNumber).getAttack());
+                 }

@@ -1,0 +1,46 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/ScreenHelper.java
++++ b/com/pixelmonmod/pixelmon/client/gui/ScreenHelper.java
+@@ -515,9 +515,7 @@
+             tempWidth = fontRenderer.width(title);
+         }
+ 
+-        int justifiedWidth = justification == ScoreboardJustification.RIGHT
+-            ? tempWidth
+-            : (justification == ScoreboardJustification.CENTER ? tempWidth / 2 : 0);
++      int justifiedWidth = justification == ScoreboardJustification.RIGHT ? tempWidth : (justification == ScoreboardJustification.CENTER ? tempWidth / 2 : 0);
+         int left = x - justifiedWidth - 3;
+         int boxHeight = (lines.size() + 1) * 10;
+         GuiComponent.fill(matrix, left, top, left + tempWidth, top + boxHeight, alpha);
+@@ -629,9 +627,7 @@
+             GuiComponent.fill(matrix, left + longestStringWidth + 3, y - 3, left + longestStringWidth + 4, y + boxHeight + 3, background);
+             int gradient2 = (gradient1 & 16777215) >> 1 | gradient1 & 0xFF000000;
+             drawGradientRect(matrix, left - 3, y - 3 + 1, zLevel, left - 3 + 1, y + boxHeight + 3 - 1, gradient1, gradient2);
+-            drawGradientRect(
+-                matrix, left + longestStringWidth + 2, y - 3 + 1, zLevel, left + longestStringWidth + 3, y + boxHeight + 3 - 1, gradient1, gradient2
+-            );
++         drawGradientRect(matrix, left + longestStringWidth + 2, y - 3 + 1, zLevel, left + longestStringWidth + 3, y + boxHeight + 3 - 1, gradient1, gradient2);
+             drawGradientRect(matrix, left - 3, y - 3, zLevel, left + longestStringWidth + 3, y - 3 + 1, gradient1, gradient1);
+             drawGradientRect(matrix, left - 3, y + boxHeight + 2, zLevel, left + longestStringWidth + 3, y + boxHeight + 3, gradient2, gradient2);
+ 
+@@ -1524,9 +1520,7 @@
+                     }
+ 
+                     if (rl != null) {
+-                        drawImageQuad(
+-                            rl, matrix, (float)(mc.font.width(name) + x - 101), (float)y, 5.0F, 8.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F
+-                        );
++                  drawImageQuad(rl, matrix, (float)(mc.font.width(name) + x - 101), (float)y, 5.0F, 8.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F);
+                     }
+                 }
+ 
+@@ -1581,9 +1575,7 @@
+         drawScaledSquashedString(matrix, text, x, y, color, fontSize, widthFactor, false);
+     }
+ 
+-    public static void drawScaledSquashedString(
+-        PoseStack matrix, String text, float x, float y, int color, float fontSize, double widthFactor, boolean unicode
+-    ) {
++   public static void drawScaledSquashedString(PoseStack matrix, String text, float x, float y, int color, float fontSize, double widthFactor, boolean unicode) {
+         float scalar = fontSize / 16.0F;
+         Font fr = Minecraft.getInstance().font;
+         Minecraft.getInstance().selectMainFont(unicode);

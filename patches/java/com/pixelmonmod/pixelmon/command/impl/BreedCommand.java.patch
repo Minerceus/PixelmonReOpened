@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/BreedCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/BreedCommand.java
+@@ -62,9 +62,7 @@
+         DayCareEvent.PrePokemonAdd event = new DayCareEvent.PrePokemonAdd(player, storage, pokemon1, pokemon2, egg);
+         if (!Pixelmon.EVENT_BUS.post(event)) {
+             Pixelmon.EVENT_BUS.post(new DayCareEvent.PostPokemonAdd(player, storage, event.getParentOne(), event.getParentTwo(), event.getChildCreated()));
+-            DayCareEvent.PreCollect preEvent = new DayCareEvent.PreCollect(
+-                player, storage, event.getParentOne(), event.getParentTwo(), event.getChildCreated()
+-            );
++         DayCareEvent.PreCollect preEvent = new DayCareEvent.PreCollect(player, storage, event.getParentOne(), event.getParentTwo(), event.getChildCreated());
+             if (!Pixelmon.EVENT_BUS.post(preEvent)) {
+                 PixelmonCommandUtils.sendMessage(sender, "pixelmon.command.breed.giveegg", pokemon1.getLocalizedName(), pokemon2.getLocalizedName());
+                 storage.add(preEvent.getChildGiven());

@@ -1,0 +1,33 @@
+--- a/com/pixelmonmod/tcg/block/BattleControllerBlock.java
++++ b/com/pixelmonmod/tcg/block/BattleControllerBlock.java
+@@ -85,10 +85,8 @@
+                         te.setEndingCommand(tag.getString("EndingCommand"));
+                         te.setStartingMessage(tag.getString("StartingMessage"));
+                         te.setEndingMessage(tag.getString("EndingMessage"));
++                  player.sendMessage(new TextComponent(ChatFormatting.AQUA + "Placed BattleBox with following rules:"), ChatType.GAME_INFO, Util.NIL_UUID);
+                         player.sendMessage(
+-                            new TextComponent(ChatFormatting.AQUA + "Placed BattleBox with following rules:"), ChatType.GAME_INFO, Util.NIL_UUID
+-                        );
+-                        player.sendMessage(
+                             new TextComponent(ChatFormatting.LIGHT_PURPLE + "Deck size: " + ChatFormatting.WHITE + tag.getInt("DeckSize")),
+                             ChatType.GAME_INFO,
+                             Util.NIL_UUID
+@@ -169,16 +167,14 @@
+                         Util.NIL_UUID
+                     );
+                     player.sendMessage(
+-                        new TextComponent(ChatFormatting.LIGHT_PURPLE + "Ending command: " + ChatFormatting.WHITE + tag.getString("EndingCommand")),
+-                        Util.NIL_UUID
++                  new TextComponent(ChatFormatting.LIGHT_PURPLE + "Ending command: " + ChatFormatting.WHITE + tag.getString("EndingCommand")), Util.NIL_UUID
+                     );
+                     player.sendMessage(
+                         new TextComponent(ChatFormatting.LIGHT_PURPLE + "Starting message: " + ChatFormatting.WHITE + tag.getString("StartingMessage")),
+                         Util.NIL_UUID
+                     );
+                     player.sendMessage(
+-                        new TextComponent(ChatFormatting.LIGHT_PURPLE + "Ending message: " + ChatFormatting.WHITE + tag.getString("EndingMessage")),
+-                        Util.NIL_UUID
++                  new TextComponent(ChatFormatting.LIGHT_PURPLE + "Ending message: " + ChatFormatting.WHITE + tag.getString("EndingMessage")), Util.NIL_UUID
+                     );
+                 }
+ 

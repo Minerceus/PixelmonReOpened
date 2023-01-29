@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/npcEditor/ShopkeeperEditorScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/npcEditor/ShopkeeperEditorScreen.java
+@@ -55,9 +55,7 @@
+             new IndexedButton(1, this.width / 2 + 155, this.height / 2 + 90, 30, 20, new TranslatableComponent("gui.guiItemDrops.ok"), this::actionPerformed)
+         );
+         this.addButton(
+-            new IndexedButton(
+-                6, this.width / 2 + 100, this.height / 2 - 120, 80, 20, new TranslatableComponent("gui.npceditor.despawn"), this::actionPerformed
+-            )
++         new IndexedButton(6, this.width / 2 + 100, this.height / 2 - 120, 80, 20, new TranslatableComponent("gui.npceditor.despawn"), this::actionPerformed)
+         );
+         this.jsonDropDown = new DropDown<>(shopkeeperData, new ClientShopkeeperData(json), this.width / 2 - 10, this.height / 2 - 81, 140, 100)
+             .setGetOptionString(shopkeeper -> I18n.get("npc.shopkeeper." + shopkeeper.getID(), new Object[0]))
+@@ -132,9 +130,7 @@
+         );
+         Lighting.turnOff();
+         ScreenHelper.drawEntity(matrix, this.npc, this.width / 2 - 140, this.height / 2 + 50, 60.0F, 0.0F, 0.0F);
+-        this.minecraft
+-            .font
+-            .draw(matrix, I18n.get("gui.shopkeeper.json", new Object[0]), (float)this.width / 2.0F - 60.0F, (float)this.height / 2.0F - 80.0F, 0);
++      this.minecraft.font.draw(matrix, I18n.get("gui.shopkeeper.json", new Object[0]), (float)this.width / 2.0F - 60.0F, (float)this.height / 2.0F - 80.0F, 0);
+         this.minecraft.font.draw(matrix, I18n.get("gui.trainereditor", new Object[0]), (float)this.width / 2.0F - 60.0F, (float)this.height / 2.0F - 50.0F, 0);
+         this.minecraft
+             .font

@@ -1,0 +1,68 @@
+--- a/com/pixelmonmod/pixelmon/blocks/tileentity/TradeMachineTileEntity.java
++++ b/com/pixelmonmod/pixelmon/blocks/tileentity/TradeMachineTileEntity.java
+@@ -166,17 +166,11 @@
+ 
+             OpenScreenPacket.open(player, EnumGuiScreen.Trading, this.worldPosition.getX(), this.worldPosition.getY(), this.worldPosition.getZ());
+             if (player == this.player2) {
+-                NetworkHelper.sendPacket(
+-                    new RegisterTraderPacket(this.player1.getUUID(), this.hasMoreThan1HatchedPokemon(this.player1.getUUID())), this.player2
+-                );
+-                NetworkHelper.sendPacket(
+-                    new RegisterTraderPacket(this.player2.getUUID(), this.hasMoreThan1HatchedPokemon(this.player2.getUUID())), this.player1
+-                );
++            NetworkHelper.sendPacket(new RegisterTraderPacket(this.player1.getUUID(), this.hasMoreThan1HatchedPokemon(this.player1.getUUID())), this.player2);
++            NetworkHelper.sendPacket(new RegisterTraderPacket(this.player2.getUUID(), this.hasMoreThan1HatchedPokemon(this.player2.getUUID())), this.player1);
+                 if (this.pos1 != -1) {
+                     PlayerPartyStorage party = StorageProxy.getParty(this.player1);
+-                    NetworkHelper.sendPacket(
+-                        new SetTradeTargetPacket(party.get(this.pos1), new PixelmonStatsData(party.get(this.pos1).getStats())), this.player2
+-                    );
++               NetworkHelper.sendPacket(new SetTradeTargetPacket(party.get(this.pos1), new PixelmonStatsData(party.get(this.pos1).getStats())), this.player2);
+                     NetworkHelper.sendPacket(new SetSelectedStatsPacket(new PixelmonStatsData(party.get(this.pos1).getStats())), this.player1);
+                 }
+             }
+@@ -317,40 +311,28 @@
+                         } else if (!Pixelmon.EVENT_BUS.post(new PokemonReceivedEvent(this.player1, pokemon2, "Trade"))) {
+                             if (!Pixelmon.EVENT_BUS.post(new PokemonReceivedEvent(this.player2, pokemon1, "Trade"))) {
+                                 if (party1.playerPokedex.get(pokemon2.getSpecies().getDex()) != PokedexRegistrationStatus.CAUGHT) {
+-                                    PokedexEvent.Pre preEvent = new PokedexEvent.Pre(
+-                                        this.player1.getUUID(), pokemon2, PokedexRegistrationStatus.CAUGHT, "tradePlayer"
+-                                    );
++                           PokedexEvent.Pre preEvent = new PokedexEvent.Pre(this.player1.getUUID(), pokemon2, PokedexRegistrationStatus.CAUGHT, "tradePlayer");
+                                     if (!Pixelmon.EVENT_BUS.post(preEvent)) {
+                                         party1.playerPokedex.set(preEvent.getPokemon(), preEvent.getNewStatus());
+                                         party1.playerPokedex.update();
+                                         Pixelmon.EVENT_BUS
+                                             .post(
+                                                 new PokedexEvent.Post(
+-                                                    this.player1.getUUID(),
+-                                                    preEvent.getOldStatus(),
+-                                                    preEvent.getPokemon(),
+-                                                    preEvent.getNewStatus(),
+-                                                    preEvent.getCause()
++                                       this.player1.getUUID(), preEvent.getOldStatus(), preEvent.getPokemon(), preEvent.getNewStatus(), preEvent.getCause()
+                                                 )
+                                             );
+                                     }
+                                 }
+ 
+                                 if (party2.playerPokedex.get(pokemon1.getSpecies().getDex()) != PokedexRegistrationStatus.CAUGHT) {
+-                                    PokedexEvent.Pre preEvent = new PokedexEvent.Pre(
+-                                        this.player2.getUUID(), pokemon1, PokedexRegistrationStatus.CAUGHT, "tradePlayer"
+-                                    );
++                           PokedexEvent.Pre preEvent = new PokedexEvent.Pre(this.player2.getUUID(), pokemon1, PokedexRegistrationStatus.CAUGHT, "tradePlayer");
+                                     if (!Pixelmon.EVENT_BUS.post(preEvent)) {
+                                         party1.playerPokedex.set(preEvent.getPokemon(), preEvent.getNewStatus());
+                                         party2.playerPokedex.update();
+                                         Pixelmon.EVENT_BUS
+                                             .post(
+                                                 new PokedexEvent.Post(
+-                                                    this.player2.getUUID(),
+-                                                    preEvent.getOldStatus(),
+-                                                    preEvent.getPokemon(),
+-                                                    preEvent.getNewStatus(),
+-                                                    preEvent.getCause()
++                                       this.player2.getUUID(), preEvent.getOldStatus(), preEvent.getPokemon(), preEvent.getNewStatus(), preEvent.getCause()
+                                                 )
+                                             );
+                                     }

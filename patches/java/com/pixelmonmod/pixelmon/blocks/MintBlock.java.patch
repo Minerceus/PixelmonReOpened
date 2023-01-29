@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/blocks/MintBlock.java
++++ b/com/pixelmonmod/pixelmon/blocks/MintBlock.java
+@@ -72,9 +72,7 @@
+             ? Lists.newArrayList(
+                 new ItemStack[]{
+                     new ItemStack(
+-                        (ItemLike)((RegistryObject)RandomHelper.getRandomElementFromCollection(ItemRegistration.getMints()))
+-                            .orElse(PixelmonItems.mint_adamant),
+-                        1
++                  (ItemLike)((RegistryObject)RandomHelper.getRandomElementFromCollection(ItemRegistration.getMints())).orElse(PixelmonItems.mint_adamant), 1
+                     )
+                 }
+             )

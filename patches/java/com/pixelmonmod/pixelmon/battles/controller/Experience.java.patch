@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/battles/controller/Experience.java
++++ b/com/pixelmonmod/pixelmon/battles/controller/Experience.java
+@@ -45,7 +45,7 @@
+                     }
+ 
+                     boolean hasExpAll = false;
+-                    ArrayList<ItemStack> items = new ArrayList();
++               ArrayList<ItemStack> items = new ArrayList<>();
+                     items.addAll(player.player.inventory.items);
+                     items.addAll(player.player.inventory.offhand);
+ 

@@ -1,0 +1,22 @@
+--- a/com/pixelmonmod/pixelmon/api/moveskills/MoveSkill.java
++++ b/com/pixelmonmod/pixelmon/api/moveskills/MoveSkill.java
+@@ -120,9 +120,7 @@
+             return true;
+         } else if (!this.ableSpecs.isEmpty() && CollectionHelper.find(this.ableSpecs, spec -> spec.matches(pokemon)) == null) {
+             return false;
+-        } else if (!this.combinationMoves.isEmpty() && CollectionHelper.find(this.combinationMoves, moveID -> !pokemon.getMoveset().hasAttack(moveID)) != null
+-            )
+-         {
++      } else if (!this.combinationMoves.isEmpty() && CollectionHelper.find(this.combinationMoves, moveID -> !pokemon.getMoveset().hasAttack(moveID)) != null) {
+             return false;
+         } else {
+             return this.anyMoves.isEmpty() || CollectionHelper.find(this.anyMoves, moveID -> pokemon.getMoveset().hasAttack(moveID)) != null;
+@@ -200,7 +198,7 @@
+     }
+ 
+     public MoveSkill setBehaviourBlockTarget(BiFunction<PixelmonEntity, Tuple<BlockPos, Direction>, Integer> cooldown) {
+-        this.behaviours.put(MoveSkill.EnumTargetType.BLOCK, (pixelmon, tup) -> cooldown.apply(pixelmon, (Tuple)tup));
++      this.behaviours.put(MoveSkill.EnumTargetType.BLOCK, (pixelmon, tup) -> cooldown.apply(pixelmon, (Tuple<BlockPos, Direction>) tup));
+         return this;
+     }
+ 

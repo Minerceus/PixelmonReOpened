@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/world/dimension/ultraspace/tree/MegaUltraJungleTrunkPlacer.java
++++ b/com/pixelmonmod/pixelmon/world/dimension/ultraspace/tree/MegaUltraJungleTrunkPlacer.java
+@@ -35,7 +35,7 @@
+         list.addAll(super.placeTrunk(level, random, height, blockPos, logs, boundingBox, config));
+ 
+         for(int i = (int)(1.5 * (double)height - (double)random.nextInt(2)); i > height / 3; i -= random.nextInt(3)) {
+-            float f = random.nextFloat() * (float) (Math.PI * 2);
++         float f = random.nextFloat() * ((float) (Math.PI * 2));
+             int j = 0;
+             int k = 0;
+             int y = 0;

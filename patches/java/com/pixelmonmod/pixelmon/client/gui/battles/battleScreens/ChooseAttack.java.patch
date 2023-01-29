@@ -1,0 +1,40 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/ChooseAttack.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/ChooseAttack.java
+@@ -71,9 +71,7 @@
+ 
+                     Moveset moveset = pixelmon.moveset;
+                     if (moveset.stream()
+-                        .noneMatch(attack -> attack != null && (!attack.getDisabled() || this.bm.dynamaxing || this.bm.dynamaxTurnsLeft > 0) && attack.pp > 0)
+-                        )
+-                     {
++                  .noneMatch(attack -> attack != null && (!attack.getDisabled() || this.bm.dynamaxing || this.bm.dynamaxTurnsLeft > 0) && attack.pp > 0)) {
+                         if (move.id == 0) {
+                             button.visible = true;
+                             ((ChooseAttack.MoveButton)button).struggle();
+@@ -572,9 +570,7 @@
+                         (double)(this.width + 6),
+                         8.0,
+                         (float)this.attack.pp / (float)this.attack.getMaxPP(),
+-                        this.attack.pp <= 0 || this.attack.getDisabled() && (!this.willDynamax && !this.isDynamaxed || this.holdingAssaultVest)
+-                            ? DARKCOLOR
+-                            : COLOR
++                  this.attack.pp <= 0 || this.attack.getDisabled() && (!this.willDynamax && !this.isDynamaxed || this.holdingAssaultVest) ? DARKCOLOR : COLOR
+                     );
+                     ScreenHelper.drawScaledCenteredString(
+                         matrix,
+@@ -649,14 +645,7 @@
+                         matrix, this.attack.getAttackCategory().getLocalizedName(), (float)(w - 40), (float)(h - 35), 16777215, 16.0F, 100, false
+                     );
+                     ScreenHelper.drawScaledCenteredSplitString(
+-                        matrix,
+-                        I18n.get("gui.battle.powerval", new Object[]{this.displayedPower}),
+-                        (float)(w - 40),
+-                        (float)(h - 24),
+-                        16777215,
+-                        16.0F,
+-                        100,
+-                        false
++                  matrix, I18n.get("gui.battle.powerval", new Object[]{this.displayedPower}), (float)(w - 40), (float)(h - 24), 16777215, 16.0F, 100, false
+                     );
+                     ScreenHelper.drawScaledCenteredSplitString(
+                         matrix, I18n.get("gui.battle.accuracyval", new Object[]{accuracy}), (float)(w - 40), (float)(h - 13), 16777215, 16.0F, 100, false

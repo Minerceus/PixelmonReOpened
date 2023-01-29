@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/api/spawning/archetypes/spawners/TickingSpawner.java
++++ b/com/pixelmonmod/pixelmon/api/spawning/archetypes/spawners/TickingSpawner.java
+@@ -120,9 +120,7 @@
+             spawner.spawnLocationCalculator = this.spawnLocationCalculator;
+             spawner.capacity = this.capacity != null ? this.capacity : PixelmonConfigProxy.getSpawning().getWildSpawning().getEntitiesPerPlayer();
+             spawner.spawnsPerPass = this.spawnsPerPass != null ? this.spawnsPerPass : PixelmonConfigProxy.getSpawning().getWildSpawning().getSpawnsPerPass();
+-            spawner.spawnFrequency = this.spawnFrequency != null
+-                ? this.spawnFrequency
+-                : PixelmonConfigProxy.getSpawning().getWildSpawning().getSpawnFrequency();
++         spawner.spawnFrequency = this.spawnFrequency != null ? this.spawnFrequency : PixelmonConfigProxy.getSpawning().getWildSpawning().getSpawnFrequency();
+             spawner.minDistBetweenSpawns = this.minDistBetweenSpawns != null
+                 ? this.minDistBetweenSpawns
+                 : PixelmonConfigProxy.getSpawning().getWildSpawning().getMinimumDistanceBetweenSpawns();

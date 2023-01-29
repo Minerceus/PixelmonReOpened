@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/init/registry/ContainerRegistration.java
++++ b/com/pixelmonmod/pixelmon/init/registry/ContainerRegistration.java
+@@ -47,9 +47,7 @@
+     public static final RegistryObject<MenuType<DayCareContainer>> DAY_CARE = CONTAINERS.register(
+         "day_care", () -> IForgeContainerType.create(DayCareContainer::new)
+     );
+-    public static final RegistryObject<MenuType<BinderContainer>> BINDER = CONTAINERS.register(
+-        "binder", () -> IForgeContainerType.create(BinderContainer::new)
+-    );
++   public static final RegistryObject<MenuType<BinderContainer>> BINDER = CONTAINERS.register("binder", () -> IForgeContainerType.create(BinderContainer::new));
+     public static final RegistryObject<MenuType<DeckContainer>> DECK = CONTAINERS.register("deck", () -> IForgeContainerType.create(DeckContainer::new));
+ 
+     @SubscribeEvent

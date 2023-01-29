@@ -1,0 +1,10 @@
+--- a/com/pixelmonmod/pixelmon/api/config/api/Config.java
++++ b/com/pixelmonmod/pixelmon/api/config/api/Config.java
+@@ -1,6 +1,6 @@
+ package com.pixelmonmod.pixelmon.api.config.api;
+ 
+-import info.pixelmon.repack.org.spongepowered.ConfigurationNode;
++import org.spongepowered.configurate.ConfigurationNode;
+ 
+ public interface Config {
+     ConfigurationNode getNode();

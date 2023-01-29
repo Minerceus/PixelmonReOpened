@@ -1,0 +1,44 @@
+--- a/com/pixelmonmod/pixelmon/api/spawning/archetypes/entities/pokemon/SpawnInfoPokemon.java
++++ b/com/pixelmonmod/pixelmon/api/spawning/archetypes/entities/pokemon/SpawnInfoPokemon.java
+@@ -112,9 +112,7 @@
+         Pokemon pokemon = this.spec.create();
+         if (!this.spec.getValue(LevelRequirement.class).isPresent()) {
+             pokemon.setLevel(
+-                RandomHelper.getRandomNumberBetween(
+-                    Math.min(this.minLevel, PixelmonServerConfig.maxLevel), Math.min(this.maxLevel, PixelmonServerConfig.maxLevel)
+-                )
++            RandomHelper.getRandomNumberBetween(Math.min(this.minLevel, PixelmonServerConfig.maxLevel), Math.min(this.maxLevel, PixelmonServerConfig.maxLevel))
+             );
+         }
+ 
+@@ -155,9 +153,7 @@
+                 }
+             }
+ 
+-            if (RandomHelper.getRandomChance(shinyChanceMultiplier / PixelmonConfigProxy.getSpawning().getShinyRate(spawnLocation.location.world.dimension()))
+-                )
+-             {
++         if (RandomHelper.getRandomChance(shinyChanceMultiplier / PixelmonConfigProxy.getSpawning().getShinyRate(spawnLocation.location.world.dimension()))) {
+                 pokemon.setShiny();
+             } else if (pokemon.isShiny()) {
+                 pokemon.setShiny(false);
+@@ -205,9 +201,7 @@
+                     strain = RandomHelper.getRandomChance(1.0F / this.set.setSpecificPokerusRate) ? PokerusStrain.getRandomType() : null;
+                 }
+             } else if (PixelmonConfigProxy.getGeneral().getPokerus().getSpawnRate() > 0.0F) {
+-                strain = RandomHelper.getRandomChance(1.0F / PixelmonConfigProxy.getGeneral().getPokerus().getSpawnRate())
+-                    ? PokerusStrain.getRandomType()
+-                    : null;
++            strain = RandomHelper.getRandomChance(1.0F / PixelmonConfigProxy.getGeneral().getPokerus().getSpawnRate()) ? PokerusStrain.getRandomType() : null;
+             }
+ 
+             if (strain != null) {
+@@ -244,7 +238,7 @@
+             if (value != null && value.isInitialized()) {
+                 this.species = value.getValueUnsafe();
+             } else {
+-                Pixelmon.LOGGER.warn("Bad Pok\u00e9mon name: " + this.spec.toString() + " in set " + this.set.id);
++            Pixelmon.LOGGER.warn("Bad Pokémon name: " + this.spec.toString() + " in set " + this.set.id);
+             }
+         }
+ 

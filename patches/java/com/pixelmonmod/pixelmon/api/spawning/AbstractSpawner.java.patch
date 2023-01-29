@@ -1,0 +1,31 @@
+--- a/com/pixelmonmod/pixelmon/api/spawning/AbstractSpawner.java
++++ b/com/pixelmonmod/pixelmon/api/spawning/AbstractSpawner.java
+@@ -108,7 +108,7 @@
+     public SpatialData calculateSpatialData(Level world, BlockPos centre, int max, boolean includeDownwards, Predicate<Block> condition) {
+         BlockState state = world.getBlockState(centre);
+         if (!condition.test(state.getBlock())) {
+-            return new SpatialData(0, world.getBlockState(centre.below()).getBlock(), Sets.newHashSet(new Block[]{state.getBlock()}));
++         return new SpatialData(0, world.getBlockState(centre.below()).getBlock(), Sets.newHashSet(state.getBlock()));
+         } else {
+             int r = 1;
+             int[] xs = new int[]{-1, 1};
+@@ -166,8 +166,8 @@
+             );
+         float theta = RandomHelper.getRandomNumberBetween(0.0F, (float) (Math.PI * 2));
+         int r = RandomHelper.getRandomNumberBetween(minDistFromCentre, maxDistFromCentre);
+-        int xDisplacement = (int)((double)r * Math.cos((double)theta));
+-        int zDisplacement = (int)((double)r * Math.sin((double)theta));
++      int xDisplacement = (int)((double)r * Math.cos(theta));
++      int zDisplacement = (int)((double)r * Math.sin(theta));
+         centre = centre.offset(xDisplacement, 0, zDisplacement);
+         return new BlockCollection(
+             entity,
+@@ -239,7 +239,7 @@
+                             if (condition.biomes != null && !condition.biomes.isEmpty()) {
+                                 for(ResourceLocation biome : condition.biomes) {
+                                     if (!biomes.contains(biome)) {
+-                                        biomes.add((E)biome);
++                              biomes.add(biome);
+                                     }
+                                 }
+                             }

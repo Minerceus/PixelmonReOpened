@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/ObscuredStatus.java
++++ b/com/pixelmonmod/pixelmon/battles/status/ObscuredStatus.java
+@@ -25,9 +25,7 @@
+         if (user.attack.isAttack(AttackRegistry.ANCIENT_LUNAR_BLESSING, AttackRegistry.ANCIENT_SHELTER)) {
+             turns = 4;
+         } else if (user.attack
+-            .isAttack(AttackRegistry.ANCIENT_MUD_BOMB, AttackRegistry.ANCIENT_MUD_SLAP, AttackRegistry.ANCIENT_OCTAZOOKA, AttackRegistry.ANCIENT_SHADOW_FORCE)
+-            )
+-         {
++         .isAttack(AttackRegistry.ANCIENT_MUD_BOMB, AttackRegistry.ANCIENT_MUD_SLAP, AttackRegistry.ANCIENT_OCTAZOOKA, AttackRegistry.ANCIENT_SHADOW_FORCE)) {
+             turns = 3;
+         }
+ 

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/items/CurryDishItem.java
++++ b/com/pixelmonmod/pixelmon/items/CurryDishItem.java
+@@ -102,9 +102,7 @@
+                 color = ChatFormatting.GOLD;
+         }
+ 
+-        tooltip.add(
+-            new TranslatableComponent("item.pixelmon.curry.tooltip", new Object[]{EnumCurryRating.values()[rating].getLocalizedName()}).withStyle(color)
+-        );
++      tooltip.add(new TranslatableComponent("item.pixelmon.curry.tooltip", new Object[]{EnumCurryRating.values()[rating].getLocalizedName()}).withStyle(color));
+         super.appendHoverText(stack, world, tooltip, advanced);
+     }
+ }

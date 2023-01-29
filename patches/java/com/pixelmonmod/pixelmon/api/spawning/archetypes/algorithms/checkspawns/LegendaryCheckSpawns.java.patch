@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/pixelmon/api/spawning/archetypes/algorithms/checkspawns/LegendaryCheckSpawns.java
++++ b/com/pixelmonmod/pixelmon/api/spawning/archetypes/algorithms/checkspawns/LegendaryCheckSpawns.java
+@@ -45,7 +45,7 @@
+             Pixelmon.EVENT_BUS.post(event);
+             LegendarySpawner lSpawner = (LegendarySpawner)spawner;
+             ServerPlayer target = null;
+-            List<ServerPlayer> targets = new ArrayList();
++         List<ServerPlayer> targets = new ArrayList<>();
+             if (!(sender.getEntity() instanceof ServerPlayer)) {
+                 PlayerList playerList = ServerLifecycleHooks.getCurrentServer().getPlayerList();
+ 
+@@ -105,7 +105,7 @@
+             ServerLifecycleHooks.getCurrentServer()
+                 .execute(
+                     () -> {
+-                        List<Component> messages = new ArrayList();
++                  List<Component> messages = new ArrayList<>();
+                         long timeToGo = lSpawner.nextSpawnTime - System.currentTimeMillis();
+                         int minutes = (int)Math.ceil((double)((float)timeToGo / 1000.0F / 60.0F));
+                         if (event.shouldShowTime) {

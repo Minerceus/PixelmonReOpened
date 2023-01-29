@@ -1,0 +1,19 @@
+--- a/com/pixelmonmod/pixelmon/api/config/api/yaml/AbstractYamlConfig.java
++++ b/com/pixelmonmod/pixelmon/api/config/api/yaml/AbstractYamlConfig.java
+@@ -1,11 +1,11 @@
+ package com.pixelmonmod.pixelmon.api.config.api.yaml;
+ 
+ import com.pixelmonmod.pixelmon.api.config.api.Config;
+-import info.pixelmon.repack.org.spongepowered.CommentedConfigurationNode;
+-import info.pixelmon.repack.org.spongepowered.ConfigurationNode;
+-import info.pixelmon.repack.org.spongepowered.objectmapping.ConfigSerializable;
+-import info.pixelmon.repack.org.spongepowered.reference.ConfigurationReference;
+-import info.pixelmon.repack.org.spongepowered.reference.ValueReference;
++import org.spongepowered.configurate.CommentedConfigurationNode;
++import org.spongepowered.configurate.ConfigurationNode;
++import org.spongepowered.configurate.objectmapping.ConfigSerializable;
++import org.spongepowered.configurate.reference.ConfigurationReference;
++import org.spongepowered.configurate.reference.ValueReference;
+ 
+ @ConfigSerializable
+ public abstract class AbstractYamlConfig implements Config {

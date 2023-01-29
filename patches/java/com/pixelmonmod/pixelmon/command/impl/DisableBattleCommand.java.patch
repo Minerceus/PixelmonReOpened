@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/DisableBattleCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/DisableBattleCommand.java
+@@ -30,8 +30,7 @@
+         PlayerPartyStorage storage = PixelmonCommandUtils.require(PixelmonCommandUtils.getPlayerStorage(target), "pixelmon.command.general.invalidplayer");
+         storage.battleEnabled = !storage.battleEnabled;
+         sender.sendSuccess(
+-            PixelmonCommandUtils.format(ChatFormatting.GREEN, "pixelmon.command.disablebattle", args[0], storage.battleEnabled ? "enabled" : "disabled"),
+-            false
++         PixelmonCommandUtils.format(ChatFormatting.GREEN, "pixelmon.command.disablebattle", args[0], storage.battleEnabled ? "enabled" : "disabled"), false
+         );
+     }
+ 

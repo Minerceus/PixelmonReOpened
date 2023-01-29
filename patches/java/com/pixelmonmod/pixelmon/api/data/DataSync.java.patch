@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/data/DataSync.java
++++ b/com/pixelmonmod/pixelmon/api/data/DataSync.java
+@@ -68,7 +68,7 @@
+             this.fieldSetter.accept((A)sender, (B)data);
+         }
+ 
+-        sender.getEntityData().set(this.dataParameter, data);
++      sender.getEntityData().set(this.dataParameter, (B) data);
+     }
+ 
+     public void set(Pokemon sender, Object data) {

@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/comm/packetHandlers/daycare/AddToDayCarePacket.java
++++ b/com/pixelmonmod/pixelmon/comm/packetHandlers/daycare/AddToDayCarePacket.java
+@@ -66,9 +66,7 @@
+                         this.reply(context, new UpdateDayCareBoxPacket(dayCareBox));
+                         Pixelmon.EVENT_BUS
+                             .post(
+-                                new DayCareEvent.PostPokemonAdd(
+-                                    party.getPlayer(), party, preEvent.getParentOne(), preEvent.getParentTwo(), preEvent.getChildCreated()
+-                                )
++                        new DayCareEvent.PostPokemonAdd(party.getPlayer(), party, preEvent.getParentOne(), preEvent.getParentTwo(), preEvent.getChildCreated())
+                             );
+                     }
+                 }

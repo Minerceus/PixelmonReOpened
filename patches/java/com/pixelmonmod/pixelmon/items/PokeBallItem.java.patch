@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/items/PokeBallItem.java
++++ b/com/pixelmonmod/pixelmon/items/PokeBallItem.java
+@@ -117,7 +117,7 @@
+ 
+     @Override
+     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flagIn) {
+-        tooltip.add(new TextComponent("[\u2c10\u2517\u2739\u2ae2\u2175\u2cb5\u227c\u2d64\u2363\u2810\u21c6] Poke Ball"));
++      tooltip.add(new TextComponent("[Ⱀ┗✹⫢ⅵⲵ≼ⵤ⍣⠐⇆] Poke Ball"));
+         super.appendHoverText(stack, world, tooltip, flagIn);
+     }
+ 

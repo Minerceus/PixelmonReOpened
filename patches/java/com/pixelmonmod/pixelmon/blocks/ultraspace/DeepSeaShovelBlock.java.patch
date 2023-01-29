@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/blocks/ultraspace/DeepSeaShovelBlock.java
++++ b/com/pixelmonmod/pixelmon/blocks/ultraspace/DeepSeaShovelBlock.java
+@@ -8,8 +8,6 @@
+ 
+ public class DeepSeaShovelBlock extends Block {
+     public DeepSeaShovelBlock() {
+-        super(
+-            Properties.of(Material.SAND).strength(1.5F, 1.5F).harvestLevel(1).harvestTool(ToolType.SHOVEL).requiresCorrectToolForDrops().sound(SoundType.SAND)
+-        );
++      super(Properties.of(Material.SAND).strength(1.5F, 1.5F).harvestLevel(1).harvestTool(ToolType.SHOVEL).requiresCorrectToolForDrops().sound(SoundType.SAND));
+     }
+ }

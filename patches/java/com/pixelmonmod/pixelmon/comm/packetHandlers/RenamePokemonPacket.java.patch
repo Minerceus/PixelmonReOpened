@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/comm/packetHandlers/RenamePokemonPacket.java
++++ b/com/pixelmonmod/pixelmon/comm/packetHandlers/RenamePokemonPacket.java
+@@ -57,7 +57,7 @@
+         PokemonStorage storage = (PokemonStorage)(this.position.box == -1 ? StorageProxy.getParty(player) : StorageProxy.getPCForPlayer(player));
+         Pokemon pokemon = storage.get(this.position);
+         if (pokemon != null && pokemon.getUUID().equals(this.pokemonUUID)) {
+-            this.name = this.name.replaceAll("\u00a7", "&");
++         this.name = this.name.replaceAll("§", "&");
+             if (TextHelper.DENY_PATTERN.matcher(this.name).replaceAll("").length() > 16) {
+                 this.name = this.name.substring(0, 16);
+             }

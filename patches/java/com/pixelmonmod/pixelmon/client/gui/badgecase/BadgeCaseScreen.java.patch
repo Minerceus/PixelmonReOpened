@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/badgecase/BadgeCaseScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/badgecase/BadgeCaseScreen.java
+@@ -90,7 +90,7 @@
+ 
+         if (!this.allowChanges) {
+             this.buttonRegister.active = false;
+-            Arrays.stream((Object[])this.badgeButtons).forEach(badge -> badge.active = false);
++         Arrays.stream(this.badgeButtons).forEach(badge -> badge.active = false);
+         }
+ 
+         if (this.owner != null && !this.owner.isEmpty()) {

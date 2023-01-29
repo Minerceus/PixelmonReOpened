@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/PokeRestartCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/PokeRestartCommand.java
+@@ -49,9 +49,7 @@
+         }
+ 
+         this.restartPlayer(target, storage, pc);
+-        sender.sendSuccess(
+-            PixelmonCommandUtils.format(ChatFormatting.GREEN, "pixelmon.command.pokerestart.success", target.getDisplayName().getString()), false
+-        );
++      sender.sendSuccess(PixelmonCommandUtils.format(ChatFormatting.GREEN, "pixelmon.command.pokerestart.success", target.getDisplayName().getString()), false);
+     }
+ 
+     private void restartPlayer(ServerPlayer target, PlayerPartyStorage storage, PCStorage pc) {

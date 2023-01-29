@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/api/trading/PossibleTradeList.java
++++ b/com/pixelmonmod/pixelmon/api/trading/PossibleTradeList.java
+@@ -50,8 +50,7 @@
+             }
+ 
+             if (INSTANCE.filteredAllPossibleTrades.isEmpty()) {
+-                INSTANCE.filteredAllPossibleTrades
+-                    .add(new TradePair(PokemonSpecificationProxy.create("Magikarp"), PokemonSpecificationProxy.create("Magikarp")));
++            INSTANCE.filteredAllPossibleTrades.add(new TradePair(PokemonSpecificationProxy.create("Magikarp"), PokemonSpecificationProxy.create("Magikarp")));
+                 if (PixelmonConfigProxy.getSpawning().getBlockedGenerations().size() == 9) {
+                     Pixelmon.LOGGER.error("No valid trades could be registered with only 0 being enabled!");
+                 } else {

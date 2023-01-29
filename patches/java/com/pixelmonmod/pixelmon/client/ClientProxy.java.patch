@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/pixelmon/client/ClientProxy.java
++++ b/com/pixelmonmod/pixelmon/client/ClientProxy.java
+@@ -405,9 +405,7 @@
+                 (state, reader, pos, something) -> reader != null && pos != null
+                         ? BiomeColors.getAverageFoliageColor(reader, pos)
+                         : FoliageColor.getDefaultColor(),
+-                new net.minecraft.world.level.block.Block[]{
+-                    (net.minecraft.world.level.block.Block)BlockRegistration.ULTRA_SPACE_COBBLESTONE_PRESSURE_PLATE.get()
+-                }
++            new net.minecraft.world.level.block.Block[]{(net.minecraft.world.level.block.Block)BlockRegistration.ULTRA_SPACE_COBBLESTONE_PRESSURE_PLATE.get()}
+             );
+         event.getBlockColors()
+             .register(
+@@ -705,9 +703,7 @@
+         }
+     }
+ 
+-    public static void spawnParticle(
+-        EnumBreedingParticles particle, Level worldObj, double posX, double posY, double posZ, PaletteProperties paletteProperties
+-    ) {
++   public static void spawnParticle(EnumBreedingParticles particle, Level worldObj, double posX, double posY, double posZ, PaletteProperties paletteProperties) {
+     }
+ 
+     public static void registerTickHandlers() {

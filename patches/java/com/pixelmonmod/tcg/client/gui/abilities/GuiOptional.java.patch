@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/tcg/client/gui/abilities/GuiOptional.java
++++ b/com/pixelmonmod/tcg/client/gui/abilities/GuiOptional.java
+@@ -39,7 +39,7 @@
+     public void render(PoseStack matrix, int mouseX, int mouseY, float partialTicks) {
+         super.render(matrix, mouseX, mouseY, partialTicks);
+         if (this.visible) {
+-            String text = "\u00a7lActivate your attack's optional effect?";
++         String text = "§lActivate your attack's optional effect?";
+             this.minecraft.font.draw(matrix, text, (float)(this.getScaledWidth() / 2 - this.minecraft.font.width(text) / 2), 15.0F, 16777215);
+         }
+     }

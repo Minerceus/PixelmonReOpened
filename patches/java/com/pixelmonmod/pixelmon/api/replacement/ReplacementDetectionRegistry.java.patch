@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/replacement/ReplacementDetectionRegistry.java
++++ b/com/pixelmonmod/pixelmon/api/replacement/ReplacementDetectionRegistry.java
+@@ -15,7 +15,7 @@
+     }
+ 
+     public static void register(Supplier<? extends SpawnDetectionLogic> detectionLogic) {
+-        REPLACEMENT_DETECTION_LOGIC.put(detectionLogic.get().getId().toLowerCase(), detectionLogic);
++      REPLACEMENT_DETECTION_LOGIC.put(detectionLogic.get().getId().toLowerCase(), (Supplier<SpawnDetectionLogic>) detectionLogic);
+     }
+ 
+     static {

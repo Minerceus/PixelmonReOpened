@@ -1,0 +1,45 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/pokemoneditor/PartyEditorBaseScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/pokemoneditor/PartyEditorBaseScreen.java
+@@ -28,7 +28,7 @@
+     private int draggedSlot = -1;
+     private long cursor = (long)CursorHelper.DEFAULT_CURSOR.get();
+     public List<Pokemon> pokemonList;
+-    private List<Button> pokemonButtons = new ArrayList();
++   private List<Button> pokemonButtons = new ArrayList<>();
+ 
+     protected PartyEditorBaseScreen(List<Pokemon> pokemonList) {
+         super(TextComponent.EMPTY);
+@@ -126,14 +126,10 @@
+         );
+         Lighting.turnOff();
+         String title = this.getTitle().getString();
++      this.minecraft.font.draw(matrix, title, (float)this.width / 2.0F - (float)this.minecraft.font.width(title) / 2.0F, (float)this.height / 2.0F - 90.0F, 0);
++      this.minecraft.font.draw(matrix, I18n.get("gui.trainereditor", new Object[0]), (float)this.width / 2.0F - 130.0F, (float)this.height / 2.0F - 65.0F, 0);
+         this.minecraft
+             .font
+-            .draw(matrix, title, (float)this.width / 2.0F - (float)this.minecraft.font.width(title) / 2.0F, (float)this.height / 2.0F - 90.0F, 0);
+-        this.minecraft
+-            .font
+-            .draw(matrix, I18n.get("gui.trainereditor", new Object[0]), (float)this.width / 2.0F - 130.0F, (float)this.height / 2.0F - 65.0F, 0);
+-        this.minecraft
+-            .font
+             .draw(matrix, I18n.get("gui.trainereditor.lvl", new Object[0]), (float)this.width / 2.0F - 40.0F, (float)this.height / 2.0F - 65.0F, 0);
+ 
+         for(int k = 0; k < 6; ++k) {
+@@ -148,14 +144,10 @@
+         for(int k = 0; k < this.pokemonList.size(); ++k) {
+             Pokemon p = this.pokemonList.get(k);
+             if (p != null) {
++            this.minecraft.font.draw(matrix, p.getDisplayName(), (float)this.width / 2.0F - 130.0F, (float)this.height / 2.0F - 44.0F + (float)(k * 20), 0);
+                 this.minecraft
+                     .font
+-                    .draw(matrix, p.getDisplayName(), (float)this.width / 2.0F - 130.0F, (float)this.height / 2.0F - 44.0F + (float)(k * 20), 0);
+-                this.minecraft
+-                    .font
+-                    .draw(
+-                        matrix, String.valueOf(p.getPokemonLevel()), (float)this.width / 2.0F - 40.0F, (float)this.height / 2.0F - 44.0F + (float)(k * 20), 0
+-                    );
++               .draw(matrix, String.valueOf(p.getPokemonLevel()), (float)this.width / 2.0F - 40.0F, (float)this.height / 2.0F - 44.0F + (float)(k * 20), 0);
+                 float x = (float)this.width / 2.0F - 157.0F;
+                 float y = (float)this.height / 2.0F - 53.0F + (float)(k * 20);
+                 float alpha = 1.0F;

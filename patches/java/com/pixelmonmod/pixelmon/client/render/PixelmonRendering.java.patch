@@ -1,0 +1,38 @@
+--- a/com/pixelmonmod/pixelmon/client/render/PixelmonRendering.java
++++ b/com/pixelmonmod/pixelmon/client/render/PixelmonRendering.java
+@@ -403,7 +403,7 @@
+ 
+     public static <T extends Entity> void renderEntity(PoseStack matrix, T entity, boolean fullbright, float partialTicks) {
+         EntityRenderDispatcher renderManager = Minecraft.getInstance().getEntityRenderDispatcher();
+-        EntityRenderer<T> entityClassRenderObject = renderManager.getRenderer(entity);
++      EntityRenderer<T> entityClassRenderObject = (EntityRenderer<T>) renderManager.getRenderer(entity);
+         BufferSource impl = ScreenHelper.getBufferImpl();
+         entityClassRenderObject.render(
+             entity, 0.0F, partialTicks, matrix, impl, fullbright ? 15728880 : renderManager.getPackedLightCoords(entity, partialTicks)
+@@ -413,7 +413,7 @@
+ 
+     public static <T extends Entity> void renderEntity(PoseStack matrix, T entity, int packedLight, boolean fullbright, float partialTicks) {
+         EntityRenderDispatcher renderManager = Minecraft.getInstance().getEntityRenderDispatcher();
+-        EntityRenderer<T> entityClassRenderObject = renderManager.getRenderer(entity);
++      EntityRenderer<T> entityClassRenderObject = (EntityRenderer<T>) renderManager.getRenderer(entity);
+         BufferSource impl = ScreenHelper.getBufferImpl();
+         entityClassRenderObject.render(entity, 0.0F, partialTicks, matrix, impl, fullbright ? 15728880 : packedLight);
+         impl.endBatch();
+@@ -440,16 +440,7 @@
+     }
+ 
+     public static void renderBlockModel(
+-        Pose mat,
+-        VertexConsumer builder,
+-        @Nullable BlockState state,
+-        BakedModel model,
+-        float f,
+-        float g,
+-        float b,
+-        int light,
+-        int overlay,
+-        IModelData modelData
++      Pose mat, VertexConsumer builder, @Nullable BlockState state, BakedModel model, float f, float g, float b, int light, int overlay, IModelData modelData
+     ) {
+         Random random = new Random();
+ 

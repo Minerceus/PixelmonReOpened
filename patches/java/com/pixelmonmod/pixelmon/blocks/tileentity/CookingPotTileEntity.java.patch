@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/blocks/tileentity/CookingPotTileEntity.java
++++ b/com/pixelmonmod/pixelmon/blocks/tileentity/CookingPotTileEntity.java
+@@ -179,11 +179,7 @@
+                     this.level
+                         .addFreshEntity(
+                             new ItemEntity(
+-                                this.level,
+-                                (double)this.worldPosition.getX(),
+-                                (double)this.worldPosition.getY() + 2.5,
+-                                (double)this.worldPosition.getZ(),
+-                                curry
++                        this.level, (double)this.worldPosition.getX(), (double)this.worldPosition.getY() + 2.5, (double)this.worldPosition.getZ(), curry
+                             )
+                         );
+                     Pixelmon.EVENT_BUS.post(new CurryFinishedEvent(this.startingPlayer, rating, this.curryKey, this.cookingFlavor));

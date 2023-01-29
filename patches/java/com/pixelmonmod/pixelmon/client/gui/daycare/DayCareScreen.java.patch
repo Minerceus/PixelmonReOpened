@@ -1,0 +1,35 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/daycare/DayCareScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/daycare/DayCareScreen.java
+@@ -85,8 +85,7 @@
+                 TextComponent.EMPTY,
+                 this::clickConfirm,
+                 (a, matrix, mouseX, mouseY) -> this.renderTooltip(matrix, new TranslatableComponent("pixelmon.daycare.confirm"), mouseX, mouseY),
+-                ix -> this.box != null && this.child != null && this.box.isEmpty()
+-                        || this.box != null && !this.box.hasBreedingBegun() && this.box.canConsume(),
++            ix -> this.box != null && this.child != null && this.box.isEmpty() || this.box != null && !this.box.hasBreedingBegun() && this.box.canConsume(),
+                 0
+             )
+         );
+@@ -162,8 +161,7 @@
+                                 } else {
+                                     List<Component> allErrorMessages = Lists.newArrayList(
+                                         new Component[]{
+-                                            new TranslatableComponent("pixelmon.daycare.box." + boxId),
+-                                            new TranslatableComponent("pixelmon.daycare.requirements")
++                                 new TranslatableComponent("pixelmon.daycare.box." + boxId), new TranslatableComponent("pixelmon.daycare.requirements")
+                                         }
+                                     );
+                                     allErrorMessages.addAll(dayCareBox.getAllErrorMessages());
+@@ -684,11 +682,7 @@
+                                         this.minecraft
+                                             .font
+                                             .draw(
+-                                                matrix,
+-                                                totalDuration,
+-                                                (float)(j1 + 18 + 50 - this.minecraft.font.width(totalDuration)),
+-                                                (float)(j + 33 + 19 * k - 9),
+-                                                1
++                                    matrix, totalDuration, (float)(j1 + 18 + 50 - this.minecraft.font.width(totalDuration)), (float)(j + 33 + 19 * k - 9), 1
+                                             );
+                                     }
+                                 } else {

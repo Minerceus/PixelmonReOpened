@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/battles/status/Freeze.java
++++ b/com/pixelmonmod/pixelmon/battles/status/Freeze.java
+@@ -64,9 +64,9 @@
+ 
+     @Override
+     public void onDamageReceived(PixelmonWrapper userWrapper, PixelmonWrapper pokemon, Attack a, int damage, DamageTypeEnum damageType) {
+-        if (damageType == DamageTypeEnum.ATTACK
+-            && a != null
+-            && (a.getType() == Element.FIRE || a.isAttack(AttackRegistry.SCALD, AttackRegistry.STEAM_ERUPTION))) {
++      if (damageType == DamageTypeEnum.ATTACK && a != null && (a.getType() == Element.FIRE || a.isAttack(AttackRegistry.SCALD, AttackRegistry.STEAM_ERUPTION))
++         )
++       {
+             pokemon.removeStatus(this);
+         }
+     }

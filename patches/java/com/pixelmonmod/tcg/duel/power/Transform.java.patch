@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/tcg/duel/power/Transform.java
++++ b/com/pixelmonmod/tcg/duel/power/Transform.java
+@@ -39,9 +39,7 @@
+     }
+ 
+     @Override
+-    public void onPlay(
+-        PokemonCardState newPokemon, PlayerCommonState playingPlayer, PokemonCardState pokemon, PlayerServerState player, GameServerState server
+-    ) {
++   public void onPlay(PokemonCardState newPokemon, PlayerCommonState playingPlayer, PokemonCardState pokemon, PlayerServerState player, GameServerState server) {
+         if (newPokemon == pokemon
+             && player.getActiveCard() == pokemon
+             && server.getOpponent(player).getActiveCard() != null

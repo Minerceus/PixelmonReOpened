@@ -1,0 +1,71 @@
+--- a/com/pixelmonmod/pixelmon/api/spawning/archetypes/algorithms/selection/LocationWeightedAlgorithm.java
++++ b/com/pixelmonmod/pixelmon/api/spawning/archetypes/algorithms/selection/LocationWeightedAlgorithm.java
+@@ -9,10 +9,9 @@
+ import com.pixelmonmod.pixelmon.api.spawning.archetypes.spawners.TickingSpawner;
+ import com.pixelmonmod.pixelmon.api.spawning.calculators.SelectionAlgorithm;
+ import com.pixelmonmod.pixelmon.api.util.helpers.CollectionHelper;
+-import java.util.ArrayList;
+-import java.util.HashMap;
+-import java.util.List;
+-import java.util.Map;
++
++import java.util.*;
++
+ import net.minecraft.core.BlockPos;
+ import net.minecraft.world.entity.Entity;
+ 
+@@ -30,26 +29,13 @@
+             }
+         }
+ 
+-        BlockPos pos;
+-        SpawnLocation location;
++      BlockPos pos = null;
++      SpawnLocation location = null;
+         for(;
+             !potentialSpawns.isEmpty()
+                 && (tickingSpawner == null || tickingSpawner.hasCapacity(toSpawn.size() + 1) && toSpawn.size() <= tickingSpawner.spawnsPerPass);
+-            potentialSpawns.keySet()
+-                .removeIf(
+-                    spawnLocation -> {
+-                        if (tickingSpawner == null) {
+-                            return false;
+-                        } else if (spawnLocation.location.world != location.location.world) {
+-                            return false;
+-                        } else {
+-                            return !(
+-                                spawnLocation.location.pos.distSqr((double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), true)
+-                                    >= (double)(tickingSpawner.minDistBetweenSpawns * tickingSpawner.minDistBetweenSpawns)
+-                            );
+-                        }
+-                    }
+-                )
++         removeIf(potentialSpawns.keySet(), tickingSpawner, pos, location)
++
+         ) {
+             location = CollectionHelper.getRandomElement(Lists.newArrayList(potentialSpawns.keySet()));
+             SpawnInfo spawnInfo = potentialSpawns.get(location);
+@@ -64,6 +50,23 @@
+         return toSpawn;
+     }
+ 
++   private void removeIf(Set<SpawnLocation> keySet, TickingSpawner tickingSpawner, BlockPos pos, SpawnLocation location) {
++      keySet.removeIf(
++              spawnLocation -> {
++                 if (tickingSpawner == null) {
++                    return false;
++                 } else if (spawnLocation.location.world != location.location.world) {
++                    return false;
++                 } else {
++                    return !(
++                            spawnLocation.location.pos.distSqr(pos.getX(), pos.getY(), pos.getZ(), true)
++                                    >= (double) (tickingSpawner.minDistBetweenSpawns * tickingSpawner.minDistBetweenSpawns)
++                    );
++                 }
++              }
++      );
++   }
++
+     @Override
+     public Map<SpawnInfo, Float> getAdjustedRarities(AbstractSpawner spawner, Map<SpawnLocation, List<SpawnInfo>> possibleSpawns) {
+         HashMap<SpawnInfo, Float> adjustedRarities = new HashMap<>();

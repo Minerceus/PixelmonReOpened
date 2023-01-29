@@ -1,0 +1,20 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/DoLegendarySpawnCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/DoLegendarySpawnCommand.java
+@@ -72,7 +72,7 @@
+             abstrSpawner = PixelmonSpawning.legendarySpawner;
+         }
+ 
+-        LegendarySpawner spawner = PixelmonCommandUtils.require(abstrSpawner, "spawning.error.legendaryspawnermissing");
++      LegendarySpawner spawner = (LegendarySpawner) PixelmonCommandUtils.require(abstrSpawner, "spawning.error.legendaryspawnermissing");
+         sender.sendSuccess(PixelmonCommandUtils.format(ChatFormatting.GRAY, "spawning.attemptlegendaryspawn"), false);
+         if (isCoordinatorActive) {
+             spawner.forcefullySpawn(target);
+@@ -111,7 +111,7 @@
+         ArrayList<ServerPlayer> players = new ArrayList(ServerLifecycleHooks.getCurrentServer().getPlayerList().getPlayers());
+         if (onlyFocus == null) {
+             while(!players.isEmpty()) {
+-                ArrayList<ServerPlayer> cluster = new ArrayList();
++            ArrayList<ServerPlayer> cluster = new ArrayList<>();
+                 ServerPlayer focus = (ServerPlayer)players.remove(0);
+                 cluster.add(focus);
+                 LegendarySpawner.fillNearby(players, cluster, focus);

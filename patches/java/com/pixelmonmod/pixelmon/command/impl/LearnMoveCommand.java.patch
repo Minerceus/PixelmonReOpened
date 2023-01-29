@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/LearnMoveCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/LearnMoveCommand.java
+@@ -43,9 +43,7 @@
+ 
+         String attackName = StringUtils.join(args, " ", 2, args.length);
+         attackName = attackName.replace('_', ' ');
+-        ImmutableAttack attack = PixelmonCommandUtils.require(
+-            AttackRegistry.getAttackBase(attackName), "pixelmon.command.learnmove.nonexistentmove", attackName
+-        );
++      ImmutableAttack attack = PixelmonCommandUtils.require(AttackRegistry.getAttackBase(attackName), "pixelmon.command.learnmove.nonexistentmove", attackName);
+         if (!pokemon.getForm().getMoves().canLearn(attack)) {
+             PixelmonCommandUtils.endCommand("pixelmon.command.learnmove.cannotlearn", pokemon.getLocalizedName(), attack.getAttackName());
+         }

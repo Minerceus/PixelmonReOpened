@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/RedeemFossilCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/RedeemFossilCommand.java
+@@ -71,9 +71,7 @@
+                     }
+                 });
+                 sender.sendSuccess(
+-                    PixelmonCommandUtils.format(
+-                        ChatFormatting.GREEN, "pixelmon.command.redeemfossil.recoveredall", held.getCount(), species.getLocalizedName()
+-                    ),
++               PixelmonCommandUtils.format(ChatFormatting.GREEN, "pixelmon.command.redeemfossil.recoveredall", held.getCount(), species.getLocalizedName()),
+                     false
+                 );
+                 held.shrink(decreaseCount);

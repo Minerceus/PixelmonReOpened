@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/comm/packetHandlers/camera/ItemCameraPacket.java
++++ b/com/pixelmonmod/pixelmon/comm/packetHandlers/camera/ItemCameraPacket.java
+@@ -63,8 +63,7 @@
+                     CameraEvent.TakePhoto event = new CameraEvent.TakePhoto(player, pixelmon, photo);
+                     if (!Pixelmon.EVENT_BUS.post(event)) {
+                         player.inventory.add(event.photo);
+-                        pixelmon.level
+-                            .playSound(null, player.getX(), player.getY(), player.getZ(), PixelSounds.cameraShutter, SoundSource.AMBIENT, 1.0F, 1.0F);
++                  pixelmon.level.playSound(null, player.getX(), player.getY(), player.getZ(), PixelSounds.cameraShutter, SoundSource.AMBIENT, 1.0F, 1.0F);
+                     }
+                 }
+             }

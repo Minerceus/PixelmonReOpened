@@ -1,0 +1,14 @@
+--- a/com/pixelmonmod/pixelmon/quests/client/editor/ui/ListQuestEditor.java
++++ b/com/pixelmonmod/pixelmon/quests/client/editor/ui/ListQuestEditor.java
+@@ -143,10 +143,7 @@
+     }
+ 
+     public Quest mouseClicked(double mouseX, double mouseY, int mouseButton, int offsetY) {
+-        if (mouseX > (double)this.xPos
+-            && mouseX < (double)(this.xPos + this.width)
+-            && mouseY > (double)this.yPos
+-            && mouseY < (double)(this.yPos + this.height)) {
++      if (mouseX > (double)this.xPos && mouseX < (double)(this.xPos + this.width) && mouseY > (double)this.yPos && mouseY < (double)(this.yPos + this.height)) {
+             mouseY += 8.0;
+             int theLine = (int)((mouseY - (double)offsetY) / (double)this.lineHeight);
+             int index = theLine + this.startLine;

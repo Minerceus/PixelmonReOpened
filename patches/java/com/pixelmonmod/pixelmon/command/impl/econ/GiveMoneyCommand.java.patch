@@ -1,0 +1,22 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/econ/GiveMoneyCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/econ/GiveMoneyCommand.java
+@@ -50,17 +50,13 @@
+             } else {
+                 String currencyString = Double.toString(currencyDifference);
+                 sender.sendSuccess(
+-                    new TranslatableComponent(
+-                        "pixelmon.command.givemoney.notifygive", new Object[]{sender.getTextName(), currencyDifference, target.getName()}
+-                    ),
++               new TranslatableComponent("pixelmon.command.givemoney.notifygive", new Object[]{sender.getTextName(), currencyDifference, target.getName()}),
+                     true
+                 );
+                 PixelmonCommandUtils.sendMessage(sender, "pixelmon.command.givemoney.given", currencyString, target.getName());
+                 ServerPlayer player = PixelmonCommandUtils.getEntityPlayer(target.getId());
+                 if (player != null && player != sender.getEntity()) {
+-                    PixelmonCommandUtils.sendMessage(
+-                        player, ChatFormatting.GRAY, "pixelmon.command.givemoney.received", sender.getDisplayName(), currencyString
+-                    );
++               PixelmonCommandUtils.sendMessage(player, ChatFormatting.GRAY, "pixelmon.command.givemoney.received", sender.getDisplayName(), currencyString);
+                 }
+             }
+         } else {

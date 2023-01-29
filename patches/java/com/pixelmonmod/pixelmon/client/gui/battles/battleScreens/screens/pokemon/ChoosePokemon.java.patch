@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/screens/pokemon/ChoosePokemon.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/screens/pokemon/ChoosePokemon.java
+@@ -69,11 +69,7 @@
+                     if (button.mouseClicked(mouseX, mouseY, 0)) {
+                         this.bm
+                             .selectedActions
+-                            .add(
+-                                new SwitchPokemonPacket(
+-                                    button.getPig().pokemonUUID, this.bm.battleControllerIndex, this.bm.getCurrentPokemon().pokemonUUID, false
+-                                )
+-                            );
++                     .add(new SwitchPokemonPacket(button.getPig().pokemonUUID, this.bm.battleControllerIndex, this.bm.getCurrentPokemon().pokemonUUID, false));
+                         button.getPig().isSwitchingIn = true;
+                         this.bm.selectedMove();
+                     }

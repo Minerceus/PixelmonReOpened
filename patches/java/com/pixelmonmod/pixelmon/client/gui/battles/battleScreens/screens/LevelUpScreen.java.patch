@@ -1,0 +1,16 @@
+--- a/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/screens/LevelUpScreen.java
++++ b/com/pixelmonmod/pixelmon/client/gui/battles/battleScreens/screens/LevelUpScreen.java
+@@ -82,12 +82,7 @@
+                     matrix, mc.font, "+" + (levelUp.statsLevel2.SpecialAttack - levelUp.statsLevel1.SpecialAttack), width / 2 + 25, height / 2 - 6, 16777215
+                 );
+                 drawString(
+-                    matrix,
+-                    mc.font,
+-                    "+" + (levelUp.statsLevel2.SpecialDefense - levelUp.statsLevel1.SpecialDefense),
+-                    width / 2 + 25,
+-                    height / 2 + 10,
+-                    16777215
++               matrix, mc.font, "+" + (levelUp.statsLevel2.SpecialDefense - levelUp.statsLevel1.SpecialDefense), width / 2 + 25, height / 2 + 10, 16777215
+                 );
+                 drawString(matrix, mc.font, "+" + (levelUp.statsLevel2.Speed - levelUp.statsLevel1.Speed), width / 2 + 25, height / 2 + 26, 16777215);
+             } else if (this.drawLevelStage == LevelUpScreen.EnumLevelStage.Second) {

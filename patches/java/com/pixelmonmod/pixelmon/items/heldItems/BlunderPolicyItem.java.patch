@@ -1,0 +1,15 @@
+--- a/com/pixelmonmod/pixelmon/items/heldItems/BlunderPolicyItem.java
++++ b/com/pixelmonmod/pixelmon/items/heldItems/BlunderPolicyItem.java
+@@ -17,9 +17,9 @@
+ 
+     @Override
+     public void onMiss(PixelmonWrapper attacker, PixelmonWrapper target, Attack attack) {
+-        if (!target.hasStatus(
+-            StatusType.SkyDropping, StatusType.SkyDropped, StatusType.Submerged, StatusType.Flying, StatusType.UnderGround, StatusType.Vanish
+-        )) {
++      if (!target.hasStatus(StatusType.SkyDropping, StatusType.SkyDropped, StatusType.Submerged, StatusType.Flying, StatusType.UnderGround, StatusType.Vanish)
++         )
++       {
+             for(EffectBase effect : attack.getMove().effects) {
+                 if (effect instanceof OHKO) {
+                     return;

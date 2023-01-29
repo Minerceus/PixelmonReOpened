@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/storage/NbtKeys.java
++++ b/com/pixelmonmod/pixelmon/api/storage/NbtKeys.java
+@@ -1,7 +1,7 @@
+ package com.pixelmonmod.pixelmon.api.storage;
+ 
+ public class NbtKeys {
+-    public static final String HIDDEN_LORE_KEY = "[\u2c10\u2517\u2739\u2ae2\u2175\u2cb5\u227c\u2d64\u2363\u2810\u21c6]";
++   public static final String HIDDEN_LORE_KEY = "[Ⱀ┗✹⫢ⅵⲵ≼ⵤ⍣⠐⇆]";
+     public static final String FORGE_DATA = "ForgeData";
+     public static final String SPRITE_NAME = "SpriteName";
+     public static final String CLONING_OWNER = "Owner";

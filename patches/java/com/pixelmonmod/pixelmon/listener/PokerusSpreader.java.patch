@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/listener/PokerusSpreader.java
++++ b/com/pixelmonmod/pixelmon/listener/PokerusSpreader.java
+@@ -59,9 +59,7 @@
+                                             analyzedMap.put(receiver, donors);
+                                             res.target
+                                                 .getPokerus()
+-                                                .ifPresent(
+-                                                    pkrs -> spread(pkrs.type, attack.pokemon, (PlayerPartyStorage)attack.pokemon.getParticipant().getStorage())
+-                                                );
++                                    .ifPresent(pkrs -> spread(pkrs.type, attack.pokemon, (PlayerPartyStorage)attack.pokemon.getParticipant().getStorage()));
+                                         }
+                                     }
+                                 }

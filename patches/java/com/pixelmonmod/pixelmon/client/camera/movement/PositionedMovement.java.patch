@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/client/camera/movement/PositionedMovement.java
++++ b/com/pixelmonmod/pixelmon/client/camera/movement/PositionedMovement.java
+@@ -18,7 +18,7 @@
+ public class PositionedMovement extends CameraMovement {
+     int ticksToChange = 0;
+     int currentPos = 0;
+-    ArrayList<BlockPos> cameraPositionList = new ArrayList();
++   ArrayList<BlockPos> cameraPositionList = new ArrayList<>();
+     boolean initPokePos = false;
+     boolean initDiagonals = false;
+ 

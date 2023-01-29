@@ -1,0 +1,24 @@
+--- a/com/pixelmonmod/pixelmon/api/item/JsonItemStack.java
++++ b/com/pixelmonmod/pixelmon/api/item/JsonItemStack.java
+@@ -38,7 +38,7 @@
+                     return ItemStack.EMPTY;
+                 }
+             } else {
+-                ArrayList<Item> matchingItems = new ArrayList();
++            ArrayList<Item> matchingItems = new ArrayList<>();
+                 ForgeRegistries.ITEMS.forEach(testItem -> {
+                     if (testItem.getRegistryName().getPath().equalsIgnoreCase(this.itemID)) {
+                         matchingItems.add(testItem);
+@@ -51,11 +51,7 @@
+ 
+                 if (matchingItems.size() > 1) {
+                     Pixelmon.LOGGER
+-                        .error(
+-                            "Duplicate items found for item ID in SpawnInfo: "
+-                                + this.itemID
+-                                + ". Prefix this id with the resource domain, such as: 'minecraft:'"
+-                        );
++                  .error("Duplicate items found for item ID in SpawnInfo: " + this.itemID + ". Prefix this id with the resource domain, such as: 'minecraft:'");
+                     return ItemStack.EMPTY;
+                 }
+ 

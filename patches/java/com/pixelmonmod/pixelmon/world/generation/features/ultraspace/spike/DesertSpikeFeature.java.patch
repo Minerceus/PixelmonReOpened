@@ -1,0 +1,23 @@
+--- a/com/pixelmonmod/pixelmon/world/generation/features/ultraspace/spike/DesertSpikeFeature.java
++++ b/com/pixelmonmod/pixelmon/world/generation/features/ultraspace/spike/DesertSpikeFeature.java
+@@ -50,18 +50,14 @@
+                                 BlockState blockstate = p_241855_1_.getBlockState(p_241855_4_.offset(i1, k, j1));
+                                 Block block = blockstate.getBlock();
+                                 if (blockstate.isAir(p_241855_1_, p_241855_4_.offset(i1, k, j1)) || block == BlockRegistration.ULTRA_DESERT_SAND.get()) {
+-                                    this.setBlock(
+-                                        p_241855_1_, p_241855_4_.offset(i1, k, j1), ((Block)BlockRegistration.CRYSTAL_BLOCK.get()).defaultBlockState()
+-                                    );
++                           this.setBlock(p_241855_1_, p_241855_4_.offset(i1, k, j1), ((Block)BlockRegistration.CRYSTAL_BLOCK.get()).defaultBlockState());
+                                 }
+ 
+                                 if (k != 0 && l > 1) {
+                                     blockstate = p_241855_1_.getBlockState(p_241855_4_.offset(i1, -k, j1));
+                                     block = blockstate.getBlock();
+                                     if (blockstate.isAir(p_241855_1_, p_241855_4_.offset(i1, -k, j1)) || block == BlockRegistration.ULTRA_DESERT_SAND.get()) {
+-                                        this.setBlock(
+-                                            p_241855_1_, p_241855_4_.offset(i1, -k, j1), ((Block)BlockRegistration.CRYSTAL_BLOCK.get()).defaultBlockState()
+-                                        );
++                              this.setBlock(p_241855_1_, p_241855_4_.offset(i1, -k, j1), ((Block)BlockRegistration.CRYSTAL_BLOCK.get()).defaultBlockState());
+                                     }
+                                 }
+                             }

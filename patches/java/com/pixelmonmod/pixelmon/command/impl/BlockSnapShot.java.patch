@@ -1,0 +1,27 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/BlockSnapShot.java
++++ b/com/pixelmonmod/pixelmon/command/impl/BlockSnapShot.java
+@@ -22,7 +22,7 @@
+ import net.minecraft.world.phys.AABB;
+ 
+ public class BlockSnapShot extends PixelCommand {
+-    private ArrayList<BlockPos> corners = new ArrayList();
++   private ArrayList<BlockPos> corners = new ArrayList<>();
+ 
+     public BlockSnapShot(CommandDispatcher<CommandSourceStack> dispatcher) {
+         super(dispatcher);
+@@ -78,14 +78,7 @@
+ 
+                 for(NPCTrainer trainer : world.getEntitiesOfClass(NPCTrainer.class, aabb)) {
+                     Pixelmon.LOGGER
+-                        .info(
+-                            "Trainer position: "
+-                                + (trainer.getX() - (double)minX)
+-                                + " "
+-                                + (trainer.getY() - (double)minY)
+-                                + " "
+-                                + (trainer.getZ() - (double)minZ)
+-                        );
++                  .info("Trainer position: " + (trainer.getX() - (double)minX) + " " + (trainer.getY() - (double)minY) + " " + (trainer.getZ() - (double)minZ));
+                 }
+ 
+                 for(NPCChatting npc : world.getEntitiesOfClass(NPCChatting.class, aabb)) {

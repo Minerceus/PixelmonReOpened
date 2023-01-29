@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/SleepTalk.java
++++ b/com/pixelmonmod/pixelmon/battles/attacks/specialAttacks/basic/SleepTalk.java
+@@ -56,7 +56,7 @@
+     }
+ 
+     private ArrayList<Attack> getPossibleAttacks(PixelmonWrapper user) {
+-        return user.getMoveset().stream().filter(this::canSelect).collect(Collectors.toList());
++      return (ArrayList<Attack>) user.getMoveset().stream().filter(this::canSelect).collect(Collectors.toList());
+     }
+ 
+     @Override

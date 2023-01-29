@@ -1,0 +1,22 @@
+--- a/com/pixelmonmod/pixelmon/entities/pixelmon/interactions/formChanges/NecrozmaFormChange.java
++++ b/com/pixelmonmod/pixelmon/entities/pixelmon/interactions/formChanges/NecrozmaFormChange.java
+@@ -56,7 +56,7 @@
+                 }
+ 
+                 if (fused == null) {
+-                    Pixelmon.LOGGER.error("Couldn't get fused Pok\u00e9mon from NBT for player: " + player.getName());
++               Pixelmon.LOGGER.error("Couldn't get fused Pokémon from NBT for player: " + player.getName());
+                 }
+             }
+ 
+@@ -126,9 +126,7 @@
+                 storage.set(toFuse.getPosition(), null);
+                 pokemon.getPersistentData().put("FusedPokemon", toFuse.writeToNBT(new CompoundTag()));
+                 pokemon.setForm(toForm);
+-                Attack specialMove = partner.is(PixelmonSpecies.SOLGALEO)
+-                    ? new Attack(AttackRegistry.SUNSTEEL_STRIKE)
+-                    : new Attack(AttackRegistry.MOONGEIST_BEAM);
++            Attack specialMove = partner.is(PixelmonSpecies.SOLGALEO) ? new Attack(AttackRegistry.SUNSTEEL_STRIKE) : new Attack(AttackRegistry.MOONGEIST_BEAM);
+                 if (!pokemon.getMoveset().add(specialMove)) {
+                     LearnMoveController.sendLearnMove(player, pokemon.getUUID(), specialMove.getActualMove());
+                 }

@@ -1,0 +1,36 @@
+--- a/com/pixelmonmod/tcg/api/accessors/Coins.java
++++ b/com/pixelmonmod/tcg/api/accessors/Coins.java
+@@ -12,10 +12,7 @@
+ public class Coins {
+     public static final RegistryValue<Coin> CHARMANDER = register(
+         new Coin(
+-            "Charmander",
+-            "Pokenerd",
+-            new ResourceLocation("tcg", "gui/coins/heads/charmander.png"),
+-            new ResourceLocation("tcg", "gui/coins/tails/default.png")
++         "Charmander", "Pokenerd", new ResourceLocation("tcg", "gui/coins/heads/charmander.png"), new ResourceLocation("tcg", "gui/coins/tails/default.png")
+         )
+     );
+     public static final RegistryValue<Coin> BULBASAUR = register(
+@@ -24,19 +21,14 @@
+         )
+     );
+     public static final RegistryValue<Coin> SQUIRTLE = register(
+-        new Coin(
+-            "Squirtle", "Pokenerd", new ResourceLocation("tcg", "gui/coins/heads/squirtle.png"), new ResourceLocation("tcg", "gui/coins/tails/default.png")
+-        )
++      new Coin("Squirtle", "Pokenerd", new ResourceLocation("tcg", "gui/coins/heads/squirtle.png"), new ResourceLocation("tcg", "gui/coins/tails/default.png"))
+     );
+     public static final RegistryValue<Coin> PIKACHU = register(
+         new Coin("Pikachu", "Pokenerd", new ResourceLocation("tcg", "gui/coins/heads/pikachu.png"), new ResourceLocation("tcg", "gui/coins/tails/default.png"))
+     );
+     public static final RegistryValue<Coin> JIGGLYPUFF = register(
+         new Coin(
+-            "Jigglypuff",
+-            "Pokenerd",
+-            new ResourceLocation("tcg", "gui/coins/heads/jigglypuff.png"),
+-            new ResourceLocation("tcg", "gui/coins/tails/default.png")
++         "Jigglypuff", "Pokenerd", new ResourceLocation("tcg", "gui/coins/heads/jigglypuff.png"), new ResourceLocation("tcg", "gui/coins/tails/default.png")
+         )
+     );
+ 

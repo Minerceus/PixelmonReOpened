@@ -1,0 +1,14 @@
+--- a/com/pixelmonmod/tcg/duel/trainer/PokemonCenter.java
++++ b/com/pixelmonmod/tcg/duel/trainer/PokemonCenter.java
+@@ -38,10 +38,7 @@
+     private void apply(PokemonCardState card) {
+         if (card.getStatus().getDamage() > 0) {
+             card.getStatus().setDamage(0);
+-            List<CommonCardState> energies = card.getAttachments()
+-                .stream()
+-                .filter(attachment -> attachment.isEnergyEquivalence())
+-                .collect(Collectors.toList());
++         List<CommonCardState> energies = card.getAttachments().stream().filter(attachment -> attachment.isEnergyEquivalence()).collect(Collectors.toList());
+             card.getAttachments().removeAll(energies);
+         }
+     }

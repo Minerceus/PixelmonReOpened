@@ -1,0 +1,66 @@
+--- a/com/pixelmonmod/pixelmon/init/registry/ItemRegistration.java
++++ b/com/pixelmonmod/pixelmon/init/registry/ItemRegistration.java
+@@ -307,7 +307,7 @@
+     }
+ 
+     public static ArrayList<Item> initializePotionElixirList() {
+-        ArrayList<Item> list = new ArrayList();
++      ArrayList<Item> list = new ArrayList<>();
+         list.add(PixelmonItems.potion);
+         list.add(PixelmonItems.super_potion);
+         list.add(PixelmonItems.hyper_potion);
+@@ -387,7 +387,7 @@
+ 
+     private static void initializeItemMap() {
+         allItemMap = new HashMap<>();
+-        allItemList = new ArrayList();
++      allItemList = new ArrayList<>();
+         populateItemMap(PixelmonItems.class.getFields());
+         populateItemMap(PixelmonItems.mailItems);
+         populateItemMap(PixelmonItems.HMs);
+@@ -1237,12 +1237,8 @@
+         ITEMS.register(
+             "apicot_berry", () -> new BerryStatIncreaseItem(food(f -> f.nutrition(2).saturationMod(0.3F)), BerryType.APICOT, BattleStatsType.SPECIAL_DEFENSE)
+         );
+-        ITEMS.register(
+-            "liechi_berry", () -> new BerryStatIncreaseItem(food(f -> f.nutrition(2).saturationMod(0.3F)), BerryType.LIECHI, BattleStatsType.ATTACK)
+-        );
+-        ITEMS.register(
+-            "ganlon_berry", () -> new BerryStatIncreaseItem(food(f -> f.nutrition(2).saturationMod(0.3F)), BerryType.GANLON, BattleStatsType.DEFENSE)
+-        );
++      ITEMS.register("liechi_berry", () -> new BerryStatIncreaseItem(food(f -> f.nutrition(2).saturationMod(0.3F)), BerryType.LIECHI, BattleStatsType.ATTACK));
++      ITEMS.register("ganlon_berry", () -> new BerryStatIncreaseItem(food(f -> f.nutrition(2).saturationMod(0.3F)), BerryType.GANLON, BattleStatsType.DEFENSE));
+         ITEMS.register("salac_berry", () -> new BerryStatIncreaseItem(food(f -> f.nutrition(2).saturationMod(0.3F)), BerryType.SALAC, BattleStatsType.SPEED));
+         ITEMS.register(
+             "petaya_berry", () -> new BerryStatIncreaseItem(food(f -> f.nutrition(2).saturationMod(0.3F)), BerryType.PETAYA, BattleStatsType.SPECIAL_ATTACK)
+@@ -1694,8 +1690,7 @@
+ 
+         for(LureItem.LureType type : LureItem.LureType.values()) {
+             ITEMS.register(
+-                "lure_" + type.name().toLowerCase(Locale.ROOT) + "_weak",
+-                () -> addToList(new LureItem(type, LureItem.LureStrength.WEAK), PixelmonItems.weakLures)
++            "lure_" + type.name().toLowerCase(Locale.ROOT) + "_weak", () -> addToList(new LureItem(type, LureItem.LureStrength.WEAK), PixelmonItems.weakLures)
+             );
+             ITEMS.register(
+                 "lure_" + type.name().toLowerCase(Locale.ROOT) + "_strong",
+@@ -1734,7 +1729,8 @@
+         ITEMS.register("tm_gen1_blank", () -> new BlankTechnicalMachineItem(TMType.TM1));
+ 
+         for(int i = 0; i < HMNames.size(); ++i) {
+-            ITEMS.register("hm" + (i + 1), () -> new HMItem(HMNames.get(i), i + 1));
++         int finalI = i;
++         ITEMS.register("hm" + (i + 1), () -> new HMItem(HMNames.get(finalI), finalI + 1));
+         }
+ 
+         for(Element value : Element.getElements()) {
+@@ -1932,9 +1928,7 @@
+         ITEMS.register("armorite_ore", () -> new PixelmonItem(new Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+         ITEMS.register("dynite_ore", () -> new PixelmonItem(new Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+         ITEMS.register("wishing_piece", () -> new PixelmonItem(new Properties().tab(CreativeModeTab.TAB_MISC)));
+-        ITEMS.register(
+-            "waterdude_wishing_piece", () -> new PixelmonItem(new Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.EPIC)).setHasEffect(true)
+-        );
++      ITEMS.register("waterdude_wishing_piece", () -> new PixelmonItem(new Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.EPIC)).setHasEffect(true));
+         ITEMS.register("tumblestone", () -> new TumblestoneItem(Color.RED, new Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+         ITEMS.register("sky_tumblestone", () -> new TumblestoneItem(Color.BLUE, new Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+         ITEMS.register("black_tumblestone", () -> new TumblestoneItem(Color.BLACK, new Properties().tab(CreativeModeTab.TAB_MATERIALS)));

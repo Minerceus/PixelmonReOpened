@@ -1,0 +1,35 @@
+--- a/com/pixelmonmod/pixelmon/world/dimension/ultraspace/generator/UltraDeepSeaChunkGenerator.java
++++ b/com/pixelmonmod/pixelmon/world/dimension/ultraspace/generator/UltraDeepSeaChunkGenerator.java
+@@ -389,9 +389,7 @@
+                 int i2 = p_225551_2_.getHeight(Types.WORLD_SURFACE_WG, i1, j1) + 1;
+                 double d1 = this.surfaceNoise.getSurfaceNoiseValue((double)k1 * 0.0625, (double)l1 * 0.0625, 0.0625, (double)i1 * 0.0625) * 15.0;
+                 p_225551_1_.getBiome(blockpos$mutable.set(k + i1, i2, l + j1))
+-                    .buildSurfaceAt(
+-                        sharedseedrandom, p_225551_2_, k1, l1, i2, d1, this.defaultBlock, this.defaultFluid, this.getSeaLevel(), p_225551_1_.getSeed()
+-                    );
++               .buildSurfaceAt(sharedseedrandom, p_225551_2_, k1, l1, i2, d1, this.defaultBlock, this.defaultFluid, this.getSeaLevel(), p_225551_1_.getSeed());
+             }
+         }
+ 
+@@ -413,9 +411,7 @@
+                 if (flag) {
+                     for(int j1 = 0; j1 < 5; ++j1) {
+                         if (j1 <= p_222555_2_.nextInt(5)) {
+-                            p_222555_1_.setBlockState(
+-                                blockpos$mutable.set(blockpos.getX(), l - j1, blockpos.getZ()), Blocks.BEDROCK.defaultBlockState(), false
+-                            );
++                     p_222555_1_.setBlockState(blockpos$mutable.set(blockpos.getX(), l - j1, blockpos.getZ()), Blocks.BEDROCK.defaultBlockState(), false);
+                         }
+                     }
+                 }
+@@ -423,9 +419,7 @@
+                 if (flag1) {
+                     for(int k1 = 4; k1 >= 0; --k1) {
+                         if (k1 <= p_222555_2_.nextInt(5)) {
+-                            p_222555_1_.setBlockState(
+-                                blockpos$mutable.set(blockpos.getX(), k + k1, blockpos.getZ()), Blocks.BEDROCK.defaultBlockState(), false
+-                            );
++                     p_222555_1_.setBlockState(blockpos$mutable.set(blockpos.getX(), k + k1, blockpos.getZ()), Blocks.BEDROCK.defaultBlockState(), false);
+                         }
+                     }
+                 }

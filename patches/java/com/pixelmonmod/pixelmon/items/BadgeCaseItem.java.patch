@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/items/BadgeCaseItem.java
++++ b/com/pixelmonmod/pixelmon/items/BadgeCaseItem.java
+@@ -78,8 +78,7 @@
+                 );
+             } else {
+                 NetworkHelper.sendPacket(
+-                    new OpenBadgeCasePacket(badgeCase.owner, badgeCase.isOwner(player), false, badgeCase.color, badgeCase.badges, Collections.emptyList()),
+-                    player
++               new OpenBadgeCasePacket(badgeCase.owner, badgeCase.isOwner(player), false, badgeCase.color, badgeCase.badges, Collections.emptyList()), player
+                 );
+             }
+         }

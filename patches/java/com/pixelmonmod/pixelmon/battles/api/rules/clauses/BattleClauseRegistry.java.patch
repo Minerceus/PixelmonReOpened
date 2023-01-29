@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/battles/api/rules/clauses/BattleClauseRegistry.java
++++ b/com/pixelmonmod/pixelmon/battles/api/rules/clauses/BattleClauseRegistry.java
+@@ -60,7 +60,7 @@
+     public static final BattleClause INVERSE_BATTLE = register(new BattleClause("inverse"));
+     public static final BattleClause NO_DUPLICATE_ITEMS = register(new NoDuplicateItemClause());
+     public static final BattleClause LEGEND_BAN = register(
+-        new PokemonBanClause("legendary", PixelmonSpecies.getLegendaries().stream().map(PixelmonSpecies::fromNationalDex).toArray(x$0 -> new Species[x$0]))
++      new PokemonBanClause("legendary", PixelmonSpecies.getLegendaries().stream().map(PixelmonSpecies::fromNationalDex).toArray(Species[]::new))
+     );
+     public static final BattleClause MEGA_STONE = register(new ItemPreventClause("mega", EnumHeldItems.megaStone));
+     public static final BattleClause MOODY = register(new AbilityClause("moody", Moody.class));

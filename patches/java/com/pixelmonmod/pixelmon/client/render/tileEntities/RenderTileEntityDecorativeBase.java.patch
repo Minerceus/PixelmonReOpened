@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/client/render/tileEntities/RenderTileEntityDecorativeBase.java
++++ b/com/pixelmonmod/pixelmon/client/render/tileEntities/RenderTileEntityDecorativeBase.java
+@@ -25,9 +25,7 @@
+ 
+         try {
+             matrix.translate(
+-                (double)((float)te.getBlockPos().getX() + 0.5F),
+-                (double)((float)te.getBlockPos().getY() + 0.5F),
+-                (double)((float)te.getBlockPos().getZ() + 0.5F)
++            (double)((float)te.getBlockPos().getX() + 0.5F), (double)((float)te.getBlockPos().getY() + 0.5F), (double)((float)te.getBlockPos().getZ() + 0.5F)
+             );
+             matrix.scale(-1.0F, -1.0F, 1.0F);
+             BlockState state = te.getLevel().getBlockState(te.getBlockPos());

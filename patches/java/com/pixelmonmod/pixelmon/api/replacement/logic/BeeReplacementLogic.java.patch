@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/api/replacement/logic/BeeReplacementLogic.java
++++ b/com/pixelmonmod/pixelmon/api/replacement/logic/BeeReplacementLogic.java
+@@ -31,7 +31,7 @@
+             .map(PoiRecord::getPos);
+         boolean spawn = false;
+ 
+-        for(BlockPos blockPos : (List)stream.collect(Collectors.toList())) {
++      for(BlockPos blockPos : stream.collect(Collectors.toList())) {
+             if (event.getWorld().getChunkSource().isTickingChunk(blockPos)) {
+                 BlockEntity tileentity = event.getWorld().getBlockEntity(blockPos);
+                 boolean spawned = tileentity.getTileData().contains("SPAWNED") && tileentity.getTileData().getBoolean("SPAWNED");

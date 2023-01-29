@@ -1,0 +1,98 @@
+--- a/com/pixelmonmod/tcg/client/gui/duel/TCGScreen.java
++++ b/com/pixelmonmod/tcg/client/gui/duel/TCGScreen.java
+@@ -199,9 +199,7 @@
+ 
+                         this.buttonAttacks[i].setHeight(height);
+                         this.buttonAttacks[i]
+-                            .setX(
+-                                (int)((double)(this.scaledWidth / 2.0F) + (double)(this.inspectingCard.isPickingAttack() ? 0 : 150) * this.guiScaling - 56.0)
+-                            );
++                     .setX((int)((double)(this.scaledWidth / 2.0F) + (double)(this.inspectingCard.isPickingAttack() ? 0 : 150) * this.guiScaling - 56.0));
+                         this.buttonAttacks[i].setY((int)(this.scaledHeight / 2.0F + -2.0F + (float)line * spacing + (float)offset));
+                         line += attackLines[i] + 1;
+                     }
+@@ -226,10 +224,7 @@
+                 this.cardSelector.set(null, null);
+             }
+ 
+-            if ((
+-                    this.cardSelector.getPurpose() == CardSelectorPurpose.FinishRetreating
+-                        || this.cardSelector.getPurpose() == CardSelectorPurpose.StartRetreating
+-                )
++         if ((this.cardSelector.getPurpose() == CardSelectorPurpose.FinishRetreating || this.cardSelector.getPurpose() == CardSelectorPurpose.StartRetreating)
+                 && this.cardSelector.getData().isCancellable()
+                 && !client.isMyTurn()) {
+                 this.cardSelector.set(null, null);
+@@ -459,17 +454,7 @@
+                     }
+ 
+                     ScreenHelper.drawImageQuad(
+-                        tex,
+-                        matrix,
+-                        (float)this.minecraft.getWindow().getWidth() / this.scaledFactor - 50.0F,
+-                        33.0F,
+-                        40.0F,
+-                        40.0F,
+-                        0.0F,
+-                        0.0F,
+-                        1.0F,
+-                        1.0F,
+-                        0.0F
++                  tex, matrix, (float)this.minecraft.getWindow().getWidth() / this.scaledFactor - 50.0F, 33.0F, 40.0F, 40.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F
+                     );
+                     String text = client.isMyTurn() ? I18n.get("battle.first", new Object[0]) : I18n.get("battle.second", new Object[0]);
+                     ScreenHelper.drawString(matrix, text, this.scaledWidth - (float)ScreenHelper.getStringWidth(text) - 50.0F, 40.0F, 16777215, true);
+@@ -1077,13 +1062,7 @@
+                 int stroke = button.isInside((double)mouseX, (double)mouseY) ? -256 : -570425345;
+                 if (isEnabled && button.isInside((double)mouseX, (double)mouseY)) {
+                     this.drawRectWithBorder(
+-                        matrix,
+-                        button.getX() - 1,
+-                        button.getY() - 1,
+-                        button.getX() + button.getWidth() + 1,
+-                        button.getY() + button.getHeight() + 1,
+-                        color,
+-                        stroke
++                  matrix, button.getX() - 1, button.getY() - 1, button.getX() + button.getWidth() + 1, button.getY() + button.getHeight() + 1, color, stroke
+                     );
+                 } else if (isEnabled) {
+                     this.drawRectWithBorder(
+@@ -1148,8 +1127,7 @@
+                     PokemonAttackStatus attackStatus = pokemon.getAttacksStatus()[i];
+                     CardAttack cardAttack = attackStatus.getData();
+                     if (cardAttack != null && !attackStatus.isDisabled() && this.buttonAttacks[i].isInside(mouseX, mouseY)) {
+-                        boolean enoughEnergy = this.inspectingCard.isPickingAttack()
+-                            || LogicHelper.isEnoughEnergy(cardAttack, pokemon.getAttachments(), pokemon);
++                  boolean enoughEnergy = this.inspectingCard.isPickingAttack() || LogicHelper.isEnoughEnergy(cardAttack, pokemon.getAttachments(), pokemon);
+                         if (enoughEnergy) {
+                             NetworkHelper.sendToServer(new GenericActionRequestPacket(this.controller.getBlockPos(), PhaseAction.UseAttack, playerIndex, i, 0));
+                             handled = true;
+@@ -1280,9 +1258,7 @@
+         return clickedSomething;
+     }
+ 
+-    private void checkAndDrawActionHint(
+-        PoseStack matrix, ImmutableCard card, boolean isMyTurn, int mouseX, int mouseY, PlayerClientMyState me, int playerIndex
+-    ) {
++   private void checkAndDrawActionHint(PoseStack matrix, ImmutableCard card, boolean isMyTurn, int mouseX, int mouseY, PlayerClientMyState me, int playerIndex) {
+         CardType ct = card.getCardType();
+         int c = 10;
+         int color = 65280;
+@@ -1487,16 +1463,7 @@
+     }
+ 
+     private void showPokemonCardActionHint(
+-        PoseStack matrix,
+-        int mouseX,
+-        int mouseY,
+-        CardType ct,
+-        int c,
+-        int color,
+-        int errorColor,
+-        PlayerClientMyState me,
+-        PokemonCardState card,
+-        boolean isActive
++      PoseStack matrix, int mouseX, int mouseY, CardType ct, int c, int color, int errorColor, PlayerClientMyState me, PokemonCardState card, boolean isActive
+     ) {
+         if (ct == CardType.BASIC && card == null) {
+             if (isActive) {

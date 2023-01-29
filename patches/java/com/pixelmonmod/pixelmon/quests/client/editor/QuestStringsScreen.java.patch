@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/quests/client/editor/QuestStringsScreen.java
++++ b/com/pixelmonmod/pixelmon/quests/client/editor/QuestStringsScreen.java
+@@ -15,7 +15,7 @@
+ import net.minecraft.network.chat.TextComponent;
+ 
+ public class QuestStringsScreen extends Screen {
+-    private List<SimpleButton> buttons = new ArrayList();
++   private List<SimpleButton> buttons = new ArrayList<>();
+     private ListQuestLang list;
+     private TextField field;
+     private String selection = null;

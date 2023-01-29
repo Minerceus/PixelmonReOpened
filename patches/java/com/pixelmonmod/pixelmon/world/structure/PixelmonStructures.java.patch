@@ -1,0 +1,40 @@
+--- a/com/pixelmonmod/pixelmon/world/structure/PixelmonStructures.java
++++ b/com/pixelmonmod/pixelmon/world/structure/PixelmonStructures.java
+@@ -179,9 +179,7 @@
+         register("grotto_ultra_desert", (Supplier<StructureFeature<?>>)(() -> new BiomeGenericStructure("ultra_space/desert/grotto", "pixelmon:ultra_desert")))
+     );
+     public static final RegistryObject<StructureFeature<NoneFeatureConfiguration>> ULTRA_SEA_GROTTO = add(
+-        register(
+-            "grotto_ultra_deep_sea", (Supplier<StructureFeature<?>>)(() -> new BiomeGenericStructure("ultra_space/sea/grotto", "pixelmon:ultra_deep_sea"))
+-        )
++      register("grotto_ultra_deep_sea", (Supplier<StructureFeature<?>>)(() -> new BiomeGenericStructure("ultra_space/sea/grotto", "pixelmon:ultra_deep_sea")))
+     );
+     public static final RegistryObject<StructureFeature<NoneFeatureConfiguration>> ULTRA_FOREST_GROTTO = add(
+         register("grotto_ultra_forest", (Supplier<StructureFeature<?>>)(() -> new BiomeGenericStructure("ultra_space/forest/grotto", "pixelmon:ultra_forest")))
+@@ -252,7 +250,7 @@
+     }
+ 
+     public static <F extends StructureFeature<?>> RegistryObject<F> register(String name, Supplier<StructureFeature<?>> supplier) {
+-        return STRUCTURE_REGISTRY.register(name, supplier);
++      return (RegistryObject<F>) STRUCTURE_REGISTRY.register(name, supplier);
+     }
+ 
+     private static <FC extends FeatureConfiguration, F extends StructureFeature<FC>> ConfiguredStructureFeature<FC, F> register2(
+@@ -335,14 +333,12 @@
+     ) {
+         StructureFeature.STRUCTURES_REGISTRY.put(structure.getRegistryName().toString(), structure);
+         if (transformSurroundingLand) {
+-            StructureFeature.NOISE_AFFECTING_FEATURES = ImmutableList.builder().addAll(StructureFeature.NOISE_AFFECTING_FEATURES).add(structure).build();
++         StructureFeature.NOISE_AFFECTING_FEATURES = ImmutableList.<StructureFeature<?>>builder().addAll(StructureFeature.NOISE_AFFECTING_FEATURES).add(structure).build();
+         }
+ 
+-        StructureSettings.DEFAULTS = ImmutableMap.builder().putAll(StructureSettings.DEFAULTS).put(structure, settings).build();
++      StructureSettings.DEFAULTS = ImmutableMap.<StructureFeature<?>, StructureFeatureConfiguration>builder().putAll(StructureSettings.DEFAULTS).put(structure, settings).build();
+         BuiltinRegistries.NOISE_GENERATOR_SETTINGS.entrySet().forEach(s -> {
+-            Map<StructureFeature<?>, StructureFeatureConfiguration> structureMap = ((NoiseGeneratorSettings)s.getValue())
+-                .structureSettings()
+-                .structureConfig();
++         Map<StructureFeature<?>, StructureFeatureConfiguration> structureMap = ((NoiseGeneratorSettings)s.getValue()).structureSettings().structureConfig();
+             if (structureMap instanceof ImmutableMap) {
+                 Map<StructureFeature<?>, StructureFeatureConfiguration> tempMap = Maps.newHashMap(structureMap);
+                 tempMap.put(structure, settings);

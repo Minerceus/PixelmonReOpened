@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/api/storage/PlayerPartyStorage.java
++++ b/com/pixelmonmod/pixelmon/api/storage/PlayerPartyStorage.java
+@@ -133,8 +133,7 @@
+             ServerPlayer player = this.getPlayer();
+             if (player != null) {
+                 player.sendMessage(
+-                    new TranslatableComponent("pixelmon.storage.partyfull", new Object[]{pokemon.isEgg() ? "The egg" : pokemon.getLocalizedName()}),
+-                    Util.NIL_UUID
++               new TranslatableComponent("pixelmon.storage.partyfull", new Object[]{pokemon.isEgg() ? "The egg" : pokemon.getLocalizedName()}), Util.NIL_UUID
+                 );
+             }
+ 

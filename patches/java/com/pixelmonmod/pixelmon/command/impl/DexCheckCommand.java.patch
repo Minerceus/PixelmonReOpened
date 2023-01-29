@@ -1,0 +1,12 @@
+--- a/com/pixelmonmod/pixelmon/command/impl/DexCheckCommand.java
++++ b/com/pixelmonmod/pixelmon/command/impl/DexCheckCommand.java
+@@ -24,8 +24,7 @@
+         ServerPlayer player = PixelmonCommandUtils.requireEntityPlayer(sender);
+         PlayerPokedex dex = PixelmonCommandUtils.require(PixelmonCommandUtils.getPlayerStorage(player), "pixelmon.command.general.invalidplayer").playerPokedex;
+         int caught = dex.countCaught();
+-        BigDecimal percent = BigDecimal.valueOf((long)caught)
+-            .divide(BigDecimal.valueOf((long)Pokedex.pokedexSize), new MathContext(5, RoundingMode.HALF_EVEN));
++      BigDecimal percent = BigDecimal.valueOf((long)caught).divide(BigDecimal.valueOf((long)Pokedex.pokedexSize), new MathContext(5, RoundingMode.HALF_EVEN));
+         String percentString = NumberHelper.formatPercentage(percent.doubleValue());
+         sender.sendSuccess(
+             PixelmonCommandUtils.format(

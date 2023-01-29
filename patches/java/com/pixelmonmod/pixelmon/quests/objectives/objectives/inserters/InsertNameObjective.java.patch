@@ -1,0 +1,11 @@
+--- a/com/pixelmonmod/pixelmon/quests/objectives/objectives/inserters/InsertNameObjective.java
++++ b/com/pixelmonmod/pixelmon/quests/objectives/objectives/inserters/InsertNameObjective.java
+@@ -31,7 +31,7 @@
+         if (in.equalsIgnoreCase("0") || in.equalsIgnoreCase("m") || in.equalsIgnoreCase("male")) {
+             return 0;
+         } else {
+-            return !in.equalsIgnoreCase("1") && !in.equalsIgnoreCase("f") && !in.equalsIgnoreCase("female") ? 2 : 1;
++         return (byte) (!in.equalsIgnoreCase("1") && !in.equalsIgnoreCase("f") && !in.equalsIgnoreCase("female") ? 2 : 1);
+         }
+     }
+ 

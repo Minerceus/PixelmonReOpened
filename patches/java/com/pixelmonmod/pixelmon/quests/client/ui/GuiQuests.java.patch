@@ -1,0 +1,19 @@
+--- a/com/pixelmonmod/pixelmon/quests/client/ui/GuiQuests.java
++++ b/com/pixelmonmod/pixelmon/quests/client/ui/GuiQuests.java
+@@ -378,15 +378,7 @@
+         }
+ 
+         blit(
+-            matrix,
+-            (int)((float)(x + gap * 3) + (float)dispWidth / 2.0F) + 11,
+-            (int)((float)(y + lowerBorder) - (float)div * 1.55F),
+-            0.0F,
+-            0.0F,
+-            32,
+-            32,
+-            32,
+-            32
++         matrix, (int)((float)(x + gap * 3) + (float)dispWidth / 2.0F) + 11, (int)((float)(y + lowerBorder) - (float)div * 1.55F), 0.0F, 0.0F, 32, 32, 32, 32
+         );
+         this.minecraft.getTextureManager().bind(Resources.crossTexture);
+         blit(matrix, (int)v + 11, (int)((float)(y + lowerBorder) - (float)div * 1.55F), 0.0F, 0.0F, 32, 32, 32, 32);

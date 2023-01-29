@@ -1,0 +1,13 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/stats/evolution/conditions/TimeCondition.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/stats/evolution/conditions/TimeCondition.java
+@@ -45,9 +45,7 @@
+             times.addAll(this.times);
+         }
+ 
+-        MutableComponent timesText = TextHelper.join(
+-            times.stream().map(ITranslatable::getTranslatedName).collect(Collectors.toList()), TextHelper.OR_DELIMITER
+-        );
++      MutableComponent timesText = TextHelper.join(times.stream().map(ITranslatable::getTranslatedName).collect(Collectors.toList()), TextHelper.OR_DELIMITER);
+         return PixelmonCommandUtils.format("pixelmon.evolution.conditions.time", timesText);
+     }
+ }

@@ -1,0 +1,23 @@
+--- a/com/pixelmonmod/pixelmon/blocks/tileentity/IlexShrineTileEntity.java
++++ b/com/pixelmonmod/pixelmon/blocks/tileentity/IlexShrineTileEntity.java
+@@ -81,9 +81,7 @@
+                                     pixelmonEntity.getPokemon().setPalette("shiny");
+                                 }
+         
+-                                pixelmonEntity.setPos(
+-                                    (double)this.worldPosition.getX(), (double)(this.worldPosition.getY() + 2), (double)this.worldPosition.getZ()
+-                                );
++                        pixelmonEntity.setPos((double)this.worldPosition.getX(), (double)(this.worldPosition.getY() + 2), (double)this.worldPosition.getZ());
+                                 IlexShrineEvent.Pre pre = new IlexShrineEvent.Pre((ServerPlayer)player, block, pixelmonEntity, this);
+                                 if (Pixelmon.EVENT_BUS.post(pre)) {
+                                     return;
+@@ -99,8 +97,7 @@
+                                         player.level
+                                             .setBlock(
+                                                 this.worldPosition.above(),
+-                                                (BlockState)((BlockState)state.setValue(IlexShrineBlock.USED, true))
+-                                                    .setValue(IlexShrineBlock.BLOCKPOS, EnumBlockPos.TOP),
++                                    (BlockState)((BlockState)state.setValue(IlexShrineBlock.USED, true)).setValue(IlexShrineBlock.BLOCKPOS, EnumBlockPos.TOP),
+                                                 2
+                                             );
+                                     }

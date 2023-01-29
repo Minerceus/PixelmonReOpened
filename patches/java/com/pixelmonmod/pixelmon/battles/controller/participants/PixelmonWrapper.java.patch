@@ -1,0 +1,56 @@
+--- a/com/pixelmonmod/pixelmon/battles/controller/participants/PixelmonWrapper.java
++++ b/com/pixelmonmod/pixelmon/battles/controller/participants/PixelmonWrapper.java
+@@ -417,9 +417,7 @@
+             ArrayList<PixelmonWrapper> opponentPokemon = this.bc.getOpponentPokemon(this.participant);
+             boolean[][] targetted = new boolean[][]{new boolean[teamPokemon.size()], new boolean[opponentPokemon.size()]};
+             int mypos = teamPokemon.indexOf(this);
+-            if (this.bc.rules.getOrDefault(BattleRuleRegistry.BATTLE_TYPE) == BattleType.HORDE && info.hitsAll && info.hitsOppositeFoe && info.hitsAdjacentFoe
+-                )
+-             {
++         if (this.bc.rules.getOrDefault(BattleRuleRegistry.BATTLE_TYPE) == BattleType.HORDE && info.hitsAll && info.hitsOppositeFoe && info.hitsAdjacentFoe) {
+                 targets.addAll(opponentPokemon);
+                 return targets;
+             } else {
+@@ -600,9 +598,7 @@
+             if (!this.attack.isAttack(AttackRegistry.FOCUS_PUNCH) && !this.hasStatus(StatusType.Bide)) {
+                 this.bc
+                     .sendToAll(
+-                        "pixelmon.battletext.used",
+-                        this.getNickname(),
+-                        this.usingZ ? this.zMove.getLocalizedName() : this.attack.getMove().getTranslatedName()
++                  "pixelmon.battletext.used", this.getNickname(), this.usingZ ? this.zMove.getLocalizedName() : this.attack.getMove().getTranslatedName()
+                     );
+             }
+ 
+@@ -1325,9 +1321,7 @@
+                 }
+ 
+                 if (this.attack != null) {
+-                    if (this.usingZ && this.attack.getAttackCategory() == AttackCategory.STATUS && this.attack.getMove().getZMove(this.pokemon, false) != null
+-                        )
+-                     {
++               if (this.usingZ && this.attack.getAttackCategory() == AttackCategory.STATUS && this.attack.getMove().getZMove(this.pokemon, false) != null) {
+                         for(EffectBase e : this.attack.getMove().getZMove(this.pokemon, false).effects) {
+                             try {
+                                 if (e instanceof StatsEffect) {
+@@ -1481,8 +1475,7 @@
+                         if (isRayquaza) {
+                             this.bc.sendToAll("pixelmon.battletext.rayquazamegareact", this.participant.getDisplayName());
+                         } else {
+-                            this.bc
+-                                .sendToAll("pixelmon.battletext.megareact", nickname, this.getHeldItem().getLocalizedName(), this.participant.getDisplayName());
++                     this.bc.sendToAll("pixelmon.battletext.megareact", nickname, this.getHeldItem().getLocalizedName(), this.participant.getDisplayName());
+                         }
+ 
+                         this.evolution = new EvolutionQuery(this.entity, form);
+@@ -2614,9 +2607,7 @@
+             return false;
+         } else if ((this.getSpecies().is(PixelmonSpecies.KYOGRE) || user.getSpecies().is(PixelmonSpecies.KYOGRE)) && item == PixelmonItems.blue_orb.getItem()) {
+             return true;
+-        } else if ((this.getSpecies().is(PixelmonSpecies.GROUDON) || user.getSpecies().is(PixelmonSpecies.GROUDON)) && item == PixelmonItems.red_orb.getItem()
+-            )
+-         {
++      } else if ((this.getSpecies().is(PixelmonSpecies.GROUDON) || user.getSpecies().is(PixelmonSpecies.GROUDON)) && item == PixelmonItems.red_orb.getItem()) {
+             return true;
+         } else if (item instanceof PlateItem && this.getBattleAbility() instanceof Multitype) {
+             return true;
