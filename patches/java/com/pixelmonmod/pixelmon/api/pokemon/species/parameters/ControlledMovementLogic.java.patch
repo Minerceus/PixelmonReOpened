@@ -1,0 +1,14 @@
+--- a/com/pixelmonmod/pixelmon/api/pokemon/species/parameters/ControlledMovementLogic.java
++++ b/com/pixelmonmod/pixelmon/api/pokemon/species/parameters/ControlledMovementLogic.java
+@@ -14,9 +14,8 @@
+ public interface ControlledMovementLogic {
+     Codec<ControlledMovementLogic> CODEC = Codec.STRING
+         .dispatch(
+-            controlledMovementLogic -> PixelmonRegistry.movementLogicTypes.getKey(new MovementType(controlledMovementLogic.codec())).toString(),
+-            controlledMovementLogic -> ((MovementType)PixelmonRegistry.movementLogicTypes.getValue(ResourceLocationHelper.of(controlledMovementLogic)))
+-                    .getCodec()
++            controlledMovementLogic -> PixelmonRegistry.movementLogicTypes.getKey(new MovementType<>(controlledMovementLogic.codec())).toString(),
++            controlledMovementLogic -> (PixelmonRegistry.movementLogicTypes.getValue(ResourceLocationHelper.of(controlledMovementLogic))).getCodec()
+         );
+ 
+     Codec<? extends ControlledMovementLogic> codec();

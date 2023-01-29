@@ -1,0 +1,10 @@
+--- a/com/pixelmonmod/pixelmon/init/registry/PixelmonRegistry.java
++++ b/com/pixelmonmod/pixelmon/init/registry/PixelmonRegistry.java
+@@ -46,6 +46,6 @@
+     }
+ 
+     private static <T> Class<T> classOf(Class<?> clazz) {
+-        return clazz;
++        return (Class<T>) clazz;
+     }
+ }

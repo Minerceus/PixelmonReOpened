@@ -1,11 +1,11 @@
 --- a/com/pixelmonmod/pixelmon/command/impl/PokeBombCommand.java
 +++ b/com/pixelmonmod/pixelmon/command/impl/PokeBombCommand.java
-@@ -38,7 +38,7 @@
-         String[] specList = Arrays.copyOfRange(args, 0, args.length);
-         PokemonSpecification spec = PokemonSpecificationProxy.create(specList);
+@@ -36,7 +36,7 @@
+         ServerLevel world = sender.getEntity() instanceof ServerPlayer ? sender.getLevel() : ServerLifecycleHooks.getCurrentServer().getLevel(Level.OVERWORLD);
+         PokemonSpecification spec = PokemonSpecificationProxy.create(args);
  
 -        for(Entity entity : (List)world.getEntities().collect(Collectors.toList())) {
-+      for(Entity entity : world.getEntities().collect(Collectors.toList())) {
++        for(Entity entity : world.getEntities().collect(Collectors.toList())) {
              if (entity instanceof PixelmonEntity) {
                  PixelmonEntity pixelmon = (PixelmonEntity)entity;
                  if (!pixelmon.hasOwner() && pixelmon.battleController == null) {

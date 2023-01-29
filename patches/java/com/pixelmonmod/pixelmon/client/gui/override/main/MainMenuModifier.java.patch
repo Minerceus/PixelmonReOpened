@@ -1,6 +1,13 @@
 --- a/com/pixelmonmod/pixelmon/client/gui/override/main/MainMenuModifier.java
 +++ b/com/pixelmonmod/pixelmon/client/gui/override/main/MainMenuModifier.java
-@@ -47,22 +47,6 @@
+@@ -41,28 +41,12 @@
+                 new ResourceLocation("pixelmon", "textures/gui/pixelmon.png"),
+                 singleplayerButton.x,
+                 multiplayerY,
+-                98,
++                200,
+                 20,
+                 new TranslatableComponent("menu.pixelmon"),
                  p_onPress_1_ -> Minecraft.getInstance().setScreen(new ExtrasEditorScreen())
              )
          );

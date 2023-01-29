@@ -1,6 +1,6 @@
 --- a/com/pixelmonmod/pixelmon/client/gui/daycare/DayCareScreen.java
 +++ b/com/pixelmonmod/pixelmon/client/gui/daycare/DayCareScreen.java
-@@ -85,8 +85,7 @@
+@@ -86,8 +86,7 @@
                  TextComponent.EMPTY,
                  this::clickConfirm,
                  (a, matrix, mouseX, mouseY) -> this.renderTooltip(matrix, new TranslatableComponent("pixelmon.daycare.confirm"), mouseX, mouseY),
@@ -10,7 +10,7 @@
                  0
              )
          );
-@@ -162,8 +161,7 @@
+@@ -163,8 +162,7 @@
                                  } else {
                                      List<Component> allErrorMessages = Lists.newArrayList(
                                          new Component[]{
@@ -20,7 +20,7 @@
                                          }
                                      );
                                      allErrorMessages.addAll(dayCareBox.getAllErrorMessages());
-@@ -684,11 +682,7 @@
+@@ -698,11 +696,7 @@
                                          this.minecraft
                                              .font
                                              .draw(
